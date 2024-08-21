@@ -1,4 +1,4 @@
-# GMH Leasing Package - `gmhleasr` <img src="man/figures/hex_logo.svg" width="120" height="auto" alight="right"/>
+# GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" align="right" height="139" alt="" />
 
 > [!NOTE] 
 > This is an R oackage for GMH Leasing. It is a work in progress.
