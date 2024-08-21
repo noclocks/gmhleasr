@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata Base API Request
@@ -84,7 +83,9 @@
   retry_codes <- c(401, 403, 429, 500, 501, 502, 503, 504)
   resp_body <- httr2::resp_body_json(resp)
   err_code <- purrr::pluck(resp_body, "response", "error", "code")
-  if (err_code %in% retry_codes) { return(TRUE) }
+  if (err_code %in% retry_codes) {
+    return(TRUE)
+  }
   return(FALSE)
 }
 
@@ -214,20 +215,18 @@
 #' @importFrom purrr pluck_exists pluck
 #' @importFrom fs path_temp
 entrata <- function(
-  endpoint = NULL,
-  method = NULL,
-  params = list(NULL),
-  ua = user_agent(),
-  verbosity = NULL,
-  perform = FALSE,
-  extract = perform,
-  enable_retry = FALSE,
-  max_retries = 3,
-  retry_delay = 1,
-  config = config::get("entrata"),
-  ...
-) {
-
+    endpoint = NULL,
+    method = NULL,
+    params = list(NULL),
+    ua = user_agent(),
+    verbosity = NULL,
+    perform = FALSE,
+    extract = perform,
+    enable_retry = FALSE,
+    max_retries = 3,
+    retry_delay = 1,
+    config = config::get("entrata"),
+    ...) {
   base_url <- config$base_url
 
   req_body <- list(
@@ -266,7 +265,9 @@ entrata <- function(
         max_tries = max_retries,
         max_seconds = 60,
         is_transient = .should_retry,
-        backoff = function(x) { retry_delay * 2^(x - 1) }
+        backoff = function(x) {
+          retry_delay * 2^(x - 1)
+        }
       )
   }
 
@@ -280,7 +281,4 @@ entrata <- function(
 
   res <- req |> httr2::req_perform(verbosity = verbosity)
   return(res)
-
 }
-
-

@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata Utilities
@@ -28,8 +27,11 @@
 user_agent <- function(
     package = "gmhleasr",
     version = utils::packageVersion("gmhleasr"),
-    url = desc::desc_get("URL")
-) {
-  if (is.na(url)) { url <- "" } else { url <- paste0(" (", url, ")") }
+    url = desc::desc_get("URL")) {
+  if (is.na(url)) {
+    url <- ""
+  } else {
+    url <- paste0(" (", url, ")")
+  }
   glue::glue("{package}/{version}{url}")
 }

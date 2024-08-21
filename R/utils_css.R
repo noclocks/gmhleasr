@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : CSS Utilities
@@ -29,7 +28,6 @@
 #' @importFrom glue glue
 #' @importFrom shiny isolate
 verify_css <- function(selector, css) {
-
   css_props <- jsonlite::toJSON(css, auto_unbox = TRUE)
 
   js <- glue::glue("
@@ -51,8 +49,7 @@ verify_css <- function(selector, css) {
         }}
       }}
       return true;
-    }})();"
-  )
+    }})();")
 
   result <- shiny::isolate(shinyjs::runjs(js))
 

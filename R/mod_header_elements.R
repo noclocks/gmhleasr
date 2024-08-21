@@ -39,8 +39,9 @@ mod_header_elements_ui <- function(id,
   )
 
   create_element <- function(element_id, config) {
-
-    if (!include_elements[[element_id]]) return(NULL)
+    if (!include_elements[[element_id]]) {
+      return(NULL)
+    }
 
     if (element_id == "contact") {
       return(if (include_elements$contact) create_contact_menu(contacts) else NULL)
@@ -86,17 +87,15 @@ mod_header_elements_ui <- function(id,
 #' @importFrom shiny observeEvent showModal modalDialog includeMarkdown icon
 #' @importFrom shinyWidgets confirmSweetAlert
 mod_header_elements_server <- function(
-  id,
-  parent_session = NULL,
-  paths = list(
-    help = fs::path_package("gmhrleasr", "assets/content/help.Rmd"),
-    about = fs::path_package("gmhrleasr", "assets/content/about.Rmd")
-  )
-) {
+    id,
+    parent_session = NULL,
+    paths = list(
+      help = fs::path_package("gmhrleasr", "assets/content/help.Rmd"),
+      about = fs::path_package("gmhrleasr", "assets/content/about.Rmd")
+    )) {
   shiny::moduleServer(
     id,
     function(input, output, session) {
-
       observe_element <- function(element_id, action) {
         shiny::observeEvent(input[[element_id]], action())
       }
@@ -108,7 +107,6 @@ mod_header_elements_server <- function(
       shiny::observeEvent(input$confirmrefresh, {
         if (isTRUE(input$confirmrefresh)) session$reload()
       })
-
     }
   )
 }

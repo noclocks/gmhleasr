@@ -19,7 +19,6 @@ NULL
 #' @importFrom shiny NS
 #' @importFrom htmltools tags
 mod_sidebar_ui <- function(id) {
-
   ns <- shiny::NS(id)
 
   bs4Dash::bs4DashSidebar(
@@ -50,11 +49,9 @@ mod_sidebar_server <- function(id) {
   shiny::moduleServer(
     id,
     function(input, output, session) {
-
       ns <- session$ns
 
       output$sidebar_menu <- bs4Dash::renderMenu({
-
         bs4Dash::sidebarMenu(
           id = ns("sidebar_menu"),
           bs4Dash::menuItem(

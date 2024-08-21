@@ -34,7 +34,7 @@
 #' @return menu
 #' @export
 #' @importFrom htmltools tags div
-contact_menu <- function(...){
+contact_menu <- function(...) {
   items <- c(list(...))
 
   htmltools::tags$li(
@@ -66,8 +66,7 @@ contact_item <- function(
     phone = NULL,
     email = NULL,
     url = NULL,
-    image = NULL
-){
+    image = NULL) {
   image_html <- if (!is.null(image) && nzchar(image)) {
     # Check if the image file exists
     if (file.exists(image)) {

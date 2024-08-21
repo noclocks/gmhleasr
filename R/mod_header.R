@@ -13,9 +13,7 @@ header_title <- function(
     img_alt = "GMH Communities",
     href = "https://www.gmhcommunities.com/",
     opacity = 1,
-    ...
-) {
-
+    ...) {
   shiny::div(
     class = "header-title",
     shiny::tags$a(
@@ -31,20 +29,15 @@ header_title <- function(
       class = paste0("text-", color)
     )
   )
-
-
-
 }
 
 
 # exported ----------------------------------------------------------------
 
 mod_header_ui <- function(
-  id,
-  title = "GMH Leasing Dashboard",
-  ...
-) {
-
+    id,
+    title = "GMH Leasing Dashboard",
+    ...) {
   ns <- shiny::NS(id)
 
   elements <- mod_header_elements_ui(
@@ -84,7 +77,6 @@ mod_header_ui <- function(
 }
 
 mod_header_server <- function(id, ...) {
-
   shiny::moduleServer(
     id,
     function(input, output, session) {
@@ -93,5 +85,4 @@ mod_header_server <- function(id, ...) {
       )
     }
   )
-
 }

@@ -49,5 +49,3 @@ create_user_menu <- function(ns) {
     )
   )
 }
-
-

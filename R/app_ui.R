@@ -7,7 +7,6 @@
 #  ------------------------------------------------------------------------
 
 app_ui <- function(req) {
-
   ui <- force(req)
 
   bs4Dash::bs4DashPage(
@@ -43,7 +42,7 @@ app_ui <- function(req) {
     fullscreen = TRUE,
     help = TRUE,
     dark = FALSE,
-    scrollToTop = TRUE#,
+    scrollToTop = TRUE # ,
     # freshTheme = app_ui_theme(),
     # preloader = app_ui_preloader(),
     # body = app_body(),
