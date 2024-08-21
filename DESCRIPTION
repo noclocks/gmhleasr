@@ -33,7 +33,6 @@ Imports:
     tibble (>= 3.2.1),
     tools,
     utils,
-    yaml (>= 2.3.9),
     ymlthis (>= 0.1.7)
 Suggests: 
     here,

@@ -34,11 +34,10 @@ yaml_to_json <- function(yaml) {
   return(json)
 
 }
-yaml <- yaml::read_yaml("config.yml")
 
 yaml_to_list <- function(yaml) {
 
   if (!ymlthis:::is_yml(yaml))
-  return(yaml)
+    return(yaml)
 
 }
