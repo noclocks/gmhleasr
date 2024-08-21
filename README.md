@@ -5,6 +5,13 @@
 
 <!-- badges: start -->
 
+[![roxygen](https://github.com/noclocks/gmhleasr/actions/workflows/roxygen.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/roxygen.yml)
+[![lint](https://github.com/noclocks/gmhleasr/actions/workflows/lint.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/lint.yml)
+[![pull-requests](https://github.com/noclocks/gmhleasr/actions/workflows/pull-requests.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/pull-requests.yml)
+[![style](https://github.com/noclocks/gmhleasr/actions/workflows/style.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/style.yml)
+[![coverage](https://github.com/noclocks/gmhleasr/actions/workflows/coverage.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/coverage.yml)
+[![check](https://github.com/noclocks/gmhleasr/actions/workflows/check.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/check.yml)
+[![Codecov test coverage](https://codecov.io/gh/noclocks/gmhleasr/graph/badge.svg)](https://codecov.io/gh/noclocks/gmhleasr)
 <!-- badges: end -->
 
 ## Contents {#contents}
