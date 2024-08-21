@@ -8,6 +8,7 @@
 
 ## Configuration
 
+- Remove config.yml symlink ([865bca7](https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596))  - (Jimmy Briggs)
 - Update config ([44eeb1e](https://github.com/noclocks/gmhleasr/commit/44eeb1e6fc77970844da011f7051f9f5e04fe50d))  - (Jimmy Briggs)
 - Un-gitignore config.yml symlink ([a5d16f5](https://github.com/noclocks/gmhleasr/commit/a5d16f5114e16eae5b02df201c7976e708cdd4b1))  - (Jimmy Briggs)
 
@@ -19,6 +20,9 @@
 
 ## Features
 
+- **data:** Add database configuration schema ([1d8969a](https://github.com/noclocks/gmhleasr/commit/1d8969aba8c0ea8958c7db76479df536d6dae7f6))  - (Jimmy Briggs)
+- **run_app:** Add run_app.R script ([459390d](https://github.com/noclocks/gmhleasr/commit/459390d6f9bf49f6113334cdb0a51b646f919021))  - (Jimmy Briggs)
+- Add new modules and utility functions ([e836db6](https://github.com/noclocks/gmhleasr/commit/e836db65869968f1e7787aa737ad670d4612bc91))  - (Jimmy Briggs)
 - **.github/workflows:** Add automated changelog generation ([087c3fe](https://github.com/noclocks/gmhleasr/commit/087c3fea83b0bed2d89858e5728659122c3fedbd))  - (Jimmy Briggs)
 - **ci:** Add GitHub Actions workflows and update package documentation ([7a379c7](https://github.com/noclocks/gmhleasr/commit/7a379c77cf605dfe23c8ae558e11a78ec30865a0))  - (Jimmy Briggs)
 - Add internal package data ([917b550](https://github.com/noclocks/gmhleasr/commit/917b550932bf4bd9881381a3692140fbdf8db743))  - (Jimmy Briggs)
