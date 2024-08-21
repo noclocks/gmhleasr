@@ -18,6 +18,7 @@
 
 ## Documentation
 
+- Update URLs in _pkgdown.yml and DESCRIPTION files ([c3d7571](https://github.com/noclocks/gmhleasr/commit/c3d7571baa6050c1776ea399eeb5cc495210afa7))  - (Jimmy Briggs)
 - Update man pages ([71e3adc](https://github.com/noclocks/gmhleasr/commit/71e3adc3816be5a3ab1117138fe245b4eaa9513a))  - (Jimmy Briggs)
 - Initialize vignettes ([58cb2dc](https://github.com/noclocks/gmhleasr/commit/58cb2dc0233a8fa3f41b73d3660bba1e2717d45a))  - (Jimmy Briggs)
 - Document package man page ([be29933](https://github.com/noclocks/gmhleasr/commit/be29933f1bd67681a457c71228574eecda9b1bb8))  - (Jimmy Briggs)
@@ -44,6 +45,10 @@
 - Update logo and README ([93ad242](https://github.com/noclocks/gmhleasr/commit/93ad242649cf8cce32f8dfaa7b56df0599bb44d4))  - (Jimmy Briggs)
 - Add hex logo and add to README ([a3abc56](https://github.com/noclocks/gmhleasr/commit/a3abc560ba15e6d11a1acb69964a9ab9fb18bb59))  - (Jimmy Briggs)
 - Add development scripts ([be2b9aa](https://github.com/noclocks/gmhleasr/commit/be2b9aa803a6b3e5490a7b46a8f9127474ef837e))  - (Jimmy Briggs)
+
+## Refactoring
+
+- Remove yaml dependency and enhance documentation ([df20cbe](https://github.com/noclocks/gmhleasr/commit/df20cbe36a7de65e9ddacb1c97630197522c1374))  - (Jimmy Briggs)
 
 ## Testing
 
