@@ -1,0 +1,214 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for config.yml",
+  "type": "object",
+  "properties": {
+    "default": {
+      "type": "object",
+      "properties": {
+        "app_name": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "api_key": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "api_url": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sentry_dsn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "auth": {
+          "type": "object",
+          "properties": {
+            "api_key": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "api_key"
+          ]
+        },
+        "entrata": {
+          "type": "object",
+          "properties": {
+            "api_url": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "username": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "password": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "api_url",
+            "username",
+            "password"
+          ]
+        },
+        "db": {
+          "type": "object",
+          "properties": {
+            "host": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "port": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              }
+            },
+            "dbname": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "user": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "password": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "host",
+            "port",
+            "dbname",
+            "user",
+            "password"
+          ]
+        },
+        "s3": {
+          "type": "object",
+          "properties": {
+            "AWS_ACCESS_KEY_ID": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "AWS_SECRET_ACCESS_KEY": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "AWS_REGION": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "BUCKET_NAME": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "AWS_ACCESS_KEY_ID",
+            "AWS_SECRET_ACCESS_KEY",
+            "AWS_REGION",
+            "BUCKET_NAME"
+          ]
+        }
+      },
+      "required": [
+        "app_name",
+        "api_key",
+        "api_url",
+        "sentry_dsn",
+        "auth",
+        "entrata",
+        "db",
+        "s3"
+      ]
+    },
+    "development": {
+      "type": "object",
+      "properties": {
+        "s3": {
+          "type": "object",
+          "properties": {
+            "BUCKET_NAME": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "BUCKET_NAME"
+          ]
+        }
+      },
+      "required": [
+        "s3"
+      ]
+    },
+    "production": {
+      "type": "object",
+      "properties": {
+        "s3": {
+          "type": "object",
+          "properties": {
+            "BUCKET_NAME": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "BUCKET_NAME"
+          ]
+        }
+      },
+      "required": [
+        "s3"
+      ]
+    }
+  },
+  "required": [
+    "default",
+    "development",
+    "production"
+  ]
+}
