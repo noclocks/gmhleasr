@@ -1,0 +1,10 @@
+{
+    "response": {
+        "requestId": "15",
+        "code": 200,
+        "result": {
+            "status": "Success",
+            "message": "API service is available and running."
+        }
+    }
+}
