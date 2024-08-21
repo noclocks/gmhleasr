@@ -12,6 +12,10 @@
 - Update config ([44eeb1e](https://github.com/noclocks/gmhleasr/commit/44eeb1e6fc77970844da011f7051f9f5e04fe50d))  - (Jimmy Briggs)
 - Un-gitignore config.yml symlink ([a5d16f5](https://github.com/noclocks/gmhleasr/commit/a5d16f5114e16eae5b02df201c7976e708cdd4b1))  - (Jimmy Briggs)
 
+## DevOps
+
+- **.github/workflows:** Update GitHub Actions workflows ([7cd1b53](https://github.com/noclocks/gmhleasr/commit/7cd1b53b835c69e82eb2b7ca2e92b1b7ad841cef))  - (Jimmy Briggs)
+
 ## Documentation
 
 - Update man pages ([71e3adc](https://github.com/noclocks/gmhleasr/commit/71e3adc3816be5a3ab1117138fe245b4eaa9513a))  - (Jimmy Briggs)
