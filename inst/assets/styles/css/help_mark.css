@@ -1,0 +1,17 @@
+.helper {
+    margin-left: 2px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.helper[data-help]:hover::after {
+    width: 200px;
+    content: attr(data-help);
+    color: black;
+    background: #ffffffaa;
+    position: absolute;
+    padding: 2px;
+    border: 1px solid black;
+    border-radius: 4px;
+    z-index: 9999;
+}
