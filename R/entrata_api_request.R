@@ -21,6 +21,8 @@
 #'
 #' @keywords internal
 #'
+#' @noRd
+#'
 #' @importFrom httr2 resp_body_json
 #' @importFrom purrr pluck
 #' @importFrom glue glue
@@ -51,6 +53,8 @@
 #'
 #' @keywords internal
 #'
+#' @noRd
+#'
 #' @importFrom purrr pluck_exists
 #' @importFrom httr2 resp_body_json
 .err_func <- function(resp) {
@@ -61,6 +65,21 @@
   return(FALSE)
 }
 
+#' Should Retry
+#'
+#' @description
+#' Function to determine if a request should be retried.
+#'
+#' @param resp [httr2::response()] object
+#'
+#' @return Logical value indicating whether the request should be retried.
+#'
+#' @keywords internal
+#'
+#' @noRd
+#'
+#' @importFrom httr2 resp_body_json
+#' @importFrom purrr pluck
 .should_retry <- function(resp) {
   retry_codes <- c(401, 403, 429, 500, 501, 502, 503, 504)
   resp_body <- httr2::resp_body_json(resp)
@@ -71,7 +90,7 @@
 
 # exported ----------------------------------------------------------------
 
-#' Entrtata API Request
+#' Entrata API Request
 #'
 #' @description
 #' This function sends an `HTTP` request to the Entrata API.

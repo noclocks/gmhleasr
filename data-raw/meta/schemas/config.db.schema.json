@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "config.db.schema.json",
+  "title": "Database Configuration Schema",
+  "description": "Validate the database configuration",
+  "required": ["db"]
+  "type": "object",
+  "properties": {
+    "db": {
+      "type": "object",
+      "properties": {
+        "driver": {
+          "type": "string",
+          "example": "postgresql",
+          "enum": [
+            "postgresql",
+            "mysql",
+            "sqlite3",
+            "mssql"
+          ]
+        },
+        "dbname": {
+          "type": "string",
+          "example": "public"
+        },
+        "host": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string",
+        },
+        "port": {
+          "type": "integer",
+          "example": 5432,
+          "default": 5432,
+          "minimum": 1000,
+          "maximum": 65535
+        },
+        "sslmode": {
+          "type": "string",
+          "example": "disable",
+          "enum": [
+            "disable",
+            "require",
+            "verify-ca",
+            "verify-full"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "example": "postgres://user:password@localhost:5432/public",
+          "pattern": "^(postgres|mysql|sqlite3|mssql)://[a-zA-Z0-9]+:[a-zA-Z0-9]+@[a-zA-Z0-9]+:[0-9]+/[a-zA-Z0-9]+$"
+        },
+        "user": {
+          "type": "string",
+          "example": "postgres"
+        }
+      },
+      "required": [
+        "driver",
+        "dbname",
+        "host",
+        "password",
+        "port",
+        "user"
+      ]
+    }
+  },
+  "required": [
+    "db"
+  ]
+}
