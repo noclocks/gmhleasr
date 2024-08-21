@@ -22,6 +22,7 @@
 
 ## Documentation
 
+- Tweak readme ([133e328](https://github.com/noclocks/gmhleasr/commit/133e3289b78f4358476788fa218911ea242b925a))  - (Jimmy Briggs)
 - Update URLs in _pkgdown.yml and DESCRIPTION files ([c3d7571](https://github.com/noclocks/gmhleasr/commit/c3d7571baa6050c1776ea399eeb5cc495210afa7))  - (Jimmy Briggs)
 - Update man pages ([71e3adc](https://github.com/noclocks/gmhleasr/commit/71e3adc3816be5a3ab1117138fe245b4eaa9513a))  - (Jimmy Briggs)
 - Initialize vignettes ([58cb2dc](https://github.com/noclocks/gmhleasr/commit/58cb2dc0233a8fa3f41b73d3660bba1e2717d45a))  - (Jimmy Briggs)
