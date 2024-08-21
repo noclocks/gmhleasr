@@ -6,6 +6,8 @@
 \alias{gmhleasr-package}
 \title{gmhleasr: Shiny Dashboard for GMH Communities Leasing Data}
 \description{
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
+
 Shiny Dashboard for GMH Communities Leasing Data.
 }
 \author{
