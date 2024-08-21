@@ -9,6 +9,8 @@ Authors@R: c(
   )
 Description: Shiny Dashboard for GMH Communities Leasing Data.
 License: file LICENSE
+Depends: 
+    R (>= 4.1)
 Imports: 
     base64enc (>= 0.1.3),
     bs4Dash (>= 2.3.3),
