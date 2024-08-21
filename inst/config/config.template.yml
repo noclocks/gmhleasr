@@ -1,0 +1,63 @@
+default:
+  app:
+    name: "<NAME>"
+    version: "<VERSION>"
+    description: "<DESCRIPTION>"
+    host: "<HOST>"
+    port: "<PORT>"
+    contacts:
+    - name: "<NAME>"
+      role: "<ROLE>"
+      email: "<EMAIL>"
+      url: "<URL>"
+    - name: "<NAME>"
+      role: "<ROLE>"
+      email: "<EMAIL>"
+      url: "<URL>"
+    - name: "<NAME>"
+      role: "<ROLE>"
+      email: "<EMAIL>"
+      url: "<URL>"
+  auth:
+    api_url: "<API_URL>"
+    api_key: "<API_KEY>"
+  entrata:
+    base_url: "<BASE_URL>"
+    username: "<USERNAME>"
+    password: "<PASSWORD>"
+  db:
+    host: "<HOST>"
+    port: "<PORT>"
+    dbname: "<DBNAME>"
+    user: "<USER>"
+    password: "<PASSWORD>"
+    uri: "<URI>"
+  sentry:
+    dsn: "<DSN>"
+  gcp:
+    project: "<PROJECT>"
+    client_id: "<CLIENT_ID>"
+    client_secret: "<CLIENT_SECRET>"
+    oauth_credentials: "<OAUTH_CREDENTIALS>"
+    service_account: "<SERVICE_ACCOUNT>"
+  aws:
+    access_key_id: "<ACCESS_KEY_ID>"
+    secret_access_key: "<SECRET_ACCESS_KEY>"
+    region: "<REGION>"
+    bucket_name: "<BUCKET_NAME>"
+development:
+  db:
+    dbname: "<DBNAME>"
+  aws:
+    bucket_name: "<BUCKET_NAME>"
+production:
+  db:
+    dbname: "<DBNAME>"
+  aws:
+    bucket_name: "<BUCKET_NAME>"
+test:
+  db:
+    dbname: "<DBNAME>"
+  aws:
+    bucket_name: "<BUCKET_NAME>"
+
