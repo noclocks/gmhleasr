@@ -1,0 +1,9 @@
+pandoc: 3.1.11
+pkgdown: 2.1.0
+pkgdown_sha: ~
+articles:
+  gmhleasr: gmhleasr.html
+last_built: 2024-08-21T18:34Z
+urls:
+  reference: https://docs.noclocks.dev/gmhleasr/reference
+  article: https://docs.noclocks.dev/gmhleasr/articles
