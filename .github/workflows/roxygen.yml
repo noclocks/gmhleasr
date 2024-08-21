@@ -3,8 +3,9 @@
 on:
   push:
     paths: ["R/**"]
+  workflow_dispatch:
 
-name: document.yaml
+name: Document (Roxygen)
 
 permissions: read-all
 

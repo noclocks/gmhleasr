@@ -4,7 +4,7 @@ on:
   issue_comment:
     types: [created]
 
-name: pr-commands.yaml
+name: Pull Requests
 
 permissions: read-all
 
