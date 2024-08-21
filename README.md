@@ -1,12 +1,24 @@
+# GMH Leasing Package - `gmhleasr` <img src="man/figures/hex_logo.svg" width="120" height="auto" alight="right"/>
 
-# gmhleasr
+> [!NOTE] 
+> This is an R oackage for GMH Leasing. It is a work in progress.
 
 <!-- badges: start -->
+
 <!-- badges: end -->
+
+## Contents {#contents}
+
+-   [Contents](#contents)
+-   [Overview](#overview)
+-   [Installation](#installation)
+-   [Example](#example)
+
+## Overview {#overview}
 
 The goal of gmhleasr is to ...
 
-## Installation
+## Installation {#installation}
 
 You can install the development version of gmhleasr like so:
 
@@ -14,7 +26,7 @@ You can install the development version of gmhleasr like so:
 # FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
 ```
 
-## Example
+## Example {#example}
 
 This is a basic example which shows you how to solve a common problem:
 
@@ -22,4 +34,3 @@ This is a basic example which shows you how to solve a common problem:
 library(gmhleasr)
 ## basic example code
 ```
-
