@@ -6,6 +6,10 @@
 
 ## [Unreleased]
 
+## Bug Fixes
+
+- Fix DESCRIPTION versions ([8772332](https://github.com/noclocks/gmhleasr/commit/8772332a187b67ac29d8a1f47cae5e69b01f0fde))  - (Jimmy Briggs)
+
 ## Configuration
 
 - Remove config.yml symlink ([865bca7](https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596))  - (Jimmy Briggs)
