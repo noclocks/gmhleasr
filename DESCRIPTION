@@ -1,11 +1,45 @@
 Package: gmhleasr
-Title: What the Package Does (One Line, Title Case)
+Title: Shiny Dashboard for GMH Communities Leasing Data
 Version: 0.0.0.9000
-Authors@R: 
+Authors@R: c(
     person("Jimmy", "Briggs", , "jimmy.briggs@jimbrig.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0000-0002-7489-8787"))
-Description: What the package does (one paragraph).
+           comment = c(ORCID = "0000-0002-7489-8787")),
+    person("Patrick", "Howard", , "patrick.howard@noclocks.dev", role = c("aut", "rev")),
+    person("No Clocks, LLC", , , "team@noclocks.dev", role = c("cph", "fnd"))
+  )
+Description: Shiny Dashboard for GMH Communities Leasing Data.
 License: file LICENSE
+Imports: 
+    base64enc (>= 0.1.3),
+    bs4Dash (>= 2.3.3),
+    cli (>= 3.6.3),
+    config (>= 0.3.2),
+    desc,
+    fs (>= 1.6.4),
+    glue (>= 1.7.0),
+    htmltools (>= 0.5.8.1),
+    httr2 (>= 1.0.1),
+    jsonlite (>= 1.8.8),
+    purrr (>= 1.0.2),
+    rlang (>= 1.1.4.9000),
+    shiny (>= 1.8.1.1),
+    shinyjs (>= 2.1.0),
+    shinyWidgets (>= 0.8.6),
+    tibble (>= 3.2.1),
+    tools,
+    utils,
+    yaml (>= 2.3.9),
+    ymlthis (>= 0.1.7)
+Suggests: 
+    here,
+    httptest2,
+    knitr,
+    rmarkdown,
+    spelling,
+    testthat (>= 3.0.0)
+VignetteBuilder: 
+    knitr
+Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)

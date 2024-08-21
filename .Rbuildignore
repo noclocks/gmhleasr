@@ -1,3 +1,11 @@
 ^gmhleasr\.Rproj$
 ^\.Rproj\.user$
 ^dev$
+^data-raw$
+^examples$
+^config\.yml$
+^run_app\.R$
+^\.editorconfig$
+^\.gitattributes$
+^\.gitignore$
+^_config\.yml$
