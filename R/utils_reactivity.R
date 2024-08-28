@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Reactivity Utilities
@@ -32,7 +31,6 @@
 #' # create a reactive trigger
 #' trigger <- make_reactive_trigger(dev = TRUE, label = "my_trigger")
 make_reactive_trigger <- function(dev = FALSE, label = "") {
-
   rv <- shiny::reactiveValues(a = 0)
 
   list(
@@ -46,5 +44,4 @@ make_reactive_trigger <- function(dev = FALSE, label = "") {
       rv$a <- shiny::isolate(rv$a + 1)
     }
   )
-
 }

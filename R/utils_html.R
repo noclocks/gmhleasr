@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : HTML Utilities
@@ -44,12 +43,11 @@ centered <- function(...) {
 #' @importFrom htmltools tags HTML
 #' @importFrom shiny icon
 help_mark <- function(help_txt) {
-
   htmltools::tagList(
     htmltools::tags$head(
       htmltools::tags$style(
         htmltools::HTML(
-        ".helper {
+          ".helper {
           display: inline-block;
           position: relative;
           margin-left: 0.5em;
@@ -78,7 +76,7 @@ help_mark <- function(help_txt) {
         .helper:hover::after {
           display: block;
         }"
-      )
+        )
       )
     ),
     htmltools::tags$div(
@@ -87,7 +85,6 @@ help_mark <- function(help_txt) {
       `data-help` = help_txt
     )
   )
-
 }
 
 #' @rdname utils_html
@@ -100,8 +97,3 @@ help_label <- function(label_text, help_text) {
     help_mark(help_text)
   )
 }
-
-
-
-
-
