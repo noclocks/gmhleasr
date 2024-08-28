@@ -23,14 +23,18 @@ Imports:
     glue,
     htmltools,
     httr2,
+    janitor,
     jsonlite,
+    listviewer,
     lubridate,
     purrr,
     rlang,
     shiny,
     shinyjs,
+    stringr,
     tibble,
     tibblify,
+    tidyr,
     utils,
     yaml,
     ymlthis
@@ -39,6 +43,7 @@ Suggests:
     httptest2,
     knitr,
     rmarkdown,
+    rprojroot,
     spelling,
     testthat (>= 3.0.0)
 VignetteBuilder: 
