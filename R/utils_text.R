@@ -6,19 +6,75 @@
 #
 #  ------------------------------------------------------------------------
 
-# Helper functions
-# strip_phone_number <- function(phone) {
-#   gsub("[^0-9]", "", phone)
-# }
-#
-# display_phone_number <- function(phone) {
-#   stripped <- strip_phone_number(phone)
-#   if (nchar(stripped) == 10) {
-#     paste0("(", substr(stripped, 1, 3), ") ", substr(stripped, 4, 6), "-", substr(stripped, 7, 10))
-#   } else {
-#     phone
-#   }
-# }
+
+# trim whitespace ---------------------------------------------------------
+
+#' Trim Whitespace
+#'
+#' @name trim_ws
+#'
+#' @description `trim_ws()` is an efficient function to trim leading and trailing
+#' white space from character vectors or strings.
+#'
+#' @param str Character vector, or a data frame.
+#' @param ... Currently not used.
+#'
+#' @return Character vector, where trailing and leading white spaces are removed.
+#'
+#' @export
+#'
+#' @examples
+#' trim_ws("  no space!  ")
+trim_ws <- function(str, ...) {
+  UseMethod("trim_ws")
+}
+
+#' @export
+trim_ws.default <- function(str, ...) {
+  UseMethod("trim_ws.character")
+}
+
+#' @rdname trim_ws
+#' @export
+trim_ws.character <- function(x, ...) {
+  gsub("^\\s+|\\s+$", "", x, perl = TRUE, useBytes = TRUE)
+}
+
+#' @rdname trim_ws
+#' @export
+trim_ws.data.frame <- function(x, character_only = TRUE, ...) {
+  if (character_only) {
+    chars <- which(vapply(x, is.character, FUN.VALUE = logical(1L)))
+  } else {
+    chars <- seq_len(ncol(x))
+  }
+  if (length(chars)) {
+    x[chars] <- lapply(x[chars], trim_ws)
+  }
+  x
+}
+
+#' @rdname trim_ws
+#' @export
+trim_ws.list <- function(x, character_only = TRUE, ...) {
+  if (character_only) {
+    chars <- which(vapply(x, is.character, FUN.VALUE = logical(1L)))
+  } else {
+    chars <- seq_len(length(x))
+  }
+  if (length(chars)) {
+    x[chars] <- lapply(x[chars], trim_ws)
+  }
+  x
+}
+
+
+
+# compact -----------------------------------------------------------------
+
+
+
+
 
 #' Strip Phone Number
 #'
