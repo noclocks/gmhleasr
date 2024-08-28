@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata Endpoints Data Preparation
@@ -250,19 +249,17 @@ entrata_api_request_endpoint_methods <- tibble::enframe(
   tidyr::unnest(cols = c(method)) |>
   dplyr::left_join(
     y = tibble::enframe(
-        important_entrata_request_endpoint_methods,
-        name = "endpoint",
-        value = "method"
-      ) |>
-        tidyr::unnest(cols = c(method)) |>
-        dplyr::mutate(
-          important = TRUE
-        ),
+      important_entrata_request_endpoint_methods,
+      name = "endpoint",
+      value = "method"
+    ) |>
+      tidyr::unnest(cols = c(method)) |>
+      dplyr::mutate(
+        important = TRUE
+      ),
     by = c("endpoint", "method")
   ) |>
   dplyr::mutate(
     important = dplyr::coalesce(important, FALSE)
   ) |>
   dplyr::arrange(dplyr::desc(important))
-
-

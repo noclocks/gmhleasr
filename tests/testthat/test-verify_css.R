@@ -1,4 +1,6 @@
-mock_runjs <- function(js_code) { TRUE }
+mock_runjs <- function(js_code) {
+  TRUE
+}
 
 # Tests for verify_css function
 test_that("verify_css function works as implemented", {
@@ -20,4 +22,3 @@ test_that("verify_css function works as implemented", {
     verify_css(".helper", list("margin-left" = "2px", "margin-right" = "2px", "color" = "red"))
   )
 })
-

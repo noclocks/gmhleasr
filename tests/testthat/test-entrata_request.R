@@ -1,4 +1,3 @@
-
 httptest2::with_mock_dir(
   dir = "status",
   test_that("Can ping API status endpoint", {
@@ -23,4 +22,3 @@ httptest2::with_mock_api({
     expect_equal(res$status_code, 200)
   })
 })
-
