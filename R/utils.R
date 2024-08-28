@@ -19,8 +19,7 @@
 #' view_list(list(1, 2, 3))
 view_list <- function(
     listdata = NULL,
-    ...
-) {
+    ...) {
   listviewer::jsonedit(listdata, ...)
 }
 

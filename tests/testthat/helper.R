@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Test Helpers
@@ -25,13 +24,14 @@ create_mock_response <- function(status_code, body) {
 # package root ------------------------------------------------------------
 
 test_package_root <- function() {
-
   hold <- tryCatch(
     rprojroot::find_package_root_file(),
     error = function(e) NULL
   )
 
-  if (!is.null(hold)) { return(hold) }
+  if (!is.null(hold)) {
+    return(hold)
+  }
 
   pkg <- testthat::testing_package()
 
@@ -42,10 +42,9 @@ test_package_root <- function() {
     error = function(e) NULL
   )
 
-  if (!is.null(hold)) { return(hold) }
+  if (!is.null(hold)) {
+    return(hold)
+  }
 
   rlang::abort("Could not find package root")
-
 }
-
-

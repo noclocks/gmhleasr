@@ -161,12 +161,12 @@ entrata <- function(
     dry_run = FALSE,
     progress = FALSE,
     config = config::get("entrata"),
-    ...
-) {
-
+    ...) {
   base_url <- config$base_url
 
-  if (is.null(method)) { method <- get_default_method(endpoint) }
+  if (is.null(method)) {
+    method <- get_default_method(endpoint)
+  }
 
   validate_entrata_endpoint_method(endpoint, method)
   validate_entrata_method_params(endpoint, method, method_params)
@@ -214,7 +214,6 @@ entrata <- function(
   }
 
   if (enable_retry) {
-
     req <- req |>
       httr2::req_retry(
         max_tries = 5,

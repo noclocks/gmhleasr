@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata Properties
@@ -27,7 +26,6 @@
 #' @importFrom janitor clean_names
 #' @importFrom dplyr rename
 parse_properties_response <- function(res) {
-
   out <- httr2::resp_body_json(res) |>
     purrr::pluck("response", "result", "PhysicalProperty", "Property") |>
     jsonlite::toJSON() |>
@@ -53,7 +51,6 @@ parse_properties_response <- function(res) {
     )
 
   return(out)
-
 }
 
 
@@ -91,9 +88,7 @@ entrata_properties <- function(
     property_ids = c(NULL),
     property_lookup_codes = NULL,
     show_all_status = FALSE,
-    ...
-) {
-
+    ...) {
   prop_ids <- if (!is.null(property_ids)) {
     paste(property_ids, collapse = ",")
   } else {
@@ -119,6 +114,4 @@ entrata_properties <- function(
 
   # parse results -----------------------------------------------------------
   res |> parse_properties_response()
-
 }
-

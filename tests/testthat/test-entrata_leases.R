@@ -1,4 +1,3 @@
-
 # httptest2::start_capturing(simplify = TRUE)
 #
 # test_prop_ids <- c("739084")
@@ -16,7 +15,6 @@
 # httptest2::stop_capturing()
 
 httptest2::with_mock_dir("leases", {
-
   test_that("Can call leases endpoint getLeases method", {
     test_prop_ids <- c("739084")
     prop_ids <- paste(test_prop_ids, collapse = ",")
@@ -29,11 +27,9 @@ httptest2::with_mock_dir("leases", {
     )
     expect_equal(res$status_code, 200)
   })
-
 })
 
 httptest2::with_mock_dir("leases", {
-
   test_that("entrata_leases function works correctly", {
     result <- entrata_leases(property_ids = c("641240"))
     expect_s3_class(result, "data.frame")
@@ -41,5 +37,4 @@ httptest2::with_mock_dir("leases", {
     expect_true("move_in_date" %in% names(result))
     expect_true("customer_name" %in% names(result))
   })
-
 })

@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata API Internals
@@ -37,7 +36,6 @@
 #' @importFrom dplyr filter pull
 #' @importFrom cli cli_abort
 validate_entrata_endpoint_method <- function(endpoint, method) {
-
   # validate endpoint -------------------------------------------------------
   if (!(endpoint %in% entrata_api_request_endpoint_methods$endpoint)) {
     cli::cli_abort(
@@ -64,7 +62,6 @@ validate_entrata_endpoint_method <- function(endpoint, method) {
       )
     )
   }
-
 }
 
 #' @rdname entrata_internal
@@ -79,7 +76,6 @@ validate_entrata_method_params <- function(endpoint, method, method_params) {
 #' @keywords internal
 #' @importFrom dplyr filter pull
 get_default_method <- function(endpoint) {
-
   available_methods <- entrata_api_request_endpoint_methods |>
     dplyr::filter(endpoint == !!endpoint) |>
     dplyr::pull(method) |>
@@ -113,12 +109,15 @@ get_default_method <- function(endpoint) {
 #' @examples
 #' user_agent("gmhleasr", "0.0.1")
 user_agent <- function(
-  package = "gmhleasr",
-  version = utils::packageVersion("gmhleasr"),
-  url = desc::desc_get("URL"),
-  overwrite = FALSE
-) {
-  if (is.na(url)) { url <- "" } else { url <- paste0(" (", url, ")") }
+    package = "gmhleasr",
+    version = utils::packageVersion("gmhleasr"),
+    url = desc::desc_get("URL"),
+    overwrite = FALSE) {
+  if (is.na(url)) {
+    url <- ""
+  } else {
+    url <- paste0(" (", url, ")")
+  }
   glue::glue("{package}/{version}{url}")
 }
 
@@ -246,9 +245,13 @@ NULL
 req_should_retry <- function(resp) {
   retry_codes <- c(401, 403, 429, 500, 501, 502, 503, 504)
   resp_body <- httr2::resp_body_json(resp)
-  if (!purrr::pluck_exists(resp_body, "response", "error")) { return(FALSE) }
+  if (!purrr::pluck_exists(resp_body, "response", "error")) {
+    return(FALSE)
+  }
   err_code <- purrr::pluck(resp_body, "response", "error", "code")
-  if (err_code %in% retry_codes) { return(TRUE) }
+  if (err_code %in% retry_codes) {
+    return(TRUE)
+  }
   return(FALSE)
 }
 
@@ -269,14 +272,15 @@ req_retry_is_transient <- function(resp) {
 
 #' @rdname request_retry
 #' @export
-req_retry_backoff <- function(n) { 2^(n - 1) }
+req_retry_backoff <- function(n) {
+  2^(n - 1)
+}
 
 #' @rdname request_retry
 #' @export
 #' @importFrom httr2 resp_body_json resp_headers
 #' @importFrom purrr pluck
 req_retry_after <- function(resp) {
-
   resp_headers <- resp |>
     purrr::pluck("headers") |>
     toupper()
@@ -289,7 +293,3 @@ req_retry_after <- function(resp) {
 
   return(0)
 }
-
-
-
-
