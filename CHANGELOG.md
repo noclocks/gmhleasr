@@ -12,6 +12,7 @@
 
 ## Configuration
 
+- Update NAMESPACE and DESCRIPTION ([636e221](https://github.com/noclocks/gmhleasr/commit/636e2216403245691b40acb67fc326de170c048c))  - (Jimmy Briggs)
 - Remove config.yml symlink ([865bca7](https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596))  - (Jimmy Briggs)
 - Update config ([44eeb1e](https://github.com/noclocks/gmhleasr/commit/44eeb1e6fc77970844da011f7051f9f5e04fe50d))  - (Jimmy Briggs)
 - Un-gitignore config.yml symlink ([a5d16f5](https://github.com/noclocks/gmhleasr/commit/a5d16f5114e16eae5b02df201c7976e708cdd4b1))  - (Jimmy Briggs)
@@ -22,6 +23,8 @@
 
 ## Documentation
 
+- Update man pages for functions ([d245525](https://github.com/noclocks/gmhleasr/commit/d2455252fb956d7d3d5a48b16d24259c8861d649))  - (Jimmy Briggs)
+- Add examples README ([0cae31b](https://github.com/noclocks/gmhleasr/commit/0cae31ba479403ae2db1bba83dc86e3f097471aa))  - (Jimmy Briggs)
 - Tweak readme ([133e328](https://github.com/noclocks/gmhleasr/commit/133e3289b78f4358476788fa218911ea242b925a))  - (Jimmy Briggs)
 - Update URLs in _pkgdown.yml and DESCRIPTION files ([c3d7571](https://github.com/noclocks/gmhleasr/commit/c3d7571baa6050c1776ea399eeb5cc495210afa7))  - (Jimmy Briggs)
 - Update man pages ([71e3adc](https://github.com/noclocks/gmhleasr/commit/71e3adc3816be5a3ab1117138fe245b4eaa9513a))  - (Jimmy Briggs)
@@ -30,6 +33,17 @@
 
 ## Features
 
+- Add view_list helper and other utils ([bac44a9](https://github.com/noclocks/gmhleasr/commit/bac44a9f14e0d236d594031fe294ab098cb7cd5d))  - (Jimmy Briggs)
+- Initialize reports endpoint functions ([fe472e5](https://github.com/noclocks/gmhleasr/commit/fe472e5608f2a7474393eb1147717921d1342924))  - (Jimmy Briggs)
+- Initialize properties functions ([b08c18c](https://github.com/noclocks/gmhleasr/commit/b08c18ccd5829e7bed5fbbd05540ac2162f6838e))  - (Jimmy Briggs)
+- Add entrata leases core functions and parsers ([ac83e78](https://github.com/noclocks/gmhleasr/commit/ac83e78c62dc084292a68a1e5a17b5d1f13dad04))  - (Jimmy Briggs)
+- Create core entrata request function / template ([bcd3e81](https://github.com/noclocks/gmhleasr/commit/bcd3e8176926e5e9703dbc9a4a571431dae5100b))  - (Jimmy Briggs)
+- Add entrata internal functions ([43b1420](https://github.com/noclocks/gmhleasr/commit/43b142000a050f454196775d618b9c1f8a002a06))  - (Jimmy Briggs)
+- Add entrata configuration validation ([99b226d](https://github.com/noclocks/gmhleasr/commit/99b226ddcc19ffb2805e1dd9a33bc1abc1e27081))  - (Jimmy Briggs)
+- Add placeholder example for properties ([bed6a48](https://github.com/noclocks/gmhleasr/commit/bed6a482030b015913766fe559926bb836bb7fc2))  - (Jimmy Briggs)
+- Add `Makefile` ([#12](https://github.com/noclocks/gmhleasr/issues/12)) ([252292a](https://github.com/noclocks/gmhleasr/commit/252292a56c7590c2287af070881b2020d8c7cb67))  - (Jimmy Briggs)
+- Add screen size JS ([a193309](https://github.com/noclocks/gmhleasr/commit/a1933092731d84cec6c7cc6a0e370dda23ac8078))  - (Jimmy Briggs)
+- Migrate development to dev dir ([d0c03c0](https://github.com/noclocks/gmhleasr/commit/d0c03c06a975e588266ad627f03dcc65de564221))  - (Jimmy Briggs)
 - **data:** Add database configuration schema ([1d8969a](https://github.com/noclocks/gmhleasr/commit/1d8969aba8c0ea8958c7db76479df536d6dae7f6))  - (Jimmy Briggs)
 - **run_app:** Add run_app.R script ([459390d](https://github.com/noclocks/gmhleasr/commit/459390d6f9bf49f6113334cdb0a51b646f919021))  - (Jimmy Briggs)
 - Add new modules and utility functions ([e836db6](https://github.com/noclocks/gmhleasr/commit/e836db65869968f1e7787aa737ad670d4612bc91))  - (Jimmy Briggs)
@@ -53,10 +67,12 @@
 
 ## Refactoring
 
+- Cleanup ([fe18c2e](https://github.com/noclocks/gmhleasr/commit/fe18c2ed4266fb13b8c25c0fdefd5be152a871f4))  - (Jimmy Briggs)
 - Remove yaml dependency and enhance documentation ([df20cbe](https://github.com/noclocks/gmhleasr/commit/df20cbe36a7de65e9ddacb1c97630197522c1374))  - (Jimmy Briggs)
 
 ## Testing
 
+- Add mocked unit tests using httptest2 ([907f240](https://github.com/noclocks/gmhleasr/commit/907f240eab5fff3dba88bfcf782629ce0e2744c4))  - (Jimmy Briggs)
 - Add css tests ([4726725](https://github.com/noclocks/gmhleasr/commit/4726725f9ce08de6f2e434d2456a6fa5bc7a2027))  - (Jimmy Briggs)
 - Add tests for html utils ([2d139e0](https://github.com/noclocks/gmhleasr/commit/2d139e07cd33611ef7fcdc06e927bb75443d4ff6))  - (Jimmy Briggs)
 - Add entrata tests ([4c217d2](https://github.com/noclocks/gmhleasr/commit/4c217d2c62442129af4b871dc803fbe62ec4a203))  - (Jimmy Briggs)
