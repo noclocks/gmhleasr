@@ -15,30 +15,35 @@ BugReports: https://github.com/noclocks/gmhleasr/issues
 Depends: 
     R (>= 4.1)
 Imports:
-    base64enc,
-    bs4Dash,
     cli,
     config,
     desc,
+    dplyr,
     fs,
     glue,
     htmltools,
     httr2,
+    janitor,
     jsonlite,
+    listviewer,
+    lubridate,
     purrr,
     rlang,
     shiny,
     shinyjs,
-    shinyWidgets,
+    stringr,
     tibble,
-    tools,
+    tibblify,
+    tidyr,
     utils,
+    yaml,
     ymlthis
 Suggests: 
     here,
     httptest2,
     knitr,
     rmarkdown,
+    rprojroot,
     spelling,
     testthat (>= 3.0.0)
 VignetteBuilder: 

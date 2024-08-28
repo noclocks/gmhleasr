@@ -6,89 +6,6 @@
 #
 #  ------------------------------------------------------------------------
 
-
-# internal ----------------------------------------------------------------
-
-#' Error Body
-#'
-#' @description
-#' Function for [httr2::req_error()]'s `body` argument
-#'
-#' @param resp [httr2::response()] object
-#'
-#' @return Error message as a string.
-#'
-#' @keywords internal
-#'
-#' @noRd
-#'
-#' @importFrom httr2 resp_body_json
-#' @importFrom purrr pluck
-#' @importFrom glue glue
-.err_body <- function(resp) {
-  err <- httr2::resp_body_json(resp) |>
-    purrr::pluck(
-      "response",
-      "error"
-    )
-  err_code <- err$code
-  err_msg <- err$message
-  return(
-    glue::glue(
-      "Error Code: {err_code}\n",
-      "Error Message: {err_msg}"
-    )
-  )
-}
-
-#' Error Function
-#'
-#' @description
-#' Function for [httr2::req_error()]'s `is_error` argument.
-#'
-#' @param resp [httr2::response()] object
-#'
-#' @return Logical value indicating whether the response is an error.
-#'
-#' @keywords internal
-#'
-#' @noRd
-#'
-#' @importFrom purrr pluck_exists
-#' @importFrom httr2 resp_body_json
-.err_func <- function(resp) {
-  resp_body <- httr2::resp_body_json(resp)
-  if (purrr::pluck_exists(resp_body, "response", "error")) {
-    return(TRUE)
-  }
-  return(FALSE)
-}
-
-#' Should Retry
-#'
-#' @description
-#' Function to determine if a request should be retried.
-#'
-#' @param resp [httr2::response()] object
-#'
-#' @return Logical value indicating whether the request should be retried.
-#'
-#' @keywords internal
-#'
-#' @noRd
-#'
-#' @importFrom httr2 resp_body_json
-#' @importFrom purrr pluck
-.should_retry <- function(resp) {
-  retry_codes <- c(401, 403, 429, 500, 501, 502, 503, 504)
-  resp_body <- httr2::resp_body_json(resp)
-  err_code <- purrr::pluck(resp_body, "response", "error", "code")
-  if (err_code %in% retry_codes) {
-    return(TRUE)
-  }
-  return(FALSE)
-}
-
 # exported ----------------------------------------------------------------
 
 #' Entrata API Request
@@ -110,10 +27,18 @@
 #'   method listed for that endpoint. If no endpoint is specified, `NULL`
 #'   will be used as the method in the request body. See details for available
 #'   methods by endpoint and more details on the structure of the request.
-#' @param params List of parameters to use in the request. Default is an empty list.
-#'   Some endpoint methods have required parameters that must be provided in the
-#'   request. See details for more information on the structure of the request
-#'   and required parameters by endpoint method.
+#' @param method_version Entrata API Method Version to use in the request. Default is `"r1"`.
+#'   Some endpoints have multiple versions of the same method. The version
+#'   should be provided as a string. See details for more information on the
+#'   structure of the request and available versions by endpoint method.
+#' @param method_params List of parameters to use in the request body's `"method"`
+#'   object. Default is an empty list. The parameters should be provided as a
+#'   named list where the names are the parameter names and the values are the
+#'   parameter values. See details for more information on the structure of the
+#'   request and available parameters by endpoint method.
+#'   The default value depends on whether the `endpoint` parameter was provided,
+#'   if it is available the default value is an empty list. If no endpoint is
+#'   specified, `NULL` will be used as the method in the request body.
 #' @param ua User Agent string to use in the request. Default is to use [user_agent()].
 #' @inheritParams httr2::req_perform
 #' @param perform Logical value indicating whether to perform the request.
@@ -124,17 +49,25 @@
 #'   Default is the value of `perform`. If `TRUE`, the function will extract the
 #'   response object and return it. If `FALSE`, the function will return the
 #'   response object as is.
-#' @param max_retries Maximum number of times to retry the request. Default is `3`.
-#'   If the request fails, the function will retry the request up to `max_retries`
-#'   times before returning an error.
-#' @param retry_delay Number of seconds to wait between retries. Default is `1`.
-#'   The function will wait `retry_delay` seconds before retrying the request.
-#'   The delay between retries will increase exponentially with each retry.
+#' @param enable_retry Logical value indicating whether to enable request retry.
+#'   Default is `FALSE`. If `TRUE`, the function will enable request retry with
+#'   the default retry settings. If `FALSE`, the function will not enable request
+#'   retry.
+#' @param timeout Numeric value indicating the request timeout in seconds.
+#'   Default is `NULL`. If provided, the function will set the request timeout
+#'   to the provided value in seconds.
+#' @param dry_run Logical value indicating whether to perform a dry run of the request.
+#'   Default is `FALSE`. If `TRUE`, the function will perform a dry run of the
+#'   request before performing the actual request (or if `perform` is not set,
+#'   will return the request object without performing the request).
+#' @param progress Logical value indicating whether to show progress of the request.
+#'   Only useful for long running requests. Default is `FALSE`. If `TRUE`, the
+#'   function will show the progress of the request.
 #' @param config Entrata API Configuration Values as a list. Default is to use
 #'   `config::get("entrata")` to retrieve the configuration values from a
 #'   `config.yml` configuration file. The configuration values should include
 #'   the following keys: `username`, `password`, and `base_url`. See details.
-#' @param ... Additional arguments not currently in use.
+#' @param ... Additional arguments to pass to the request object.
 #'
 #' @details
 #' This function creates a request to the Entrata API using the `httr2` package.
@@ -217,17 +150,26 @@
 entrata <- function(
     endpoint = NULL,
     method = NULL,
-    params = list(NULL),
+    method_version = "r1",
+    method_params = list(NULL),
     ua = user_agent(),
     verbosity = NULL,
     perform = FALSE,
     extract = perform,
     enable_retry = FALSE,
-    max_retries = 3,
-    retry_delay = 1,
+    timeout = NULL,
+    dry_run = FALSE,
+    progress = FALSE,
     config = config::get("entrata"),
-    ...) {
+    ...
+) {
+
   base_url <- config$base_url
+
+  if (is.null(method)) { method <- get_default_method(endpoint) }
+
+  validate_entrata_endpoint_method(endpoint, method)
+  validate_entrata_method_params(endpoint, method, method_params)
 
   req_body <- list(
     auth = list(
@@ -236,8 +178,8 @@ entrata <- function(
     requestId = 15,
     method = list(
       name = method,
-      version = "r1",
-      params = params
+      version = method_version,
+      params = method_params
     )
   ) |>
     purrr::compact()
@@ -253,26 +195,50 @@ entrata <- function(
       `Content-Type` = "application/json; charset=UTF-8"
     ) |>
     httr2::req_user_agent(ua) |>
-    httr2::req_body_json(req_body) |>
     httr2::req_error(
-      is_error = .err_func,
-      body = .err_body
+      is_error = res_is_err,
+      body = res_err_body
+    ) |>
+    httr2::req_body_json(req_body) |>
+    httr2::req_verbose(
+      header_req = TRUE,
+      header_resp = TRUE,
+      body_req = TRUE,
+      body_resp = TRUE,
+      info = TRUE,
+      redact_headers = TRUE
     )
-
-  if (enable_retry) {
-    req <- req |>
-      httr2::req_retry(
-        max_tries = max_retries,
-        max_seconds = 60,
-        is_transient = .should_retry,
-        backoff = function(x) {
-          retry_delay * 2^(x - 1)
-        }
-      )
-  }
 
   if (!is.null(endpoint)) {
     req <- req |> httr2::req_url_path_append(endpoint)
+  }
+
+  if (enable_retry) {
+
+    req <- req |>
+      httr2::req_retry(
+        max_tries = 5,
+        max_seconds = 60,
+        is_transient = req_retry_is_transient,
+        backoff = req_retry_backoff
+      )
+  }
+
+  if (!is.null(timeout) && is.numeric(timeout)) {
+    req <- req |>
+      httr2::req_timeout(seconds = timeout)
+  }
+
+  if (progress) {
+    req <- req |>
+      httr2::req_progress()
+  }
+
+  if (dry_run) {
+    cli::cli_alert_info(
+      "Dry Run: Request will not be performed. Redacted headers are shown."
+    )
+    httr2::req_dry_run(req, quiet = FALSE, redact_headers = TRUE)
   }
 
   if (!perform) {

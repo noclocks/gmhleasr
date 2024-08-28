@@ -1,3 +1,6 @@
+!.gitignore
+!tests/
+!R/
 golem
 temp
-tests
+
