@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata API Configuration
@@ -25,7 +24,6 @@
 #' @importFrom cli cli_abort
 #' @importFrom yaml read_yaml
 validate_entrata_config <- function(cfg) {
-
   cfg_orig <- cfg
 
   # check if cfg is a path and not the object
@@ -64,5 +62,4 @@ validate_entrata_config <- function(cfg) {
   }
 
   return(invisible(cfg_orig))
-
 }

@@ -64,9 +64,7 @@ entrata_leases <- function(
     pagination_page_number = 1,
     pagination_page_size = 500,
     include_pagination_links = FALSE,
-    ...
-) {
-
+    ...) {
   prop_ids <- paste(property_ids, collapse = ",")
 
   method_params <- purrr::compact(list(
@@ -147,7 +145,6 @@ entrata_leases <- function(
 #' @importFrom janitor clean_names
 #' @importFrom lubridate parse_date_time
 parse_entrata_leases <- function(res) {
-
   res_content <- res |>
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "leases", "lease") |>
@@ -314,7 +311,6 @@ parse_entrata_lease_intervals <- function(res_content) {
 #' @importFrom dplyr select mutate
 #' @importFrom janitor clean_names
 parse_entrata_lease_scheduled_charges <- function(res_content) {
-
   res_content |>
     dplyr::select(lease_id, scheduled_charges) |>
     tidyr::unnest_longer("scheduled_charges") |>
@@ -356,5 +352,3 @@ parse_entrata_lease_unit_spaces <- function(res_content) {
       unit_space_id = as.character(unit_space_id)
     )
 }
-
-

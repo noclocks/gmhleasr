@@ -1,15 +1,11 @@
-
-
 # internal ----------------------------------------------------------------
 
 validate_entrata_report_name <- function(report_name) {
-
   report_names <- entrata_reports() |>
     dplyr::pull(report_name) |>
     unique()
 
   if (!report_name %in% report_names) {
-
     cli::cli_alert_danger(
       "The report name provided, {.field {report_name}}, is not valid."
     )
@@ -20,22 +16,18 @@ validate_entrata_report_name <- function(report_name) {
 
     cli::cli_abort("Invalid Report Name.")
   }
-
 }
 
 get_property_ids_filter_param <- function() {
-
   entrata(endpoint = "properties", method = "getProperties", perform = TRUE) |>
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "PhysicalProperty", "Property") |>
     purrr::map(purrr::pluck, "PropertyID") |>
     purrr::map(as.character) |>
     purrr::list_flatten()
-
 }
 
 get_latest_report_version <- function(report_name) {
-
   latest_report_version <- entrata_reports(latest_only = TRUE) |>
     dplyr::filter(
       .data$report_name == .env$report_name
@@ -43,14 +35,12 @@ get_latest_report_version <- function(report_name) {
     dplyr::pull(report_version)
 
   return(latest_report_version)
-
 }
 
 
 # reports list ------------------------------------------------------------
 
 get_entrata_reports_list <- function(latest_only = TRUE) {
-
   req <- entrata(endpoint = "reports", method = "getReportList")
 
   spec <- tibblify::tspec_df(
@@ -129,14 +119,12 @@ get_entrata_reports_list <- function(latest_only = TRUE) {
     dplyr::select(
       -is_latest
     )
-
 }
 
 
 # report info -------------------------------------------------------------
 
 get_entrata_report_info <- function(report_name, report_version = "latest") {
-
   validate_entrata_report_name(report_name)
 
   if (report_version == "latest") {
@@ -199,31 +187,28 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
     )
 
   return(res_data_merged)
-
 }
 
 
 # pre-lease report --------------------------------------------------------
 
 prep_pre_lease_report_params <- function(
-  latest_report_version,
-  property_group_ids,
-  period_start_date = "09/01/2024",
-  period_type = "date",
-  summarize_by = "property",
-  group_by = "do_not_group",
-  consider_pre_leased_on = "332",
-  charge_code_detail = 0,
-  space_options = 'do_not_show',
-  additional_units_shown = 'available',
-  combine_unit_spaces_with_same_lease = 0,
-  consolidate_by = 'no_consolidation',
-  arrange_by_property = 0,
-  subtotals = list("summary", "details"),
-  yoy = 1,
-  ...
-) {
-
+    latest_report_version,
+    property_group_ids,
+    period_start_date = "09/01/2024",
+    period_type = "date",
+    summarize_by = "property",
+    group_by = "do_not_group",
+    consider_pre_leased_on = "332",
+    charge_code_detail = 0,
+    space_options = "do_not_show",
+    additional_units_shown = "available",
+    combine_unit_spaces_with_same_lease = 0,
+    consolidate_by = "no_consolidation",
+    arrange_by_property = 0,
+    subtotals = list("summary", "details"),
+    yoy = 1,
+    ...) {
   list(
     reportName = "pre_lease",
     reportVersion = latest_report_version,
@@ -237,10 +222,10 @@ prep_pre_lease_report_params <- function(
       group_by = "do_not_group",
       consider_pre_leased_on = "332",
       charge_code_detail = 0,
-      space_options = 'do_not_show',
-      additional_units_shown = 'available',
+      space_options = "do_not_show",
+      additional_units_shown = "available",
       combine_unit_spaces_with_same_lease = 0,
-      consolidate_by = 'no_consolidation',
+      consolidate_by = "no_consolidation",
       arrange_by_property = 0,
       subtotals = list("summary", "details"),
       yoy = 1
@@ -249,11 +234,9 @@ prep_pre_lease_report_params <- function(
 }
 
 entrata_pre_lease_report <- function(
-  property_ids = c(NULL),
-  period_start = "09/01/2024",
-  ...
-) {
-
+    property_ids = c(NULL),
+    period_start = "09/01/2024",
+    ...) {
   latest_report_version <- get_latest_report_version("pre_lease")
   property_group_ids <- get_property_ids_filter_param()
 
@@ -376,9 +359,4 @@ entrata_pre_lease_report <- function(
       vel_95,
       vel_100
     )
-
 }
-
-
-
-

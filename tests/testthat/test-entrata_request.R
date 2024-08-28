@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Entrata Request Tests
@@ -8,7 +7,6 @@
 #  ------------------------------------------------------------------------
 
 test_that("entrata function creates a valid request object", {
-
   req <- entrata(
     endpoint = "status",
     method = "getStatus",
@@ -27,7 +25,6 @@ test_that("entrata function creates a valid request object", {
 })
 
 test_that("entrata function handles different endpoints and methods", {
-
   req1 <- entrata(endpoint = "status", method = "getStatus", config = cfg)
   req2 <- entrata(endpoint = "properties", method = "getProperties", config = cfg)
 
@@ -42,7 +39,6 @@ test_that("entrata function handles different endpoints and methods", {
 })
 
 test_that("entrata function respects custom configurations", {
-
   custom_cfg <- list(
     username = "custom_user",
     password = "custom_pass",
@@ -76,4 +72,3 @@ test_that("entrata function respects enable_retry parameter", {
   expect_identical(typeof(req$policies$retry_is_transient), "closure")
   expect_identical(typeof(req$policies$retry_backoff), "closure")
 })
-
