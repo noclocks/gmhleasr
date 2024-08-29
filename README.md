@@ -1,7 +1,21 @@
-# GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" align="right" height="150" alt="" />
+<center>
+<img src="man/figures/logo.png" height="200" alt="gmhleasr hexlogo" />
+</center>
+
+# GMH Leasing Package - `gmhleasr`
 
 > [!NOTE] 
 > This is an R oackage for GMH Leasing. It is a work in progress.
+
+## Contents
+
+-   [Contents](#contents)
+-   [Badges](#badges)
+-   [Overview](#overview)
+-   [Installation](#installation)
+-   [Example](#example)
+
+## Badges
 
 <!-- badges: start -->
 
@@ -14,30 +28,23 @@
 [![Codecov test coverage](https://codecov.io/gh/noclocks/gmhleasr/graph/badge.svg)](https://codecov.io/gh/noclocks/gmhleasr)
 <!-- badges: end -->
 
-## Contents {#contents}
+## Overview
 
--   [Contents](#contents)
--   [Overview](#overview)
--   [Installation](#installation)
--   [Example](#example)
+The goal of `gmhleasr` is to provide a set of tools for GMH Communities Leasing.
+This package is a work in progress.
 
-## Overview {#overview}
+## Installation
 
-The goal of gmhleasr is to ...
+You can install the development version of `gmhleasr` like so:
 
-## Installation {#installation}
+```r
+# remotes method
+remotes::install_github("noclocks/gmhleasr")
 
-You can install the development version of gmhleasr like so:
+# devtools method
+devtools::install_github("noclocks/gmhleasr")
 
-``` r
-# FILL THIS IN! HOW CAN PEOPLE INSTALL YOUR DEV PACKAGE?
+# pak method
+pak::pkg_install("noclocks/gmhleasr")
 ```
 
-## Example {#example}
-
-This is a basic example which shows you how to solve a common problem:
-
-``` r
-library(gmhleasr)
-## basic example code
-```
