@@ -16,12 +16,11 @@
 
 httptest2::with_mock_dir("leases", {
   test_that("Can call leases endpoint getLeases method", {
-    test_prop_ids <- c("739084")
-    prop_ids <- paste(test_prop_ids, collapse = ",")
+    test_prop_id <- "739084"
     res <- entrata(
       endpoint = "leases",
       method = "getLeases",
-      method_params = list("propertyId" = prop_ids),
+      method_params = list("propertyId" = test_prop_id),
       method_version = "r2",
       perform = TRUE
     )
