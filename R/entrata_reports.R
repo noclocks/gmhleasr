@@ -16,7 +16,6 @@
 #' @importFrom dplyr filter pull
 #' @importFrom memoise memoise
 validate_entrata_report_name <- function(report_name) {
-
   mem_reports_list <- memoise::memoise(get_entrata_reports_list)
 
   report_names <- mem_reports_list() |>
@@ -249,7 +248,8 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
 
   res_report_name <- res_content |> purrr::pluck("name")
   res_report_description <- res_content |> purrr::pluck("description")
-  res_report_filters <- res_content |> purrr::pluck("filters", "filter") |>
+  res_report_filters <- res_content |>
+    purrr::pluck("filters", "filter") |>
     purrr::map(tibble::as_tibble) |>
     purrr::list_rbind()
 
@@ -313,8 +313,6 @@ prep_pre_lease_report_params <- function(
     subtotals = list("summary", "details"),
     yoy = 1,
     ...) {
-
-
   list(
     reportName = "pre_lease",
     reportVersion = latest_report_version,
@@ -363,7 +361,6 @@ entrata_pre_lease_report <- function(
     property_ids = c(NULL),
     period_start = "09/01/2024",
     ...) {
-
   latest_report_version <- mem_get_latest_report_version("pre_lease")
   property_group_ids <- mem_get_property_ids_filter_param()
 
@@ -406,10 +403,12 @@ entrata_pre_lease_report <- function(
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "reportData")
 
-  res_data_summary <- res_content |> purrr::pluck("summary") |>
+  res_data_summary <- res_content |>
+    purrr::pluck("summary") |>
     dplyr::bind_rows()
 
-  res_data_details <- res_content |> purrr::pluck("details") |>
+  res_data_details <- res_content |>
+    purrr::pluck("details") |>
     dplyr::bind_rows()
 
   leasing_season_ending <- lubridate::ymd("2025-08-01")
@@ -445,7 +444,7 @@ entrata_pre_lease_report <- function(
       current_occupency = occupied_count / total_beds, # Total Leases / Total Beds
       total_new = approved_new_count + partially_completed_new_count + completed_new_count,
       total_renewals = approved_renewal_count + partially_completed_renewal_count + completed_renewal_count,
-      total_leases = total_new + total_renewals, #leases_count,
+      total_leases = total_new + total_renewals, # leases_count,
       prelease_percent = approved_percent,
       # prelease_percent = units / approved_count, # total beds / total leases
       prior_total_new = approved_new_count_prior + partially_completed_new_count_prior + completed_new_count_prior,
@@ -463,7 +462,7 @@ entrata_pre_lease_report <- function(
       vel_90 = beds_left * .9 / weeks_left_to_lease,
       vel_95 = beds_left * .95 / weeks_left_to_lease,
       vel_100 = beds_left * 1 / weeks_left_to_lease
-      )
+    )
 
   res_data_details_out <- res_data_details
 

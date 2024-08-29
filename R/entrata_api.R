@@ -48,17 +48,14 @@ EntrataAPI <- R6::R6Class(
     #'
     #' @return The response object from the API request.
     #' @export
-    send_request = function(
-        endpoint,
-        method,
-        method_version = "r1",
-        method_params = list(),
-        enable_retry = FALSE,
-        timeout = NULL,
-        progress = FALSE,
-        ...
-    ) {
-
+    send_request = function(endpoint,
+                            method,
+                            method_version = "r1",
+                            method_params = list(),
+                            enable_retry = FALSE,
+                            timeout = NULL,
+                            progress = FALSE,
+                            ...) {
       validate_entrata_endpoint_method(endpoint, method)
       validate_entrata_method_params(endpoint, method, method_params)
 

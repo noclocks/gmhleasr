@@ -28,7 +28,6 @@ validate_entrata_config <- function(cfg) {
     }
 
     cfg <- cfg$entrata
-
   }
 
   if ("default" %in% names(cfg)) {
