@@ -16,6 +16,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      NOCLOCKS_ENCRYPTION_KEY: ${{ secrets.NOCLOCKS_ENCRYPTION_KEY }}
+
     steps:
       - uses: actions/checkout@v4
 

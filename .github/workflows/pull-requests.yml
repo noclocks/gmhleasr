@@ -15,6 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      NOCLOCKS_ENCRYPTION_KEY: ${{ secrets.NOCLOCKS_ENCRYPTION_KEY }}
     permissions:
       contents: write
     steps:
@@ -54,6 +55,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      NOCLOCKS_ENCRYPTION_KEY: ${{ secrets.NOCLOCKS_ENCRYPTION_KEY }}
     permissions:
       contents: write
     steps:
