@@ -8,14 +8,22 @@
 
 ## Bug Fixes
 
+- Fix leases test ([447c86e](https://github.com/noclocks/gmhleasr/commit/447c86e2fd7c771af43bcd11ef78c7a5375798fd))  - (Jimmy Briggs)
+- Fix and refactor ([4a3fc9e](https://github.com/noclocks/gmhleasr/commit/4a3fc9e4ef6c78f4d8bcc7e842f9b337e8f0a06b))  - (Jimmy Briggs)
 - Fix DESCRIPTION versions ([8772332](https://github.com/noclocks/gmhleasr/commit/8772332a187b67ac29d8a1f47cae5e69b01f0fde))  - (Jimmy Briggs)
 
 ## Configuration
 
+- Configure lintr ([c827082](https://github.com/noclocks/gmhleasr/commit/c82708297a2d8c3d3b7e7fa7df231202df00db78))  - (Jimmy Briggs)
+- Update gitignore and DESCRIPTION ([a5befd1](https://github.com/noclocks/gmhleasr/commit/a5befd1c4e29f1dd1b507df095b08b8b99561264))  - (Jimmy Briggs)
 - Update NAMESPACE and DESCRIPTION ([636e221](https://github.com/noclocks/gmhleasr/commit/636e2216403245691b40acb67fc326de170c048c))  - (Jimmy Briggs)
 - Remove config.yml symlink ([865bca7](https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596))  - (Jimmy Briggs)
 - Update config ([44eeb1e](https://github.com/noclocks/gmhleasr/commit/44eeb1e6fc77970844da011f7051f9f5e04fe50d))  - (Jimmy Briggs)
 - Un-gitignore config.yml symlink ([a5d16f5](https://github.com/noclocks/gmhleasr/commit/a5d16f5114e16eae5b02df201c7976e708cdd4b1))  - (Jimmy Briggs)
+
+## Data
+
+- Add misc working xlsx files ([bed6866](https://github.com/noclocks/gmhleasr/commit/bed68666976037473969764f800660e0aef68c1b))  - (Jimmy Briggs)
 
 ## DevOps
 
@@ -23,6 +31,13 @@
 
 ## Documentation
 
+- Badges ([7a43270](https://github.com/noclocks/gmhleasr/commit/7a432703f79390e7048e14c90ccbe11ae6423162))  - (Jimmy Briggs)
+- Update badges ([a007072](https://github.com/noclocks/gmhleasr/commit/a0070724d4190b6fca5af13219e3b7ed9edf57d1))  - (Jimmy Briggs)
+- Updated man pages ([b896699](https://github.com/noclocks/gmhleasr/commit/b896699094c43ebdb27643e06159b8232c8e45d2))  - (Jimmy Briggs)
+- Vignettes ([8a06dd7](https://github.com/noclocks/gmhleasr/commit/8a06dd7ab20e58097d3f4074c3e402ef9845bf30))  - (Jimmy Briggs)
+- Update README ([1644d78](https://github.com/noclocks/gmhleasr/commit/1644d78d89595a9704d795f5934425f556baeef9))  - (Jimmy Briggs)
+- Add initial vignette and assets ([3c6273e](https://github.com/noclocks/gmhleasr/commit/3c6273e72b3f0b9cd2236831384b78b2d9dbfede))  - (Jimmy Briggs)
+- Add man pages for new R6 class ([490fdad](https://github.com/noclocks/gmhleasr/commit/490fdad29d4fd89a840d25962d10d72733742020))  - (Jimmy Briggs)
 - Update man pages for functions ([d245525](https://github.com/noclocks/gmhleasr/commit/d2455252fb956d7d3d5a48b16d24259c8861d649))  - (Jimmy Briggs)
 - Add examples README ([0cae31b](https://github.com/noclocks/gmhleasr/commit/0cae31ba479403ae2db1bba83dc86e3f097471aa))  - (Jimmy Briggs)
 - Tweak readme ([133e328](https://github.com/noclocks/gmhleasr/commit/133e3289b78f4358476788fa218911ea242b925a))  - (Jimmy Briggs)
@@ -33,6 +48,14 @@
 
 ## Features
 
+- Update all GHA ([0f6e5c5](https://github.com/noclocks/gmhleasr/commit/0f6e5c5def0411ad2a885190a382e0bd0d864bf1))  - (Jimmy Briggs)
+- Add teardown for config decryption, memoized helpers in onLoad, and more ([3dd32f4](https://github.com/noclocks/gmhleasr/commit/3dd32f40666aeddb77a1c1c8f275e660d9ee1541))  - (Jimmy Briggs)
+- Updates and fixes related to tests ([428ca56](https://github.com/noclocks/gmhleasr/commit/428ca56669658e509f04c34e76ee24fcb87f9d31))  - (Jimmy Briggs)
+- Update core request function ([e915788](https://github.com/noclocks/gmhleasr/commit/e915788194853ccaa6ba733c00f1e101a73052de))  - (Jimmy Briggs)
+- Add multi-pkgdown ([1141fd8](https://github.com/noclocks/gmhleasr/commit/1141fd8dfc6e1b8ca5fdacbb7a2f2a1d6de643ca))  - (Jimmy Briggs)
+- Major refactoring ([b02949b](https://github.com/noclocks/gmhleasr/commit/b02949b074c3f4169ffc87a5ddcc3cc031ee8a71))  - (Jimmy Briggs)
+- Starting to add json schemas ([ea8961e](https://github.com/noclocks/gmhleasr/commit/ea8961eaa9ae005fd793ce449f52d454ad7c834a))  - (Jimmy Briggs)
+- Add new `entrata_api.R` with R6 class ([cc328df](https://github.com/noclocks/gmhleasr/commit/cc328df715663f2e6ea4867d665054c488ff564e))  - (Jimmy Briggs)
 - Add view_list helper and other utils ([bac44a9](https://github.com/noclocks/gmhleasr/commit/bac44a9f14e0d236d594031fe294ab098cb7cd5d))  - (Jimmy Briggs)
 - Initialize reports endpoint functions ([fe472e5](https://github.com/noclocks/gmhleasr/commit/fe472e5608f2a7474393eb1147717921d1342924))  - (Jimmy Briggs)
 - Initialize properties functions ([b08c18c](https://github.com/noclocks/gmhleasr/commit/b08c18ccd5829e7bed5fbbd05540ac2162f6838e))  - (Jimmy Briggs)
@@ -72,6 +95,11 @@
 
 ## Testing
 
+- Cleanup ([9146ec0](https://github.com/noclocks/gmhleasr/commit/9146ec035f3166c682987a9dccd0fdb15979a158))  - (Jimmy Briggs)
+- Refactor all tests with new mocking setup ([74517f6](https://github.com/noclocks/gmhleasr/commit/74517f64cdf7ab068e7ae6037178c528f441c501))  - (Jimmy Briggs)
+- Add tests for new R6 ([04b0a29](https://github.com/noclocks/gmhleasr/commit/04b0a29c02fba7082476dc64f558ba82eedbcbc6))  - (Jimmy Briggs)
+- Add cfg_test ([03df184](https://github.com/noclocks/gmhleasr/commit/03df18489c8d1d53b2ea33085a19e365b8fc3ce5))  - (Jimmy Briggs)
+- Update test for leases ([02d39c7](https://github.com/noclocks/gmhleasr/commit/02d39c730a25c3970ab090e03622fe37f65ae031))  - (Jimmy Briggs)
 - Add mocked unit tests using httptest2 ([907f240](https://github.com/noclocks/gmhleasr/commit/907f240eab5fff3dba88bfcf782629ce0e2744c4))  - (Jimmy Briggs)
 - Add css tests ([4726725](https://github.com/noclocks/gmhleasr/commit/4726725f9ce08de6f2e434d2456a6fa5bc7a2027))  - (Jimmy Briggs)
 - Add tests for html utils ([2d139e0](https://github.com/noclocks/gmhleasr/commit/2d139e07cd33611ef7fcdc06e927bb75443d4ff6))  - (Jimmy Briggs)
