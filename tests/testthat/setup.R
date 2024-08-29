@@ -12,3 +12,8 @@ options(
 )
 
 cfg <- config::get("entrata", file = here::here("config.yml"))
+cfg_test <- list(
+  username = "testuser",
+  password = "testpass",
+  base_url = "https://api.entrata.com"
+)
