@@ -9,6 +9,9 @@
 > [!NOTE] 
 > This is an R package for built by [No Clocks, LLC]() for [GMH Communities]() for managing and maintaining a Shiny application to visualize and report on Leasing Data.
 
+> [!WARNING]
+> This package is a work in progress.
+
 ## Contents
 
 -   [Contents](#contents)
