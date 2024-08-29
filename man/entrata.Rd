@@ -115,6 +115,56 @@ by appending to the request's URL path the provided endpoint, assigning the
 \code{POST} \code{HTTP} Method, adding the necessary authentication, populating the
 necessary request headers, and deriving the request's body using the provided
 \code{method} name and \code{params} parameters. See below for details.
+
+This is the raw format of the base template request:
+
+\if{html}{\out{<div class="sourceCode http">}}\preformatted{POST https://gmhcommunities.entrata.com/api/v1
+Headers:
+Content-Type: 'application/json; charset=UTF-8'
+Accept: '*/*'
+Accept-Language: 'en-US,en;q=0.9'
+Cache-Control: 'no-cache'
+Connection: 'keep-alive'
+Origin: 'https://gmhcommunities.entrata.com'
+Pragma: 'no-cache'
+Referer: 'https://gmhcommunities.entrata.com/'
+Authorization: '<REDACTED>'
+Body: JSON Encoded Data
+}\if{html}{\out{</div>}}
+
+where the \code{Authorization} header is a \code{Basic} authentication header with the
+provided username and password and the body is a JSON encoded data object using
+the provided \code{method} and \code{params}:
+
+\if{html}{\out{<div class="sourceCode json">}}\preformatted{\{
+"data": \{
+  "auth": \{
+    "type": [
+      "basic"
+    ]
+  \},
+  "requestId": [
+    15
+  ],
+  "method": \{
+    "name": [
+      "<method>"
+    ],
+    "version": [
+      "r1"
+    ],
+    "params": \{
+      "param1": [
+        "value1"
+      ],
+      "param2": [
+        "value2"
+      ]
+    \}
+  \}
+\}
+\}
+}\if{html}{\out{</div>}}
 }
 \seealso{
 \href{https://docs.entrata.com/api/v1/documentation/}{Entrata API Documentation}
