@@ -2,12 +2,9 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_property_ids_filter_param}
 \alias{get_property_ids_filter_param}
-\alias{mem_get_property_ids_filter_param}
 \title{Get Property IDs Filter Parameter}
 \usage{
 get_property_ids_filter_param()
-
-mem_get_property_ids_filter_param()
 }
 \value{
 A list of character strings representing property IDs.
@@ -16,8 +13,3 @@ A list of character strings representing property IDs.
 This function retrieves the list of property IDs to be used
 as a filter parameter in Entrata API requests.
 }
-\section{Functions}{
-\itemize{
-\item \code{mem_get_property_ids_filter_param()}: Memoized Get Property IDs Filter Parameter
-
-}}

@@ -2,12 +2,9 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_entrata_report_info}
 \alias{get_entrata_report_info}
-\alias{mem_get_entrata_report_info}
 \title{Get Entrata Report Info}
 \usage{
 get_entrata_report_info(report_name, report_version = "latest")
-
-mem_get_entrata_report_info(report_name, report_version = "latest")
 }
 \arguments{
 \item{report_name}{A character string representing the name of the report.}
@@ -22,8 +19,3 @@ A list containing report name, description, and filters.
 This function retrieves detailed information for a specified
 report from Entrata, including filters and descriptions.
 }
-\section{Functions}{
-\itemize{
-\item \code{mem_get_entrata_report_info()}: Memoized Get Entrata Report Info
-
-}}

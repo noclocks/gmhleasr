@@ -2,6 +2,8 @@
 
 library(httr2, warn.conflicts = FALSE)
 library(httptest2, warn.conflicts = FALSE)
+library(here, warn.conflicts = FALSE)
+library(withr, warn.conflicts = FALSE)
 
 Sys.setlocale("LC_COLLATE", "C")
 
@@ -12,7 +14,7 @@ options(
 )
 
 cfg_file_pkg <- system.file("config/config.yml", package = "gmhleasr")
-cfg_file_local <- fs::path("inst/config/config.yml")
+cfg_file_local <- here::here("inst/config/config.yml")
 
 decrypt_cfg_file()
 
@@ -38,3 +40,10 @@ test_prop_ids <- c(
   "1143679",
   "1311849"
 )
+
+if (is_github()) {
+  withr::defer({
+    file.remove(cfg_file_local)
+    Sys.unsetenv("R_CONFIG_FILE")
+  }, testthat::teardown_env())
+}

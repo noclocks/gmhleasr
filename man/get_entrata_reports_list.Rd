@@ -2,12 +2,9 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_entrata_reports_list}
 \alias{get_entrata_reports_list}
-\alias{mem_get_entrata_reports_list}
 \title{Get Entrata Reports List}
 \usage{
 get_entrata_reports_list(latest_only = TRUE)
-
-mem_get_entrata_reports_list(latest_only = TRUE)
 }
 \arguments{
 \item{latest_only}{Logical, if TRUE (default), returns only the latest version
@@ -21,8 +18,3 @@ system name, and version.
 This function retrieves a list of reports available in the
 Entrata system, optionally filtering to only the latest version of each report.
 }
-\section{Functions}{
-\itemize{
-\item \code{mem_get_entrata_reports_list()}: Memoized Get Entrata Reports List
-
-}}

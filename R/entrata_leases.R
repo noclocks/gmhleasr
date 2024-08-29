@@ -214,7 +214,9 @@ parse_entrata_leases <- function(res) {
 #' @importFrom dplyr select mutate rename_with left_join distinct
 #' @importFrom stringr str_replace
 #' @importFrom janitor clean_names
+#' @importFrom rlang .data .env
 parse_entrata_lease_customers <- function(res_content) {
+
   res_content |>
     dplyr::select(lease_id, customers) |>
     tidyr::unnest_longer(customers) |>

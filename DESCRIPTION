@@ -15,6 +15,7 @@ BugReports: https://github.com/noclocks/gmhleasr/issues
 Depends: 
     R (>= 4.1)
 Imports:
+    cachem,
     cli,
     config,
     desc,
@@ -47,7 +48,8 @@ Suggests:
     rmarkdown,
     rprojroot,
     spelling,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    withr
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3

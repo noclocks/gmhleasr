@@ -14,11 +14,9 @@
 #'
 #' @importFrom cli cli_alert_danger cli_alert_info cli_abort
 #' @importFrom dplyr filter pull
-#' @importFrom memoise memoise
 validate_entrata_report_name <- function(report_name) {
-  mem_reports_list <- memoise::memoise(get_entrata_reports_list)
 
-  report_names <- mem_reports_list() |>
+  report_names <- get_entrata_reports_list(latest_only = TRUE) |>
     dplyr::pull("report_name") |>
     unique()
 
@@ -60,10 +58,7 @@ get_property_ids_filter_param <- function() {
     purrr::list_flatten()
 }
 
-#' @describeIn get_property_ids_filter_param Memoized Get Property IDs Filter Parameter
-#' @export
-#' @importFrom memoise memoise
-mem_get_property_ids_filter_param <- memoise::memoise(get_property_ids_filter_param)
+
 
 # reports list ------------------------------------------------------------
 
@@ -85,7 +80,9 @@ mem_get_property_ids_filter_param <- memoise::memoise(get_property_ids_filter_pa
 #' @importFrom tibblify tspec_df tib_int tib_chr tib_row tib_df tib_lgl
 #' @importFrom purrr pluck set_names list_rbind
 #' @importFrom httr2 req_perform resp_body_json
+#' @importFrom rlang .data .env
 get_entrata_reports_list <- function(latest_only = TRUE) {
+
   req <- entrata(endpoint = "reports", method = "getReportList")
 
   spec <- tibblify::tspec_df(
@@ -135,21 +132,21 @@ get_entrata_reports_list <- function(latest_only = TRUE) {
 
   res_data_merged <- dplyr::select(
     res_data,
-    report_id = id,
-    report_name = reportName,
-    system_name = systemName,
-    -reportVersions
+    "report_id" = "id",
+    "report_name" = "reportName",
+    "system_name" = "systemName",
+    -c("reportVersions")
   ) |>
     dplyr::left_join(
       res_data_report_versions,
       by = "report_name"
     ) |>
     dplyr::select(
-      report_id,
-      report_name,
-      system_name,
-      report_version = version,
-      is_latest = isLatest,
+      "report_id",
+      "report_name",
+      "system_name",
+      "report_version" = "version",
+      "is_latest" = "isLatest",
       -c("titleAddendum", "expiryDate")
     )
 
@@ -159,17 +156,14 @@ get_entrata_reports_list <- function(latest_only = TRUE) {
 
   res_data_merged |>
     dplyr::filter(
-      is_latest == TRUE
+      .data$is_latest == TRUE
     ) |>
     dplyr::select(
-      -is_latest
+      -c("is_latest")
     )
 }
 
-#' @describeIn get_entrata_reports_list Memoized Get Entrata Reports List
-#' @export
-#' @importFrom memoise memoise
-mem_get_entrata_reports_list <- memoise::memoise(get_entrata_reports_list)
+
 
 #' Get Latest Report Version
 #'
@@ -186,19 +180,19 @@ mem_get_entrata_reports_list <- memoise::memoise(get_entrata_reports_list)
 #' @importFrom dplyr filter pull
 #' @importFrom rlang .data .env
 get_latest_report_version <- function(report_name) {
-  latest_report_version <- mem_get_entrata_reports_list(latest_only = TRUE) |>
+
+  validate_entrata_report_name(report_name)
+
+  latest_report_version <- get_entrata_reports_list(latest_only = TRUE) |>
     dplyr::filter(
-      .data$report_name == .env$report_name
+      .data$report_name == {{report_name}}
     ) |>
-    dplyr::pull(report_version)
+    dplyr::pull("report_version")
 
   return(latest_report_version)
 }
 
-#' @describeIn get_latest_report_version Memoized Get Latest Report Version
-#' @export
-#' @importFrom memoise memoise
-mem_get_latest_report_version <- memoise::memoise(get_latest_report_version)
+
 
 # report info -------------------------------------------------------------
 
@@ -226,9 +220,9 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
   if (report_version == "latest") {
     latest_report_version <- mem_get_entrata_reports_list(latest_only = TRUE) |>
       dplyr::filter(
-        .data$report_name == .env$report_name
+        "report_name" == {{report_name}}
       ) |>
-      dplyr::pull(report_version)
+      dplyr::pull("report_version")
   }
 
   req <- entrata(
@@ -262,10 +256,7 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
   return(res_report_info)
 }
 
-#' @describeIn get_entrata_report_info Memoized Get Entrata Report Info
-#' @export
-#' @importFrom memoise memoise
-mem_get_entrata_report_info <- memoise::memoise(get_entrata_report_info)
+
 
 # pre-lease report --------------------------------------------------------
 
@@ -357,10 +348,13 @@ prep_pre_lease_report_params <- function(
 #' @importFrom lubridate ymd today %--% as.duration
 #' @importFrom httr2 req_perform resp_body_json req_retry
 #' @importFrom purrr pluck
+#' @importFrom rlang .data .env
 entrata_pre_lease_report <- function(
     property_ids = c(NULL),
     period_start = "09/01/2024",
-    ...) {
+    ...
+) {
+
   latest_report_version <- mem_get_latest_report_version("pre_lease")
   property_group_ids <- mem_get_property_ids_filter_param()
 
@@ -433,35 +427,35 @@ entrata_pre_lease_report <- function(
 
   res_data_summary_out <- res_data_summary |>
     dplyr::transmute(
-      property_name = property_name,
+      property_name = .data$property_name,
       leases_count = rowSums(
         dplyr::across(dplyr::all_of(sum_cols)),
         na.rm = TRUE
       ),
-      total_beds = available_count,
+      total_beds = .data$available_count,
       model_beds = 0,
-      current_occupied = occupied_count,
-      current_occupency = occupied_count / total_beds, # Total Leases / Total Beds
-      total_new = approved_new_count + partially_completed_new_count + completed_new_count,
-      total_renewals = approved_renewal_count + partially_completed_renewal_count + completed_renewal_count,
-      total_leases = total_new + total_renewals, # leases_count,
-      prelease_percent = approved_percent,
+      current_occupied = .data$occupied_count,
+      current_occupency = .data$occupied_count / .data$total_beds, # Total Leases / Total Beds
+      total_new = .data$approved_new_count + .data$partially_completed_new_count + .data$completed_new_count,
+      total_renewals = .data$approved_renewal_count + .data$partially_completed_renewal_count + .data$completed_renewal_count,
+      total_leases = .data$total_new + .data$total_renewals, # leases_count,
+      prelease_percent = .data$approved_percent,
       # prelease_percent = units / approved_count, # total beds / total leases
-      prior_total_new = approved_new_count_prior + partially_completed_new_count_prior + completed_new_count_prior,
-      prior_total_renewals = approved_renewal_count_prior + partially_completed_renewal_count_prior + completed_renewal_count_prior,
-      prior_total_leases = approved_count_prior + partially_completed_count_prior + completed_count_prior,
-      prior_prelease_percent = prior_total_leases / total_beds,
-      yoy_variance_1 = total_leases - prior_total_leases,
-      yoy_variance_2 = prelease_percent - prior_prelease_percent,
+      prior_total_new = .data$approved_new_count_prior + .data$partially_completed_new_count_prior + .data$completed_new_count_prior,
+      prior_total_renewals = .data$approved_renewal_count_prior + .data$partially_completed_renewal_count_prior + .data$completed_renewal_count_prior,
+      prior_total_leases = .data$approved_count_prior + .data$partially_completed_count_prior + .data$completed_count_prior,
+      prior_prelease_percent = .data$prior_total_leases / .data$total_beds,
+      yoy_variance_1 = .data$total_leases - .data$prior_total_leases,
+      yoy_variance_2 = .data$prelease_percent - .data$prior_prelease_percent,
       seven_new = 0,
       seven_renewal = 0,
-      seven_total = seven_new + seven_renewal,
-      seven_percent_gained = seven_total / total_beds,
-      beds_left = total_beds - total_leases,
-      leased_this_week = seven_total,
-      vel_90 = beds_left * .9 / weeks_left_to_lease,
-      vel_95 = beds_left * .95 / weeks_left_to_lease,
-      vel_100 = beds_left * 1 / weeks_left_to_lease
+      seven_total = .data$seven_new + .data$seven_renewal,
+      seven_percent_gained = .data$seven_total / .data$total_beds,
+      beds_left = .data$total_beds - .data$total_leases,
+      leased_this_week = .data$seven_total,
+      vel_90 = .data$beds_left * .9 / .env$weeks_left_to_lease,
+      vel_95 = .data$beds_left * .95 / .env$weeks_left_to_lease,
+      vel_100 = .data$beds_left * 1 / .env$weeks_left_to_lease
     )
 
   res_data_details_out <- res_data_details

@@ -64,10 +64,12 @@ validate_entrata_method_params <- function(endpoint, method, method_params) {
 #' @export
 #' @keywords internal
 #' @importFrom dplyr filter pull
+#' @importFrom rlang !!
 get_default_method <- function(endpoint) {
+
   available_methods <- entrata_api_request_endpoint_methods |>
     dplyr::filter(endpoint == !!endpoint) |>
-    dplyr::pull(method) |>
+    dplyr::pull("method") |>
     unique()
 
   if (length(available_methods) > 0) {
@@ -98,8 +100,12 @@ get_default_method <- function(endpoint) {
 user_agent <- function(
     package = "gmhleasr",
     version = utils::packageVersion("gmhleasr"),
-    url = desc::desc_get("URL"),
-    overwrite = FALSE) {
+    url = desc::desc_get(
+      "URL",
+      system.file("DESCRIPTION", package = package)
+    )[[1]],
+    overwrite = FALSE
+) {
   if (is.na(url)) {
     url <- ""
   } else {

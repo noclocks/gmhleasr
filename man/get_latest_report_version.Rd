@@ -2,12 +2,9 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_latest_report_version}
 \alias{get_latest_report_version}
-\alias{mem_get_latest_report_version}
 \title{Get Latest Report Version}
 \usage{
 get_latest_report_version(report_name)
-
-mem_get_latest_report_version(report_name)
 }
 \arguments{
 \item{report_name}{A character string representing the name of the report.}
@@ -19,8 +16,3 @@ A character string representing the latest version of the report.
 This function retrieves the latest version of a specified
 report from Entrata.
 }
-\section{Functions}{
-\itemize{
-\item \code{mem_get_latest_report_version()}: Memoized Get Latest Report Version
-
-}}
