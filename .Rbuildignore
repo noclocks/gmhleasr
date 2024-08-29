@@ -16,3 +16,4 @@
 ^pkgdown$
 ^Makefile$
 ^CHANGELOG\.md$
+^\.lintr$
