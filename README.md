@@ -1,11 +1,11 @@
-<center>
-<img src="man/figures/logo.png" height="200" alt="gmhleasr hexlogo" />
-</center>
 
-# GMH Leasing Package - `gmhleasr`
+# GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" width="200px" height="auto" alt="hexlogo" align="right" />
 
 > [!NOTE] 
-> This is an R oackage for GMH Leasing. It is a work in progress.
+> This is an R package for built by [No Clocks, LLC]() for [GMH Communities]() for managing and maintaining a Shiny application to visualize and report on Leasing Data.
+
+> [!WARNING]
+> This package is a work in progress.
 
 ## Contents
 
@@ -13,7 +13,6 @@
 -   [Badges](#badges)
 -   [Overview](#overview)
 -   [Installation](#installation)
--   [Example](#example)
 
 ## Badges
 
