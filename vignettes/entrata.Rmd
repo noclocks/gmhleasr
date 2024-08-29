@@ -1,5 +1,5 @@
 ---
-title: "Entrata API <img src='./assets/entrata/entrata-logo-light.png' align='right' width='150' height='auto'/>"
+title: "Entrata API"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Entrata API}
@@ -22,6 +22,8 @@ knitr::opts_chunk$set(
 ```{r setup}
 # library(gmhleasr)
 ```
+
+<img src='./assets/entrata/entrata-logo-light.png' align='right' width='150' height='auto' alt='entrata logo'/>
 
 ## Contents
 
