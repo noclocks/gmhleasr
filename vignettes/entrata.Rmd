@@ -1,0 +1,127 @@
+---
+title: "Entrata API"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Entrata API}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = TRUE,
+  echo = FALSE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center"
+)
+```
+
+```{r setup}
+# library(gmhleasr)
+```
+
+<img src='./assets/entrata/entrata-logo-light.png' align='right' width='150' height='auto' alt='entrata logo'/>
+
+## Contents
+
+- [Overview](#overview)
+- [Authentication](#authentication)
+- [Endpoints and Methods](#endpoints-and-methods)
+- [Status Codes](#status-codes)
+- [Rate Limiting and Throttling](#rate-limiting-and-throttling)
+- [Error Handling and Retry](#error-handling-and-retry)
+- [Request Structure](#request-structure)
+  - [Request Headers](#request-headers)
+  - [Request Body](#request-body)
+  - [Request Parameters](#request-parameters)
+- [Response Structure](#response-structure)
+  - [Response Headers](#response-headers)
+  - [Response Body](#response-body)
+- [Examples](#examples)
+
+## Overview
+
+The Entrata API provides programmatic access to read and write data to the Entrata
+Platform as a Service (PaaS), and it retrieves various property and marketing data,
+lease and resident details, and more.
+
+The API is organized around RPC protocols, and authenticates users by a username
+and password generated through the Entrata platform. Each user is a specific
+client and they can only access API for that particular company.
+
+In order to make the API as explorable as possible, Entrata provides a "swagger-like"
+experience in their documentation where you are able to view all the endpoints,
+methods, parameters, examples, and even test out the API's functionality for all
+read types of web-services. This functionality returns live data.
+
+The API supports both `XML` and `JSON` format. For our use-case we will only be dealing with
+JSON. The response will match the request format and should be specified in the 
+`Content-Type` `HTTP` header. The URL `endpoint` depends upon the call being made.
+For example, if you are making the `getCustomers` service, you would post to 
+`https://[subdomain].entrata.com/api/customers`. The subdomain is client specific. 
+
+Please note that unless stated otherwise, all dates and times used in the API are 
+assumed to be in Mountain Time (MST or MDT).
+
+## Authentication
+
+The Entrata API uses basic authentication. The username and password are passed
+in the `Authorization` header of the `HTTP` request. The username and password
+are the same as the ones used to log into the Entrata platform.
+
+To perform authentication from R, this package utilizes the `httr2` library's
+`req_auth_basic()` function to pass the username and password to the API and 
+handle the encoding of the credentials.
+
+## Endpoints and Methods
+
+The Entrata API has a number of endpoints that can be accessed. Each endpoint
+has a number of methods that can be called. The methods are specific to the
+endpoint and are used to perform specific actions on the data. For example, the
+`properties` endpoint has methods like `getProperties`, `getPropertyUnits`,
+and `sendFloorplans`.
+
+It is important to note that *all requests made to the Entrata API are `HTTP` `POST` requests*.
+This means that all requests must be made using the `POST` method, even if the
+operation is a read-only (i.e. `GET`) operation. This is where the endpoint-specific
+*methods* (not to be confused with `HTTP` methods) come into play. The method
+is the action that you want to perform on the data. For example, if you want to
+get a list of properties, you would use the `getProperties` method on the
+`properties` endpoint passing it the necessary parameters specific to that 
+method.
+
+## Status Codes
+
+Another unique aspect of the Entrata API is that it always returns a `200` status
+code, regardless of the success or failure of the request. To determine if a request
+was successful or not, you must inspect the response body. If the response body
+contains an error message and code, then the request was not successful.
+
+The actual `HTTP` status code associated with the error will be located in the
+response body instead of the typical `HTTP` status code. The response body will
+contain a `status` object with a `code` and `message` field. The `code` field
+will contain the `HTTP` status code and the `message` field will contain the
+message.
+
+## Rate Limiting and Throttling
+
+## Error Handling and Retry
+
+## Request Structure
+
+### Request Headers
+
+### Request Body
+
+### Request Parameters
+
+## Response Structure
+
+### Response Headers
+
+### Response Body
+
+## Examples

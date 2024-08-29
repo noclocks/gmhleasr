@@ -7,7 +7,7 @@
 user_agent(
   package = "gmhleasr",
   version = utils::packageVersion("gmhleasr"),
-  url = desc::desc_get("URL"),
+  url = desc::desc_get("URL", system.file("DESCRIPTION", package = package))[[1]],
   overwrite = FALSE
 )
 }

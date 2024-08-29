@@ -6181,6 +6181,168 @@
                         }
                     },
                     {
+                        "id": "13451055",
+                        "leaseStatusTypeId": "4",
+                        "propertyId": "739084",
+                        "moveInDate": "08/16/2024",
+                        "propertyName": "908 S. 1st",
+                        "leaseIntervalStatus": "Current",
+                        "occupancyTypeId": "10",
+                        "occupancyType": "Student",
+                        "isMonthToMonth": 0,
+                        "leaseIntervalId": "17100710",
+                        "floorPlanId": "565167",
+                        "floorPlanName": "D1",
+                        "spaceConfiguration": "Per Bedroom",
+                        "paymentAllowanceType": "Allow All Payment Types",
+                        "customers": {
+                            "customer": [
+                                {
+                                    "id": 18050012,
+                                    "customerType": "Primary",
+                                    "firstName": "Raheem",
+                                    "lastName": "Gbadegesin",
+                                    "middleName": "Kolade",
+                                    "nameFull": "Gbadegesin, Raheem",
+                                    "emailAddress": "rgkings24@gmail.com",
+                                    "leaseCustomerStatus": "Current",
+                                    "relationshipName": "Primary",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Previous",
+                                                "streetLine": "106 E Daniel St",
+                                                "city": "Champaign",
+                                                "state": "IL",
+                                                "postalCode": "61820",
+                                                "countryName": "US"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 3124939441",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    },
+                                    "customerContacts": {
+                                        "customerContact": [
+                                            {
+                                                "id": "8267535",
+                                                "contactTypeId": "7",
+                                                "contactTypeName": "Emergency Contact",
+                                                "firstName": "Aminat",
+                                                "lastName": "Gbadegesin",
+                                                "primaryPhoneNumber": "7736540275",
+                                                "email": "Aminat.Gbadegesin@gmail.com",
+                                                "relationship": "Mother",
+                                                "hasAccessToUnit": "0"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 18050041,
+                                    "customerType": "Guarantor",
+                                    "firstName": "Kabira",
+                                    "lastName": "Gbadegesin",
+                                    "middleName": "Abidemi",
+                                    "nameFull": "Gbadegesin, Kabira",
+                                    "emailAddress": "kabira.gbadegeasin@gmail.com",
+                                    "leaseCustomerStatus": "Current",
+                                    "relationshipName": "Guarantor",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Current",
+                                                "streetLine": "810 W Grace apt.810",
+                                                "city": "Chicago",
+                                                "state": "IL",
+                                                "postalCode": "60613",
+                                                "countryName": "US"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 3129780460",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "unitId": "4087585",
+                        "unitSpaces": {
+                            "unitSpace": [
+                                {
+                                    "unitSpaceId": 4247016,
+                                    "unitSpace": "315-D"
+                                }
+                            ]
+                        },
+                        "scheduledCharges": {
+                            "scheduledCharge": [
+                                {
+                                    "id": "42285582",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17100710",
+                                    "chargeCodeId": "147881",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "Base Rent",
+                                    "chargeCode": "Base Rent",
+                                    "amount": "850.00",
+                                    "chargeUsage": "Base",
+                                    "description": "Base Rent"
+                                }
+                            ]
+                        },
+                        "leaseIntervals": {
+                            "leaseInterval": [
+                                {
+                                    "id": 17100710,
+                                    "startDate": "08/16/2024",
+                                    "endDate": "07/30/2025",
+                                    "leaseIntervalTypeId": 1,
+                                    "leaseIntervalTypeName": "Application",
+                                    "leaseIntervalStatusTypeId": 4,
+                                    "leaseIntervalStatusTypeName": "Current",
+                                    "applicationCompletedOn": "09/28/2023 17:55:27.738183 MDT",
+                                    "applicationId": "17383434",
+                                    "intervalDateTime": "09/27/2023 20:44:01.396376 MDT",
+                                    "applications": {
+                                        "application": [
+                                            {
+                                                "id": "17383434",
+                                                "leaseApprovedOn": "10/19/2023 10:16:54 MDT",
+                                                "leaseTerm": "2024/2025",
+                                                "applicationCompletedOn": "09/28/2023 17:55:27.738183 MDT",
+                                                "leaseIntervalTypeId": 1,
+                                                "isActiveLeaseInterval": "t",
+                                                "propertyFloorPlanId": "565167",
+                                                "leaseStartDate": "08/16/2024",
+                                                "leaseEndDate": "07/30/2025"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
                         "id": "13451646",
                         "leaseStatusTypeId": "4",
                         "propertyId": "739084",
@@ -13554,6 +13716,166 @@
                                                 "leaseApprovedOn": "02/07/2024 15:01:45 MST",
                                                 "leaseTerm": "2024/2025",
                                                 "applicationCompletedOn": "01/22/2024 15:23:54.785426 MST",
+                                                "leaseIntervalTypeId": 1,
+                                                "isActiveLeaseInterval": "t",
+                                                "propertyFloorPlanId": "565162",
+                                                "leaseStartDate": "08/16/2024",
+                                                "leaseEndDate": "07/30/2025"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "13472193",
+                        "leaseStatusTypeId": "4",
+                        "propertyId": "739084",
+                        "moveInDate": "08/16/2024",
+                        "propertyName": "908 S. 1st",
+                        "leaseIntervalStatus": "Current",
+                        "occupancyTypeId": "10",
+                        "occupancyType": "Student",
+                        "isMonthToMonth": 0,
+                        "leaseIntervalId": "17168691",
+                        "floorPlanId": "565162",
+                        "floorPlanName": "M1 Murphy Balcony",
+                        "spaceConfiguration": "Per Bedroom",
+                        "paymentAllowanceType": "Allow All Payment Types",
+                        "customers": {
+                            "customer": [
+                                {
+                                    "id": 18067511,
+                                    "customerType": "Primary",
+                                    "firstName": "Mingxi",
+                                    "lastName": "Li",
+                                    "nameFull": "Li, Mingxi",
+                                    "emailAddress": "w376129lmx@outlook.com",
+                                    "leaseCustomerStatus": "Current",
+                                    "relationshipName": "Primary",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Previous",
+                                                "streetLine": "75 E Armory Ave, Apt 415",
+                                                "city": "Champaign",
+                                                "state": "IL",
+                                                "postalCode": "61820",
+                                                "countryName": "US"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 2177783789",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    },
+                                    "customerContacts": {
+                                        "customerContact": [
+                                            {
+                                                "id": "8395682",
+                                                "contactTypeId": "7",
+                                                "contactTypeName": "Emergency Contact",
+                                                "firstName": "Kemin",
+                                                "lastName": "Liu",
+                                                "primaryPhoneNumber": "13983845872",
+                                                "email": "lxx376129@gmail.com",
+                                                "relationship": "Parent",
+                                                "hasAccessToUnit": "0"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 18075872,
+                                    "customerType": "Guarantor",
+                                    "firstName": "Kemin",
+                                    "lastName": "Liu",
+                                    "nameFull": "Liu, Kemin",
+                                    "emailAddress": "lxx376129@gmail.com",
+                                    "leaseCustomerStatus": "Cancelled",
+                                    "relationshipName": "Guarantor",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Current",
+                                                "streetLine": "Jiangyucheng",
+                                                "city": "Chongqing",
+                                                "state": "Chongqing Shi",
+                                                "postalCode": "401123",
+                                                "countryName": "CN"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 2177783789",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "unitId": "4087571",
+                        "unitSpaces": {
+                            "unitSpace": [
+                                {
+                                    "unitSpaceId": 4246996,
+                                    "unitSpace": "301"
+                                }
+                            ]
+                        },
+                        "scheduledCharges": {
+                            "scheduledCharge": [
+                                {
+                                    "id": "42547742",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17168691",
+                                    "chargeCodeId": "147881",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "Base Rent",
+                                    "chargeCode": "Base Rent",
+                                    "amount": "1110.00",
+                                    "chargeUsage": "Base",
+                                    "description": "Base Rent"
+                                }
+                            ]
+                        },
+                        "leaseIntervals": {
+                            "leaseInterval": [
+                                {
+                                    "id": 17168691,
+                                    "startDate": "08/16/2024",
+                                    "endDate": "07/30/2025",
+                                    "leaseIntervalTypeId": 1,
+                                    "leaseIntervalTypeName": "Application",
+                                    "leaseIntervalStatusTypeId": 4,
+                                    "leaseIntervalStatusTypeName": "Current",
+                                    "applicationCompletedOn": "02/14/2024 14:51:12.414476 MST",
+                                    "applicationId": "17416551",
+                                    "intervalDateTime": "01/23/2024 22:59:32.949029 MST",
+                                    "applications": {
+                                        "application": [
+                                            {
+                                                "id": "17416551",
+                                                "leaseApprovedOn": "02/23/2024 09:50:33 MST",
+                                                "leaseTerm": "2024/2025",
+                                                "applicationCompletedOn": "02/14/2024 14:51:12.414476 MST",
                                                 "leaseIntervalTypeId": 1,
                                                 "isActiveLeaseInterval": "t",
                                                 "propertyFloorPlanId": "565162",

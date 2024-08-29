@@ -43,32 +43,36 @@
 #' @importFrom httr2 req_headers req_url_query req_perform
 #' @importFrom purrr compact
 entrata_leases <- function(
-    property_ids,
-    application_id = NULL,
-    customer_id = NULL,
-    lease_status_type_ids = NULL,
-    lease_ids = NULL,
-    scheduled_ar_code_ids = NULL,
-    unit_number = NULL,
-    building_name = NULL,
-    move_in_date_from = NULL,
-    move_in_date_to = NULL,
-    lease_expiring_date_from = NULL,
-    lease_expiring_date_to = NULL,
-    move_out_date_from = NULL,
-    move_out_date_to = NULL,
-    include_other_income_leases = NULL,
-    resident_friendly_mode = NULL,
-    include_lease_history = NULL,
-    include_ar_transactions = NULL,
+    property_id,
+    application_id = as.integer(NULL),
+    customer_id = as.integer(NULL),
+    lease_status_type_ids = as.integer(c(NULL)),
+    lease_ids = as.integer(c(NULL)),
+    scheduled_ar_code_ids = as.integer(c(NULL)),
+    unit_number = as.character(NULL),
+    building_name = as.character(NULL),
+    move_in_date_from = as.Date(NULL),
+    move_in_date_to = as.Date(NULL),
+    lease_expiring_date_from = as.Date(NULL),
+    lease_expiring_date_to = as.Date(NULL),
+    move_out_date_from = as.Date(NULL),
+    move_out_date_to = as.Date(NULL),
+    include_other_income_leases = FALSE,
+    resident_friendly_mode = FALSE,
+    include_lease_history = FALSE,
+    include_ar_transactions = FALSE,
     pagination_page_number = 1,
     pagination_page_size = 500,
     include_pagination_links = FALSE,
     ...) {
-  prop_ids <- paste(property_ids, collapse = ",")
+  if (length(property_id) > 1) {
+    cli::cli_alert_warning("The {.field getLeases} method requires a single {.field propertyId}.")
+    property_id <- property_id[[1]]
+    cli::cli_alert_info("Using the first property ID: {.field {property_id}}")
+  }
 
-  method_params <- purrr::compact(list(
-    propertyId = prop_ids,
+  method_params <- list(
+    propertyId = as.character(as.integer(property_id)),
     applicationId = application_id,
     customerId = customer_id,
     leaseStatusTypeIds = lease_status_type_ids,
@@ -86,7 +90,10 @@ entrata_leases <- function(
     residentFriendlyMode = resident_friendly_mode,
     includeLeaseHistory = include_lease_history,
     includeArTransactions = include_ar_transactions
-  ))
+  ) |>
+    purrr::compact()
+
+  req_body <- derive_req_body("getLeases", method_params, "r2")
 
   req <- entrata(
     endpoint = "leases",
@@ -207,6 +214,7 @@ parse_entrata_leases <- function(res) {
 #' @importFrom dplyr select mutate rename_with left_join distinct
 #' @importFrom stringr str_replace
 #' @importFrom janitor clean_names
+#' @importFrom rlang .data .env
 parse_entrata_lease_customers <- function(res_content) {
   res_content |>
     dplyr::select(lease_id, customers) |>

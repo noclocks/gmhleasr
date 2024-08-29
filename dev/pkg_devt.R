@@ -55,3 +55,6 @@ c(
   "entrata_api_request"
 ) |>
   purrr::walk(usethis::use_test, open = FALSE)
+
+
+usethis::use_vignette("entrata", "Entrata API")

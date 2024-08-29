@@ -16,6 +16,7 @@ jobs:
       contents: write
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+      NOCLOCKS_ENCRYPTION_KEY: ${{ secrets.NOCLOCKS_ENCRYPTION_KEY }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4

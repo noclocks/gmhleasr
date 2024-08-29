@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "auth": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "requestId": {
+      "type": "integer"
+    },
+    "method": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object",
+          "properties": {
+            "showAllStatus": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "showAllStatus"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "params"
+      ]
+    }
+  },
+  "required": [
+    "auth",
+    "requestId",
+    "method"
+  ]
+}

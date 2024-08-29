@@ -1,15 +1,4 @@
-#  ------------------------------------------------------------------------
-#
-# Title : Entrata API Internals
-#    By : Jimmy Briggs
-#  Date : 2024-08-27
-#
-#  ------------------------------------------------------------------------
-
-
-# validations -------------------------------------------------------------
-
-#' Entrata API Request Internal Helpers
+#' Entrata API Internal Helpers
 #'
 #' @name entrata_internal
 #'
@@ -75,10 +64,11 @@ validate_entrata_method_params <- function(endpoint, method, method_params) {
 #' @export
 #' @keywords internal
 #' @importFrom dplyr filter pull
+#' @importFrom rlang !!
 get_default_method <- function(endpoint) {
   available_methods <- entrata_api_request_endpoint_methods |>
     dplyr::filter(endpoint == !!endpoint) |>
-    dplyr::pull(method) |>
+    dplyr::pull("method") |>
     unique()
 
   if (length(available_methods) > 0) {
@@ -87,8 +77,6 @@ get_default_method <- function(endpoint) {
     return(NULL)
   }
 }
-
-# user agent --------------------------------------------------------------
 
 #' Create User Agent
 #'
@@ -111,7 +99,10 @@ get_default_method <- function(endpoint) {
 user_agent <- function(
     package = "gmhleasr",
     version = utils::packageVersion("gmhleasr"),
-    url = desc::desc_get("URL"),
+    url = desc::desc_get(
+      "URL",
+      system.file("DESCRIPTION", package = package)
+    )[[1]],
     overwrite = FALSE) {
   if (is.na(url)) {
     url <- ""
@@ -120,8 +111,6 @@ user_agent <- function(
   }
   glue::glue("{package}/{version}{url}")
 }
-
-# req_error helpers -------------------------------------------------------
 
 #' Request Error Helpers
 #'
@@ -189,8 +178,6 @@ res_is_err <- function(resp) {
   }
   return(FALSE)
 }
-
-# req_retry helpers -------------------------------------------------------
 
 #' Request Retry Helpers
 #'

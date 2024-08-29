@@ -1,32 +1,46 @@
-#  ------------------------------------------------------------------------
-#
-# Title : Entrata Properties
-#    By : Jimmy Briggs
-#  Date : 2024-08-28
-#
-#  ------------------------------------------------------------------------
-
-
-# internal ----------------------------------------------------------------
-
-#' @describeIn entrata_properties Parse Entrata Properties Response
+#' Get Entrata Properties
 #'
 #' @description
-#' This function parses the response from the Entrata API's "getProperties" method.
+#' Retrieves properties from the Entrata API.
 #'
-#' @param res A response object from the Entrata API
+#' @param api An instance of the `EntrataAPI` class.
+#' @param property_ids A vector of property IDs to retrieve.
+#' @param property_lookup_codes A vector of property lookup codes to retrieve.
+#' @param show_all_status Logical. Whether to return all properties regardless of status.
+#' @param ... Additional parameters to pass to the underlying API request.
 #'
-#' @return A tibble with the property information
-#'
+#' @return A data frame with the retrieved property information.
 #' @export
+get_properties <- function(api, property_ids = NULL, property_lookup_codes = NULL, show_all_status = FALSE, ...) {
+  method_params <- list(
+    propertyIds = if (!is.null(property_ids)) paste(property_ids, collapse = ",") else NULL,
+    propertyLookupCode = property_lookup_codes,
+    showAllStatus = as.character(as.integer(show_all_status))
+  ) |>
+    purrr::compact()
+
+  res <- api$send_request(
+    endpoint = "properties",
+    method = "getProperties",
+    method_params = method_params,
+    enable_retry = TRUE,
+    ...
+  )
+
+  parse_entrata_properties(res)
+}
+
+#' Parse Entrata Properties
 #'
-#' @importFrom httr2 resp_body_json
-#' @importFrom jsonlite toJSON fromJSON
-#' @importFrom tibble as_tibble
-#' @importFrom janitor clean_names
-#' @importFrom dplyr rename
-parse_properties_response <- function(res) {
-  out <- httr2::resp_body_json(res) |>
+#' @description
+#' Parses the response from the Entrata API's "getProperties" method.
+#'
+#' @param res The [httr2::response()] object from the Entrata API.
+#'
+#' @return A data frame with the parsed property information.
+#' @export
+parse_entrata_properties <- function(res) {
+  httr2::resp_body_json(res) |>
     purrr::pluck("response", "result", "PhysicalProperty", "Property") |>
     jsonlite::toJSON() |>
     jsonlite::fromJSON(flatten = TRUE) |>
@@ -49,69 +63,4 @@ parse_properties_response <- function(res) {
       phone = phone_phone_number,
       phone_description = phone_phone_description
     )
-
-  return(out)
-}
-
-
-# exported ----------------------------------------------------------------
-
-#' Entrata API Properties Endpoint
-#'
-#' @name entrata_properties
-#'
-#' @description
-#' This function retrieves properties from the Entrata API.
-#'
-#' @param property_ids Character Vector of Property IDs to include in the request
-#'   body parameters. If `NULL`, all properties will be returned. Default is
-#'   `NULL`.
-#' @param property_lookup_code Character string with a "Property Lookup Code"
-#'   to include in the request's body. Default is `NULL`.
-#' @param show_all_status Logical: if `TRUE` will return all properties, regardless
-#'   of status. Default is `FALSE`.
-#'
-#' @inheritDotParams entrata
-#'
-#' @seealso [entrata()]
-#' @seealso https://gmhcommunities.entrata.com/api/v1/documentation/getProperties
-#'
-#' @return A tibble with the property information
-#'
-#' @export
-#'
-#' @example examples/ex_entrata_properties.R
-#'
-#' @importFrom httr2 req_perform
-#' @importFrom purrr compact
-entrata_properties <- function(
-    property_ids = c(NULL),
-    property_lookup_codes = NULL,
-    show_all_status = FALSE,
-    ...) {
-  prop_ids <- if (!is.null(property_ids)) {
-    paste(property_ids, collapse = ",")
-  } else {
-    NULL
-  }
-
-  # body params -------------------------------------------------------------
-  method_params <- list(
-    propertyIds = prop_ids,
-    propertyLookupCode = property_lookup_codes,
-    showAllStatus = as.integer(show_all_status)
-  ) |>
-    purrr::compact()
-
-  # build & perform request ------------------------------------------------
-  res <- entrata(
-    endpoint = "properties",
-    method = "getProperties",
-    method_params = method_params,
-    perform = TRUE,
-    ...
-  )
-
-  # parse results -----------------------------------------------------------
-  res |> parse_properties_response()
 }

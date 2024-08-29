@@ -6,6 +6,10 @@
 #
 #  ------------------------------------------------------------------------
 
+
+# internal ----------------------------------------------------------------
+
+
 # exported ----------------------------------------------------------------
 
 #' Entrata API Request
@@ -171,18 +175,11 @@ entrata <- function(
   validate_entrata_endpoint_method(endpoint, method)
   validate_entrata_method_params(endpoint, method, method_params)
 
-  req_body <- list(
-    auth = list(
-      type = "basic"
-    ),
-    requestId = 15,
-    method = list(
-      name = method,
-      version = method_version,
-      params = method_params
-    )
-  ) |>
-    purrr::compact()
+  req_body <- derive_req_body(
+    method = method,
+    method_version = method_version,
+    method_params = method_params
+  )
 
   username <- config$username
   password <- config$password
@@ -246,4 +243,33 @@ entrata <- function(
 
   res <- req |> httr2::req_perform(verbosity = verbosity)
   return(res)
+}
+
+#' Derive Entrata API Request Body
+#'
+#' @description
+#' Derives the request body for an Entrata API request.
+#'
+#' @param method The Entrata API method to use.
+#' @param method_version The version of the API method to use.
+#' @param method_params A named list of parameters to include in the request body.
+#'
+#' @return A list representing the request body.
+#'
+#' @export
+#'
+#' @importFrom purrr compact
+derive_req_body <- function(method, method_version, method_params) {
+  list(
+    auth = list(
+      type = "basic"
+    ),
+    requestId = 15,
+    method = list(
+      name = method,
+      version = method_version,
+      params = method_params
+    )
+  ) |>
+    purrr::compact()
 }

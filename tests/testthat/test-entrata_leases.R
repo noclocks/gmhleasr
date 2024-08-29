@@ -1,37 +1,34 @@
-# httptest2::start_capturing(simplify = TRUE)
+# httptest2::capture_requests({
 #
-# test_prop_ids <- c("739084")
+#   test_prop_id_1 <- "739084"
+#   test_prop_id_2 <- "641240"
 #
-# prop_ids <- paste(test_prop_ids, collapse = ",")
+#   res_leases <- entrata(
+#     endpoint = "leases",
+#     method = "getLeases",
+#     method_params = list("propertyId" = test_prop_id_1),
+#     method_version = "r2",
+#     perform = TRUE
+#   )
 #
-# res <- entrata(
-#   endpoint = "leases",
-#   method = "getLeases",
-#   method_params = list("propertyId" = prop_ids),
-#   method_version = "r2",
-#   perform = TRUE
-# )
-#
-# httptest2::stop_capturing()
+#   entrata_leases(property_id = test_prop_id_2)
+# })
 
-httptest2::with_mock_dir("leases", {
+httptest2::with_mock_api({
   test_that("Can call leases endpoint getLeases method", {
-    test_prop_ids <- c("739084")
-    prop_ids <- paste(test_prop_ids, collapse = ",")
+    test_prop_id <- "739084"
     res <- entrata(
       endpoint = "leases",
       method = "getLeases",
-      method_params = list("propertyId" = prop_ids),
+      method_params = list("propertyId" = test_prop_id),
       method_version = "r2",
       perform = TRUE
     )
     expect_equal(res$status_code, 200)
   })
-})
 
-httptest2::with_mock_dir("leases", {
   test_that("entrata_leases function works correctly", {
-    result <- entrata_leases(property_ids = c("641240"))
+    result <- entrata_leases(property_id = "641240")
     expect_s3_class(result, "data.frame")
     expect_true("lease_id" %in% names(result))
     expect_true("move_in_date" %in% names(result))

@@ -1,15 +1,3 @@
-#  ------------------------------------------------------------------------
-#
-# Title : Entrata API Configuration
-#    By : Jimmy Briggs
-#  Date : 2024-08-27
-#
-#  ------------------------------------------------------------------------
-
-
-
-# validate ----------------------------------------------------------------
-
 #' Validate Entrata API Configuration
 #'
 #' @description
@@ -17,7 +5,7 @@
 #'
 #' @param cfg Either a path to a YAML configuration file or a list object containing the configurations.
 #'
-#' @return Invisibly returns the original configuration object.
+#' @return The original configuration object, invisibly.
 #'
 #' @export
 #'
@@ -26,40 +14,41 @@
 validate_entrata_config <- function(cfg) {
   cfg_orig <- cfg
 
-  # check if cfg is a path and not the object
   if (!is.list(cfg) && file.exists(cfg)) {
     cfg <- yaml::read_yaml(cfg)
+
+    if (!("default" %in% names(cfg))) {
+      cli::cli_abort("Invalid configuration. Provided configuration is missing required {.field default} configuration.")
+    }
+
+    cfg <- cfg$default
+
+    if (!("entrata" %in% names(cfg))) {
+      cli::cli_abort("Invalid configuration. Provided configuration is missing required {.field entrata} field.")
+    }
+
+    cfg <- cfg$entrata
   }
 
-  # validate cfg is a list
+  if ("default" %in% names(cfg)) {
+    cfg <- cfg$default
+  }
+
+  if ("entrata" %in% names(cfg)) {
+    cfg <- cfg$entrata
+  }
+
   if (!is.list(cfg)) {
-    cli::cli_abort("Invalid {.var cfg}. Provided {.var cfg} is not a list.")
+    cli::cli_abort("Invalid configuration. Provided configuration is not a list.")
   }
 
-  # check configurations and use default
-  if (!("default" %in% names(cfg))) {
-    cli::cli_abort("Invalid {.var cfg}. Provided {.var cfg} is missing required {.field default} configuration.")
-  }
-
-  cfg <- cfg$default
-
-  # validate required `entrata` configuration
-  if (!("entrata" %in% names(cfg))) {
-    cli::cli_abort("Invalid {.var cfg}. Provided {.var cfg} is missing required field: {.field entrata}.")
-  }
-
-  # extract entrata config
-  cfg <- cfg$entrata
-
-  # validate required fields - username and password
   if (!all(c("username", "password") %in% names(cfg))) {
-    cli::cli_abort("Invalid {.var cfg}. Provided {.var cfg} is missing required fields: {.field username} and {.field password}.")
+    cli::cli_abort("Invalid configuration. Provided configuration is missing required {.field username} and {.field password} fields.")
   }
 
-  # validate base_url OR domain OR api_url
   if (!any(c("base_url", "domain", "api_url") %in% names(cfg))) {
-    cli::cli_abort("Invalid {.var cfg}. Provided {.var cfg} is missing required fields: {.field base_url}, {.field api_url}, or {.field domain}.")
+    cli::cli_abort("Invalid configuration. Provided configuration is missing required 'base_url', 'api_url', or 'domain' fields.")
   }
 
-  return(invisible(cfg_orig))
+  invisible(cfg_orig)
 }

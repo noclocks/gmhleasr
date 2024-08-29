@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "getPropertiesRequest",
+  "title": "getProperties request schema",
+  "description": "Schema for getProperties request",
+  "type": "object",
+  "properties": {
+    "auth": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ]
+    },
+    "requestId": {
+      "type": "integer"
+    },
+    "method": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "params": {
+          "type": "object",
+          "properties": {
+            "showAllStatus": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "showAllStatus"
+          ]
+        }
+      },
+      "required": [
+        "name",
+        "version",
+        "params"
+      ]
+    }
+  },
+  "required": [
+    "auth",
+    "requestId",
+    "method"
+  ]
+}
