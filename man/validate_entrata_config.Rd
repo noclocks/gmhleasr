@@ -10,7 +10,7 @@ validate_entrata_config(cfg)
 \item{cfg}{Either a path to a YAML configuration file or a list object containing the configurations.}
 }
 \value{
-Invisibly returns the original configuration object.
+The original configuration object, invisibly.
 }
 \description{
 Validate proper configuration setup for Entrata API credentials and URLs.

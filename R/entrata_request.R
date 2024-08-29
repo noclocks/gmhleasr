@@ -6,6 +6,10 @@
 #
 #  ------------------------------------------------------------------------
 
+
+# internal ----------------------------------------------------------------
+
+
 # exported ----------------------------------------------------------------
 
 #' Entrata API Request
@@ -161,7 +165,9 @@ entrata <- function(
     dry_run = FALSE,
     progress = FALSE,
     config = config::get("entrata"),
-    ...) {
+    ...
+) {
+
   base_url <- config$base_url
 
   if (is.null(method)) {

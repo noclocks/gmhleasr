@@ -1,15 +1,4 @@
-#  ------------------------------------------------------------------------
-#
-# Title : Entrata API Internals
-#    By : Jimmy Briggs
-#  Date : 2024-08-27
-#
-#  ------------------------------------------------------------------------
-
-
-# validations -------------------------------------------------------------
-
-#' Entrata API Request Internal Helpers
+#' Entrata API Internal Helpers
 #'
 #' @name entrata_internal
 #'
@@ -88,8 +77,6 @@ get_default_method <- function(endpoint) {
   }
 }
 
-# user agent --------------------------------------------------------------
-
 #' Create User Agent
 #'
 #' @description
@@ -120,8 +107,6 @@ user_agent <- function(
   }
   glue::glue("{package}/{version}{url}")
 }
-
-# req_error helpers -------------------------------------------------------
 
 #' Request Error Helpers
 #'
@@ -189,8 +174,6 @@ res_is_err <- function(resp) {
   }
   return(FALSE)
 }
-
-# req_retry helpers -------------------------------------------------------
 
 #' Request Retry Helpers
 #'

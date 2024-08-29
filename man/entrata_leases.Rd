@@ -5,24 +5,24 @@
 \title{Entrata Leases}
 \usage{
 entrata_leases(
-  property_ids,
-  application_id = NULL,
-  customer_id = NULL,
-  lease_status_type_ids = NULL,
-  lease_ids = NULL,
-  scheduled_ar_code_ids = NULL,
-  unit_number = NULL,
-  building_name = NULL,
-  move_in_date_from = NULL,
-  move_in_date_to = NULL,
-  lease_expiring_date_from = NULL,
-  lease_expiring_date_to = NULL,
-  move_out_date_from = NULL,
-  move_out_date_to = NULL,
-  include_other_income_leases = NULL,
-  resident_friendly_mode = NULL,
-  include_lease_history = NULL,
-  include_ar_transactions = NULL,
+  property_id,
+  application_id = as.integer(NULL),
+  customer_id = as.integer(NULL),
+  lease_status_type_ids = as.integer(c(NULL)),
+  lease_ids = as.integer(c(NULL)),
+  scheduled_ar_code_ids = as.integer(c(NULL)),
+  unit_number = as.character(NULL),
+  building_name = as.character(NULL),
+  move_in_date_from = as.Date(NULL),
+  move_in_date_to = as.Date(NULL),
+  lease_expiring_date_from = as.Date(NULL),
+  lease_expiring_date_to = as.Date(NULL),
+  move_out_date_from = as.Date(NULL),
+  move_out_date_to = as.Date(NULL),
+  include_other_income_leases = FALSE,
+  resident_friendly_mode = FALSE,
+  include_lease_history = FALSE,
+  include_ar_transactions = FALSE,
   pagination_page_number = 1,
   pagination_page_size = 500,
   include_pagination_links = FALSE,
@@ -30,8 +30,6 @@ entrata_leases(
 )
 }
 \arguments{
-\item{property_ids}{Required. Integer vector of property IDs}
-
 \item{application_id}{Optional. Integer value of the application ID}
 
 \item{customer_id}{Optional. Integer value of the customer ID}
@@ -73,6 +71,8 @@ entrata_leases(
 \item{include_pagination_links}{Logical value to include pagination links in the response. Default is FALSE}
 
 \item{...}{Additional parameters to pass to the request}
+
+\item{property_ids}{Required. Integer vector of property IDs}
 }
 \value{
 Parsed Response Body Content as a tibble with leases data.
