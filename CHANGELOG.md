@@ -97,6 +97,7 @@
 
 ## Testing
 
+- Fix issues with testing environment ([c3823f7](https://github.com/noclocks/gmhleasr/commit/c3823f79526cf669a5c4cb33aaa6211db3788aba))  - (Jimmy Briggs)
 - Cleanup ([9146ec0](https://github.com/noclocks/gmhleasr/commit/9146ec035f3166c682987a9dccd0fdb15979a158))  - (Jimmy Briggs)
 - Refactor all tests with new mocking setup ([74517f6](https://github.com/noclocks/gmhleasr/commit/74517f64cdf7ab068e7ae6037178c528f441c501))  - (Jimmy Briggs)
 - Add tests for new R6 ([04b0a29](https://github.com/noclocks/gmhleasr/commit/04b0a29c02fba7082476dc64f558ba82eedbcbc6))  - (Jimmy Briggs)
