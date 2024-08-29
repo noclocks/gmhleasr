@@ -28,5 +28,3 @@ httptest2::with_mock_api({
     expect_equal(length(hold), 1)
   })
 })
-
-

@@ -1,5 +1,4 @@
 httptest2::capture_requests({
-
   cfg <- config::get("entrata")
 
   res <- entrata(
@@ -11,7 +10,6 @@ httptest2::capture_requests({
 })
 
 httptest2::with_mock_api({
-
   test_that("Can ping API status endpoint", {
     res <- entrata(
       endpoint = "status",
@@ -21,5 +19,4 @@ httptest2::with_mock_api({
     )
     expect_equal(res$status_code, 200)
   })
-
 })

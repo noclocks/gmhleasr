@@ -34,5 +34,4 @@ httptest2::with_mock_api({
     expect_true("move_in_date" %in% names(result))
     expect_true("customer_name" %in% names(result))
   })
-
 })
