@@ -31,6 +31,14 @@ validate_entrata_config <- function(cfg) {
 
   }
 
+  if ("default" %in% names(cfg)) {
+    cfg <- cfg$default
+  }
+
+  if ("entrata" %in% names(cfg)) {
+    cfg <- cfg$entrata
+  }
+
   if (!is.list(cfg)) {
     cli::cli_abort("Invalid configuration. Provided configuration is not a list.")
   }
