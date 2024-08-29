@@ -19,21 +19,13 @@
 
 <!-- badges: start -->
 [![Automate Changelog](https://github.com/noclocks/gmhleasr/actions/workflows/changelog.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/changelog.yml)
-
 [![Code Style](https://github.com/noclocks/gmhleasr/actions/workflows/style.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/style.yml)
-
 [![Lint](https://github.com/noclocks/gmhleasr/actions/workflows/lint.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/lint.yml)
-
 [![Document (Roxygen)](https://github.com/noclocks/gmhleasr/actions/workflows/roxygen.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/roxygen.yml)
-
 [![pkgdown](https://github.com/noclocks/gmhleasr/actions/workflows/pkgdown.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/pkgdown.yml)
-
 [![Pkgdown Multi](https://github.com/noclocks/gmhleasr/actions/workflows/pkgdown-multi.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/pkgdown-multi.yml)
-
 [![Dependabot Updates](https://github.com/noclocks/gmhleasr/actions/workflows/dependabot/dependabot-updates/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/dependabot/dependabot-updates)
-
 [![R CMD Check](https://github.com/noclocks/gmhleasr/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/noclocks/gmhleasr/actions/workflows/check.yml)
-
 [![Test Coverage](https://github.com/noclocks/gmhleasr/actions/workflows/coverage.yml/badge.svg)](https://github.com/noclocks/gmhleasr/actions/workflows/coverage.yml)
 <!-- badges: end -->
 
