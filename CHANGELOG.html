@@ -17,6 +17,10 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto"><li class="nav-item"><a class="nav-link" href="articles/gmhleasr.html">Get started</a></li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles"><li><a class="dropdown-item" href="articles/entrata.html">Entrata API</a></li>
+  </ul></li>
       </ul><ul class="navbar-nav"><li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json"></form></li>
 <li class="nav-item"><a class="external-link nav-link" href="https://github.com/noclocks/gmhleasr/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
@@ -45,7 +49,8 @@
 </ul></div>
 <div class="section level2">
 <h2 id="configuration">Configuration<a class="anchor" aria-label="anchor" href="#configuration"></a></h2>
-<ul><li>Remove config.yml symlink (<a href="https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596" class="external-link">865bca7</a>) - (Jimmy Briggs)</li>
+<ul><li>Update NAMESPACE and DESCRIPTION (<a href="https://github.com/noclocks/gmhleasr/commit/636e2216403245691b40acb67fc326de170c048c" class="external-link">636e221</a>) - (Jimmy Briggs)</li>
+<li>Remove config.yml symlink (<a href="https://github.com/noclocks/gmhleasr/commit/865bca70b6b86ecfe19187edc83a1c5e5e56a596" class="external-link">865bca7</a>) - (Jimmy Briggs)</li>
 <li>Update config (<a href="https://github.com/noclocks/gmhleasr/commit/44eeb1e6fc77970844da011f7051f9f5e04fe50d" class="external-link">44eeb1e</a>) - (Jimmy Briggs)</li>
 <li>Un-gitignore config.yml symlink (<a href="https://github.com/noclocks/gmhleasr/commit/a5d16f5114e16eae5b02df201c7976e708cdd4b1" class="external-link">a5d16f5</a>) - (Jimmy Briggs)</li>
 </ul></div>
@@ -56,7 +61,9 @@
 </ul></div>
 <div class="section level2">
 <h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a></h2>
-<ul><li>Tweak readme (<a href="https://github.com/noclocks/gmhleasr/commit/133e3289b78f4358476788fa218911ea242b925a" class="external-link">133e328</a>) - (Jimmy Briggs)</li>
+<ul><li>Update man pages for functions (<a href="https://github.com/noclocks/gmhleasr/commit/d2455252fb956d7d3d5a48b16d24259c8861d649" class="external-link">d245525</a>) - (Jimmy Briggs)</li>
+<li>Add examples README (<a href="https://github.com/noclocks/gmhleasr/commit/0cae31ba479403ae2db1bba83dc86e3f097471aa" class="external-link">0cae31b</a>) - (Jimmy Briggs)</li>
+<li>Tweak readme (<a href="https://github.com/noclocks/gmhleasr/commit/133e3289b78f4358476788fa218911ea242b925a" class="external-link">133e328</a>) - (Jimmy Briggs)</li>
 <li>Update URLs in _pkgdown.yml and DESCRIPTION files (<a href="https://github.com/noclocks/gmhleasr/commit/c3d7571baa6050c1776ea399eeb5cc495210afa7" class="external-link">c3d7571</a>) - (Jimmy Briggs)</li>
 <li>Update man pages (<a href="https://github.com/noclocks/gmhleasr/commit/71e3adc3816be5a3ab1117138fe245b4eaa9513a" class="external-link">71e3adc</a>) - (Jimmy Briggs)</li>
 <li>Initialize vignettes (<a href="https://github.com/noclocks/gmhleasr/commit/58cb2dc0233a8fa3f41b73d3660bba1e2717d45a" class="external-link">58cb2dc</a>) - (Jimmy Briggs)</li>
@@ -64,7 +71,18 @@
 </ul></div>
 <div class="section level2">
 <h2 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a></h2>
-<ul><li>
+<ul><li>Add view_list helper and other utils (<a href="https://github.com/noclocks/gmhleasr/commit/bac44a9f14e0d236d594031fe294ab098cb7cd5d" class="external-link">bac44a9</a>) - (Jimmy Briggs)</li>
+<li>Initialize reports endpoint functions (<a href="https://github.com/noclocks/gmhleasr/commit/fe472e5608f2a7474393eb1147717921d1342924" class="external-link">fe472e5</a>) - (Jimmy Briggs)</li>
+<li>Initialize properties functions (<a href="https://github.com/noclocks/gmhleasr/commit/b08c18ccd5829e7bed5fbbd05540ac2162f6838e" class="external-link">b08c18c</a>) - (Jimmy Briggs)</li>
+<li>Add entrata leases core functions and parsers (<a href="https://github.com/noclocks/gmhleasr/commit/ac83e78c62dc084292a68a1e5a17b5d1f13dad04" class="external-link">ac83e78</a>) - (Jimmy Briggs)</li>
+<li>Create core entrata request function / template (<a href="https://github.com/noclocks/gmhleasr/commit/bcd3e8176926e5e9703dbc9a4a571431dae5100b" class="external-link">bcd3e81</a>) - (Jimmy Briggs)</li>
+<li>Add entrata internal functions (<a href="https://github.com/noclocks/gmhleasr/commit/43b142000a050f454196775d618b9c1f8a002a06" class="external-link">43b1420</a>) - (Jimmy Briggs)</li>
+<li>Add entrata configuration validation (<a href="https://github.com/noclocks/gmhleasr/commit/99b226ddcc19ffb2805e1dd9a33bc1abc1e27081" class="external-link">99b226d</a>) - (Jimmy Briggs)</li>
+<li>Add placeholder example for properties (<a href="https://github.com/noclocks/gmhleasr/commit/bed6a482030b015913766fe559926bb836bb7fc2" class="external-link">bed6a48</a>) - (Jimmy Briggs)</li>
+<li>Add <code>Makefile</code> (<a href="https://github.com/noclocks/gmhleasr/issues/12" class="external-link">#12</a>) (<a href="https://github.com/noclocks/gmhleasr/commit/252292a56c7590c2287af070881b2020d8c7cb67" class="external-link">252292a</a>) - (Jimmy Briggs)</li>
+<li>Add screen size JS (<a href="https://github.com/noclocks/gmhleasr/commit/a1933092731d84cec6c7cc6a0e370dda23ac8078" class="external-link">a193309</a>) - (Jimmy Briggs)</li>
+<li>Migrate development to dev dir (<a href="https://github.com/noclocks/gmhleasr/commit/d0c03c06a975e588266ad627f03dcc65de564221" class="external-link">d0c03c0</a>) - (Jimmy Briggs)</li>
+<li>
 <strong>data:</strong> Add database configuration schema (<a href="https://github.com/noclocks/gmhleasr/commit/1d8969aba8c0ea8958c7db76479df536d6dae7f6" class="external-link">1d8969a</a>) - (Jimmy Briggs)</li>
 <li>
 <strong>run_app:</strong> Add run_app.R script (<a href="https://github.com/noclocks/gmhleasr/commit/459390d6f9bf49f6113334cdb0a51b646f919021" class="external-link">459390d</a>) - (Jimmy Briggs)</li>
@@ -91,11 +109,13 @@
 </ul></div>
 <div class="section level2">
 <h2 id="refactoring">Refactoring<a class="anchor" aria-label="anchor" href="#refactoring"></a></h2>
-<ul><li>Remove yaml dependency and enhance documentation (<a href="https://github.com/noclocks/gmhleasr/commit/df20cbe36a7de65e9ddacb1c97630197522c1374" class="external-link">df20cbe</a>) - (Jimmy Briggs)</li>
+<ul><li>Cleanup (<a href="https://github.com/noclocks/gmhleasr/commit/fe18c2ed4266fb13b8c25c0fdefd5be152a871f4" class="external-link">fe18c2e</a>) - (Jimmy Briggs)</li>
+<li>Remove yaml dependency and enhance documentation (<a href="https://github.com/noclocks/gmhleasr/commit/df20cbe36a7de65e9ddacb1c97630197522c1374" class="external-link">df20cbe</a>) - (Jimmy Briggs)</li>
 </ul></div>
 <div class="section level2">
 <h2 id="testing">Testing<a class="anchor" aria-label="anchor" href="#testing"></a></h2>
-<ul><li>Add css tests (<a href="https://github.com/noclocks/gmhleasr/commit/4726725f9ce08de6f2e434d2456a6fa5bc7a2027" class="external-link">4726725</a>) - (Jimmy Briggs)</li>
+<ul><li>Add mocked unit tests using httptest2 (<a href="https://github.com/noclocks/gmhleasr/commit/907f240eab5fff3dba88bfcf782629ce0e2744c4" class="external-link">907f240</a>) - (Jimmy Briggs)</li>
+<li>Add css tests (<a href="https://github.com/noclocks/gmhleasr/commit/4726725f9ce08de6f2e434d2456a6fa5bc7a2027" class="external-link">4726725</a>) - (Jimmy Briggs)</li>
 <li>Add tests for html utils (<a href="https://github.com/noclocks/gmhleasr/commit/2d139e07cd33611ef7fcdc06e927bb75443d4ff6" class="external-link">2d139e0</a>) - (Jimmy Briggs)</li>
 <li>Add entrata tests (<a href="https://github.com/noclocks/gmhleasr/commit/4c217d2c62442129af4b871dc803fbe62ec4a203" class="external-link">4c217d2</a>) - (Jimmy Briggs)</li>
 </ul><hr><p><em>Changelog generated by <a href="https://github.com/orhun/git-cliff" class="external-link">git-cliff</a>.</em> ***</p>
