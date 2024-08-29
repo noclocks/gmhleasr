@@ -42,8 +42,11 @@ test_prop_ids <- c(
 )
 
 if (is_github()) {
-  withr::defer({
-    file.remove(cfg_file_local)
-    Sys.unsetenv("R_CONFIG_FILE")
-  }, testthat::teardown_env())
+  withr::defer(
+    {
+      file.remove(cfg_file_local)
+      Sys.unsetenv("R_CONFIG_FILE")
+    },
+    testthat::teardown_env()
+  )
 }

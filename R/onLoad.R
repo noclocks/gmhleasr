@@ -1,5 +1,3 @@
-
-
 # internal ----------------------------------------------------------------
 
 #' @keywords internal
@@ -10,16 +8,14 @@
 #' @importFrom glue glue
 #' @importFrom cli cli_alert_info
 .cache_function <- function(
-  function_name,
-  pkg,
-  duration = 86400,
-  omit_args = c(),
-  cache = cachem::cache_mem(),
-  rename_prefix = "mem_",
-  quiet = TRUE,
-  ...
-) {
-
+    function_name,
+    pkg,
+    duration = 86400,
+    omit_args = c(),
+    cache = cachem::cache_mem(),
+    rename_prefix = "mem_",
+    quiet = TRUE,
+    ...) {
   fn <- base::get(function_name, envir = rlang::ns_env(pkg))
 
   mem_fn <- memoise::memoise(
@@ -47,7 +43,6 @@
 #' @noRd
 #' @importFrom purrr walk
 .onLoad <- function(libname, pkgname) {
-
   # cache functions ---------------------------------------------------------
   c(
     "get_entrata_reports_list",
@@ -56,5 +51,4 @@
     "get_property_ids_filter_param"
   ) |>
     purrr::walk(.cache_function, pkg = pkgname, quiet = FALSE)
-
 }

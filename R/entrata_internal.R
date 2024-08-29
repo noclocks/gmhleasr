@@ -66,7 +66,6 @@ validate_entrata_method_params <- function(endpoint, method, method_params) {
 #' @importFrom dplyr filter pull
 #' @importFrom rlang !!
 get_default_method <- function(endpoint) {
-
   available_methods <- entrata_api_request_endpoint_methods |>
     dplyr::filter(endpoint == !!endpoint) |>
     dplyr::pull("method") |>
@@ -104,8 +103,7 @@ user_agent <- function(
       "URL",
       system.file("DESCRIPTION", package = package)
     )[[1]],
-    overwrite = FALSE
-) {
+    overwrite = FALSE) {
   if (is.na(url)) {
     url <- ""
   } else {

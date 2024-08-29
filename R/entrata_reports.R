@@ -15,7 +15,6 @@
 #' @importFrom cli cli_alert_danger cli_alert_info cli_abort
 #' @importFrom dplyr filter pull
 validate_entrata_report_name <- function(report_name) {
-
   report_names <- get_entrata_reports_list(latest_only = TRUE) |>
     dplyr::pull("report_name") |>
     unique()
@@ -82,7 +81,6 @@ get_property_ids_filter_param <- function() {
 #' @importFrom httr2 req_perform resp_body_json
 #' @importFrom rlang .data .env
 get_entrata_reports_list <- function(latest_only = TRUE) {
-
   req <- entrata(endpoint = "reports", method = "getReportList")
 
   spec <- tibblify::tspec_df(
@@ -180,12 +178,11 @@ get_entrata_reports_list <- function(latest_only = TRUE) {
 #' @importFrom dplyr filter pull
 #' @importFrom rlang .data .env
 get_latest_report_version <- function(report_name) {
-
   validate_entrata_report_name(report_name)
 
   latest_report_version <- get_entrata_reports_list(latest_only = TRUE) |>
     dplyr::filter(
-      .data$report_name == {{report_name}}
+      .data$report_name == {{ report_name }}
     ) |>
     dplyr::pull("report_version")
 
@@ -220,7 +217,7 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
   if (report_version == "latest") {
     latest_report_version <- mem_get_entrata_reports_list(latest_only = TRUE) |>
       dplyr::filter(
-        "report_name" == {{report_name}}
+        "report_name" == {{ report_name }}
       ) |>
       dplyr::pull("report_version")
   }
@@ -352,9 +349,7 @@ prep_pre_lease_report_params <- function(
 entrata_pre_lease_report <- function(
     property_ids = c(NULL),
     period_start = "09/01/2024",
-    ...
-) {
-
+    ...) {
   latest_report_version <- mem_get_latest_report_version("pre_lease")
   property_group_ids <- mem_get_property_ids_filter_param()
 
