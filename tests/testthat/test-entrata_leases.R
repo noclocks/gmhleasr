@@ -30,7 +30,7 @@ httptest2::with_mock_dir("leases", {
 
 httptest2::with_mock_dir("leases", {
   test_that("entrata_leases function works correctly", {
-    result <- entrata_leases(property_ids = c("641240"))
+    result <- entrata_leases(property_id = "641240")
     expect_s3_class(result, "data.frame")
     expect_true("lease_id" %in% names(result))
     expect_true("move_in_date" %in% names(result))
