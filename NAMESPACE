@@ -3,6 +3,7 @@
 S3method(trim_ws,character)
 S3method(trim_ws,data.frame)
 S3method(trim_ws,list)
+export(EntrataAPI)
 export(centered)
 export(display_phone_number)
 export(entrata)
