@@ -10,11 +10,9 @@
 # encryption --------------------------------------------------------------
 
 decrypt_cfg_file <- function(
-  cfg_file = here::here("inst/config/config.yml"),
-  cfg_file_encrypted = here::here("inst/config/config.encrypted.yml"),
-  key = "NOCLOCKS_ENCRYPTION_KEY"
-) {
-
+    cfg_file = here::here("inst/config/config.yml"),
+    cfg_file_encrypted = here::here("inst/config/config.encrypted.yml"),
+    key = "NOCLOCKS_ENCRYPTION_KEY") {
   if (!httr2::secret_has_key(key)) {
     cli::cli_alert_danger("Encryption key: {.field {key}} not found.")
     cli::cli_abort("Please set the encryption key in your environment variables.")
