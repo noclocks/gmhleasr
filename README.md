@@ -1,6 +1,12 @@
 
 # GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" width="200px" height="auto" alt="hexlogo" align="right" />
 
+<p align="center">
+
+  [CHANGELOG](CHANGELOG.md) &middot; [Documentation](https://docs.noclocks.dev/gmhleasr/) &middot; [Development Documentation](https://docs.noclocks.dev/gmhleasr/develop/)
+
+</p>
+
 > [!WARNING]
 > This package is a work in progress.
 
