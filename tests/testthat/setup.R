@@ -11,7 +11,12 @@ options(
   warn = 1
 )
 
-Sys.setenv("R_CONFIG_FILE" = system.file("config/config.yml", package = "gmhleasr"))
+cfg_file_pkg <- system.file("config/config.yml", package = "gmhleasr")
+cfg_file_local <- fs::path("inst/config/config.yml")
+
+decrypt_cfg_file()
+
+Sys.setenv("R_CONFIG_FILE" = cfg_file_local)
 
 cfg <- config::get("entrata")
 
