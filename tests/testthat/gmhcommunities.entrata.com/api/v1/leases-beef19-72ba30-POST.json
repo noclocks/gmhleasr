@@ -16246,18 +16246,6 @@
                         "scheduledCharges": {
                             "scheduledCharge": [
                                 {
-                                    "id": "42888583",
-                                    "frequency": "Once",
-                                    "leaseIntervalId": "17200668",
-                                    "chargeCodeId": "149342",
-                                    "startDate": "08/01/2024",
-                                    "chargeType": "Security Deposit",
-                                    "chargeCode": "Deferred Rent July 2025",
-                                    "amount": "527.50",
-                                    "chargeUsage": "Base",
-                                    "description": "Deferred Rent July 2025"
-                                },
-                                {
                                     "id": "42888582",
                                     "frequency": "Once",
                                     "leaseIntervalId": "17200668",
@@ -16268,6 +16256,18 @@
                                     "amount": "527.50",
                                     "chargeUsage": "Base",
                                     "description": "Deferred Rent June 2025"
+                                },
+                                {
+                                    "id": "42888583",
+                                    "frequency": "Once",
+                                    "leaseIntervalId": "17200668",
+                                    "chargeCodeId": "149342",
+                                    "startDate": "08/01/2024",
+                                    "chargeType": "Security Deposit",
+                                    "chargeCode": "Deferred Rent July 2025",
+                                    "amount": "527.50",
+                                    "chargeUsage": "Base",
+                                    "description": "Deferred Rent July 2025"
                                 },
                                 {
                                     "id": "42888577",
