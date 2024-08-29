@@ -2,7 +2,6 @@
 
 library(httr2, warn.conflicts = FALSE)
 library(httptest2, warn.conflicts = FALSE)
-library(here, warn.conflicts = FALSE)
 library(withr, warn.conflicts = FALSE)
 
 Sys.setlocale("LC_COLLATE", "C")
@@ -13,12 +12,9 @@ options(
   warn = 1
 )
 
-cfg_file_pkg <- system.file("config/config.yml", package = "gmhleasr")
-cfg_file_local <- here::here("inst/config/config.yml")
+cfg_file_pkg <- fs::path_package(package = "gmhleasr", "config/config.encrypted.yml")
 
-decrypt_cfg_file()
-
-Sys.setenv("R_CONFIG_FILE" = cfg_file_local)
+cfg_decrypted <- decrypt_cfg_file(cfg_file_pkg)
 
 cfg <- config::get("entrata")
 
@@ -44,7 +40,7 @@ test_prop_ids <- c(
 if (is_github()) {
   withr::defer(
     {
-      file.remove(cfg_file_local)
+      file.remove(cfg_decrypted)
       Sys.unsetenv("R_CONFIG_FILE")
     },
     testthat::teardown_env()

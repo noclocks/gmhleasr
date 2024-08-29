@@ -15,27 +15,24 @@ is_github <- function() {
 
 # encryption --------------------------------------------------------------
 
-decrypt_cfg_file <- function(
-    cfg_file = here::here("inst/config/config.yml"),
-    cfg_file_encrypted = here::here("inst/config/config.encrypted.yml"),
-    key = "NOCLOCKS_ENCRYPTION_KEY") {
+decrypt_cfg_file <- function(cfg_path, key = "NOCLOCKS_ENCRYPTION_KEY") {
+
   if (!httr2::secret_has_key(key)) {
     cli::cli_alert_danger("Encryption key: {.field {key}} not found.")
     cli::cli_abort("Please set the encryption key in your environment variables.")
   }
 
-  cfg_file_decrypted <- cfg_file |> fs::path()
-  cfg_file_encrypted <- cfg_file_encrypted |> fs::path()
-
   cfg_file_decrypted_temp <- httr2::secret_decrypt_file(
-    path = cfg_file_encrypted,
+    path = cfg_path,
     key = key
   )
 
   fs::file_move(
     cfg_file_decrypted_temp,
-    cfg_file_decrypted
+    fs::path(dirname(cfg_path), "config.yml")
   )
+
+  cfg_file_decrypted <- fs::path(dirname(cfg_path), "config.yml")
 
   cli::cli_alert_success("Successfully decrypted the config file: {.file cfg_file_decrypted}")
   cli::cli_alert_info("The decrypted file is now the active config file.")
@@ -43,7 +40,7 @@ decrypt_cfg_file <- function(
   Sys.setenv("R_CONFIG_FILE" = cfg_file_decrypted)
   cli::cli_alert_info("Set `R_CONFIG_FILE` to: {.file {cfg_file_decrypted}}")
 
-  return(invisible(config::get()))
+  return(invisible(cfg_file_decrypted))
 }
 
 # mocks -------------------------------------------------------------------
