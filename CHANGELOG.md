@@ -31,6 +31,7 @@
 
 ## Documentation
 
+- Tweak README ([54e22e7](https://github.com/noclocks/gmhleasr/commit/54e22e7ff7f3bc526127ee623be8930307f43f80))  - (Jimmy Briggs)
 - Badges ([7a43270](https://github.com/noclocks/gmhleasr/commit/7a432703f79390e7048e14c90ccbe11ae6423162))  - (Jimmy Briggs)
 - Update badges ([a007072](https://github.com/noclocks/gmhleasr/commit/a0070724d4190b6fca5af13219e3b7ed9edf57d1))  - (Jimmy Briggs)
 - Updated man pages ([b896699](https://github.com/noclocks/gmhleasr/commit/b896699094c43ebdb27643e06159b8232c8e45d2))  - (Jimmy Briggs)
