@@ -34,7 +34,14 @@
 ## Overview
 
 The goal of `gmhleasr` is to provide a set of tools for GMH Communities Leasing.
+
 This package is a work in progress.
+
+Resources:
+
+- View the [CHANGELOG](CHANGELOG.md) for the latest updates.
+- Visit the [Package Documentation Website](https://docs.noclocks.dev/gmhleasr/)
+- Visit the [Development Package Documentation Website](https://docs.noclocks.dev/gmhleasr/develop/)
 
 ## Installation
 
