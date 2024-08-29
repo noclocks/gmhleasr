@@ -6,27 +6,27 @@
 #
 # ------------------------------------------------------------------------
 
-property_id = "739084"
-application_id = as.integer(NULL)
-customer_id = as.integer(NULL)
-lease_status_type_ids = as.integer(c(NULL))
-lease_ids = as.integer(c(NULL))
-scheduled_ar_code_ids = as.integer(c(NULL))
-unit_number = as.character(NULL)
-building_name = as.character(NULL)
-move_in_date_from = as.Date(NULL)
-move_in_date_to = as.Date(NULL)
-lease_expiring_date_from = as.Date(NULL)
-lease_expiring_date_to = as.Date(NULL)
-move_out_date_from = as.Date(NULL)
-move_out_date_to = as.Date(NULL)
-include_other_income_leases = as.character(as.integer(FALSE))
-resident_friendly_mode = as.character(as.integer(FALSE))
-include_lease_history = as.character(as.integer(FALSE))
-include_ar_transactions = as.character(as.integer(FALSE))
-pagination_page_number = 1
-pagination_page_size = 500
-include_pagination_links = as.character(as.integer(FALSE))
+property_id <- "739084"
+application_id <- as.integer(NULL)
+customer_id <- as.integer(NULL)
+lease_status_type_ids <- as.integer(c(NULL))
+lease_ids <- as.integer(c(NULL))
+scheduled_ar_code_ids <- as.integer(c(NULL))
+unit_number <- as.character(NULL)
+building_name <- as.character(NULL)
+move_in_date_from <- as.Date(NULL)
+move_in_date_to <- as.Date(NULL)
+lease_expiring_date_from <- as.Date(NULL)
+lease_expiring_date_to <- as.Date(NULL)
+move_out_date_from <- as.Date(NULL)
+move_out_date_to <- as.Date(NULL)
+include_other_income_leases <- as.character(as.integer(FALSE))
+resident_friendly_mode <- as.character(as.integer(FALSE))
+include_lease_history <- as.character(as.integer(FALSE))
+include_ar_transactions <- as.character(as.integer(FALSE))
+pagination_page_number <- 1
+pagination_page_size <- 500
+include_pagination_links <- as.character(as.integer(FALSE))
 
 #' Entrata Leases
 #'
@@ -86,9 +86,7 @@ entrata_leases <- function(
     pagination_page_number = 1,
     pagination_page_size = 500,
     include_pagination_links = FALSE,
-    ...
-) {
-
+    ...) {
   if (length(property_id) > 1) {
     cli::cli_alert_warning("The {.field getLeases} method requires a single {.field propertyId}.")
     property_id <- property_id[[1]]
