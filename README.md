@@ -1,3 +1,4 @@
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&multiline=true&width=450&height=80&lines=GMH+Leasing+Dashboard;Built+by+No+Clocks%2C+LLC)](https://git.io/typing-svg)
 
 # GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" width="200px" height="auto" alt="hexlogo" align="right" />
 
@@ -14,7 +15,6 @@
 
 > [!NOTE] 
 > This is an R package for built by [No Clocks, LLC]() for [GMH Communities]() for managing and maintaining a Shiny application to visualize and report on Leasing Data.
-
 
 ## Contents
 
