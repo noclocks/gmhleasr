@@ -1,23 +1,30 @@
-#' Entrata API Manager
+#' @title Entrata API Manager Client
 #'
 #' @description
-#' This is a wrapper class that provides a high-level interface for interacting
-#' with the Entrata API. It handles authentication, request construction, and
-#' response parsing, making it easy for developers to work with the Entrata API.
+#' This is a wrapper [R6::R6Class()] that provides a high-level interface for
+#' interacting with the [Entrata API](https://api.entrata.com/v1/documentation/).
+#'
+#' It handles authentication, request parameter validation and construction,
+#' and response parsing, making it easy for developers to work with the API.
+#'
+#' @details
+#' This class ...
 #'
 #' @field config A list containing the Entrata API configuration, including
 #'   the username, password, and API base URL.
 #'
 #' @field user_agent The user agent string to use for API requests.
 #'
+#' @export
+#'
 #' @importFrom httr2 req_auth_basic req_headers req_url_path_append request
 #' @importFrom purrr compact
 #' @importFrom glue glue
 #' @importFrom rlang abort
 #' @importFrom config get
-#' @export
 EntrataAPI <- R6::R6Class(
-  "EntrataAPI",
+  classname = "EntrataAPI",
+
   public = list(
     config = NULL,
     user_agent = NULL,
@@ -201,5 +208,18 @@ EntrataAPI <- R6::R6Class(
       ) |>
         parse_entrata_property_ids()
     }
-  )
+  ),
+
+
+  private = NULL,
+  active = NULL,
+  inherit = NULL,
+  lock_objects = TRUE,
+  class = TRUE,
+  portable = TRUE,
+  lock_class = FALSE,
+  cloneable = TRUE,
+  parent_env = parent.frame()
+  # lock
+
 )
