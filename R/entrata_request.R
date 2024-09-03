@@ -165,15 +165,20 @@ entrata <- function(
     dry_run = FALSE,
     progress = FALSE,
     config = config::get("entrata"),
-    ...) {
+    ...
+) {
+
   base_url <- config$base_url
 
   if (is.null(method)) {
     method <- get_default_method(endpoint)
   }
 
-  validate_entrata_endpoint_method(endpoint, method)
-  validate_entrata_method_params(endpoint, method, method_params)
+  validate_entrata_request(
+    endpoint = endpoint,
+    method = method,
+    method_params = method_params
+  )
 
   req_body <- derive_req_body(
     method = method,
