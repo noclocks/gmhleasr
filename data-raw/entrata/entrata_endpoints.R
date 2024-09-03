@@ -274,7 +274,7 @@ entrata_api_request_parameters <- list(
     ),
   "customers" = list(
     "getCustomers" = list(
-      propertyId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value for the Property ID."),
+      propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value for the Property ID."),
       "customerIds" = list(
         type = "string",
         required = FALSE,
@@ -302,7 +302,7 @@ entrata_api_request_parameters <- list(
   ),
   "financial" = list(
     "getBudgetActuals" = list(
-      propertyId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value. propertyId"),
+      propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value. propertyId"),
       glTreeId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
       budgetId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
       postMonthFrom = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value. MM/YYYY"),
@@ -312,7 +312,7 @@ entrata_api_request_parameters <- list(
       accountingMethod = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value. accountingMethod")
     ),
     "getBudgets" = list(
-      propertyId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value. propertyId"),
+      propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value. propertyId"),
       "budgetIds" = list(
         type = "string",
         required = FALSE,
@@ -336,7 +336,7 @@ entrata_api_request_parameters <- list(
   "leases" = list(
     "getLeases" = list(
       propertyId = list(
-        type = "integer",
+        type = "string",
         required = TRUE,
         description = "This is a required field. This field accepts single value."
       ),
@@ -345,26 +345,93 @@ entrata_api_request_parameters <- list(
         required = FALSE,
         description = "This is an optional field. This field accepts single value."
       ),
-      customerId = list(type = "integer", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      leaseStatusTypeIds = list(type = "integer", required = FALSE, multiple = TRUE, description = "This is an optional field. This field accepts comma separated multiple values."),
-      leaseIds = list(type = "integer", required = FALSE, multiple = TRUE, description = "This is an optional field. This field accepts comma separated multiple values."),
-      scheduledArCodeIds = list(type = "integer", required = FALSE, multiple = TRUE, description = "This is an optional field. This field accepts comma separated multiple values."),
-      unitNumber = list(type = "string", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      buildingName = list(type = "string", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      moveInDateFrom = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      moveInDateTo = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      leaseExpiringDateFrom = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      leaseExpiringDateTo = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      moveOutDateFrom = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      moveOutDateTo = list(type = "date", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      includeOtherIncomeLeases = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      residentFriendlyMode = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      includeLeaseHistory = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value."),
-      includeArTransactions = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value. This should return the Ar Transactions associated with the lease.")
+      customerId = list(
+        type = "integer",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      leaseStatusTypeIds = list(
+        type = "integer",
+        required = FALSE,
+        multiple = TRUE,
+        description = "This is an optional field. This field accepts comma separated multiple values."
+      ),
+      leaseIds = list(
+        type = "integer",
+        required = FALSE,
+        multiple = TRUE,
+        description = "This is an optional field. This field accepts comma separated multiple values."
+      ),
+      scheduledArCodeIds = list(
+        type = "integer",
+        required = FALSE,
+        multiple = TRUE,
+        description = "This is an optional field. This field accepts comma separated multiple values."
+      ),
+      unitNumber = list(
+        type = "string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      buildingName = list(
+        type = "string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      moveInDateFrom = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      moveInDateTo = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      leaseExpiringDateFrom = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      leaseExpiringDateTo = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      moveOutDateFrom = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      moveOutDateTo = list(
+        type = "date",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      includeOtherIncomeLeases = list(
+        type = "boolean_string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      residentFriendlyMode = list(
+        type = "boolean_string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      includeLeaseHistory = list(
+        type = "boolean_string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value."
+      ),
+      includeArTransactions = list(
+        type = "boolean_string",
+        required = FALSE,
+        description = "This is an optional field. This field accepts single value. This should return the Ar Transactions associated with the lease."
+      )
     ),
     # Add other methods for the "leases" endpoint here
     "getLeaseDetails" = list(
-      propertyId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
+      propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value."),
       leaseId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
       leaseStatusTypeIds = list(type = "integer", required = FALSE, multiple = TRUE, description = "This is an optional field. This field accepts comma separated multiple values."),
       includeAddOns = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value."),
@@ -385,7 +452,7 @@ entrata_api_request_parameters <- list(
       showDeletedFile = list(type = "boolean_string", required = FALSE, description = "This is an optional field. This field accepts single value. If provided, this will return the documents which have been deleted.")
     ),
     "getLeaseDocumentsList" = list(
-      propertyId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
+      propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value."),
       leaseId = list(type = "integer", required = TRUE, description = "This is a required field. This field accepts single value."),
       externalLeaseId = list(type = "string", required = FALSE, description = "This is an optional field. This field accepts single value. Its remote primary key which is associated to lease."),
       fileTypesCode = list(

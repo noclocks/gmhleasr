@@ -1,8 +1,8 @@
-httptest2::capture_requests({
-  reports <- get_entrata_reports_list()
-  report_info <- get_entrata_report_info("pre_lease")
-  latest_version <- get_latest_report_version("pre_lease")
-})
+# httptest2::capture_requests({
+#   reports <- get_entrata_reports_list()
+#   report_info <- get_entrata_report_info("pre_lease")
+#   latest_version <- get_latest_report_version("pre_lease")
+# })
 
 httptest2::with_mock_api({
   test_that("get_entrata_reports_list() works", {

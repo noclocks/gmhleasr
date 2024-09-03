@@ -462,19 +462,6 @@
                         "scheduledCharges": {
                             "scheduledCharge": [
                                 {
-                                    "id": "42263806",
-                                    "frequency": "Monthly",
-                                    "leaseIntervalId": "17094220",
-                                    "chargeCodeId": "148097",
-                                    "startDate": "08/01/2024",
-                                    "endDate": "07/31/2025",
-                                    "chargeType": "other",
-                                    "chargeCode": "Lot Parking",
-                                    "amount": "95.00",
-                                    "chargeUsage": "Add-On",
-                                    "description": "Lot Parking"
-                                },
-                                {
                                     "id": "42263791",
                                     "frequency": "Monthly",
                                     "leaseIntervalId": "17094220",
@@ -486,6 +473,19 @@
                                     "amount": "1025.00",
                                     "chargeUsage": "Base",
                                     "description": "Base Rent"
+                                },
+                                {
+                                    "id": "42263806",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17094220",
+                                    "chargeCodeId": "148097",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "other",
+                                    "chargeCode": "Lot Parking",
+                                    "amount": "95.00",
+                                    "chargeUsage": "Add-On",
+                                    "description": "Lot Parking"
                                 }
                             ]
                         },
@@ -3558,6 +3558,19 @@
                         "scheduledCharges": {
                             "scheduledCharge": [
                                 {
+                                    "id": "42349279",
+                                    "frequency": "Once",
+                                    "leaseIntervalId": "17119987",
+                                    "chargeCodeId": "149342",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "Security Deposit",
+                                    "chargeCode": "Deferred Rent July 2025",
+                                    "amount": "170.00",
+                                    "chargeUsage": "Base",
+                                    "description": "Deferred Rent July 2025"
+                                },
+                                {
                                     "id": "42349276",
                                     "frequency": "Monthly",
                                     "leaseIntervalId": "17119987",
@@ -3582,19 +3595,6 @@
                                     "amount": "95.00",
                                     "chargeUsage": "Add-On",
                                     "description": "Lot Parking"
-                                },
-                                {
-                                    "id": "42349279",
-                                    "frequency": "Once",
-                                    "leaseIntervalId": "17119987",
-                                    "chargeCodeId": "149342",
-                                    "startDate": "08/01/2024",
-                                    "endDate": "07/31/2025",
-                                    "chargeType": "Security Deposit",
-                                    "chargeCode": "Deferred Rent July 2025",
-                                    "amount": "170.00",
-                                    "chargeUsage": "Base",
-                                    "description": "Deferred Rent July 2025"
                                 }
                             ]
                         },
@@ -4252,19 +4252,6 @@
                         "scheduledCharges": {
                             "scheduledCharge": [
                                 {
-                                    "id": "42913430",
-                                    "frequency": "Monthly",
-                                    "leaseIntervalId": "17094318",
-                                    "chargeCodeId": "148097",
-                                    "startDate": "07/01/2024",
-                                    "endDate": "07/31/2025",
-                                    "chargeType": "other",
-                                    "chargeCode": "Lot Parking",
-                                    "amount": "95.00",
-                                    "chargeUsage": "Add-On",
-                                    "description": "Lot Parking"
-                                },
-                                {
                                     "id": "42264128",
                                     "frequency": "Monthly",
                                     "leaseIntervalId": "17094318",
@@ -4276,6 +4263,19 @@
                                     "amount": "1040.00",
                                     "chargeUsage": "Base",
                                     "description": "Base Rent"
+                                },
+                                {
+                                    "id": "42913430",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17094318",
+                                    "chargeCodeId": "148097",
+                                    "startDate": "07/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "other",
+                                    "chargeCode": "Lot Parking",
+                                    "amount": "95.00",
+                                    "chargeUsage": "Add-On",
+                                    "description": "Lot Parking"
                                 }
                             ]
                         },
@@ -6330,6 +6330,188 @@
                                                 "leaseApprovedOn": "10/19/2023 10:16:54 MDT",
                                                 "leaseTerm": "2024/2025",
                                                 "applicationCompletedOn": "09/28/2023 17:55:27.738183 MDT",
+                                                "leaseIntervalTypeId": 1,
+                                                "isActiveLeaseInterval": "t",
+                                                "propertyFloorPlanId": "565167",
+                                                "leaseStartDate": "08/16/2024",
+                                                "leaseEndDate": "07/30/2025"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "id": "13451642",
+                        "leaseStatusTypeId": "4",
+                        "propertyId": "739084",
+                        "moveInDate": "08/16/2024",
+                        "propertyName": "908 S. 1st",
+                        "leaseIntervalStatus": "Current",
+                        "occupancyTypeId": "10",
+                        "occupancyType": "Student",
+                        "isMonthToMonth": 0,
+                        "leaseIntervalId": "17102470",
+                        "floorPlanId": "565167",
+                        "floorPlanName": "D1",
+                        "spaceConfiguration": "Per Bedroom",
+                        "paymentAllowanceType": "Allow All Payment Types",
+                        "customers": {
+                            "customer": [
+                                {
+                                    "id": 18045040,
+                                    "customerType": "Primary",
+                                    "firstName": "Diya",
+                                    "lastName": "Agrawal",
+                                    "middleName": "Deepak",
+                                    "nameFull": "Agrawal, Diya",
+                                    "emailAddress": "diyacloud@gmail.com",
+                                    "leaseCustomerStatus": "Current",
+                                    "relationshipName": "Primary",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Previous",
+                                                "streetLine": "10 Leanda Ct",
+                                                "city": "South Barrington",
+                                                "state": "IL",
+                                                "postalCode": "60010",
+                                                "countryName": "US"
+                                            },
+                                            {
+                                                "addressType": "Forwarding",
+                                                "streetLine": "708 S 6TH ST",
+                                                "city": "CHAMPAIGN",
+                                                "state": "IL",
+                                                "postalCode": "61820-7972",
+                                                "countryName": "US"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 2245185901",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    },
+                                    "customerContacts": {
+                                        "customerContact": [
+                                            {
+                                                "id": "8290803",
+                                                "contactTypeId": "7",
+                                                "contactTypeName": "Emergency Contact",
+                                                "firstName": "Deepak",
+                                                "lastName": "Agrawal",
+                                                "primaryPhoneNumber": "3129251337",
+                                                "email": "Dadpk2@gmail.com",
+                                                "relationship": "Father",
+                                                "hasAccessToUnit": "0"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "id": 18047944,
+                                    "customerType": "Guarantor",
+                                    "firstName": "Deepak",
+                                    "lastName": "Agrawal",
+                                    "nameFull": "Agrawal, Deepak",
+                                    "emailAddress": "dadpk2@gmail.com",
+                                    "leaseCustomerStatus": "Current",
+                                    "relationshipName": "Guarantor",
+                                    "moveInDate": "08/16/2024",
+                                    "paymentAllowanceType": "Allow All Payment Types",
+                                    "addresses": {
+                                        "address": [
+                                            {
+                                                "addressType": "Current",
+                                                "streetLine": "10 Leanda Ct",
+                                                "city": "South Barrington",
+                                                "state": "IL",
+                                                "postalCode": "60010",
+                                                "countryName": "US"
+                                            }
+                                        ]
+                                    },
+                                    "phones": {
+                                        "phone": [
+                                            {
+                                                "phoneTypeName": "Primary",
+                                                "phoneType": "mobile",
+                                                "phoneNumber": "+1 3129251337",
+                                                "countryCode": 1
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "unitId": "4087601",
+                        "unitSpaces": {
+                            "unitSpace": [
+                                {
+                                    "unitSpaceId": 4247036,
+                                    "unitSpace": "415-B"
+                                }
+                            ]
+                        },
+                        "scheduledCharges": {
+                            "scheduledCharge": [
+                                {
+                                    "id": "42292903",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17102470",
+                                    "chargeCodeId": "148097",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "other",
+                                    "chargeCode": "Lot Parking",
+                                    "amount": "95.00",
+                                    "chargeUsage": "Add-On",
+                                    "description": "Lot Parking"
+                                },
+                                {
+                                    "id": "42292898",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17102470",
+                                    "chargeCodeId": "147881",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "Base Rent",
+                                    "chargeCode": "Base Rent",
+                                    "amount": "875.00",
+                                    "chargeUsage": "Base",
+                                    "description": "Base Rent"
+                                }
+                            ]
+                        },
+                        "leaseIntervals": {
+                            "leaseInterval": [
+                                {
+                                    "id": 17102470,
+                                    "startDate": "08/16/2024",
+                                    "endDate": "07/30/2025",
+                                    "leaseIntervalTypeId": 1,
+                                    "leaseIntervalTypeName": "Application",
+                                    "leaseIntervalStatusTypeId": 4,
+                                    "leaseIntervalStatusTypeName": "Current",
+                                    "applicationCompletedOn": "09/29/2023 15:14:41.103964 MDT",
+                                    "applicationId": "17384251",
+                                    "intervalDateTime": "09/29/2023 15:01:10.382461 MDT",
+                                    "applications": {
+                                        "application": [
+                                            {
+                                                "id": "17384251",
+                                                "leaseApprovedOn": "10/20/2023 10:33:23 MDT",
+                                                "leaseTerm": "2024/2025",
+                                                "applicationCompletedOn": "09/29/2023 15:14:41.103964 MDT",
                                                 "leaseIntervalTypeId": 1,
                                                 "isActiveLeaseInterval": "t",
                                                 "propertyFloorPlanId": "565167",
@@ -10215,6 +10397,19 @@
                         "scheduledCharges": {
                             "scheduledCharge": [
                                 {
+                                    "id": "42391779",
+                                    "frequency": "Monthly",
+                                    "leaseIntervalId": "17129284",
+                                    "chargeCodeId": "147881",
+                                    "startDate": "08/01/2024",
+                                    "endDate": "07/31/2025",
+                                    "chargeType": "Base Rent",
+                                    "chargeCode": "Base Rent",
+                                    "amount": "875.00",
+                                    "chargeUsage": "Base",
+                                    "description": "Base Rent"
+                                },
+                                {
                                     "id": "42481974",
                                     "frequency": "Monthly",
                                     "leaseIntervalId": "17129284",
@@ -10239,19 +10434,6 @@
                                     "amount": "-250.00",
                                     "chargeUsage": "Special",
                                     "description": "Group New Lease Gift Card Adjustment"
-                                },
-                                {
-                                    "id": "42391779",
-                                    "frequency": "Monthly",
-                                    "leaseIntervalId": "17129284",
-                                    "chargeCodeId": "147881",
-                                    "startDate": "08/01/2024",
-                                    "endDate": "07/31/2025",
-                                    "chargeType": "Base Rent",
-                                    "chargeCode": "Base Rent",
-                                    "amount": "875.00",
-                                    "chargeUsage": "Base",
-                                    "description": "Base Rent"
                                 }
                             ]
                         },

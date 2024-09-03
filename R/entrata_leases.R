@@ -64,7 +64,9 @@ entrata_leases <- function(
     pagination_page_number = 1,
     pagination_page_size = 500,
     include_pagination_links = FALSE,
-    ...) {
+    ...
+) {
+
   if (length(property_id) > 1) {
     cli::cli_alert_warning("The {.field getLeases} method requires a single {.field propertyId}.")
     property_id <- property_id[[1]]
@@ -86,10 +88,10 @@ entrata_leases <- function(
     leaseExpiringDateTo = lease_expiring_date_to,
     moveOutDateFrom = move_out_date_from,
     moveOutDateTo = move_out_date_to,
-    includeOtherIncomeLeases = include_other_income_leases,
-    residentFriendlyMode = resident_friendly_mode,
-    includeLeaseHistory = include_lease_history,
-    includeArTransactions = include_ar_transactions
+    includeOtherIncomeLeases = as.character(as.integer(include_other_income_leases)),
+    residentFriendlyMode = as.character(as.integer(resident_friendly_mode)),
+    includeLeaseHistory = as.character(as.integer(include_lease_history)),
+    includeArTransactions = as.character(as.integer(include_ar_transactions))
   ) |>
     purrr::compact()
 
