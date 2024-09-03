@@ -17,3 +17,4 @@
 ^Makefile$
 ^CHANGELOG\.md$
 ^\.lintr$
+^README\.Rmd$

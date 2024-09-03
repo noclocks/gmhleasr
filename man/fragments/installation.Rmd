@@ -1,0 +1,12 @@
+You can install the development version of `gmhleasr` like so:
+
+```r
+# remotes method
+remotes::install_github("noclocks/gmhleasr")
+
+# devtools method
+devtools::install_github("noclocks/gmhleasr")
+
+# pak method
+pak::pkg_install("noclocks/gmhleasr")
+```

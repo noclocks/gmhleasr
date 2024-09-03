@@ -1,0 +1,254 @@
+Record ID#,property_id,Refresh key: property,Floorplan Name,Refresh key: floorplan_name,Related Floorplan,rentable_unit_count,Floorplan - Total Beds,Bed Count Variance,occupied_count,PLR Signed Leases,preleased_count,Signed Leases Variance
+726,,1008 S. 4th,B1,B1,1,8,8,0,8,8,0,8
+727,,1008 S. 4th,B2,B2,2,8,8,0,8,9,0,9
+728,,1008 S. 4th,B3,B3,3,10,10,0,10,10,0,10
+729,,1008 S. 4th,B4,B4,4,2,2,0,2,3,0,3
+730,,1008 S. 4th,B5,B5,5,2,2,0,2,2,0,2
+731,,1008 S. 4th,C1,C1,6,12,12,0,12,12,0,12
+732,,1008 S. 4th,D1,D1,7,16,16,0,16,16,0,16
+733,,1008 S. 4th,D1 Balcony,D1 Balcony,8,16,16,0,16,16,0,16
+734,,1008 S. 4th,D2,D2,9,48,48,0,46,48,0,48
+735,,1008 S. 4th,D3 Balcony,D3 Balcony,10,12,12,0,12,13,0,13
+736,,1008 S. 4th,M1 Murphy,M1 Murphy,11,4,4,0,3,6,0,6
+737,,1008 S. 4th,M1 Murphy Balcony,M1 Murphy Balcony,12,12,12,0,9,13,0,13
+739,,1008 S. 4th,S1,S1,13,4,4,0,4,4,0,4
+740,,1008 S. 4th,S2,S2,14,4,4,0,4,4,0,4
+1021,,1047 Commonwealth Avenue,,Not Selected,,0,,0,0,,0,0
+742,,1047 Commonwealth Avenue,S1,S1,15,25,25,0,25,26,0,26
+743,,1047 Commonwealth Avenue,S10,S10,16,4,4,0,4,2,0,2
+744,,1047 Commonwealth Avenue,S11,S11,17,24,24,0,22,21,0,21
+745,,1047 Commonwealth Avenue,S2,S2,18,12,12,0,11,12,0,12
+746,,1047 Commonwealth Avenue,S3,S3,19,51,51,0,51,34,0,34
+747,,1047 Commonwealth Avenue,S4,S4,20,8,8,0,8,9,0,9
+748,,1047 Commonwealth Avenue,S5,S5,21,10,10,0,10,10,0,10
+749,,1047 Commonwealth Avenue,S6,S6,22,29,29,0,29,33,0,33
+750,,1047 Commonwealth Avenue,S7,S7,23,4,4,0,4,4,0,4
+751,,1047 Commonwealth Avenue,S8,S8,24,11,11,0,11,5,0,5
+752,,1047 Commonwealth Avenue,S9,S9,25,5,5,0,5,3,0,3
+753,,307 E. Daniel,D1,D1,26,40,40,0,39,39,0,39
+696,,501 S. 6th,B1,B1,27,2,2,0,2,2,0,2
+697,,501 S. 6th,B2,B2,28,2,2,0,2,2,0,2
+698,,501 S. 6th,C1,C1,29,12,12,0,12,12,0,12
+699,,501 S. 6th,C2,C2,30,12,12,0,12,12,0,12
+700,,501 S. 6th,D1,D1,31,16,16,0,16,16,0,16
+701,,501 S. 6th,D2,D2,32,16,16,0,16,17,0,17
+702,,501 S. 6th,D3 Townhome,D3 Townhome,33,4,4,0,4,4,0,4
+703,,501 S. 6th,E1 Townhome,E1 Townhome,34,20,20,0,20,22,0,22
+704,,501 S. 6th,E2 Townhome,E2 Townhome,35,20,20,0,19,21,0,21
+706,,908 S. 1st,A1,A1,36,16,16,0,15,17,0,17
+707,,908 S. 1st,B1,B1,38,8,8,0,8,8,0,8
+708,,908 S. 1st,B2,B2,39,16,16,0,16,16,0,16
+709,,908 S. 1st,B3,B3,40,8,8,0,7,8,0,8
+710,,908 S. 1st,D1,D1,41,16,16,0,16,16,0,16
+711,,908 S. 1st,M1 Murphy,M1 Murphy,43,12,12,0,10,13,0,13
+712,,908 S. 1st,M1 Murphy Balcony,M1 Murphy Balcony,44,16,16,0,16,17,0,17
+713,,908 S. 1st,M2 Murphy,M2 Murphy,45,4,4,0,4,4,0,4
+715,,Academy 65,A1,A1,46,10,10,0,10,14,0,14
+716,,Academy 65,B1,B1,47,21,21,0,21,21,0,21
+717,,Academy 65,B1 Semi-Shared,B1 Semi-Shared,341,21,21,0,17,20,0,20
+718,,Academy 65,C1 Study,C1 Study,343,3,3,0,2,4,0,4
+719,,Academy 65,D1 Balcony,D1 Balcony,342,40,40,0,23,21,0,21
+720,,Academy 65,D2,D2,51,64,64,0,52,54,0,54
+721,,Academy 65,D3,D3,52,20,20,0,17,20,0,20
+722,,Academy 65,D3 Semi-Shared,D3 Semi-Shared,344,120,120,0,91,94,0,94
+996,,Academy 65,,Not Selected,,0,,0,0,,0,0
+724,,Academy 65,S1,S1,53,5,5,0,4,7,0,7
+725,,Academy 65,S2,S2,54,5,5,0,4,6,0,6
+755,,Academy Lincoln,B1,B1,55,30,30,0,30,32,0,32
+756,,Academy Lincoln,B2,B2,56,38,38,0,36,40,0,40
+757,,Academy Lincoln,B3 Townhome,B3 Townhome,57,14,14,0,14,14,0,14
+758,,Academy Lincoln,C1,C1,58,42,42,0,41,40,0,40
+759,,Academy Lincoln,D1,D1,60,472,472,0,452,489,0,489
+760,,Academy Lincoln,D2,D2,62,36,36,0,34,36,0,36
+1066,,Academy Lincoln,,Not Selected,,0,,0,0,,0,0
+762,,ANOVA uCity Square,A1,A1,345,6,6,0,4,5,0,5
+763,,ANOVA uCity Square,A2,A2,346,17,17,0,14,17,0,17
+764,,ANOVA uCity Square,A3,A3,347,10,10,0,10,9,0,9
+765,,ANOVA uCity Square,A4,A4,348,20,20,0,18,20,0,20
+766,,ANOVA uCity Square,A5,A5,349,6,6,0,4,4,0,4
+767,,ANOVA uCity Square,A6,A6,350,5,5,0,4,5,0,5
+768,,ANOVA uCity Square,A7,A7,351,5,5,0,4,5,0,5
+769,,ANOVA uCity Square,A8,A8,352,186,186,0,156,166,0,166
+770,,ANOVA uCity Square,B1,B1,353,11,11,0,9,12,0,12
+771,,ANOVA uCity Square,B2,B2,354,22,22,0,20,22,0,22
+772,,ANOVA uCity Square,C1,C1,355,5,5,0,5,5,0,5
+998,,ANOVA uCity Square,,Not Selected,,0,,0,0,,0,0
+774,,ANOVA uCity Square,S1,S1,357,168,168,0,123,160,0,160
+782,,Shortbread Lofts,B1 (Shared),B1,202,40,40,0,39,24,0,24
+783,,Shortbread Lofts,B2 (Shared),B2,204,10,10,0,10,,0,0
+784,,Shortbread Lofts,B3 (Private),B3,205,2,2,0,2,2,0,2
+785,,Shortbread Lofts,B4 (Private),B4,206,2,2,0,2,2,0,2
+786,,Shortbread Lofts,C1 (Private),C1,207,56,56,0,53,42,0,42
+787,,Shortbread Lofts,C2 (Shared),C2,209,6,6,0,6,6,0,6
+788,,Shortbread Lofts,C3 (Private),C3,210,20,20,0,20,10,0,10
+789,,Shortbread Lofts,C4 (Private),C4,212,24,24,0,24,6,0,6
+790,,Shortbread Lofts,D1 (Private),D1,214,205,205,0,205,73,0,73
+791,,Shortbread Lofts,D2 (Private),D2,216,9,9,0,9,9,0,9
+1065,,Shortbread Lofts,,Not Selected,,0,,0,0,,0,0
+793,,SOVA,A1,A1,86,20,20,0,19,30,0,30
+794,,SOVA,B1,B1,87,64,64,0,63,82,0,82
+795,,SOVA,B1 ALT,B1 ALT,88,30,30,0,30,41,0,41
+796,,SOVA,C1,C1,89,66,66,0,66,85,0,85
+797,,SOVA,D1,D1,90,308,308,0,305,343,0,343
+798,,SOVA,D2,D2,93,88,88,0,88,106,0,106
+799,,SOVA,D3,D3,94,240,240,0,238,263,0,263
+1001,,SOVA,,Not Selected,,0,,0,0,,0,0
+801,,Station Nine,A1,A1,95,105,105,0,89,100,0,100
+802,,Station Nine,A1 Loft,A1 Loft,96,26,26,0,17,19,0,19
+803,,Station Nine,A2,A2,97,4,4,0,2,3,0,3
+804,,Station Nine,A3,A3,98,36,36,0,25,30,0,30
+805,,Station Nine,A3 Loft,A3 Loft,99,5,5,0,5,5,0,5
+806,,Station Nine,A4,A4,100,8,8,0,2,4,0,4
+807,,Station Nine,A5,A5,101,4,4,0,3,3,0,3
+808,,Station Nine,A6,A6,102,1,1,0,0,1,0,1
+809,,Station Nine,B1,B1,103,53,53,0,35,51,0,51
+810,,Station Nine,B1 Loft,B1 Loft,104,16,16,0,9,11,0,11
+811,,Station Nine,B2,B2,105,21,21,0,13,21,0,21
+812,,Station Nine,B2 Loft,B2 Loft,106,7,7,0,2,4,0,4
+813,,Station Nine,B3,B3,107,27,27,0,26,27,0,27
+814,,Station Nine,B4,B4,108,4,4,0,2,3,0,3
+815,,Station Nine,B5,B5,109,6,6,0,4,5,0,5
+1002,,Station Nine,,Not Selected,,0,,0,0,,0,0
+819,,The Academy at Frisco,A1,A1,110,31,31,0,31,35,0,35
+820,,The Academy at Frisco,A2,A2,111,3,3,0,3,3,0,3
+821,,The Academy at Frisco,B1,B1,112,48,48,0,48,49,0,49
+822,,The Academy at Frisco,B2,B2,113,10,10,0,10,11,0,11
+823,,The Academy at Frisco,B3,B3,114,10,10,0,10,14,0,14
+824,,The Academy at Frisco,C1,C1,115,18,18,0,18,18,0,18
+825,,The Academy at Frisco,D1,D1,116,228,228,0,227,246,0,246
+826,,The Academy at Frisco,D2,D2,117,140,140,0,140,144,0,144
+827,,The Academy at Frisco,D3,D3,118,16,16,0,16,16,0,16
+828,,The Academy at Frisco,D4,D4,119,40,40,0,40,43,0,43
+829,,The Academy at Frisco,D5,D5,120,76,76,0,76,81,0,81
+1045,,The Academy at Frisco,,Not Selected,,0,,0,0,,0,0
+831,,The Academy at Frisco,Studio,Studio,122,20,20,0,20,24,0,24
+838,,The Academy on Charles,A1,A1,127,1,1,0,1,1,0,1
+839,,The Academy on Charles,A2,A2,128,1,1,0,1,1,0,1
+840,,The Academy on Charles,B1,B1,129,10,10,0,10,10,0,10
+841,,The Academy on Charles,B2,B2,130,8,8,0,8,8,0,8
+842,,The Academy on Charles,B3,B3,131,6,6,0,6,6,0,6
+843,,The Academy on Charles,B4,B4,132,8,8,0,8,8,0,8
+844,,The Academy on Charles,B5,B5,133,8,8,0,8,8,0,8
+845,,The Academy on Charles,B6,B6,134,10,10,0,10,10,0,10
+846,,The Academy on Charles,C1,C1,135,12,12,0,12,13,0,13
+847,,The Academy on Charles,C2,C2,136,36,36,0,36,36,0,36
+848,,The Academy on Charles,C3,C3,137,24,24,0,24,24,0,24
+849,,The Academy on Charles,C4,C4,138,3,3,0,3,4,0,4
+850,,The Academy on Charles,D1,D1,139,104,104,0,104,106,0,106
+851,,The Academy on Charles,D2,D2,140,40,40,0,40,41,0,41
+852,,The Academy on Charles,D3,D3,141,20,20,0,20,22,0,22
+853,,The Academy on Charles,D4,D4,142,32,32,0,32,32,0,32
+1006,,The Academy on Charles,,Not Selected,,0,,0,0,,0,0
+855,,The Academy on Charles,S1,S1,143,4,4,0,4,4,0,4
+856,,The Academy on Charles,S2,S2,144,1,1,0,1,1,0,1
+1024,,The Caswell at Runnymeade,,A1.1,,3,,3,3,,0,0
+1025,,The Caswell at Runnymeade,,A1.2,,2,,2,2,,0,0
+1026,,The Caswell at Runnymeade,,A2,,4,,4,3,,0,0
+1027,,The Caswell at Runnymeade,,A3,,16,,16,14,,0,0
+1028,,The Caswell at Runnymeade,,A4,,16,,16,15,,0,0
+1029,,The Caswell at Runnymeade,,A5.1,,6,,6,6,,0,0
+1030,,The Caswell at Runnymeade,,A5.2,,6,,6,6,,0,0
+1031,,The Caswell at Runnymeade,,A6,,4,,4,3,,0,0
+1032,,The Caswell at Runnymeade,,A7,,8,,8,8,,0,0
+1033,,The Caswell at Runnymeade,,B1,,83,,83,54,,0,0
+1034,,The Caswell at Runnymeade,,B1.2,,7,,7,6,,0,0
+1035,,The Caswell at Runnymeade,,B2,,38,,38,21,,0,0
+1036,,The Caswell at Runnymeade,,B3.1,,4,,4,1,,0,0
+1037,,The Caswell at Runnymeade,,B3.3,,2,,2,1,,0,0
+1038,,The Caswell at Runnymeade,,C1,,16,,16,10,,0,0
+1039,,The Caswell at Runnymeade,,C2,,32,,32,22,,0,0
+1040,,The Caswell at Runnymeade,,Not Selected,,0,,0,0,,0,0
+863,,The Dean Campustown,A1,A1,165,14,14,0,14,14,0,14
+864,,The Dean Campustown,A2 Deluxe,A2 Deluxe,261,28,28,0,26,28,0,28
+865,,The Dean Campustown,B1,B1,168,28,28,0,25,28,0,28
+866,,The Dean Campustown,B2,B2,167,28,28,0,28,29,0,29
+867,,The Dean Campustown,B3 XL,B3 XL,263,56,56,0,52,56,0,56
+868,,The Dean Campustown,B4 XL,B4 XL,281,56,56,0,54,56,0,56
+869,,The Dean Campustown,D1,D1,172,56,56,0,54,43,0,43
+870,,The Dean Campustown,D2,D2,173,56,56,0,55,57,0,57
+871,,The Dean Campustown,D3,D3,174,56,56,0,53,58,0,58
+872,,The Dean Campustown,D4,D4,175,56,56,0,56,59,0,59
+873,,The Dean Campustown,D5,D5,176,56,56,0,52,63,0,63
+874,,The Dean Campustown,M1,M1,177,84,84,0,82,90,0,90
+1008,,The Dean Campustown,,Not Selected,,0,,0,0,,0,0
+876,,The Dean Campustown,S1,S1,178,42,42,0,41,45,0,45
+877,,The Dean Campustown,S2,S2,179,28,28,0,27,29,0,29
+878,,The Dean Campustown,S3 XL,S3 XL,262,28,28,0,28,28,0,28
+958,,The Dean Reno,A1,A1,360,1,1,0,1,1,0,1
+959,,The Dean Reno,B1,B1,361,36,36,0,34,35,0,35
+960,,The Dean Reno,B2,B2,359,34,34,0,31,40,0,40
+961,,The Dean Reno,C1,C1,362,3,3,0,3,2,0,2
+962,,The Dean Reno,D1,D1,363,180,180,0,118,163,0,163
+963,,The Dean Reno,D2,D2,364,140,140,0,92,120,0,120
+964,,The Dean Reno,D3,D3,365,64,64,0,21,49,0,49
+965,,The Dean Reno,D4,D4,366,45,45,0,27,28,0,28
+966,,The Dean Reno,D5,D5,367,36,36,0,26,27,0,27
+967,,The Dean Reno,E1,E1,368,90,90,0,84,74,0,74
+989,,The Dean Reno,E1 Alt,E1 Alt,403,45,45,0,31,37,0,37
+968,,The Dean Reno,E2,E2,358,54,54,0,48,46,0,46
+969,,The Dean Reno,E3,E3,369,45,45,0,41,40,0,40
+1009,,The Dean Reno,,Not Selected,,0,,0,0,,0,0
+879,,The Rise at Northgate,A1,A1,221,36,36,0,21,24,0,24
+880,,The Rise at Northgate,A2,A2,223,4,4,0,2,4,0,4
+881,,The Rise at Northgate,A3 Penthouse,A3,224,1,1,0,0,1,0,1
+882,,The Rise at Northgate,B1,B1,225,42,42,0,24,28,0,28
+883,,The Rise at Northgate,B2 Penthouse,B2,228,4,4,0,1,4,0,4
+884,,The Rise at Northgate,B3 Penthouse,B3,229,2,2,0,2,2,0,2
+885,,The Rise at Northgate,C1 Penthouse,C1,230,3,3,0,3,3,0,3
+886,,The Rise at Northgate,D1,D1,231,252,252,0,135,182,0,182
+887,,The Rise at Northgate,D2,D2,233,4,4,0,2,4,0,4
+888,,The Rise at Northgate,D3,D3,234,40,40,0,22,30,0,30
+889,,The Rise at Northgate,E1 Penthouse,E1,236,15,15,0,7,16,0,16
+890,,The Rise at Northgate,E2 Penthouse,E2,237,30,30,0,17,32,0,32
+891,,The Rise at Northgate,E3 Penthouse,E3,238,5,5,0,4,5,0,5
+892,,The Rise at Northgate,F1 Penthouse,F1,239,6,6,0,1,6,0,6
+894,,The Rise at Northgate,S1,S1,218,21,21,0,12,16,0,16
+895,,Torre,A1,A1,282,3,3,0,3,3,0,3
+896,,Torre,A2,A2,283,1,1,0,1,1,0,1
+897,,Torre,B1,B1,284,2,2,0,2,2,0,2
+898,,Torre,B2,B2,285,10,10,0,10,11,0,11
+901,,Torre,B3,B3,288,4,4,0,4,5,0,5
+902,,Torre,B4,B4,289,2,2,0,2,2,0,2
+906,,Torre,B5 - SHARED,B5 - SHARED,290,44,44,0,39,46,0,46
+990,,Torre,B5.2 DELUXE,B5.2 DELUXE,401,12,12,0,10,3,0,3
+985,,Torre,B6 DELUXE,B6 DELUXE,400,36,36,0,30,34,0,34
+910,,Torre,B7 - SEMI-SHARED,B7 - SEMI-SHARED,297,12,12,0,12,8,0,8
+991,,Torre,B8 DELUXE,B8 DELUXE,402,28,28,0,20,18,0,18
+914,,Torre,B9 -  SHARED,B9 -  SHARED,301,24,24,0,24,25,0,25
+915,,Torre,C1,C1,302,3,3,0,3,3,0,3
+916,,Torre,C2 - SEMI-SHARED,C2 - SEMI-SHARED,303,16,16,0,14,10,0,10
+917,,Torre,C3,C3,304,21,21,0,21,22,0,22
+919,,Torre,D1,D1,306,28,28,0,27,24,0,24
+921,,Torre,D2 - SEMI-SHARED,D2 - SEMI-SHARED,308,5,5,0,5,4,0,4
+922,,Torre,D3 - SEMI-SHARED,D3 - SEMI-SHARED,309,12,12,0,6,10,0,10
+923,,Torre,D4 - SEMI-SHARED,D4 - SEMI-SHARED,310,12,12,0,8,7,0,7
+1011,,Torre,,Not Selected,,0,,0,0,,0,0
+926,,Torre,S1,S1,313,1,1,0,1,1,0,1
+927,,Torre,S2,S2,314,14,14,0,14,14,0,14
+929,,Torre,TH - C1,TH - C1,316,6,6,0,6,6,0,6
+931,,Torre,TH - C2,TH - C2,318,6,6,0,6,7,0,7
+932,,Torre,TH - C3,TH - C3,319,3,3,0,3,3,0,3
+933,,Torre,TH - C3.1,TH - C3.1,320,3,3,0,3,3,0,3
+934,,Torre,TH - C4,TH - C4,321,12,12,0,12,12,0,12
+936,,Torre,TH - D1,TH - D1,323,56,56,0,54,61,0,61
+938,,Torre,TH - D1.2,TH - D1.2,325,32,32,0,31,34,0,34
+939,,Torre,TH - D2,TH - D2,326,8,8,0,8,9,0,9
+941,,Torre,TH - D3,TH - D3,328,4,4,0,4,4,0,4
+942,,Torre,TH - D4 - SEMI-SHARED,TH - D4 - SEMI-SHARED,329,10,10,0,10,10,0,10
+943,,Torre,TH - D5,TH - D5,330,16,16,0,15,17,0,17
+944,,Torre,TH - D6 - SEMI-SHARED,TH - D6 - SEMI-SHARED,331,15,15,0,13,12,0,12
+946,,Torre,TH - D8 - SEMI-SHARED,TH - D8 - SEMI-SHARED,333,6,6,0,3,6,0,6
+947,,Torre,TH - D9,TH - D9,334,15,15,0,14,15,0,15
+948,,Torre,TH - E1,TH - E1,335,10,10,0,5,10,0,10
+949,,Torre,TH - F1,TH - F1,336,18,18,0,16,19,0,19
+950,,Torre,TH - F2,TH - F2,337,6,6,0,6,6,0,6
+951,,Torre,TH - F3,TH - F3,338,6,6,0,3,5,0,5
+952,,Torre,TH - F4,TH - F4,339,18,18,0,15,16,0,16
+953,,Torre,TH - F5,TH - F5,340,18,18,0,17,18,0,18
+1014,,Venue at North Campus,A,A,404,6,6,0,5,8,0,8
+1015,,Venue at North Campus,B,B,405,96,96,0,82,105,0,105
+1016,,Venue at North Campus,D1,D1,406,256,256,0,227,221,0,221
+1017,,Venue at North Campus,D2,D2,407,64,64,0,53,64,0,64
+1018,,Venue at North Campus,D3,D3,408,192,192,0,175,162,0,162
+1019,,Venue at North Campus,E,E,409,120,120,0,111,133,0,133
+1020,,Venue at North Campus,,Not Selected,,0,,0,0,,0,0

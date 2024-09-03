@@ -3,13 +3,10 @@
 \name{entrata_internal}
 \alias{entrata_internal}
 \alias{validate_entrata_endpoint_method}
-\alias{validate_entrata_method_params}
 \alias{get_default_method}
 \title{Entrata API Internal Helpers}
 \usage{
 validate_entrata_endpoint_method(endpoint, method)
-
-validate_entrata_method_params(endpoint, method, method_params)
 
 get_default_method(endpoint)
 }

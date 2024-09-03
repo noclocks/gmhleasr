@@ -1,27 +1,31 @@
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&multiline=true&width=450&height=80&lines=GMH+Leasing+Dashboard;Built+by+No+Clocks%2C+LLC)](https://git.io/typing-svg)
+<h1 align="center">GMH Leasing Package - <code>gmhleasr</code></h1>
 
-# GMH Leasing Package - `gmhleasr` <img src="man/figures/logo.png" width="200px" height="auto" alt="hexlogo" align="right" />
+<p align="center"><a href="CHANGELOG.md">Changelog</a>  &middot;  <a href="https://docs.noclocks.dev/gmhleasr/">Documentation</a>  &middot;  <a href="https://docs.noclocks.dev/gmhleasr/develop/">Development Documentation</a></p>
 
 <p align="center">
-
-  [CHANGELOG](CHANGELOG.md) &middot; [Documentation](https://docs.noclocks.dev/gmhleasr/) &middot; [Development Documentation](https://docs.noclocks.dev/gmhleasr/develop/)
-
+  <img src="man/figures/logo.png" width="200px" height="auto" alt="hexlogo"/>
 </p>
+
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=1000&center=true&vCenter=true&multiline=true&width=450&height=80&lines=GMH+Leasing+Dashboard;Built+by+No+Clocks%2C+LLC"/>
+</p>
+  
+***
 
 > [!WARNING]
 > This package is a work in progress.
 
-***
-
-> [!NOTE] 
+> [!NOTE]
 > This is an R package for built by [No Clocks, LLC]() for [GMH Communities]() for managing and maintaining a Shiny application to visualize and report on Leasing Data.
+
+***
 
 ## Contents
 
--   [Contents](#contents)
--   [Badges](#badges)
--   [Overview](#overview)
--   [Installation](#installation)
+- [Contents](#contents)
+- [Badges](#badges)
+- [Overview](#overview)
+- [Installation](#installation)
 
 ## Badges
 
@@ -41,8 +45,6 @@
 
 The goal of `gmhleasr` is to provide a set of tools for GMH Communities Leasing.
 
-This package is a work in progress.
-
 Resources:
 
 - View the [CHANGELOG](CHANGELOG.md) for the latest updates.
@@ -53,7 +55,7 @@ Resources:
 
 You can install the development version of `gmhleasr` like so:
 
-```r
+```R
 # remotes method
 remotes::install_github("noclocks/gmhleasr")
 
@@ -64,3 +66,6 @@ devtools::install_github("noclocks/gmhleasr")
 pak::pkg_install("noclocks/gmhleasr")
 ```
 
+***
+
+© 2024 [No Clocks, LLC](https://noclocks.dev)

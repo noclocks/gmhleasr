@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<link href="lib/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="lib/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+<script src="lib/ionrangeslider-javascript-2.3.1/js/ion.rangeSlider.min.js"></script>
+<script src="lib/strftime-0.9.2/strftime-min.js"></script>
+<link href="lib/ionrangeslider-css-2.3.1/css/ion.rangeSlider.css" rel="stylesheet" />
+<script src="lib/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+<script src="lib/bootstrap-4.5.2/bootstrap.bundle.min.js"></script>
+<link href="lib/os-1.13.0/OverlayScrollbars.min.css" rel="stylesheet" />
+<script src="lib/os-1.13.0/jquery.overlayScrollbars.min.js"></script>
+<link href="lib/AdminLTE3-3.1.0/adminlte.min.css" rel="stylesheet" />
+<script src="lib/AdminLTE3-3.1.0/adminlte.min.js"></script>
+<link href="lib/bs4Dash-2.3.3/bs4Dash.css" rel="stylesheet" />
+<script src="lib/bs4Dash-2.3.3/bs4Dash.min.js"></script>
+<link href="https://unpkg.com/ionicons@4.4.2/dist/css/ionicons.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+<link href="lib/glyphicons-2.3.3/glyphicons.min.css" rel="stylesheet" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+  <title>GMH Leasing Dashboard</title>
+  <style>@media (min-width: 768px) {
+              body:not(.sidebar-mini-md) .content-wrapper, 
+              body:not(.sidebar-mini-md) .main-footer, 
+              body:not(.sidebar-mini-md) .main-header {
+                transition: margin-left .3s ease-in-out;
+                margin-left: 250px;
+              }
+            }
+            
+            @media (min-width: 992px) {
+              .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused, 
+              .sidebar-mini.sidebar-collapse .main-sidebar:hover {
+                width: 250px;
+              }
+            }
+
+            @media (min-width: 992px) {
+              .sidebar-mini.sidebar-collapse.layout-fixed .main-sidebar:hover .brand-link {
+                width: 250px;
+              }
+            }
+    
+            .sidebar-collapse .main-sidebar, .sidebar-collapse .main-sidebar::before {
+              margin-left: -250px;
+            }
+
+            .main-sidebar, .main-sidebar::before {
+              transition: margin-left .3s ease-in-out,width .3s ease-in-out;
+              width: 250px;
+            }
+
+            .layout-fixed .brand-link {
+              width: 250px;
+            }
+          </style>
+  <style>.shinyjs-hide { display: none !important; }</style>
+  <script>Shiny.addCustomMessageHandler('shinyjs-show', function(params) { shinyjs.debugMessage('shinyjs: calling function "show" with parameters:'); shinyjs.debugMessage(params); shinyjs.show(params);});
+Shiny.addCustomMessageHandler('shinyjs-hide', function(params) { shinyjs.debugMessage('shinyjs: calling function "hide" with parameters:'); shinyjs.debugMessage(params); shinyjs.hide(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggle', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggle" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggle(params);});
+Shiny.addCustomMessageHandler('shinyjs-enable', function(params) { shinyjs.debugMessage('shinyjs: calling function "enable" with parameters:'); shinyjs.debugMessage(params); shinyjs.enable(params);});
+Shiny.addCustomMessageHandler('shinyjs-disable', function(params) { shinyjs.debugMessage('shinyjs: calling function "disable" with parameters:'); shinyjs.debugMessage(params); shinyjs.disable(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleState', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleState" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleState(params);});
+Shiny.addCustomMessageHandler('shinyjs-addClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "addClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.addClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-toggleClass', function(params) { shinyjs.debugMessage('shinyjs: calling function "toggleClass" with parameters:'); shinyjs.debugMessage(params); shinyjs.toggleClass(params);});
+Shiny.addCustomMessageHandler('shinyjs-html', function(params) { shinyjs.debugMessage('shinyjs: calling function "html" with parameters:'); shinyjs.debugMessage(params); shinyjs.html(params);});
+Shiny.addCustomMessageHandler('shinyjs-onevent', function(params) { shinyjs.debugMessage('shinyjs: calling function "onevent" with parameters:'); shinyjs.debugMessage(params); shinyjs.onevent(params);});
+Shiny.addCustomMessageHandler('shinyjs-removeEvent', function(params) { shinyjs.debugMessage('shinyjs: calling function "removeEvent" with parameters:'); shinyjs.debugMessage(params); shinyjs.removeEvent(params);});
+Shiny.addCustomMessageHandler('shinyjs-alert', function(params) { shinyjs.debugMessage('shinyjs: calling function "alert" with parameters:'); shinyjs.debugMessage(params); shinyjs.alert(params);});
+Shiny.addCustomMessageHandler('shinyjs-logjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "logjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.logjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-runjs', function(params) { shinyjs.debugMessage('shinyjs: calling function "runjs" with parameters:'); shinyjs.debugMessage(params); shinyjs.runjs(params);});
+Shiny.addCustomMessageHandler('shinyjs-reset', function(params) { shinyjs.debugMessage('shinyjs: calling function "reset" with parameters:'); shinyjs.debugMessage(params); shinyjs.reset(params);});
+Shiny.addCustomMessageHandler('shinyjs-delay', function(params) { shinyjs.debugMessage('shinyjs: calling function "delay" with parameters:'); shinyjs.debugMessage(params); shinyjs.delay(params);});
+Shiny.addCustomMessageHandler('shinyjs-click', function(params) { shinyjs.debugMessage('shinyjs: calling function "click" with parameters:'); shinyjs.debugMessage(params); shinyjs.click(params);});
+Shiny.addCustomMessageHandler('shinyjs-refresh', function(params) { shinyjs.debugMessage('shinyjs: calling function "refresh" with parameters:'); shinyjs.debugMessage(params); shinyjs.refresh(params);});</script>
+  <script src="shinyjs/shinyjs-default-funcs.js"></script>
+  <script>shinyjs.debug = false;</script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+  <script>$(function() {
+            // Make the dashboard widgets sortable Using jquery UI
+            $('.connectedSortable').sortable({
+              placeholder: 'sort-highlight',
+              connectWith: '.connectedSortable',
+              handle: '.card-header, .nav-tabs',
+              forcePlaceholderSize: true,
+              zIndex: 999999
+            });
+            $('.connectedSortable .card-header, .connectedSortable .nav-tabs-custom').css('cursor', 'move');
+          });
+          </script>
+  <style>.control-sidebar, .control-sidebar:before {
+                width: 250px;
+                right: -250px;
+                bottom: 0;
+                transition: right 0.3s ease-in-out;
+              }
+              .control-sidebar-slide-open.control-sidebar-push .content-wrapper, 
+              .control-sidebar-slide-open.control-sidebar-push .main-footer, 
+              .control-sidebar-slide-open.control-sidebar-push-slide .content-wrapper, 
+              .control-sidebar-slide-open.control-sidebar-push-slide .main-footer {
+                margin-right: 250px;
+              }
+
+              @media (min-width: 768px)
+                body:not(.sidebar-mini-md) .content-wrapper, 
+                body:not(.sidebar-mini-md) .main-footer, 
+                body:not(.sidebar-mini-md) .main-header {
+                  transition: margin-left .3s ease-in-out;
+                  margin-left: 250px;
+                }
+              </style>
+</head>
+<body data-help="1" data-fullscreen="1" data-dark="1" data-scrollToTop="1" class="sidebar-mini">
+  <div class="wrapper">
+    <nav data-fixed="false" class="main-header navbar navbar-expand navbar-white navbar-light">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-widget="pushmenu" href="#">
+            <i class="fas fa-bars" role="presentation" aria-label="bars icon"></i>
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+            <i class="far fa-bell" role="presentation" aria-label="bell icon"></i>
+            <span class="badge badge-info navbar-badge">1</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg">
+            <span class="dropdown-item dropdown-header">You have 1 notifications</span>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item action-button" href="#" id="triggerAction2">
+              <i aria-label="triangle-exclamation icon" class="fas fa-triangle-exclamation text-danger mr-2" role="presentation"></i>
+              Error!
+            </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+            <i class="fas fa-list-check" role="presentation" aria-label="list-check icon"></i>
+            <span class="badge badge-info navbar-badge">1</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg">
+            <span class="dropdown-item dropdown-header">You have 1 tasks</span>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item action-button" href="#" id="triggerAction3">
+              <h5>
+                <small>My progress</small>
+                <small class="float-right">10%</small>
+              </h5>
+              <div class="progress mb-3 progress-xs">
+                <div class="progress-bar bg-orange progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%"></div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto navbar-right">
+        <li class="nav-item dropdown">
+          <a class="nav-link" data-toggle="dropdown" href="#" aria-expanded="false">
+            <i class="far fa-comments" role="presentation" aria-label="comments icon"></i>
+            <span class="badge badge-danger navbar-badge">1</span>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg">
+            <span class="dropdown-item dropdown-header">You have 1 messages</span>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item action-button" id="triggerAction1" href="#">
+              <div class="media">
+                <img src="https://adminlte.io/themes/v3/dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle"/>
+                <div class="media-body">
+                  <h3 class="dropdown-item-title">
+                    Divad Nojnarg
+                    <span class="float-right text-sm text-lime">
+                      <i class="far fa-user" role="presentation" aria-label="user icon"></i>
+                    </span>
+                  </h3>
+                  <p class="text-sm">message 1</p>
+                  <p class="text-sm text-muted">
+                    <i class="far fa-clock mr-1"></i>
+                    today
+                  </p>
+                </div>
+              </div>
+            </a>
+            <div class="dropdown-divider"></div>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a id="controlbar-toggle" class="nav-link" data-widget="control-sidebar" href="#">
+            <i class="fas fa-table-cells" role="presentation" aria-label="table-cells icon"></i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <aside id="sidebar" data-fixed="true" data-minified="TRUE" data-collapsed="FALSE" data-disable="FALSE" class="main-sidebar sidebar-light-primary elevation-3">
+      <div class="brand-link">
+        <a href="https://gmhcommunities.com" target="_blank">
+          <img src="gmh-logo.svg" style="width: 100%; height: auto; margin-top: 5px; margin-bottom: 5px; align: center;" alt="GMH Communities"/>
+        </a>
+      </div>
+      <div class="sidebar" id="sidebarItemExpanded">
+        <nav class="mt-2" inputId="sidebar_state">
+          <div id="sidebar_title" style="text-align: center; padding-top: 3px; padding-bottom: 3px;">
+            <p style="font-weight: bold; margin-bottom: 0px;">GMH Leasing Dashboard</p>
+            <p style="margin-top: 0px; margin-bottom: 0px;">Version: 1.0.0</p>
+            <p style="margin-top: 0px; margin-bottom: 0px;">Last Updated: 2024-08-30</p>
+          </div>
+          <hr/>
+          <ul class="nav nav-pills nav-sidebar flex-column sidebar-menu nav-child-indent" data-widget="treeview" role="menu" data-accordion="true">
+            <li class="nav-item">
+              <a class="nav-link" id="tab-dashboard" href="#" data-target="#shiny-tab-dashboard" data-toggle="tab" data-value="dashboard">
+                <i class="fas fa-gauge-high nav-icon" role="presentation" aria-label="gauge-high icon"></i>
+                <p>Dashboard</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab-reports" href="#" data-target="#shiny-tab-reports" data-toggle="tab" data-value="reports">
+                <i class="far fa-file-lines nav-icon" role="presentation" aria-label="file-lines icon"></i>
+                <p>
+                  Reports
+                  <span class="right badge badge-success">New!</span>
+                </p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="tab-properties" href="#" data-target="#shiny-tab-properties" data-toggle="tab" data-value="properties">
+                <i class="far fa-building nav-icon" role="presentation" aria-label="building icon"></i>
+                <p>
+                  Properties
+                  <span class="right badge badge-success">New!</span>
+                </p>
+              </a>
+            </li>
+            <div id="sidebar_menu" class="sidebarMenuSelectedTabItem" data-value="null"></div>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <div class="content-wrapper">
+      <section class="content">
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane container-fluid" id="shiny-tab-item1">
+            <div class="row">
+              <section class="connectedSortable ui-sortable col-lg-4">
+                <p class="text-center">Column 1</p>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 1-th card of the 1-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 1-th card of the 1-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 2-th card of the 1-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 2-th card of the 1-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+              </section>
+              <section class="connectedSortable ui-sortable col-lg-4">
+                <p class="text-center">Column 2</p>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 1-th card of the 2-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 1-th card of the 2-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 2-th card of the 2-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 2-th card of the 2-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+              </section>
+              <section class="connectedSortable ui-sortable col-lg-4">
+                <p class="text-center">Column 3</p>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 1-th card of the 3-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 1-th card of the 3-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card bs4Dash">
+                    <div class="card-header">
+                      <h3 class="card-title">I am the 2-th card of the 3-th column</h3>
+                      <div class="card-tools float-right">
+                        <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                          <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="card-body">Click on my header</div>
+                  </div>
+                  <script type="application/json">{"title":"I am the 2-th card of the 3-th column","solidHeader":true,"width":12,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane container-fluid" id="shiny-tab-item2">
+            <div class="col-sm-9">
+              <div class="card bs4Dash">
+                <div class="card-header">
+                  <h3 class="card-title">Card with messages</h3>
+                  <div class="card-tools float-right">
+                    <button class="btn btn-tool btn-sm" type="button" data-card-widget="collapse">
+                      <i class="fas fa-minus" role="presentation" aria-label="minus icon"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="col-sm-12">
+                    <div class="direct-chat-messages direct-chat direct-chat-success" style="height: 100%;">
+                      <div class="direct-chat-msg">
+                        <div class="direct-chat-info clearfix">
+                          <span class="direct-chat-name">Alexander Pierce</span>
+                          <span class="direct-chat-timestamp">20 Jan 2:00 pm</span>
+                        </div>
+                        <img class="direct-chat-img" src="https://adminlte.io/themes/AdminLTE/dist/img/user1-128x128.jpg"/>
+                        <div class="direct-chat-text">Is this template really for free? That's unbelievable!</div>
+                      </div>
+                      <div class="direct-chat-msg right">
+                        <div class="direct-chat-info clearfix">
+                          <span class="direct-chat-name">Dana Pierce</span>
+                          <span class="direct-chat-timestamp">21 Jan 4:00 pm</span>
+                        </div>
+                        <img class="direct-chat-img" src="https://adminlte.io/themes/AdminLTE/dist/img/user5-128x128.jpg"/>
+                        <div class="direct-chat-text">Indeed, that's unbelievable!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <script type="application/json">{"title":"Card with messages","solidHeader":true,"width":9,"collapsible":true,"closable":false,"maximizable":false,"gradient":false}</script>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <aside class="control-sidebar control-sidebar-light" id="controlbarId" data-collapsed="false" data-overlay="false" data-show="true" data-pin="true" data-slide="true">
+      <button id="controlbarPin" class="m-2 p-1 btn btn-xs btn-outline-secondary" type="button">
+        <i class="fas fa-thumbtack fa-lg" role="presentation" aria-label="thumbtack icon"></i>
+      </button>
+      <div class="control-sidebar-content" id="controlbarTitle">
+        <div class="tabbable">
+          <ul class="nav nav-tabs shiny-tab-input" id="controlbarmenu" data-tabsetid="7909">
+            <li class="nav-item">
+              <a href="#tab-7909-1" data-toggle="tab" data-value="Item 1" class="nav-link active" data-target="#tab-7909-1">Item 1</a>
+            </li>
+            <li class="nav-item">
+              <a href="#tab-7909-2" data-toggle="tab" data-value="Item 2" class="nav-link" data-target="#tab-7909-2">Item 2</a>
+            </li>
+          </ul>
+          <div class="tab-content" data-tabsetid="7909">
+            <div class="tab-pane active" data-value="Item 1" id="tab-7909-1">
+              <div class="form-group shiny-input-container">
+                <label class="control-label" id="obs-label" for="obs">Number of observations:</label>
+                <input class="js-range-slider" id="obs" data-skin="shiny" data-min="0" data-max="1000" data-from="500" data-step="1" data-grid="true" data-grid-num="10" data-grid-snap="false" data-prettify-separator="," data-prettify-enabled="true" data-keyboard="true" data-data-type="number"/>
+              </div>
+              <div class="col-sm-12" align="center">
+                <div id="dist" class="form-group shiny-input-radiogroup shiny-input-container" role="radiogroup" aria-labelledby="dist-label">
+                  <label class="control-label" id="dist-label" for="dist">Distribution type:</label>
+                  <div class="shiny-options-group">
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="dist" value="norm" checked="checked"/>
+                        <span>Normal</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="dist" value="unif"/>
+                        <span>Uniform</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="dist" value="lnorm"/>
+                        <span>Log-normal</span>
+                      </label>
+                    </div>
+                    <div class="radio">
+                      <label>
+                        <input type="radio" name="dist" value="exp"/>
+                        <span>Exponential</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane" data-value="Item 2" id="tab-7909-2">Simple text</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <footer class="main-footer" data-fixed="false">
+      <div class="float-right d-none d-sm-inline">2018</div>
+      <a href="https://twitter.com/divadnojnarg" target="_blank">@DivadNojnarg</a>
+    </footer>
+  </div>
+</body>
+</html>
