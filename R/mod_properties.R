@@ -7,7 +7,7 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_properties_ui <- function(id){
+mod_properties_ui <- function(id) {
   ns <- NS(id)
   tagList(
     bs4Card(
@@ -28,8 +28,8 @@ mod_properties_ui <- function(id){
 #' Properties Server Function
 #'
 #' @noRd
-mod_properties_server <- function(id){
-  moduleServer(id, function(input, output, session){
+mod_properties_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     output$leasing_performance_chart <- plotly::renderPlotly({

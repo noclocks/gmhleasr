@@ -1,4 +1,3 @@
-
 #' Entrata API Request Validations
 #'
 #' @name entrata_request_validation
@@ -33,11 +32,9 @@ NULL
 #' @importFrom cli cli_abort
 #' @importFrom rlang caller_arg caller_env
 validate_entrata_request_endpoint <- function(
-  endpoint,
-  arg = rlang::caller_arg(endpoint),
-  call = rlang::caller_env()
-) {
-
+    endpoint,
+    arg = rlang::caller_arg(endpoint),
+    call = rlang::caller_env()) {
   if (!endpoint %in% entrata_api_request_endpoints) {
     cli::cli_abort(
       message = c(
@@ -60,9 +57,7 @@ validate_entrata_request_endpoint_method <- function(
     method,
     arg_endpoint = rlang::caller_arg(endpoint),
     arg_method = rlang::caller_arg(method),
-    call = rlang::caller_env()
-) {
-
+    call = rlang::caller_env()) {
   entrata_api_request_endpoint_methods_filtered <- entrata_api_request_endpoint_methods |>
     dplyr::filter(endpoint == !!endpoint)
 
@@ -75,9 +70,7 @@ validate_entrata_request_endpoint_method <- function(
       ),
       call = call
     )
-
   }
-
 }
 
 #' @rdname entrata_request_validation
@@ -91,9 +84,7 @@ validate_entrata_request_method_params <- function(
     arg_endpoint = rlang::caller_arg(endpoint),
     arg_method = rlang::caller_arg(method),
     arg_method_params = rlang::caller_arg(method_params),
-    call = rlang::caller_env()
-) {
-
+    call = rlang::caller_env()) {
   expected_params <- entrata_api_request_parameters[[endpoint]][[method]]
 
   if (is.null(expected_params)) {
@@ -187,9 +178,7 @@ validate_entrata_request <- function(
     arg_method = rlang::caller_arg(method),
     arg_method_params = rlang::caller_arg(method_params),
     call = rlang::caller_env(),
-    ...
-) {
-
+    ...) {
   validate_entrata_request_endpoint(
     endpoint,
     arg_endpoint,
@@ -215,7 +204,6 @@ validate_entrata_request <- function(
   )
 
   return(TRUE)
-
 }
 
 #' Validate Entrata Report Name
@@ -237,18 +225,15 @@ validate_entrata_request <- function(
 #' @importFrom dplyr filter pull
 #' @importFrom rlang caller_arg caller_env
 validate_entrata_report_name <- function(
-  report_name,
-  arg = rlang::caller_arg(report_name),
-  call = rlang::caller_env(),
-  ...
-) {
-
+    report_name,
+    arg = rlang::caller_arg(report_name),
+    call = rlang::caller_env(),
+    ...) {
   report_names <- get_entrata_reports_list(latest_only = TRUE) |>
     dplyr::pull("report_name") |>
     unique()
 
   if (!report_name %in% report_names) {
-
     cli::cli_abort(
       c(
         "The report name provided, {.arg report_name}, is not valid.",
@@ -259,15 +244,12 @@ validate_entrata_report_name <- function(
       ),
       call = call
     )
-
   } else {
-
     cli::cli_alert_info(
       c(
         "The report name provided, {.arg report_name}, is valid."
       )
     )
-
   }
 }
 

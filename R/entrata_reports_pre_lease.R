@@ -92,9 +92,7 @@ entrata_pre_lease_report <- function(
     arrange_by_property = c("0", "1"),
     subtotals = list("summary", "details"),
     yoy = c("1", "0"),
-    ...
-) {
-
+    ...) {
   # get report version
   latest_report_version <- get_latest_report_version("pre_lease")
 
@@ -221,7 +219,6 @@ entrata_pre_lease_report <- function(
     purrr::compact()
 
   return(out)
-
 }
 
 # property ids ------------------------------------------------------------

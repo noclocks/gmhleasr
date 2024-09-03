@@ -51,7 +51,6 @@ get_latest_report_version <- function(report_name) {
 #' @importFrom httr2 req_perform resp_body_json
 #' @importFrom rlang .data .env
 get_entrata_reports_list <- function(latest_only = TRUE) {
-
   req <- entrata(endpoint = "reports", method = "getReportList")
   res <- httr2::req_perform(req)
   res_content <- res |>
@@ -191,6 +190,3 @@ get_entrata_report_info <- function(report_name, report_version = "latest") {
 
   return(res_report_info)
 }
-
-
-

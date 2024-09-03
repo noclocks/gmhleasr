@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Shiny App Server
@@ -16,12 +15,9 @@ log_app_event <- function(
     level = "info",
     session = shiny::getDefaultReactiveDomain(),
     user = shiny::getDefaultReactiveDomain(),
-    ...
-) {
-
+    ...) {
   ts <- strftime(Sys.time(), " [%F %T] ")
   cli::cli_alert_info("[{toupper(level)}]: ({ts}) {event}")
-
 }
 
 
@@ -41,7 +37,6 @@ log_app_event <- function(
 #' @importFrom shiny reactiveValues reactive req bindEvent renderText observe
 #'
 app_server <- function(input, output, session) {
-
   # log session start
   log_app_event("Shiny Session Started", level = "INFO")
 
@@ -146,12 +141,4 @@ app_server <- function(input, output, session) {
   #   shiny::bindEvent(
   #     input$logout
   #   )
-
-
-
-
-
 }
-
-
-

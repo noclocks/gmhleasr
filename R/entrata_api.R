@@ -24,7 +24,6 @@
 #' @importFrom config get
 EntrataAPI <- R6::R6Class(
   classname = "EntrataAPI",
-
   public = list(
     config = NULL,
     user_agent = NULL,
@@ -209,8 +208,6 @@ EntrataAPI <- R6::R6Class(
         parse_entrata_property_ids()
     }
   ),
-
-
   private = NULL,
   active = NULL,
   inherit = NULL,
@@ -221,5 +218,4 @@ EntrataAPI <- R6::R6Class(
   cloneable = TRUE,
   parent_env = parent.frame()
   # lock
-
 )

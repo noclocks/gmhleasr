@@ -7,7 +7,7 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_leases_ui <- function(id){
+mod_leases_ui <- function(id) {
   ns <- NS(id)
   tagList(
     bs4Card(
@@ -22,8 +22,8 @@ mod_leases_ui <- function(id){
 #' Leases Server Function
 #'
 #' @noRd
-mod_leases_server <- function(id){
-  moduleServer(id, function(input, output, session){
+mod_leases_server <- function(id) {
+  moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     output$lease_info <- renderUI({

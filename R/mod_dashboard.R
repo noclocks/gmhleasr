@@ -7,8 +7,7 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
-mod_dashboard_ui <- function(id){
-
+mod_dashboard_ui <- function(id) {
   ns <- NS(id)
 
   htmltools::tagList(
@@ -34,24 +33,24 @@ mod_dashboard_ui <- function(id){
         width = 12,
         picker_entrata_properties(ns("properties")),
         htmltools::tags$h1(
-          'Leasing Summary Report',
-          style = 'text-align: center; margin-top: 20px;'
+          "Leasing Summary Report",
+          style = "text-align: center; margin-top: 20px;"
         ),
         htmltools::tags$div(
           style = "display: flex; justify-content: center; align-items: center;",
-          shiny::downloadButton(ns('download_excel'), 'Export to Excel')
+          shiny::downloadButton(ns("download_excel"), "Export to Excel")
         ),
         htmltools::tags$div(
-          style = 'text-align: center;',
+          style = "text-align: center;",
           shinyFeedback::loadingButton(
-            ns('refresh_data'),
-            'Refresh Data'
+            ns("refresh_data"),
+            "Refresh Data"
           ),
           htmltools::tags$h5(
-            'Last Refresh:',
+            "Last Refresh:",
             htmltools::tags$text(
-              style = 'font-weight: bolder;',
-              shiny::textOutput(ns('data_last_refreshed'))
+              style = "font-weight: bolder;",
+              shiny::textOutput(ns("data_last_refreshed"))
             )
           )
         )
@@ -60,21 +59,18 @@ mod_dashboard_ui <- function(id){
     shiny::fluidRow(
       shiny::column(
         width = 12,
-        DT::DTOutput(ns('summary_table')) |> shinycustomloader::withLoader()
+        DT::DTOutput(ns("summary_table")) |> shinycustomloader::withLoader()
       )
     ),
     htmltools::tags$br()
   )
-
 }
 
 #' Executive Dashboard Server Function
 #'
 #' @noRd
 mod_dashboard_server <- function(id, app_globals) {
-
-  shiny::moduleServer(id, function(input, output, session){
-
+  shiny::moduleServer(id, function(input, output, session) {
     ns <- session$ns
 
     reports_queue_id <- shiny::reactiveVal(NULL)
@@ -85,13 +81,11 @@ mod_dashboard_server <- function(id, app_globals) {
 
     # get "pre_lease" summary data from reports endpoint
     pre_lease_report_data <- shiny::reactive({
-
       shiny::req(input$properties)
 
       entrata_pre_lease_report(
         property_ids = input$properties
       )
-
     }) |>
       shiny::bindCache(
         input$properties,
@@ -160,9 +154,5 @@ mod_dashboard_server <- function(id, app_globals) {
         )
       )
     })
-
-
-
-
   })
 }

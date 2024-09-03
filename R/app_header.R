@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : App Header Module
@@ -52,8 +51,7 @@ NULL
 app_header_ui <- function(
     id,
     title = "GMH Leasing Dashboard",
-    ...
-) {
+    ...) {
   ns <- shiny::NS(id)
 
   bs4Dash::bs4DashNavbar(
@@ -71,7 +69,6 @@ app_header_ui <- function(
     status = "white",
     border = TRUE,
     leftUi = htmltools::tagList(
-
       htmltools::tags$li(
         class = "dropdown",
         shiny::actionButton(
@@ -80,7 +77,6 @@ app_header_ui <- function(
           icon = shiny::icon("refresh")
         )
       ),
-
       htmltools::tags$li(
         class = "dropdown",
         shiny::actionButton(
@@ -89,7 +85,6 @@ app_header_ui <- function(
           icon = shiny::icon("info-circle")
         )
       ),
-
       htmltools::tags$li(
         class = "dropdown",
         shiny::actionButton(
@@ -99,15 +94,14 @@ app_header_ui <- function(
         )
       )
     ),
-
     rightUi = shinydashboard::dropdownMenu(
       type = "messages",
       badgeStatus = NULL,
-      icon = shiny::icon('user'),
+      icon = shiny::icon("user"),
       headerText = shiny::textOutput("signed_in_as"),
       shiny::tags$li(
         shiny::actionLink(
-          style = 'display: inline-flex; align-items: center; padding: 2.5px 50px; width: -webkit-fill-available;',
+          style = "display: inline-flex; align-items: center; padding: 2.5px 50px; width: -webkit-fill-available;",
           "noclocksauthr__sign_out",
           label = "Sign Out",
           icon = shiny::icon("sign-out-alt")
@@ -126,9 +120,7 @@ app_header_ui <- function(
 #' @importFrom shiny moduleServer bindEvent observe showModal modalDialog
 #' @importFrom shinyWidgets confirmSweetAlert
 app_header_server <- function(id, app_globals = NULL) {
-
   shiny::moduleServer(id, function(input, output, session) {
-
     ns <- session$ns
 
     # content -----------------------------------------------------------------
@@ -186,7 +178,6 @@ app_header_server <- function(id, app_globals = NULL) {
       }
     }) |>
       shiny::bindEvent(input$confirm_refresh)
-
   })
 }
 
@@ -194,9 +185,7 @@ app_header_server <- function(id, app_globals = NULL) {
 # internal ----------------------------------------------------------------
 
 .render_content <- function(
-    content_dir = app_sys("content")
-) {
-
+    content_dir = app_sys("content")) {
   rmd_files <- fs::dir_ls(content_dir, glob = "*.Rmd")
 
   purrr::walk(
@@ -221,7 +210,6 @@ app_header_server <- function(id, app_globals = NULL) {
       }
     }
   )
-
 }
 
 # .header_dropdown <- function(id, text, icon) {

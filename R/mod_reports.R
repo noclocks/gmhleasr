@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Reports Module
@@ -11,7 +10,6 @@
 # UI ----------------------------------------------------------------------
 
 mod_reports_ui <- function(id, ...) {
-
   ns <- shiny::NS(id)
 
   htmltools::tagList(
@@ -26,15 +24,12 @@ mod_reports_ui <- function(id, ...) {
         shinycustomloader::withLoader()
     )
   )
-
 }
 
 # SERVER ------------------------------------------------------------------
 
 mod_reports_server <- function(id) {
-
   moduleServer(id, function(input, output, session) {
-
     ns <- session$ns
 
     tbl_prep <- shiny::reactive({
@@ -42,22 +37,13 @@ mod_reports_server <- function(id) {
     })
 
     output$summary_table <- DT::renderDT({
-
       shiny::req(input$report, tbl_prep())
 
       dat <- tbl_prep()$summary
 
       tbl_prep() |>
         purrr::pluck("summary") |>
-        dplyr::group_by(
-
-        )
-
+        dplyr::group_by()
     })
-
-
-
   })
-
 }
-

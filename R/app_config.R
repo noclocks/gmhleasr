@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : App Configuration
@@ -41,16 +40,13 @@ get_app_config <- function(
         "R_CONFIG_FILE",
         app_sys("config/config.yml")
       )
-    )
-) {
-
+    )) {
   config::get(
     value = value,
     config = config,
     file = file,
     use_parent = use_parent
   )
-
 }
 
 #' App System File
@@ -64,7 +60,5 @@ get_app_config <- function(
 #'
 #' @keywords internal
 app_sys <- function(...) {
-
   system.file(file.path("app/www/", ...), package = "gmhleasr", mustWork = FALSE)
-
 }

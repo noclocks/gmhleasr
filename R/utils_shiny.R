@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Shiny Utilities
@@ -20,9 +19,9 @@
 #'
 #' @importFrom shiny fluidRow column
 flucol <- function(..., width = 12, offset = 0) {
-
-  if (!is.numeric(width) || (width < 1) || (width > 12))
+  if (!is.numeric(width) || (width < 1) || (width > 12)) {
     stop("column width must be between 1 and 12")
+  }
 
   shiny::fluidRow(
     shiny::column(
@@ -47,9 +46,7 @@ insert_logo <- function(
     file,
     style = "background-color: #FFF; width: 100%; height: 100%;",
     width = NULL,
-    ref = "#"
-) {
-
+    ref = "#") {
   shiny::tags$div(
     style = style,
     shiny::tags$a(
@@ -60,7 +57,6 @@ insert_logo <- function(
       href = ref
     )
   )
-
 }
 
 #' Icon Text
@@ -79,9 +75,7 @@ insert_logo <- function(
 #' @importFrom htmltools tagList
 #' @importFrom shiny icon
 icon_text <- function(icon, text) {
-
   if (is.character(icon)) i <- shiny::icon(icon) else i <- icon
   t <- paste0(" ", text)
   htmltools::tagList(htmltools::tags$div(i, t))
-
 }

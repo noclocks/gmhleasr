@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Shiny App Inputs
@@ -36,16 +35,14 @@
 #'
 #' @importFrom shinyWidgets pickerInput pickerOptions
 picker <- function(
-  id,
-  label,
-  choices,
-  selected = choices,
-  multiple = TRUE,
-  count_threshold = 3,
-  choice_options = NULL,
-  ...
-) {
-
+    id,
+    label,
+    choices,
+    selected = choices,
+    multiple = TRUE,
+    count_threshold = 3,
+    choice_options = NULL,
+    ...) {
   shinyWidgets::pickerInput(
     id = id,
     label = label,
@@ -68,7 +65,6 @@ picker <- function(
     autocomplete = TRUE,
     ...
   )
-
 }
 
 #' Picker Input for Entrata Reports
@@ -81,16 +77,16 @@ picker <- function(
 #' @return a
 #' @export
 picker_entrata_reports <- function(
-  id,
-  label = "Select Report",
-  selected = "pre_lease",
-  ...
-) {
-
+    id,
+    label = "Select Report",
+    selected = "pre_lease",
+    ...) {
   entrata_reports <- get_entrata_reports_list()
   entrata_report_names <- entrata_reports$report_name
 
-  available_reports <- entrata_report_names |> unique() |> sort()
+  available_reports <- entrata_report_names |>
+    unique() |>
+    sort()
 
   picker(
     id = id,
@@ -100,17 +96,14 @@ picker_entrata_reports <- function(
     multiple = FALSE,
     ...
   )
-
 }
 
 picker_entrata_properties <- function(
-  id,
-  label = "Select Property",
-  selected = NULL,
-  multiple = TRUE,
-  ...
-) {
-
+    id,
+    label = "Select Property",
+    selected = NULL,
+    multiple = TRUE,
+    ...) {
   entrata_properties <- entrata_properties()
   entrata_property_names <- entrata_properties$property_name
   entrata_property_ids <- entrata_properties$property_id
@@ -126,7 +119,6 @@ picker_entrata_properties <- function(
     multiple = multiple,
     ...
   )
-
 }
 
 # picker_date <- function() {

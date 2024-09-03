@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : App Assets
@@ -50,7 +49,6 @@
 #' @importFrom shinyFeedback useShinyFeedback
 #' @importFrom waiter useWaiter
 app_assets <- function(...) {
-
   htmltools::tags$head(
     app_meta(),
     app_favicon(),
@@ -60,7 +58,6 @@ app_assets <- function(...) {
     waiter::useWaiter()
     # rintrojs::useRintrojs()
   )
-
 }
 
 # <meta> ------------------------------------------------------------------
@@ -115,9 +112,7 @@ app_meta <- function(
     twitter_creator = "@noclocksdev",
     twitter_card_type = "summary_large_image",
     twitter_site = "@noclocksdev",
-    ...
-) {
-
+    ...) {
   metathis::meta() |>
     metathis::meta_viewport(maximum_scale = 1) |>
     metathis::meta_general(
@@ -148,7 +143,6 @@ app_meta <- function(
       twitter_card_type = twitter_card_type,
       twitter_site = twitter_site
     )
-
 }
 
 
@@ -177,9 +171,7 @@ app_meta <- function(
 #' @importFrom htmltools tags
 #' @importFrom cli cli_abort
 app_favicon <- function(
-    path = app_sys("favicon.ico")
-) {
-
+    path = app_sys("favicon.ico")) {
   if (!file.exists(path)) {
     cli::cli_abort(
       "Failed to find favicon at provided path: {.path {path}}"
@@ -193,7 +185,6 @@ app_favicon <- function(
       href = path
     )
   )
-
 }
 
 # logo --------------------------------------------------------------------
@@ -212,9 +203,7 @@ app_favicon <- function(
 app_logo <- function(
     path = "public/images/logos/gmh-logo.svg",
     alt = "GMH Communities",
-    style = "width: 250px; height: auto;"
-) {
-
+    style = "width: 250px; height: auto;") {
   if (!file.exists(path)) {
     cli::cli_abort(
       "Failed to find logo at provided path: {.path {path}}"
@@ -226,5 +215,4 @@ app_logo <- function(
     alt = alt,
     style = style
   )
-
 }

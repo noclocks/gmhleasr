@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Shiny App Footer Module
@@ -28,31 +27,29 @@ NULL
 #' @importFrom bs4Dash bs4DashFooter
 #' @importFrom shiny NS
 app_footer_ui <- function(id) {
-
   ns <- shiny::NS(id)
 
   bs4Dash::bs4DashFooter(
     fixed = TRUE,
     left = htmltools::tags$p(
-      'Build for use by ',
+      "Build for use by ",
       htmltools::tags$a(
-        'GMH Communities',
-        href = 'https://gmhcommunities.com',
-        target = '_blank'
+        "GMH Communities",
+        href = "https://gmhcommunities.com",
+        target = "_blank"
       )
     ),
     right = htmltools::tags$p(
-      'Developed by ',
+      "Developed by ",
       htmltools::tags$a(
-        'No Clocks, LLC',
-        href = 'https://noclocks.dev',
-        target = '_blank'
+        "No Clocks, LLC",
+        href = "https://noclocks.dev",
+        target = "_blank"
       ),
-      ' | ', htmltools::HTML("&copy;"), ' Copyright ',
-      format(Sys.Date(), '%Y')
+      " | ", htmltools::HTML("&copy;"), " Copyright ",
+      format(Sys.Date(), "%Y")
     )
   )
-
 }
 
 #' @rdname app_footer

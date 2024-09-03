@@ -20,13 +20,11 @@
 #'
 #' @importFrom shiny runApp
 run_app <- function(
-  onStart = NULL,
-  options = list(),
-  enableBookmarking = NULL,
-  uiPattern = "/",
-  ...
-) {
-
+    onStart = NULL,
+    options = list(),
+    enableBookmarking = NULL,
+    uiPattern = "/",
+    ...) {
   shinyOptions(cache = cachem::cache_mem(max_size = 500e6))
   # shinyOptions(cache = cachem::cache_disk(file.path(dirname(tempdir()), "gmhleasr"))
   shinyOptions(cache = cachem::cache_disk("./app_cache"))
@@ -75,9 +73,7 @@ run_with_opts <- function(
     app,
     opts,
     maintenance_page = maintenance_page,
-    print = TRUE
-) {
-
+    print = TRUE) {
   if (Sys.getenv("APP_MAINTANENCE_ACTIVE", "FALSE") == "TRUE") {
     app <- shiny::shinyApp(
       ui = maintenance_page,
@@ -99,11 +95,3 @@ run_with_opts <- function(
 
   return(app)
 }
-
-
-
-
-
-
-
-
