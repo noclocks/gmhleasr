@@ -8,6 +8,7 @@
 
 ## Bug Fixes
 
+- Fix test issues related to validation of method param types ([467d68a](https://github.com/noclocks/gmhleasr/commit/467d68a355a0cfb42c94c0e55527e502a6e60c69))  - (Jimmy Briggs)
 - Fix validations in core entrata() function ([25fdafc](https://github.com/noclocks/gmhleasr/commit/25fdafc44e0bc2fd60dcc43df6d4e532eae20fdd))  - (Jimmy Briggs)
 - Fix leases test ([447c86e](https://github.com/noclocks/gmhleasr/commit/447c86e2fd7c771af43bcd11ef78c7a5375798fd))  - (Jimmy Briggs)
 - Fix and refactor ([4a3fc9e](https://github.com/noclocks/gmhleasr/commit/4a3fc9e4ef6c78f4d8bcc7e842f9b337e8f0a06b))  - (Jimmy Briggs)
