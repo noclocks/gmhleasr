@@ -1,10 +1,10 @@
-pandoc: 3.1.11
+pandoc: '3.2'
 pkgdown: 2.1.0
 pkgdown_sha: ~
 articles:
   entrata: entrata.html
   gmhleasr: gmhleasr.html
-last_built: 2024-09-03T22:18Z
+last_built: 2024-08-30T17:50Z
 urls:
-  reference: https://docs.noclocks.dev/gmhleasr/reference
-  article: https://docs.noclocks.dev/gmhleasr/articles
+  reference: https://docs.noclocks.dev/gmhleasr/main/reference
+  article: https://docs.noclocks.dev/gmhleasr/main/articles
