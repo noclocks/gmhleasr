@@ -2,11 +2,16 @@
 % Please edit documentation in R/entrata_api.R
 \name{EntrataAPI}
 \alias{EntrataAPI}
-\title{Entrata API Manager}
+\title{Entrata API Manager Client}
 \description{
-This is a wrapper class that provides a high-level interface for interacting
-with the Entrata API. It handles authentication, request construction, and
-response parsing, making it easy for developers to work with the Entrata API.
+This is a wrapper \code{\link[R6:R6Class]{R6::R6Class()}} that provides a high-level interface for
+interacting with the \href{https://api.entrata.com/v1/documentation/}{Entrata API}.
+
+It handles authentication, request parameter validation and construction,
+and response parsing, making it easy for developers to work with the API.
+}
+\details{
+This class ...
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}

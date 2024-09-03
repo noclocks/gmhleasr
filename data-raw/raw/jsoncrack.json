@@ -1,0 +1,2538 @@
+{
+  "response": {
+    "requestId": "15",
+    "code": 200,
+    "result": {
+      "reports": {
+        "report": [
+          {
+            "id": 775732,
+            "reportName": "weekly_performance",
+            "systemName": "Weekly Performance",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.0",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775735,
+            "reportName": "add_ons",
+            "systemName": "Add Ons",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/09/24"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/08/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/08/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/11/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/11/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775753,
+            "reportName": "income_statement_-_budget_vs_actual",
+            "systemName": "Income Statement - Budget vs Actual",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.4",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.3",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/09/23"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "\"Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.\t\"",
+                  "expiryDate": "09/13/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/12/22"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/12/22"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/12/22"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/22"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775759,
+            "reportName": "resident_birthdays",
+            "systemName": "Resident Birthdays",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version.",
+                  "expiryDate": "11/10/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775790,
+            "reportName": "lead_conversion",
+            "systemName": "Lead Conversion",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.6",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.5",
+                  "isLatest": false,
+                  "expiryDate": "07/11/24"
+                },
+                {
+                  "version": "3.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "3.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "09/14/22"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please use the latest version of this report",
+                  "expiryDate": "09/08/21"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please use the latest version of this report",
+                  "expiryDate": "09/08/21"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775791,
+            "reportName": "online_applications",
+            "systemName": "Application Progress Summary",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775804,
+            "reportName": "pre_lease",
+            "systemName": "Pre-Lease",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775805,
+            "reportName": "box_score",
+            "systemName": "Box Score",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.6",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please use the latest version",
+                  "expiryDate": "05/12/21"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Please use the latest version",
+                  "expiryDate": "05/12/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775814,
+            "reportName": "lease_activity",
+            "systemName": "Lease Activity",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.5",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version.",
+                  "expiryDate": "09/08/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775817,
+            "reportName": "monthly_reconciliation_new",
+            "systemName": "Monthly Reconciliation",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.1",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775818,
+            "reportName": "insurance_policy_details",
+            "systemName": "Insurance Policy Details",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.5",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 775824,
+            "reportName": "traffic_and_events",
+            "systemName": "Traffic and Events",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "expiryDate": "07/11/24"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "This report version is being deprecated, please use an updated version of the report.",
+                  "expiryDate": "07/14/21"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "This report version is being deprecated, please use an updated version of the report.",
+                  "expiryDate": "05/12/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775827,
+            "reportName": "inspection_manager_details",
+            "systemName": "Inspection Manager Details",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is no longer being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/17/21"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "11/17/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775831,
+            "reportName": "resident_deposit_refunds",
+            "systemName": "Resident Deposit Refunds",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "11/17/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775833,
+            "reportName": "specials",
+            "systemName": "Specials",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "This version dos not support the updates made by the Specials product team and will not return data.  Please update to v2.1 of the report.",
+                  "expiryDate": "10/27/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775836,
+            "reportName": "lease_commission",
+            "systemName": "Lease Commission",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.7",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version. 5/11/22",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version.5/11/22",
+                  "expiryDate": "05/11/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775840,
+            "reportName": "market_rent_schedule",
+            "systemName": "Market Rent Schedule",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775842,
+            "reportName": "payment_details",
+            "systemName": "Payment Details",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.9",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775850,
+            "reportName": "receipts_by_charge_code",
+            "systemName": "Receipts By Charge Codes",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/09/24"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/11/22"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/11/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/09/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/08/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775859,
+            "reportName": "gpr_consolidate_by",
+            "systemName": "Gross Potential Rent (GPR)",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.7",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775873,
+            "reportName": "availability",
+            "systemName": "Availability",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "4.4",
+                  "isLatest": true
+                },
+                {
+                  "version": "4.3",
+                  "isLatest": false
+                },
+                {
+                  "version": "4.2",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "4.1",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "4.0",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "3.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "3.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "3.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "3.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version.",
+                  "expiryDate": "05/12/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775876,
+            "reportName": "resident_data",
+            "systemName": "Resident Data",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.9",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.        .",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Due to the extensive data this report holds we are requesting clients update to the newest version. This is in order to ensure that the load times for this report are not so significant causing the report to fail or cause a load on the database.\r\nWe understand that limiting the statuses selected will take more manual set up but this will increase load times by 80% and it will be faster overall to run separate reports for each status group then running one report for all status groups when multiple properties are selected.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Due to the extensive data this report holds we are requesting clients update to the newest version. This is in order to ensure that the load times for this report are not so significant causing the report to fail or cause a load on the database.\r\nWe understand that limiting the statuses selected will take more manual set up but this will increase load times by 80% and it will be faster overall to run separate reports for each status group then running one report for all status groups when multiple properties are selected.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Due to the extensive data this report holds we are requesting clients update to the newest version. This is in order to ensure that the load times for this report are not so significant causing the report to fail or cause a load on the database.\r\nWe understand that limiting the statuses selected will take more manual set up but this will increase load times by 80% and it will be faster overall to run separate reports for each status group then running one report for all status groups when multiple properties are selected.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to newest version as it is optimized, and includes new column options.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to newest version as it is optimized, and includes new column options.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to newest version as it is optimized, and includes new column options.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "07/14/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775898,
+            "reportName": "work_order_summary",
+            "systemName": "Work Order Summary",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.4",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775908,
+            "reportName": "courses",
+            "systemName": "Courses",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775914,
+            "reportName": "buildings_and_units",
+            "systemName": "Buildings And Units",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.9",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775921,
+            "reportName": "delinquency",
+            "systemName": "Delinquency",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/09/24"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/09/24"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "05/09/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775937,
+            "reportName": "household_documents",
+            "systemName": "Household Documents",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.4",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775951,
+            "reportName": "leasing_center_conversion",
+            "systemName": "Leasing Center Conversion",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.1",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775959,
+            "reportName": "scheduled_charges_by_lease",
+            "systemName": "Scheduled Charges by Lease",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.0",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 775981,
+            "reportName": "resident_charges",
+            "systemName": "Resident Charges",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.0",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/09/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/09/24"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 775996,
+            "reportName": "resident_aged_receivables",
+            "systemName": "Resident Aged Receivables",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report."
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/10/24"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/10/24"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/10/23"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/09/23"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/09/23"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/10/23"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/10/22"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/10/22"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "09/07/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776008,
+            "reportName": "resident_deposit_audit",
+            "systemName": "Resident Deposit Audit",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Due to data base changes, this version of the report will no longer function correctly.  Please update to the latest version of the report, which will accommodate these changes.",
+                  "expiryDate": "05/11/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776009,
+            "reportName": "recurring_charges_forecast",
+            "systemName": "Recurring Charges Forecast",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776050,
+            "reportName": "transmissions",
+            "systemName": "Transmissions",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.1",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 776060,
+            "reportName": "work_order_details",
+            "systemName": "Work Order Details",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "2.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776065,
+            "reportName": "leases_without_rent_charges",
+            "systemName": "Leases Without Rent Charges",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.1",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 776066,
+            "reportName": "duplicate_rent_charges",
+            "systemName": "Leases with Multiple Rent Charges",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.0",
+                  "isLatest": true
+                }
+              ]
+            }
+          },
+          {
+            "id": 776088,
+            "reportName": "packages",
+            "systemName": "Packages",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.5",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the latest version of this report",
+                  "expiryDate": "07/14/21"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the latest version of this report",
+                  "expiryDate": "07/14/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776089,
+            "reportName": "resident_balances",
+            "systemName": "Resident Balances",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776106,
+            "reportName": "trending_occupancy",
+            "systemName": "Trending Occupancy",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.9",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.8",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 776115,
+            "reportName": "application_data",
+            "systemName": "Application Data",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.1",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 776116,
+            "reportName": "lease_data",
+            "systemName": "Lease Data",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.4",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "expiryDate": "07/11/24"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776123,
+            "reportName": "prebill",
+            "systemName": "Prebill",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776179,
+            "reportName": "leasing_performance",
+            "systemName": "Leasing Performance",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.7",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.6",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.5",
+                  "isLatest": false,
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "3.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/09/22"
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "This version was Entrata Only and a newer version exists.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is no longer being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/17/21"
+                },
+                {
+                  "version": "3.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to one of the newer versions of Leasing Performance.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Update to newest version as it is optimized.",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 776276,
+            "reportName": "rent_roll1_0",
+            "systemName": "Rent Roll",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "3.7",
+                  "isLatest": true
+                },
+                {
+                  "version": "3.6",
+                  "isLatest": false
+                },
+                {
+                  "version": "3.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "06/11/24"
+                },
+                {
+                  "version": "3.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "3.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "3.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.9",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "02/08/23"
+                },
+                {
+                  "version": "2.8",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "2.7",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.6",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "2.5",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report",
+                  "expiryDate": "05/11/22"
+                },
+                {
+                  "version": "2.4",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.3",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.2",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "2.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "07/13/22"
+                },
+                {
+                  "version": "2.0",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "01/12/22"
+                },
+                {
+                  "version": "1.9",
+                  "isLatest": false,
+                  "titleAddendum": "Due to data base changes, this version of the report will no longer function correctly.  Please update to the latest version of the report, which will accommodate these changes.",
+                  "expiryDate": "05/11/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 780205,
+            "reportName": "unit_type_rates",
+            "systemName": "Unit Type Rates",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.5",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.3",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Please update to the newest version of the report.",
+                  "expiryDate": "03/09/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 780715,
+            "reportName": "lease_execution_(applicant)",
+            "systemName": "Lease Execution Summary (Applicant)",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.8",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.7",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.5",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "10/11/23"
+                },
+                {
+                  "version": "1.4",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "03/09/22"
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "01/12/22"
+                }
+              ]
+            }
+          },
+          {
+            "id": 784118,
+            "reportName": "fmo_status",
+            "systemName": "FMO Status",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.3",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.2",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                }
+              ]
+            }
+          },
+          {
+            "id": 786983,
+            "reportName": "leasing_goals",
+            "systemName": "Leasing Goals",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is seldom being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "05/10/23"
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false,
+                  "titleAddendum": "Usage metrics indicate that this version is no longer being used. If you have this report version added as an instance in Company Reports in New Reporting, added to any page in Reports, or have it included in any Packets, please update to the latest version of the report.",
+                  "expiryDate": "11/17/21"
+                }
+              ]
+            }
+          },
+          {
+            "id": 788501,
+            "reportName": "property_checklists",
+            "systemName": "Property Checklists",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.2",
+                  "isLatest": true
+                },
+                {
+                  "version": "1.1",
+                  "isLatest": false
+                },
+                {
+                  "version": "1.0",
+                  "isLatest": false
+                }
+              ]
+            }
+          },
+          {
+            "id": 792875,
+            "reportName": "gmh_weekly_pre_leasing_report",
+            "systemName": "GMH Weekly Pre Leasing Report",
+            "reportVersions": {
+              "reportVersion": [
+                {
+                  "version": "1.0",
+                  "isLatest": true
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

@@ -58,3 +58,4 @@ c(
 
 
 usethis::use_vignette("entrata", "Entrata API")
+usethis::use_vignette("decisions", "Architecture Decision Records")

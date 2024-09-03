@@ -1,0 +1,32 @@
+---
+title: "Architecture Decision Records"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Architecture Decision Records}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# library(gmhleasr)
+```
+
+> Architecture Decision Records (ADRs)
+> =====================================
+> ADRs are a way to capture the context, decision, and consequences of a decision made during the development of a software system. ADRs are a lightweight way to document decisions and are intended to be kept in the project's repository.
+
+## Table of Contents
+
+1. [Decisions](#decisions)
+2. [References](#references)
+
+## Decisions
+
+### [ADR-001: App Globals](decisions/adr-001-app-globals.md)
