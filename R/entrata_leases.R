@@ -64,9 +64,7 @@ entrata_leases <- function(
     pagination_page_number = 1,
     pagination_page_size = 500,
     include_pagination_links = FALSE,
-    ...
-) {
-
+    ...) {
   if (length(property_id) > 1) {
     cli::cli_alert_warning("The {.field getLeases} method requires a single {.field propertyId}.")
     property_id <- property_id[[1]]

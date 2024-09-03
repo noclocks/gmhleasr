@@ -1,4 +1,3 @@
-
 # exported ----------------------------------------------------------------
 
 #' Entrata API Properties Endpoint
@@ -30,12 +29,10 @@
 #' @importFrom httr2 req_perform
 #' @importFrom purrr compact
 entrata_properties <- function(
-  property_ids = c(NULL),
-  property_lookup_codes = NULL,
-  show_all_status = FALSE,
-  ...
-) {
-
+    property_ids = c(NULL),
+    property_lookup_codes = NULL,
+    show_all_status = FALSE,
+    ...) {
   prop_ids <- if (!is.null(property_ids)) {
     paste(property_ids, collapse = ",")
   } else {
@@ -71,7 +68,6 @@ entrata_properties <- function(
 
   # parse results -----------------------------------------------------------
   res_data |> parse_property_res_data()
-
 }
 
 #' @describeIn entrata_properties Parse Entrata Properties Response Data
@@ -89,7 +85,6 @@ entrata_properties <- function(
 #' @importFrom tibblify tspec_df tib_int tib_chr tib_row tib_unspecified tib_df tib_lgl tibblify
 #' @importFrom tidyr unnest
 parse_property_res_data <- function(res_data) {
-
   tspec <- tibblify::tspec_df(
     property_id = tibblify::tib_int("PropertyID"),
     property_name = tibblify::tib_chr("MarketingName"),
@@ -193,7 +188,6 @@ parse_property_res_data <- function(res_data) {
       lease_start_window_start_date,
       lease_start_window_end_date
     )
-
 }
 
 

@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Excel Utilities
@@ -46,31 +45,29 @@
 #'
 #' @importFrom openxlsx createStyle addStyle
 apply_xl_styles <- function(
-  wb,
-  sheet_number,
-  range,
-  rows,
-  cols,
-  font_name,
-  font_size,
-  font_color,
-  number_format,
-  border,
-  border_color,
-  border_style,
-  bg_fill,
-  fg_fill,
-  halign,
-  valign,
-  text_decoration,
-  wrap_text,
-  text_rotation,
-  indent,
-  locked,
-  hidden,
-  ...
-) {
-
+    wb,
+    sheet_number,
+    range,
+    rows,
+    cols,
+    font_name,
+    font_size,
+    font_color,
+    number_format,
+    border,
+    border_color,
+    border_style,
+    bg_fill,
+    fg_fill,
+    halign,
+    valign,
+    text_decoration,
+    wrap_text,
+    text_rotation,
+    indent,
+    locked,
+    hidden,
+    ...) {
   cell_style <- openxlsx::createStyle(
     fontName = font_name,
     fontSize = font_size,
@@ -99,8 +96,4 @@ apply_xl_styles <- function(
     cols = cols,
     stack = TRUE
   )
-
 }
-
-
-

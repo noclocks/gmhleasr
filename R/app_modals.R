@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : Shiny App Modals
@@ -8,7 +7,6 @@
 #  ------------------------------------------------------------------------
 
 contact_button <- function() {
-
   htmltools::tagList(
     htmltools::tags$head(
       shiny::bootstrapLib()
@@ -28,13 +26,11 @@ contact_button <- function() {
       "Contact Support"
     )
   )
-
 }
 
 # error -------------------------------------------------------------------
 
 error_modal <- function(message) {
-
   shiny::modalDialog(
     title = icon_text(shiny::icon("exclamation-circle"), "Error"),
     footer = htmltools::tagList(
@@ -54,7 +50,6 @@ error_modal <- function(message) {
 
 
 warning_modal <- function(message) {
-
   shiny::modalDialog(
     title = icon_text(shiny::icon("exclamation-triangle"), "Warning"),
     footer = htmltools::tagList(
@@ -67,7 +62,6 @@ warning_modal <- function(message) {
       htmltools::tags$p(message)
     )
   )
-
 }
 
 # info --------------------------------------------------------------------

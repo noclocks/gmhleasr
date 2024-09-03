@@ -72,4 +72,3 @@ test_that("entrata function respects enable_retry parameter", {
   expect_identical(typeof(req$policies$retry_is_transient), "closure")
   expect_identical(typeof(req$policies$retry_backoff), "closure")
 })
-

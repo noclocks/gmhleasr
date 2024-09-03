@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : App User Interface
@@ -21,7 +20,6 @@
 #' @importFrom bs4Dash bs4DashPage
 #' @importFrom htmltools tagList tags
 app_ui <- function(request) {
-
   ui <- force(request)
 
   ui <- htmltools::tagList(
@@ -44,7 +42,6 @@ app_ui <- function(request) {
   )
 
   ui
-
 }
 
 #' Add external Resources to the Application
@@ -210,4 +207,3 @@ app_body_ui <- function() {
     )
   )
 }
-

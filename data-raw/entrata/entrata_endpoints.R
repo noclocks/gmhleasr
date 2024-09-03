@@ -271,7 +271,7 @@ entrata_api_request_endpoint_methods <- tibble::enframe(
 entrata_api_request_parameters <- list(
   "status" = list(
     "getStatus" = list(NA_character_)
-    ),
+  ),
   "customers" = list(
     "getCustomers" = list(
       propertyId = list(type = "string", required = TRUE, description = "This is a required field. This field accepts single value for the Property ID."),
@@ -686,4 +686,3 @@ entrata_api_request_endpoint_method_parameters <- entrata_api_request_parameters
     description
   ) |>
   dplyr::arrange(dplyr::desc(important), endpoint, method, dplyr::desc(required))
-

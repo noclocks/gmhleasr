@@ -1,4 +1,3 @@
-
 #  ------------------------------------------------------------------------
 #
 # Title : App Sidebar Module
@@ -89,7 +88,6 @@ NULL
 #' @importFrom bs4Dash bs4DashSidebar sidebarMenu menuItem
 #' @importFrom shiny NS
 app_sidebar_ui <- function(id) {
-
   ns <- shiny::NS(id)
 
   bs4Dash::bs4DashSidebar(
@@ -142,9 +140,7 @@ app_sidebar_ui <- function(id) {
 #' @rdname app_sidebar
 #' @export
 app_sidebar_server <- function(id, app_globals = NULL) {
-
   shiny::moduleServer(id, function(input, output, session) {
-
     if (is.null(app_globals)) {
       parent_session <- .subset2(session, "parent")
       app_globals <- parent_session$userData$app_globals
@@ -157,7 +153,5 @@ app_sidebar_server <- function(id, app_globals = NULL) {
       app_globals$active_tab <- input$sidebar_menu
     }) |>
       shiny::bindEvent(input$sidebar_menu)
-
   })
 }
-
