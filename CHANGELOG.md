@@ -8,6 +8,7 @@
 
 ## Bug Fixes
 
+- Fix validations in core entrata() function ([25fdafc](https://github.com/noclocks/gmhleasr/commit/25fdafc44e0bc2fd60dcc43df6d4e532eae20fdd))  - (Jimmy Briggs)
 - Fix leases test ([447c86e](https://github.com/noclocks/gmhleasr/commit/447c86e2fd7c771af43bcd11ef78c7a5375798fd))  - (Jimmy Briggs)
 - Fix and refactor ([4a3fc9e](https://github.com/noclocks/gmhleasr/commit/4a3fc9e4ef6c78f4d8bcc7e842f9b337e8f0a06b))  - (Jimmy Briggs)
 - Fix DESCRIPTION versions ([8772332](https://github.com/noclocks/gmhleasr/commit/8772332a187b67ac29d8a1f47cae5e69b01f0fde))  - (Jimmy Briggs)
@@ -31,6 +32,7 @@
 
 ## Documentation
 
+- Update README.md ([492d5a5](https://github.com/noclocks/gmhleasr/commit/492d5a5f89ac305a335f3cceac5f85f12a1b7407))  - (Jimmy Briggs)
 - Tweak README ([54e22e7](https://github.com/noclocks/gmhleasr/commit/54e22e7ff7f3bc526127ee623be8930307f43f80))  - (Jimmy Briggs)
 - Tweak README ([50044a5](https://github.com/noclocks/gmhleasr/commit/50044a58f925232486f9ac5a1530d0da05c66cdd))  - (Jimmy Briggs)
 - Badges ([7a43270](https://github.com/noclocks/gmhleasr/commit/7a432703f79390e7048e14c90ccbe11ae6423162))  - (Jimmy Briggs)
@@ -50,6 +52,20 @@
 
 ## Features
 
+- Entrata properties endpoint functions ([aa5ec7c](https://github.com/noclocks/gmhleasr/commit/aa5ec7c297ccece90ec56be52de65d18add59554))  - (Jimmy Briggs)
+- Remaining updates ([ef3352b](https://github.com/noclocks/gmhleasr/commit/ef3352bfd5e8aacc8f567894f9d5143603f35ad2))  - (Jimmy Briggs)
+- Charge codes data prep ([25adf62](https://github.com/noclocks/gmhleasr/commit/25adf621932bc26d5abb84b177f4c956b8713581))  - (Jimmy Briggs)
+- Updated internal package Entrata data ([9acf9a7](https://github.com/noclocks/gmhleasr/commit/9acf9a7a29bd949f1f138dd720cd026e3548b68e))  - (Jimmy Briggs)
+- R utility functions ([2745046](https://github.com/noclocks/gmhleasr/commit/2745046de1fe18481a7fafe4ee654ed02f78bc9e))  - (Jimmy Briggs)
+- Add initial shiny modules ([7476544](https://github.com/noclocks/gmhleasr/commit/74765442ddebebc2f1fc37e8ccbcad19d5061117))  - (Jimmy Briggs)
+- Updated base reports functions ([6cac79b](https://github.com/noclocks/gmhleasr/commit/6cac79b54f14ad46fcf3161b2d5917cdbfc2c8d9))  - (Jimmy Briggs)
+- New split out entrata_pre_lease_report ([a51624c](https://github.com/noclocks/gmhleasr/commit/a51624c88f5dca713aec714c37d334030b2b02c6))  - (Jimmy Briggs)
+- Update entrata API client R6 class ([1f67657](https://github.com/noclocks/gmhleasr/commit/1f67657708d0744cdfb7357d2af3202680476ef6))  - (Jimmy Briggs)
+- Add internal entrata validation functions with new rlang caller end ([c220306](https://github.com/noclocks/gmhleasr/commit/c220306eab11dde18a5e58eb7bb17fae82642290))  - (Jimmy Briggs)
+- Adding all new shiny app R files split out by component and module ([591721d](https://github.com/noclocks/gmhleasr/commit/591721d1df9be6c63508476fafe872e7efe1c786))  - (Jimmy Briggs)
+- Add app_config configuration helpers ([ee70d17](https://github.com/noclocks/gmhleasr/commit/ee70d17040ccb5783f70c10607f3493ffe4bb678))  - (Jimmy Briggs)
+- Add shiny app assets functions ([0da4d05](https://github.com/noclocks/gmhleasr/commit/0da4d05de59f46c9f0bfbae131e276fdb939a4cc))  - (Jimmy Briggs)
+- New Rmd README with child fragments ([d091539](https://github.com/noclocks/gmhleasr/commit/d0915391d1579ad9a1f16d61c5af4cb4c207afca))  - (Jimmy Briggs)
 - Update all GHA ([0f6e5c5](https://github.com/noclocks/gmhleasr/commit/0f6e5c5def0411ad2a885190a382e0bd0d864bf1))  - (Jimmy Briggs)
 - Add teardown for config decryption, memoized helpers in onLoad, and more ([3dd32f4](https://github.com/noclocks/gmhleasr/commit/3dd32f40666aeddb77a1c1c8f275e660d9ee1541))  - (Jimmy Briggs)
 - Updates and fixes related to tests ([428ca56](https://github.com/noclocks/gmhleasr/commit/428ca56669658e509f04c34e76ee24fcb87f9d31))  - (Jimmy Briggs)
