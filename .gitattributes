@@ -1,2 +1,5 @@
 * text=auto
 tests/fixtures/**/* -diff
+
+# ignore generated html
+*.html linguist-vendored
