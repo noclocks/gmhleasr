@@ -14,4 +14,6 @@ A data frame with the parsed property information.
 }
 \description{
 Parses the response from the Entrata API's "getProperties" method.
+This function is used internally by \code{get_properties()} to process
+the raw API response into a usable data frame.
 }

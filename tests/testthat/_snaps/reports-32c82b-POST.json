@@ -1,0 +1,9 @@
+{
+    "response": {
+        "requestId": "1725924291",
+        "code": 200,
+        "result": {
+            "queueId": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJhcGkiLCJpZGVudGlmaWVyIjoiMjExNTc4fDE0NDYxfHNlcnZpY2VzLjE0NDYxLjIxMTU3OC5zZXJ2aWNlczY2ZGY4M2U5M2FlMjM3LjMzMjA5NTkwfDI4OXwxfDR8YXBwbGljYXRpb25cL2pzb247IGNoYXJzZXQ9VVRGLTgiLCJpYXQiOjE3MjU5MjQzMjksImV4cCI6MTcyNjAxMDcyOSwibmJmIjoxNzI1OTI0MzI5fQ.0C846HltzwqFPXO9IU6L4h-vZfSYh4gFzKQiUKBcKRU"
+        }
+    }
+}

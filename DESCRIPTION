@@ -1,18 +1,21 @@
 Package: gmhleasr
-Title: Shiny Dashboard for GMH Communities Leasing Data
-Version: 0.0.0.9000
+Title: Shiny Dashboard and API Client for GMH Communities Leasing Data
+Version: 0.2.0
 Authors@R: c(
     person("Jimmy", "Briggs", , "jimmy.briggs@jimbrig.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-7489-8787")),
     person("Patrick", "Howard", , "patrick.howard@noclocks.dev", role = c("aut", "rev")),
     person("No Clocks, LLC", , , "team@noclocks.dev", role = c("cph", "fnd"))
   )
-Description: Shiny Dashboard for GMH Communities Leasing Data.
+Description: Provides a Shiny dashboard and API client for interacting
+    with GMH Communities leasing data via the Entrata API. Includes
+    functions for API authentication, data retrieval, and data
+    visualization.
 License: file LICENSE
 URL: https://github.com/noclocks/gmhleasr,
     https://docs.noclocks.dev/gmhleasr/
 BugReports: https://github.com/noclocks/gmhleasr/issues
-Depends: 
+Depends:
     R (>= 4.1)
 Imports:
     bs4Dash,
@@ -20,12 +23,16 @@ Imports:
     cli,
     config,
     desc,
+    digest,
     dplyr,
     DT,
     fresh,
     fs,
+    futile.logger,
     glue,
     golem,
+    googleway,
+    highcharter,
     htmltools,
     httr2,
     janitor,
@@ -35,10 +42,14 @@ Imports:
     lubridate,
     memoise,
     metathis,
+    noClocksAuthR,
     openxlsx,
-    plotly,
+    pkgload,
     purrr,
+    qs,
     R6,
+    rappdirs,
+    ratelimitr,
     readr,
     rlang,
     shiny,
@@ -46,6 +57,7 @@ Imports:
     shinydashboard,
     shinyFeedback,
     shinyjs,
+    shinylogs,
     shinyWidgets,
     stringr,
     tibble,
@@ -55,17 +67,23 @@ Imports:
     waiter,
     yaml,
     ymlthis
-Suggests: 
+Suggests:
+    callr,
     httptest2,
+    remotes,
     rmarkdown,
     rprojroot,
     spelling,
     testthat (>= 3.0.0),
     withr
-VignetteBuilder: 
+VignetteBuilder:
     knitr
+Config/Needs/auth: noClocksAuthR, noClocksAuthPlumber
+Config/Needs/coverage: covr,covrpage
+Config/Needs/website: pkgdown
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
+LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2

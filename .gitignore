@@ -12,3 +12,6 @@ docs
 ~*
 
 lib/
+.vscode
+
+cache/

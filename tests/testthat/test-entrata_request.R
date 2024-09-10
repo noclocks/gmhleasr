@@ -1,74 +1,73 @@
-#  ------------------------------------------------------------------------
-#
-# Title : Entrata Request Tests
-#    By : Jimmy Briggs
-#  Date : 2024-08-28
-#
-#  ------------------------------------------------------------------------
+context("Entrata API Request")
+
+# Mock configuration for testing
+mock_config <- create_entrata_config()
 
 test_that("entrata function creates a valid request object", {
   req <- entrata(
-    endpoint = "status",
-    method = "getStatus",
-    config = cfg
+    endpoint = "properties",
+    method = "getProperties",
+    config = mock_config,
+    perform = FALSE
   )
 
   expect_s3_class(req, "httr2_request")
-  expect_equal(req$url, "https://gmhcommunities.entrata.com/api/v1/status")
+  expect_equal(req$url, paste0(mock_config$base_url, "/api/v1/properties"))
   expect_equal(req$method, "POST")
   expect_true("Authorization" %in% names(req$headers))
-
-  body_data <- req$body$data
-  expect_equal(body_data$method$name, "getStatus")
-  expect_equal(body_data$method$version, "r1")
-  expect_equal(body_data$requestId, 15)
+  expect_equal(req$headers$`Content-Type`, "application/json; charset=UTF-8")
 })
 
 test_that("entrata function handles different endpoints and methods", {
-  req1 <- entrata(endpoint = "status", method = "getStatus", config = cfg)
-  req2 <- entrata(endpoint = "properties", method = "getProperties", config = cfg)
+  req1 <- entrata(endpoint = "leases", method = "getLeases", config = mock_config, perform = FALSE)
+  req2 <- entrata(endpoint = "reports", method = "getReportList", config = mock_config, perform = FALSE)
 
-  expect_match(req1$url, "/status$")
-  expect_match(req2$url, "/properties$")
-
-  body1 <- req1$body$data
-  body2 <- req2$body$data
-
-  expect_equal(body1$method$name, "getStatus")
-  expect_equal(body2$method$name, "getProperties")
+  expect_equal(req1$url, paste0(mock_config$base_url, "/api/v1/leases"))
+  expect_equal(req2$url, paste0(mock_config$base_url, "/api/v1/reports"))
 })
 
-test_that("entrata function respects custom configurations", {
-  custom_cfg <- list(
-    username = "custom_user",
-    password = "custom_pass",
-    base_url = "https://custom.entrata.com"
+test_that("entrata function handles method parameters correctly", {
+  params <- list(propertyId = 12345, startDate = "2023-01-01")
+  req <- entrata(
+    endpoint = "leases",
+    method = "getLeases",
+    method_params = params,
+    config = mock_config,
+    perform = FALSE
   )
 
-  req <- entrata(endpoint = "status", method = "getStatus", config = custom_cfg)
-
-  expect_match(req$url, "^https://custom.entrata.com")
-  expect_match(req$headers$Authorization, "^Basic Y3VzdG9tX3VzZXI6Y3VzdG9tX3Bhc3M=")
+  body <- jsonlite::fromJSON(req$body)
+  expect_equal(body$method$params$propertyId, 12345)
+  expect_equal(body$method$params$startDate, "2023-01-01")
 })
 
-test_that("entrata function respects dry_run parameter", {
-  expect_message(
-    entrata(endpoint = "status", method = "getStatus", dry_run = TRUE, config = cfg),
-    "Dry Run: Request will not be performed"
-  )
+# Note: The following tests require mocking HTTP responses and are more complex.
+# They are included as examples and may need to be adjusted based on your specific mocking setup.
+
+test_that("entrata function handles successful API responses", {
+  skip("Requires mocking HTTP responses")
+  # Example using httptest2 package
+  # httptest2::with_mock_api({
+  #   response <- entrata(endpoint = "properties", method = "getProperties", config = mock_config, perform = TRUE)
+  #   expect_s3_class(response, "httr2_response")
+  #   expect_equal(httr2::resp_status(response), 200)
+  # })
 })
 
-test_that("entrata function handles timeout parameter", {
-  req <- entrata(endpoint = "status", method = "getStatus", timeout = 30, config = cfg)
-  expect_equal(req$options$timeout_ms / 1000, 30)
+test_that("entrata function handles API errors correctly", {
+  skip("Requires mocking HTTP responses")
+  # Example using httptest2 package
+  # httptest2::with_mock_api({
+  #   expect_error(
+  #     entrata(endpoint = "invalid", method = "invalid", config = mock_config, perform = TRUE),
+  #     "API request failed"
+  #   )
+  # })
 })
 
-test_that("entrata function respects enable_retry parameter", {
-  req <- entrata(endpoint = "status", method = "getStatus", enable_retry = TRUE, config = cfg)
-  expected_names <- c("retry_max_tries", "retry_max_wait", "retry_is_transient", "retry_backoff")
-  expect_true(all(expected_names %in% names(req$policies)))
-  expect_true(req$policies$retry_max_tries > 0)
-  expect_true(req$policies$retry_max_wait > 0)
-  expect_identical(typeof(req$policies$retry_is_transient), "closure")
-  expect_identical(typeof(req$policies$retry_backoff), "closure")
+test_that("entrata function uses caching when enabled", {
+  skip("Requires setting up a temporary cache directory")
+  # This test would involve setting up a temporary cache directory,
+  # making multiple requests, and verifying that subsequent requests
+  # return cached responses.
 })

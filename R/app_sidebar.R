@@ -92,18 +92,35 @@ app_sidebar_ui <- function(id) {
 
   bs4Dash::bs4DashSidebar(
     id = ns("sidebar"),
+    width = "250px",
+    skin = "light",
+    status = "primary",
+    elevation = 4,
+    collapsed = FALSE,
+    minified = TRUE,
+    expandOnHover = TRUE,
+    fixed = TRUE,
+    customArea = htmltools::tags$div(
+      id = ns("sidebar_footer"),
+      htmltools::tags$a(
+        href = "https://noclocks.dev",
+        htmltools::tags$img(
+          src = "www/images/noclocks/noclocks-logo-wordmark-black.svg",
+          alt = "No Clocks, LLC",
+          style = "width: 200px; height: auto; align: center;"
+        )
+      )
+    ),
     htmltools::tags$div(
       class = "sidebar-header-text",
       htmltools::tags$p(
         align = "center",
-        "GMH Leasing Dashboard"
-      ),
-      htmltools::tags$p(
-        align = "center",
+        "GMH Leasing Dashboard",
+        htmltools::tags$br(),
         "Powered by No Clocks, LLC"
-      ),
-      htmltools::tags$hr()
+      )
     ),
+    htmltools::tags$hr(),
     bs4Dash::bs4SidebarMenu(
       id = ns("sidebar_menu"),
       bs4Dash::bs4SidebarMenuItem(
@@ -122,17 +139,6 @@ app_sidebar_ui <- function(id) {
         tabName = "properties",
         icon = shiny::icon("building")
       )
-    ),
-    fixed = TRUE,
-    customArea = htmltools::tagList(
-      htmltools::tags$a(
-        href = "https://noclocks.dev",
-        htmltools::tags$img(
-          src = "www/images/noclocks/noclocks-logo-wordmark-black.svg",
-          alt = "No Clocks, LLC",
-          style = "width: 200px; height: auto; margin-bottom: 20px;"
-        )
-      )
     )
   )
 }
@@ -149,7 +155,8 @@ app_sidebar_server <- function(id, app_globals = NULL) {
     # update active_tab in app_globals
     shiny::observe({
       shiny::req(input$sidebar_menu)
-      log_app_event("User changed to tab: {input$sidebar_menu}.")
+      msg <- glue::glue("User changed to tab: {input$sidebar_menu}.")
+      log_app_event(msg)
       app_globals$active_tab <- input$sidebar_menu
     }) |>
       shiny::bindEvent(input$sidebar_menu)

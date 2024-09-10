@@ -4,10 +4,10 @@
 \alias{validate_entrata_config}
 \title{Validate Entrata API Configuration}
 \usage{
-validate_entrata_config(cfg)
+validate_entrata_config(config)
 }
 \arguments{
-\item{cfg}{Either a path to a YAML configuration file or a list object containing the configurations.}
+\item{config}{An APIConfig object or a list containing the configurations.}
 }
 \value{
 The original configuration object, invisibly.

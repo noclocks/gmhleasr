@@ -24,29 +24,43 @@ parse_entrata_lease_unit_spaces(res_content)
 \item{res_content}{Response content to parse}
 }
 \value{
-Parsed Response Body Content as a tibble with leases data.
+A tibble containing parsed and cleaned lease data, including:
+\itemize{
+\item Basic lease information (ID, status, dates, etc.)
+\item Customer information
+\item Lease interval details
+\item Scheduled charges
+\item Unit space information
+}
 
-Parsed Response Body Content as a tibble with lease customer data.
+A tibble containing parsed customer data for each lease.
 
-Parsed Response Body Content as a tibble with lease interval data.
+A tibble containing parsed lease interval data for each lease.
 
-Parsed Response Body Content as a tibble with lease scheduled charges data.
+A tibble containing parsed scheduled charges data for each lease.
 
-Parsed Response Body Content as a tibble with lease unit spaces data.
+A tibble containing parsed unit spaces data for each lease.
 }
 \description{
 This function parses the response from the Entrata API's "getLeases" method.
+It extracts and processes various components of the lease data, including
+customer information, lease intervals, scheduled charges, and unit spaces.
 }
 \details{
-The core function is \code{parse_entrata_leases()}, which parses the response
-from the Entrata API's "getLeases" method called via \code{\link[=entrata_leases]{entrata_leases()}}.
+The function performs the following steps:
+\enumerate{
+\item Extracts the main lease data from the API response.
+\item Parses specific components of the lease data using helper functions.
+\item Joins the parsed components back into a single tibble.
+\item Cleans and formats the data, including date parsing and type conversions.
+}
 
-\code{parse_entrata_leases()} calls the following functions to parse the response:
+The following helper functions are used to parse specific components:
 \itemize{
-\item \code{parse_entrata_lease_customers()}: Parse Entrata lease customers
-\item \code{parse_entrata_lease_intervals()}: Parse Entrata lease intervals
-\item \code{parse_entrata_lease_scheduled_charges()}: Parse Entrata lease scheduled charges
-\item \code{parse_entrata_lease_unit_spaces()}: Parse Entrata lease unit spaces
+\item \code{parse_entrata_lease_customers()}: Parses customer information
+\item \code{parse_entrata_lease_intervals()}: Parses lease interval data
+\item \code{parse_entrata_lease_scheduled_charges()}: Parses scheduled charges
+\item \code{parse_entrata_lease_unit_spaces()}: Parses unit space information
 }
 }
 \section{Functions}{
@@ -61,5 +75,5 @@ from the Entrata API's "getLeases" method called via \code{\link[=entrata_leases
 
 }}
 \seealso{
-\code{\link[=entrata_leases]{entrata_leases()}}
+\code{\link[=entrata_leases]{entrata_leases()}} for retrieving lease data from the Entrata API.
 }

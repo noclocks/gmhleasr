@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GMH Properties</title>
+  <meta name="description" content="GMH Properties">
+  <meta name="author" content="No Clocks, LLC">
+  <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library"></script>
+  <link rel="stylesheet" href="./../styles/gmaps.css">
+</head>
+
+<body>
+  <script type="module" src="https://unpkg.com/@googlemaps/extended-component-library@0.6"></script>
+
+  <gmpx-api-loader key="AIzaSyCSI8pJJXkS8KVLod37tbNlWLn-UmMGTfo"
+    solution-channel="GMP_QB_locatorplus_v10_cABDF"></gmpx-api-loader>
+  <gmpx-store-locator map-id="e41a5d4f3d81b765"></gmpx-store-locator>
+
+  <gmpx-split-layout row-reverse row-layout-min-width="700">
+    <gmpx-overlay-layout slot="fixed">
+      <div slot="main">
+        <gmpx-place-picker placeholder="Enter a college in the US or Canada" for-map="gmap" type="university"
+          country="us ca">
+        </gmpx-place-picker>
+        <gmpx-place-overview size="large" google-logo-already-displayed>
+          <gmpx-icon-button slot="action" variant="filled" id="open-button">
+            See Reviews
+          </gmpx-icon-button>
+          <gmpx-place-directions-button slot="action" variant="filled">
+            Directions
+          </gmpx-place-directions-button>
+        </gmpx-place-overview>
+      </div>
+      <div slot="overlay">
+        <gmpx-icon-button id="close-button" autofocus>
+          Close
+        </gmpx-icon-button>
+        <gmpx-place-data-provider>
+          <gmpx-place-reviews></gmpx-place-reviews>
+        </gmpx-place-data-provider>
+      </div>
+    </gmpx-overlay-layout>
+    <gmp-map id="gmap" slot="main" center="45,-98" zoom="4" map-id="DEMO_MAP_ID">
+      <gmp-advanced-marker></gmp-advanced-marker>
+    </gmp-map>
+  </gmpx-split-layout>
+  <script src="./../scripts/gmaps.js"></script>
+</body>
+
+</html>

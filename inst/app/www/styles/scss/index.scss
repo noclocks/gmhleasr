@@ -1,11 +1,13 @@
-
 @import "_company.scss";
 @import "_social.scss";
 @import "_colors.scss";
 @import "_fonts.scss";
 @import "_logos.scss";
+@import "_gmaps.scss";
 
 body {
+  height: 100%;
+  margin: 0;
   font-family: $font-body;
   background-color: $color-light;
   color: $color-dark;

@@ -1,0 +1,36 @@
+Name,clist,Template File,Master table dbid,Master table name,MSG_DetailsNotFound,Exact Forms Plus Version,appDBID,Document Subtable DBID,Excel Sheet #,Document Subtable Excel DBID,PDF Pages,Document Subtable Excel,Add New XL Document Subtable,Date Created,Date Modified,Record ID#,Record Owner,Last Modified By
+Weekly Performance Overview,RK:3.Q4:6.R4:491.E7:403.I7:47.E8:402.I8:45.A13:25.G13:43.A18-N:26.G18-N:44.W31-N:421.G31-N:119.A24:498.G24:447.X22:408.X24:407.X26:406.A29:414.G29:215.U1-I:562,GMH Weekly Performance Overview v4 (Test) (1) (1) (1) (1) (1) (2).xlsx,bq5hz7i53,Properties,,,bqgnu6jg4,,1,bq5hz7i9k,1-9,2,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=2&z=9m8,07-19-2021 12:43 PM,10-08-2021 09:27 AM,2,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>
+Portfolio Roll Up Template,"RK:3.
+A9:8.
+B9:10.
+C9:37.
+D9-N:39.
+F9:12.
+G9:13.
+H9:11.
+I9-N:17.
+K9:15.
+L9:16.
+M9:14.
+N9-N:18.
+P9:46.
+Q9-N:19.
+S9:31.
+T9:32.
+U9:30.
+V9-N:33.
+X9:47.
+Y9:30.
+Z9:34.
+AA9:35.
+AB9:36.
+A1-D:48.
+N3:8.
+B3:49.
+AB3:50.
+AB4:52",Portfolio Roll Up 2.xlsx,bq5hz7i5x,Portfolios,,,bqgnu6jg4,,,bq5hz7i9k,,6,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=6&z=9m8,02-20-2022 04:10 PM,09-20-2022 01:54 PM,6,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>
+NEW - Weekly Performance Overview,"RK:3.J4:6.K4:491.B8:414.C8-N:26.D8-N:449.E8-N:119.B13:402.C13:403.D13:401.E13-N:177.C16:45.C17:47.C18:25.C19-N:26.D16:175.D17:176.D18:43.D19-N:44.B22:447.D22:498.B28:408.C28:407.D28:406.E28:580.K1-I:562.E29-N:579
+",GMH Weekly Performance Overview (3).xlsx,bq5hz7i53,Properties,,,bqgnu6jg4,,1,bq5hz7i9k,1-9,5,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=5&z=9m8,10-25-2021 09:34 AM,09-21-2023 04:15 PM,5,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>
+Dummy 2,,,,,,,bqgnu6jg4,,,bq5hz7i9k,,4,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=4&z=9m8,08-16-2021 12:57 PM,08-16-2021 12:57 PM,4,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>
+DUMMY,,,,,,,bqgnu6jg4,,,bq5hz7i9k,,3,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=3&z=9m8,07-19-2021 12:56 PM,07-19-2021 12:56 PM,3,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>
+Dashboard Output,RK:3.B2:16.C4:18.AC4:21.AC5:20,PLR Formatted Output v5-7.xlsx,brhf5ndin,Formatted Outputs,,,bqgnu6jg4,,1,bq5hz7i9k,,1,https://gmh.quickbase.com//db/bq5hz7i9k?a=API_GenAddRecordForm&_fid_13=1&z=9m8,06-01-2021 11:29 PM,12-19-2023 12:32 PM,1,JT Bailey <62477437.bhmt>,JT Bailey <62477437.bhmt>

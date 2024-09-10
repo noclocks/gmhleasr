@@ -15,7 +15,7 @@ get_properties(
 \arguments{
 \item{api}{An instance of the \code{EntrataAPI} class.}
 
-\item{property_ids}{A vector of property IDs to retrieve.}
+\item{property_ids}{A vector of property IDs to retrieve. If NULL, all properties will be returned.}
 
 \item{property_lookup_codes}{A vector of property lookup codes to retrieve.}
 
@@ -27,5 +27,16 @@ get_properties(
 A data frame with the retrieved property information.
 }
 \description{
-Retrieves properties from the Entrata API.
+Retrieves properties from the Entrata API using an EntrataAPI instance.
+This function is designed to be used with the EntrataAPI class and provides
+a more object-oriented approach to interacting with the Entrata API.
+}
+\examples{
+\dontrun{
+# Assuming you have an EntrataAPI instance called 'api'
+properties <- get_properties(api)
+
+# Retrieve specific properties
+specific_properties <- get_properties(api, property_ids = c("123", "456"))
+}
 }

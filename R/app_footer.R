@@ -6,6 +6,30 @@
 #
 #  ------------------------------------------------------------------------
 
+app_footer_ui_new <- function(
+  id,
+  author_name = "No Clocks, LLC",
+  author_url = "https://noclocks.dev",
+  client_name = "GMH Communities",
+  client_url = "https://gmhcommunities.com",
+  ...
+) {
+
+  ns <- shiny::NS(id)
+
+  htmltools::tagList(
+    htmltools::htmlTemplate(
+      system.file("templates", "html", "footer.html", package = "gmhleasr"),
+      id = ns(id),
+      author_name = author_name,
+      author_url = author_url,
+      client_name = client_name,
+      client_url = client_url
+    )
+  )
+
+}
+
 
 #' App Footer Module
 #'

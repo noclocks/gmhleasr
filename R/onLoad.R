@@ -1,3 +1,22 @@
+
+#  ------------------------------------------------------------------------
+#
+# Title : Pacakge onLoad and onAttach
+#    By : Jimmy Briggs
+#  Date : 2024-09-05
+#
+#  ------------------------------------------------------------------------
+
+# globals -----------------------------------------------------------------
+
+entrata_rate_limited <- entrata
+entrata_memoised <- entrata_rate_limited
+
+
+# cli theme ---------------------------------------------------------------
+
+.cli_theme <- list()
+
 # internal ----------------------------------------------------------------
 
 #' @keywords internal
@@ -8,14 +27,16 @@
 #' @importFrom glue glue
 #' @importFrom cli cli_alert_info
 .cache_function <- function(
-    function_name,
-    pkg,
-    duration = 86400,
-    omit_args = c(),
-    cache = cachem::cache_mem(),
-    rename_prefix = "mem_",
-    quiet = TRUE,
-    ...) {
+  function_name,
+  pkg,
+  duration = 86400,
+  omit_args = c(),
+  cache = cachem::cache_mem(),
+  rename_prefix = "mem_",
+  quiet = TRUE,
+  ...
+) {
+
   fn <- base::get(function_name, envir = rlang::ns_env(pkg))
 
   mem_fn <- memoise::memoise(
@@ -27,7 +48,7 @@
 
   mem_function_name <- glue::glue("{rename_prefix}{function_name}")
 
-  assign(mem_function_name, mem_fn, envir = rlang::ns_env(pkg))
+  base::assign(mem_function_name, mem_fn, envir = rlang::ns_env(pkg))
 
   if (!quiet) {
     cli::cli_alert_info("Created a cached function for {.field {function_name}} as {.field {mem_function_name}}.")
@@ -37,12 +58,32 @@
   return(invisible(TRUE))
 }
 
+
+
 # onLoad ------------------------------------------------------------------
+
+# nocov start
 
 #' @keywords internal
 #' @noRd
 #' @importFrom purrr walk
+#' @importFrom ratelimitr limit_rate rate
+#' @importFrom memoise memoise
 .onLoad <- function(libname, pkgname) {
+
+  # assign rate limited request function
+  entrata_rate_limited <<- ratelimitr::limit_rate(
+    entrata,
+    # rate can be altered via entrata_config() or ratelimitr::UPDATE_RATE()
+    ratelimitr::rate(
+      n = 1L,
+      period = 1L
+    )
+  )
+
+  # assign memoised function
+  entrata_memoised <<- memoise::memoise(entrata_rate_limited)
+
   # cache functions ---------------------------------------------------------
   c(
     "get_entrata_reports_list",
@@ -50,5 +91,8 @@
     "get_latest_report_version",
     "get_property_ids_filter_param"
   ) |>
-    purrr::walk(.cache_function, pkg = pkgname, quiet = FALSE)
+    purrr::walk(.cache_function, pkg = pkgname, quiet = TRUE)
 }
+
+# nocov end
+

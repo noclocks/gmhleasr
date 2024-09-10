@@ -4,7 +4,13 @@
 \alias{run_with_opts}
 \title{Run with Options}
 \usage{
-run_with_opts(app, opts, maintenance_page = maintenance_page, print = TRUE)
+run_with_opts(
+  app,
+  opts,
+  showcase = FALSE,
+  maintenance_page = maintenance_page,
+  print = TRUE
+)
 }
 \arguments{
 \item{app}{Shiny App object.}

@@ -4,6 +4,44 @@
 [Keep a Changelog](http://keepachangelog.com/) and this project adheres to
 [Semantic Versioning](http://semver.org/).
 
+## [0.2.0] - 2023-05-16
+
+### Added
+
+- Improved configuration management with support for config.yml file
+- Enhanced error handling and logging in API interactions
+- Additional unit tests for core functionality
+- New vignettes for comprehensive package usage guide
+
+### Changed
+
+- Updated entrata_config.R to better handle config.yml as the default configuration source
+- Refactored entrata_request.R for improved performance and maintainability
+- Enhanced documentation across all main functions
+
+### Fixed
+
+- Corrected user_agent function import and usage
+
+## [0.1.0] - 2023-05-15
+
+### Added
+
+- Improved error handling and logging in core API functions
+- New comprehensive tests for the `entrata()` function
+- Updated vignettes with detailed usage instructions and examples
+- Enhanced documentation for all main functions
+
+### Changed
+
+- Refactored `entrata_request.R` for better performance and maintainability
+- Updated DESCRIPTION file with new dependencies and improved package description
+- Improved README with more detailed information about package features and usage
+
+### Fixed
+
+- Various minor bugs and inconsistencies throughout the codebase
+
 ## [Unreleased]
 
 ## Bug Fixes

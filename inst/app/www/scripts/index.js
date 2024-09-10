@@ -2,6 +2,8 @@
  * index.js
  */
 
- const custom = require('./custom');
+const config = require('./config');
+const gmaps = require('./gmaps');
+const custom = require('./custom');
 
- custom.init();
+custom.init();

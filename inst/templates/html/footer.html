@@ -1,0 +1,16 @@
+{% raw %}
+<!-- footer.html -->
+<div id = "{{id}}">
+<footer class="main-footer" data-fixed="true">
+  <div class="float-right d-none d-sm-inline">
+    <p>
+      Developed by <a href="{{author_url}}" target="_blank">{{author_name}}</a>
+      &middot;&nbsp;&copy;Copyright {{ lubridate::year(Sys.Date()) }}
+    </p>
+  </div>
+  <p>
+    Build for use by <a href="{{client_url}}" target="_blank">{{client_name}}</a>
+  </p>
+</footer>
+</div>
+{% endraw %}

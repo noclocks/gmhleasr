@@ -6,6 +6,15 @@
 #
 #  ------------------------------------------------------------------------
 
+#' @keywords internal
+#' @noRd
+#' @importFrom rappdirs app_dir
+#' @importFrom fs path_norm
+.default_cache_dir <- function() {
+  rappdirs::app_dir("gmhleasr")$cache() |>
+    fs::path_norm()
+}
+
 #' Run Shiny App
 #'
 #' @description
@@ -18,16 +27,56 @@
 #'
 #' @export
 #'
-#' @importFrom shiny runApp
+#' @importFrom shiny runApp shinyOptions
 run_app <- function(
-    onStart = NULL,
-    options = list(),
-    enableBookmarking = NULL,
-    uiPattern = "/",
-    ...) {
-  shinyOptions(cache = cachem::cache_mem(max_size = 500e6))
-  # shinyOptions(cache = cachem::cache_disk(file.path(dirname(tempdir()), "gmhleasr"))
-  shinyOptions(cache = cachem::cache_disk("./app_cache"))
+  cache = TRUE,
+  cache_mode = c("memory", "disk"),
+  cache_dir = .default_cache_dir(),
+  reactlog = FALSE,
+  showcase = FALSE,
+  hot_reload = FALSE,
+  onStart = NULL,
+  options = list(),
+  enableBookmarking = NULL,
+  uiPattern = ".*", #"/",
+  ...
+) {
+
+  if (hot_reload) {
+    options("shiny.autoreload.pattern" = utils::glob2rx("*.R"))
+  }
+
+  if (reactlog) {
+    shiny::shinyOptions(reactlog = TRUE)
+    cli::cli_alert_info(c(
+      "Running App with Reactlog Enabled",
+      "To view the Reactlog, press `Ctrl + F3` or `Cmd + F3` in the browser."
+    ))
+  }
+
+  if (cache) {
+    cache_mode <- rlang::arg_match(cache_mode, multiple = FALSE)
+    if (cache_mode == "memory") {
+      shiny::shinyOptions(cache = cachem::cache_mem(max_size = 500e6))
+      cli::cli_alert_success("Setup Shiny Cache (in memory) with 500MB Limit")
+    } else {
+      shiny::shinyOptions(
+        cache = cachem::cache_disk(
+          dir = cache_dir,
+          max_size = 500e6,
+          write_fn = qs::qsave,
+          read_fn = qs::qread,
+          extension = ".qs",
+          logfile = fs::path(cache_dir, "cache.log"),
+          destroy_on_finalize = TRUE
+        )
+      )
+      cli::cli_alert_success("Setup Shiny Cache (on disk) with 500MB Limit")
+    }
+  } else {
+    shiny::shinyOptions(cache = NULL)
+    cli::cli_alert_info("Running App with Cache Disabled")
+  }
 
   run_with_opts(
     app = shiny::shinyApp(
@@ -38,6 +87,7 @@ run_app <- function(
       enableBookmarking = enableBookmarking,
       uiPattern = uiPattern
     ),
+    showcase = showcase,
     opts = list(...)
   )
 }
@@ -72,6 +122,7 @@ is_app_local <- function() {
 run_with_opts <- function(
     app,
     opts,
+    showcase = FALSE,
     maintenance_page = maintenance_page,
     print = TRUE) {
   if (Sys.getenv("APP_MAINTANENCE_ACTIVE", "FALSE") == "TRUE") {
@@ -91,6 +142,12 @@ run_with_opts <- function(
 
   if (print) {
     print(app)
+  }
+
+  if (showcase) {
+    shiny::runApp(app, display.mode = "showcase")
+  } else {
+    shiny::runApp(app)
   }
 
   return(app)

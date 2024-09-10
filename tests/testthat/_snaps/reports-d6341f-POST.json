@@ -1,0 +1,228 @@
+{
+    "response": {
+        "requestId": "1725924226",
+        "code": 200,
+        "result": {
+            "reports": {
+                "report": [
+                    {
+                        "name": "pre_lease",
+                        "description": "This is primarily created to assist Student properties in their pre leasing process.",
+                        "filters": {
+                            "filter": [
+                                {
+                                    "name": "property_group_ids",
+                                    "required": true,
+                                    "values": {
+                                        "value": [
+                                            518041,
+                                            518042,
+                                            518044,
+                                            518046,
+                                            577897,
+                                            641240,
+                                            676055,
+                                            739076,
+                                            739079,
+                                            739080,
+                                            739084,
+                                            739085,
+                                            833617,
+                                            952515,
+                                            1115679,
+                                            1143679,
+                                            1161867,
+                                            1197886,
+                                            1197887,
+                                            1311849
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "period_type",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "today",
+                                            {
+                                                "@value": "date",
+                                                "@attributes": {
+                                                    "date": "m/d/Y"
+                                                }
+                                            }
+                                        ]
+                                    },
+                                    "isArray": true,
+                                    "allow_future_periods": true
+                                },
+                                {
+                                    "name": "lease_occupancy_types",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "summarize_by",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "unit_type",
+                                            "floorplan_name",
+                                            "property",
+                                            "do_not_summarize"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "group_by",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "unit_type",
+                                            "floorplan_name",
+                                            "lease_term",
+                                            "do_not_group"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "consider_pre_leased_on",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            32,
+                                            33,
+                                            34,
+                                            41,
+                                            42,
+                                            43,
+                                            44
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "leases_included",
+                                    "required": true,
+                                    "values": {
+                                        "value": [
+
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "ledger_charge_code",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "charge_code_detail",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "0",
+                                            "1"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "space_options",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "show_preferred",
+                                            "show_actual",
+                                            "do_not_show"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "additional_units_shown",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "available",
+                                            "excluded"
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "combine_unit_spaces_with_same_lease",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "0",
+                                            "1"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "consolidate_by",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "no_consolidation",
+                                            "consolidate_all_properties",
+                                            "consolidate_by_property_groups"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "arrange_by_property",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "0",
+                                            "1"
+                                        ]
+                                    },
+                                    "isArray": false
+                                },
+                                {
+                                    "name": "subtotals",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "summary",
+                                            "details"
+                                        ]
+                                    },
+                                    "isArray": true
+                                },
+                                {
+                                    "name": "yoy",
+                                    "required": false,
+                                    "values": {
+                                        "value": [
+                                            "0",
+                                            "1"
+                                        ]
+                                    },
+                                    "isArray": false
+                                }
+                            ]
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

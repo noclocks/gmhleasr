@@ -5,10 +5,16 @@
 \title{Run Shiny App}
 \usage{
 run_app(
+  cache = TRUE,
+  cache_mode = c("memory", "disk"),
+  cache_dir = .default_cache_dir(),
+  reactlog = FALSE,
+  showcase = FALSE,
+  hot_reload = FALSE,
   onStart = NULL,
   options = list(),
   enableBookmarking = NULL,
-  uiPattern = "/",
+  uiPattern = ".*",
   ...
 )
 }

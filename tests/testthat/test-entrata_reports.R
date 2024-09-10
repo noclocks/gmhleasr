@@ -2,6 +2,8 @@
 #   reports <- get_entrata_reports_list()
 #   report_info <- get_entrata_report_info("pre_lease")
 #   latest_version <- get_latest_report_version("pre_lease")
+#   pre_lease_data_by_property <- entrata_pre_lease_report()
+#   pre_lease_data_by_unit_type <- entrata_pre_lease_report(summarize_by = "unit_type")
 # })
 
 httptest2::with_mock_api({

@@ -1,0 +1,421 @@
+Description,Document Template - Name,Related Document Template,Table Name,dbid,Sheet,qry,clist,slist,stlist,Is Data Grid?,Date Created,Date Modified,EachRecordasNewTab,grouplist,Last Modified By,Link to table,Max Line items,Max Lines type,Record ID#,Record Owner,Skip Rows,slist Options,Tab sub report order
+Sheet 10 - Weekly Total Graph Data,Weekly Performance Overview,2,Weekly Stats,bq5hz7i8t,10,{'11'.EX.'[RK]'} AND {'25'.EX.'2022 - 2023'},A2:12.B2:59.C2-N:47.D2-N:68.E2-N:76,59,,yes,07-19-2021 12:53 PM,10-05-2021 01:46 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,16,JT Bailey <62477437.bhmt>,,,
+Sheet 10 - Weekly Total Graph Data,NEW - Weekly Performance Overview,5,Weekly Stats,bq5hz7i8t,10,{'11'.EX.'[RK]'} AND {'25'.EX.'2022 - 2023'},"A2:12.
+B2:59.
+C2-N:47.
+D2-N:68.
+E2-N:76",59,,yes,10-25-2021 09:36 AM,12-07-2021 12:33 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,25,JT Bailey <62477437.bhmt>,,,
+Property Info,Portfolio Roll Up Template,6,,bq5hz7i5z,1,{'8'.EX.'[RK]'},"A11:7.
+B11:11.
+C11:28.
+D11-N:30.
+F11:13.
+G11:14.
+H11:12.
+I11-N:32.
+K11:16.
+L11:17.
+M11:15.
+N11-N:31.
+P11:33.
+Q11-N:34.
+S11:23.
+T11:24.
+U11:22.
+V11-N:35.
+X11:36.
+Y11:22.
+Z11:25.
+AA11:26.
+AB11:27",40,,yes,02-20-2022 05:44 PM,03-09-2022 02:05 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,50,JT Bailey <62477437.bhmt>,,,
+Portfolios,Dashboard Output,1,,bq5hz7i5x,1,{'28'.EX.'[RK]'},"B31:8.C31:10.D31:37.E31-N:39.G31:12.H31:13.I31:11.J31-N:17.L31:15.M31:16.O31-N:18.T31:31.U31:32.V31:30.W31-N:33.AA31:34.AB31:35.AC31:36
+
+
+",40,,yes,06-01-2021 11:45 PM,03-15-2023 12:14 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,1,JT Bailey <62477437.bhmt>,,,
+Sheet 12 - Floorplan PreLease Chart Data,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,12,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A2:6.
+B2:220.
+C2:221.
+D2:223",6,,yes,07-19-2021 12:53 PM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,4,JT Bailey <62477437.bhmt>,,6,
+Sheet 02 - Weekly Leasing Breakdown,Weekly Performance Overview,2,Floorplans,bq5hz7i58,2,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A5:6.
+E5:193.
+F5:199.
+G5:192.
+H5:198.
+I5:191.
+J5:197.
+K5:190.
+L5:196.
+M5:189.
+N5:195.
+O5:188.
+P5:194.
+Q5:187.
+R5:186.
+V5-N:201.
+X5:54.
+Y5:55.
+AA5:25.
+AB5:9.
+AC5:76.
+AE5-N:56",6,A: Total |E.F.G.H.I.J.K.L.M.N.O.P.Q.R.T.U.X.Y.AA.AB.AC|LIGHTBLUE,yes,07-19-2021 12:53 PM,10-07-2021 10:03 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,5,JT Bailey <62477437.bhmt>,,,
+Sheet 03 - Floorplan Financial Details,Weekly Performance Overview,2,Floorplans,bq5hz7i58,3,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A4:6.
+C4:9.
+D4:21.
+E4:72.
+G4:25.
+H4:35.
+I4:37.
+J4:76.
+K4:38.
+L4:40.
+M4:43.
+N4-N:154.
+O4-N:158
+",6,A: Total |C.G.I.J.K.L.N.O|LIGHTBLUE,yes,07-19-2021 12:53 PM,10-07-2021 01:42 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,7,JT Bailey <62477437.bhmt>,,,
+Sheet 05 - Floorplan Incentive Details,Weekly Performance Overview,2,Floorplans,bq5hz7i58,5,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A4:6.
+C4:25.
+D4:76.
+F4:35.
+G4:60.
+H4:165.
+I4:59.
+J4:166.
+K4:167.
+L4:66
+
+",6,A: Total |C.D.G.I|LIGHTBLUE,yes,07-19-2021 12:53 PM,10-07-2021 10:03 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,9,JT Bailey <62477437.bhmt>,,,
+Sheet 06 - Floorplan Lease Approval and Aging,Weekly Performance Overview,2,Floorplans,bq5hz7i58,6,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A6:6.
+E6:168.
+F6:171.
+G6:170.
+H6:169.
+J6:172",6,,yes,07-19-2021 12:53 PM,10-07-2021 10:15 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,11,JT Bailey <62477437.bhmt>,,,
+Sheet 09 - Floorplan Leasing Details,Weekly Performance Overview,2,Floorplans,bq5hz7i58,9,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A5:6.
+C5:9.
+D5-N:174.
+F5:55.
+G5:54.
+H5:25.
+I5-N:56.
+K5:52.
+L5-N:175.
+M5-N:176",6,A: Total |C.F.G.H.K|LIGHTBLUE,yes,07-19-2021 12:53 PM,10-04-2021 10:25 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,14,JT Bailey <62477437.bhmt>,,,
+Sheet 04 - Floorplan Rate Growth Details,Weekly Performance Overview,2,,bq5hz7i58,4,{'14'.EX.'[RK]'} AND {'9'.XEX.''},"A5:6.
+D5:203.
+E5-N:163.
+G5:43.
+H5-N:157.
+J5:66.
+K5-N:177",6,,yes,08-16-2021 09:48 AM,10-07-2021 10:03 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,18,JT Bailey <62477437.bhmt>,,,
+Sheet 12 - NEW PG1 CHART TEST,Weekly Performance Overview,2,,bq5hz7i58,1,{'14'.EX.'[RK]'} AND {'9'.XEX.''},T2:6.U2-N:56,6,,yes,09-14-2021 12:51 PM,10-04-2021 10:25 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,24,JT Bailey <62477437.bhmt>,,,
+Sheet 03 - Weekly Leasing Breakdown,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,3,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A5:6.
+E5:228.
+F5:229.
+G5-N:201.
+I5:230.
+J5:231.
+L5:232.
+M5:9.
+N5:76.
+P5-N:56",6,A: Total |E.F.I.J.L.M.N|LIGHTBLUE,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,26,JT Bailey <62477437.bhmt>,,,
+Sheet 04 - Floorplan Financial Details,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,4,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A4:6.
+C4:9.
+E4:21.
+G4:233.
+H4:234.
+I4:235.
+K4:76
+",6,A: Total |C.G.I.K|LIGHTBLUE,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,27,JT Bailey <62477437.bhmt>,,,
+Sheet 06 - Floorplan Incentive Details,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,6,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A4:6.
+C4:226.
+D4:76.
+F4:234.
+G4:236.
+H4:237.
+I4:238.
+J4:239.
+K4:240.
+L4:241",6,A: Total |C.D.G.I|LIGHTBLUE,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,28,JT Bailey <62477437.bhmt>,,,
+Sheet 07 - Floorplan Lease Approval and Aging,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,7,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A6:6.
+E6:168.
+F6:171.
+G6:170.
+H6:169.
+J6:172",6,,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,29,JT Bailey <62477437.bhmt>,,,
+Sheet 02 - Floorplan Leasing Details,NEW - Weekly Performance Overview,5,Floorplans,bq5hz7i58,2,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND {'9'.XEX.'0'},"A10:6.
+C10:9.
+D10:144.
+E10-N:174.
+F10:224.
+G10-N:211.
+H10:225.
+I10:226.
+J10-N:56.
+K10:227.
+L10-N:175.
+M10-N:176
+",6,A: Total |C.D.F.K.H.I|LIGHTBLUE,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,30,JT Bailey <62477437.bhmt>,,,
+Sheet 05 - Floorplan Rate Growth Details,NEW - Weekly Performance Overview,5,,bq5hz7i58,5,{'14'.EX.'[RK]'} AND {'9'.XEX.''} AND AND {'9'.XEX.'0'},"A10:6.
+D10:35.
+E10:247.
+F10-N:215.
+H10:66.
+I10:244.
+J10-N:216",6,,yes,10-25-2021 09:36 AM,10-06-2022 06:10 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,31,JT Bailey <62477437.bhmt>,,,
+Sheet 12 - NEW PG1 CHART TEST,,,,bq5hz7i58,1,{'14'.EX.'[RK]'} AND {'9'.XEX.''},T2:6.U2-N:56,6,,yes,10-25-2021 09:36 AM,10-25-2021 12:15 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,32,JT Bailey <62477437.bhmt>,,,
+Properties,Dashboard Output,1,,bq5hz7i53,1,{'425'.EX.'[RK]'},"B10:6.C10:414.D10:423.E10-N:119.G10:45.H10:47.I10:25.J10-N:26.L10:175.M10:176.O10-N:44.T10:402.U10:403.V10:401.W10-N:404.AA10:408.AB10:407.AC10:406
+",,,yes,06-01-2021 11:49 PM,11-09-2021 02:01 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,2,JT Bailey <62477437.bhmt>,,,
+Sheet 11 - Lead Graph Details,Weekly Performance Overview,2,Properties,bq5hz7i53,11,{'3'.EX.'[RK]'},"A2:6.
+B2:453.
+C2:454.
+D2:455.
+E2:456.
+F2:457.
+G2:458",,,yes,07-19-2021 12:53 PM,10-07-2021 01:32 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,3,JT Bailey <62477437.bhmt>,,,
+Sheet 2 - Weekly Leasing Breakdown Summary,DUMMY,3,Properties,bq5hz7i53,2,{'3'.EX.'[RK]'},A4:402.G4:403.M4:401.S4-N:404.E6:497.G6:496.I6:495.K6:494.M6:493.O6:492.Q6:491,,,no,07-19-2021 12:53 PM,08-15-2021 11:08 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,6,JT Bailey <62477437.bhmt>,,,
+Sheet 3 - Property Info,DUMMY,3,Properties,bq5hz7i53,3,{'3'.EX.'[RK]'},A4-N:73.D4-N:74.G4-N:75.J4:61,,,no,07-19-2021 12:53 PM,08-15-2021 11:08 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,8,JT Bailey <62477437.bhmt>,,,
+Sheet 4 - Property Info,DUMMY,3,Properties,bq5hz7i53,4,{'3'.EX.'[RK]'},A4:84.D4:83.G4-N:439.J4-N:440,,,no,07-19-2021 12:53 PM,08-15-2021 11:08 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,10,JT Bailey <62477437.bhmt>,,,
+Sheet 06 - Property Lease Approval and Aging,Weekly Performance Overview,2,Properties,bq5hz7i53,6,{'3'.EX.'[RK]'},"L5:447.
+N5:448.
+L8-N:26.
+L11-N:449.
+L15:443.
+M15:444.
+N15:445.
+O15:446.
+L18:450.
+L21:452.
+AA4:448.
+AA5:564.
+AA6:565.
+AA7:566.
+AA8:567",,,no,07-19-2021 12:53 PM,10-07-2021 10:35 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,12,JT Bailey <62477437.bhmt>,,,
+Sheet 07 - Traffic and Application Counts,Weekly Performance Overview,2,Properties,bq5hz7i53,7,{'3'.EX.'[RK]'},B13:461.C13:466.D13:471.G13:476.H13:481.I13:486.B14:464.C14:470.D14:475.G14:480.H14:485.I14:489.B15:463.C15:469.D15:474.G15:479.H15:484.I15:490.B16:462.C16:468.D16:473.G16:478.H16:483.I16:488.B17:465.C17:467.D17:472.G17:477.H17:482.I17:487.B4:497.C4:496.D4:495.E4:494.F4:493.G4:492.H4:491,,,no,07-19-2021 12:53 PM,08-16-2021 01:04 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,13,JT Bailey <62477437.bhmt>,,,
+Sheet 8 - Property Info,DUMMY,3,Properties,bq5hz7i53,8,{'3'.EX.'[RK]'},A4-N:26.D4:47.G4:45.J4:25,,,no,07-19-2021 12:53 PM,08-15-2021 11:08 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,15,JT Bailey <62477437.bhmt>,,,
+Sheet 04 - Property Rent Growth Details,Weekly Performance Overview,2,,bq5hz7i53,4,{'3'.EX.'[RK]'},"P7:66.
+Q7:67.
+P8-N:73.
+P12:76.
+Q12:68.
+P13-N:74.
+P17:439.
+Q17:441.
+P18-N:440",,,no,08-16-2021 10:09 AM,10-07-2021 10:03 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,19,JT Bailey <62477437.bhmt>,,,
+Sheet 02 - Days of the Week,Weekly Performance Overview,2,,bq5hz7i53,2,{'3'.EX.'[RK]'},"E3:497.
+G3:496.
+I3:495.
+K3:494.
+M3:493.
+O3:492.
+Q3:491",,,no,08-16-2021 10:42 AM,10-07-2021 10:03 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,20,JT Bailey <62477437.bhmt>,,,
+Sheet 07 - Daily Traffic Breakdown,Weekly Performance Overview,2,,bq5hz7i53,7,{'3'.EX.'[RK]'},"B4:497.C4:496.D4:495.E4:494.G4:493.H4:492.I4:491.B5:529.C5:524.D5:519.E5:514.	G5:509.H5:504.I5:499.B6:530.C6:525.D6:520.E6:515.G6:510.H6:505.I6:503.B7:531.C7:526.D7:521.E7:516.G7:511.H7:506.I7:502.B8:532.C8:527.D8:522.E8:517.G8:512.H8:507.I8:501.B9:533.C9:528.D9:523.E9:518.G9:513.H9:508.I9:500
+",,,no,08-16-2021 12:37 PM,08-16-2021 01:04 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,21,JT Bailey <62477437.bhmt>,,,
+Sheet 13 - Daily Chart Data,Weekly Performance Overview,2,,bq5hz7i53,13,{'3'.EX.'[RK]'},"B1:548.
+C1:549.
+D1:550.
+E1:551.
+F1:552.
+G1:553.
+H1:554.
+B2:536.
+C2:541.
+D2:540.
+E2:539.
+F2:538.
+G2:537.
+H2:534.
+B3:542.
+C3:547.
+D3:546.
+E3:545.
+F3:544.
+G3:543.
+H3:535.
+B5:529.
+C5:524.
+D5:519.
+E5:514.
+F5:509.
+G5:504.
+H5:499.
+B6:530.
+C6:525.
+D6:520.
+E6:515.
+F6:510.
+G6:505.
+H6:503",,,no,08-16-2021 12:53 PM,10-05-2021 01:42 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,22,JT Bailey <62477437.bhmt>,,,
+Sheet 09 - Property Leasing Totals,Weekly Performance Overview,2,,bq5hz7i53,9,{'3'.EX.'[RK]'},"O7-N:26.
+P7-N:44.
+O12:45.
+P12:175.
+O17:47.
+P17:176.
+O22:72.
+P22:43",,,no,08-31-2021 12:32 PM,09-13-2021 12:28 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,23,JT Bailey <62477437.bhmt>,,,
+Sheet 11 - Lead Graph Details,NEW - Weekly Performance Overview,5,Properties,bq5hz7i53,11,{'3'.EX.'[RK]'},"A2:6.
+B2:453.
+C2:454.
+D2:455.
+E2:456.
+F2:457.
+G2:458",,,yes,10-25-2021 09:36 AM,10-25-2021 09:36 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,33,JT Bailey <62477437.bhmt>,,,
+Sheet 07 - Property Lease Approval and Aging,NEW - Weekly Performance Overview,5,Properties,bq5hz7i53,7,{'3'.EX.'[RK]'},"L5:447.
+N5:448.
+L8-N:26.
+L11-N:449.
+L15:443.
+M15:444.
+N15:445.
+O15:446.
+L18:450.
+L21:452.
+AA4:448.
+AA5:564.
+AA6:565.
+AA7:566.
+AA8:567",,,no,10-25-2021 09:36 AM,12-07-2021 12:43 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,34,JT Bailey <62477437.bhmt>,,,
+Sheet 08 - Traffic and Application Counts,NEW - Weekly Performance Overview,5,Properties,bq5hz7i53,8,{'3'.EX.'[RK]'},"B13:461.
+C13:466.
+D13:471.
+G13:476.
+H13:481.
+I13:486.
+B14:464.
+C14:470.
+D14:475.
+G14:480.
+H14:485.
+I14:489.
+B15:463.
+C15:469.
+D15:474.
+G15:479.
+H15:484.
+I15:490.
+B16:462.
+C16:468.
+D16:473.
+G16:478.
+H16:483.
+I16:488.
+B17:465.
+C17:467.
+D17:472.
+G17:477.
+H17:482.
+I17:487.
+B4:497.
+C4:496.
+D4:495.
+E4:494.
+F4:493.
+G4:492.
+H4:491",,,no,10-25-2021 09:36 AM,12-07-2021 12:33 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,35,JT Bailey <62477437.bhmt>,,,
+Sheet 05 - Property Rent Growth Details,NEW - Weekly Performance Overview,5,,bq5hz7i53,5,{'3'.EX.'[RK]'},"D5:66.
+E5:597.
+DE-N:73.
+H5:439.
+I5:596.
+HI-N:440",,,no,10-25-2021 09:36 AM,10-06-2022 06:06 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,36,JT Bailey <62477437.bhmt>,,,
+Sheet 03 - Days of the Week,,,,bq5hz7i53,3,{'3'.EX.'[RK]'},"E3:497.
+G3:496.
+I3:495.
+K3:494.
+M3:493.
+O3:492.
+Q3:491",,,no,10-25-2021 09:36 AM,10-25-2021 10:30 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,37,JT Bailey <62477437.bhmt>,,,
+Sheet 08 - Daily Traffic Breakdown,NEW - Weekly Performance Overview,5,,bq5hz7i53,8,{'3'.EX.'[RK]'},"B4:497.
+C4:496.
+D4:495.
+E4:494.
+G4:493.
+H4:492.
+I4:491.
+B5:529.
+C5:524.
+D5:519.
+E5:514.
+G5:509.
+H5:504.
+I5:499.
+B6:530.
+C6:525.
+D6:520.
+E6:515.
+G6:510.
+H6:505.
+I6:503.
+B7:531.
+C7:526.
+D7:521.
+E7:516.
+G7:511.
+H7:506.
+I7:502.
+B8:532.
+C8:527.
+D8:522.
+E8:517.
+G8:512.
+H8:507.
+I8:501.
+B9:533.
+C9:528.
+D9:523.
+E9:518.
+G9:513.
+H9:508.
+I9:500",,,no,10-25-2021 09:36 AM,12-07-2021 12:44 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,38,JT Bailey <62477437.bhmt>,,,
+Sheet 13 - Daily Chart Data,NEW - Weekly Performance Overview,5,,bq5hz7i53,13,{'3'.EX.'[RK]'},"B1:548.
+C1:549.
+D1:550.
+E1:551.
+F1:552.
+G1:553.
+H1:554.
+B2:536.
+C2:541.
+D2:540.
+E2:539.
+F2:538.
+G2:537.
+H2:534.
+B3:542.
+C3:547.
+D3:546.
+E3:545.
+F3:544.
+G3:543.
+H3:535.
+B5:529.
+C5:524.
+D5:519.
+E5:514.
+F5:509.
+G5:504.
+H5:499.
+B6:530.
+C6:525.
+D6:520.
+E6:515.
+F6:510.
+G6:505.
+H6:503",,,no,10-25-2021 09:36 AM,10-25-2021 09:36 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,39,JT Bailey <62477437.bhmt>,,,
+Sheet 02 - Property Leasing Totals,NEW - Weekly Performance Overview,5,,bq5hz7i53,2,{'3'.EX.'[RK]'},"B5-N:26.
+C5-N:44.
+E5:45.
+F5:175.
+H5:47.
+I5:176.
+K5:25.
+L5:43",,,no,10-25-2021 09:36 AM,12-07-2021 12:58 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,40,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,3,{'3'.EX.'[RK]'},S1-I:562.A2:6,,,no,12-07-2021 12:17 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,41,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,4,{'3'.EX.'[RK]'},I1-I:562.A2:6,,,no,12-07-2021 12:17 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,42,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,6,{'3'.EX.'[RK]'},I1-I:562.A2:6,,,no,12-07-2021 12:17 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,43,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,9,{'3'.EX.'[RK]'},J1-I:562.A2:6,,,no,12-07-2021 12:27 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,44,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,5,{'3'.EX.'[RK]'},I1-I:562.A2:6,,,no,12-07-2021 12:58 AM,10-06-2022 06:04 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,46,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,2,{'3'.EX.'[RK]'},I1-I:562.A2:6,,,no,12-07-2021 01:00 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,47,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,7,{'3'.EX.'[RK]'},T1-I:562.A2:6,,,no,12-07-2021 01:00 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,48,JT Bailey <62477437.bhmt>,,,
+,NEW - Weekly Performance Overview,5,,bq5hz7i53,8,{'3'.EX.'[RK]'},L1-I:562.A2:6,,,no,12-07-2021 01:00 AM,12-07-2021 01:14 AM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,49,JT Bailey <62477437.bhmt>,,,
+Sheet 04 - Rent Growth Details,,,,,,,,,,no,08-15-2021 11:29 PM,08-15-2021 11:29 PM,no,,JT Bailey <62477437.bhmt>,https://gmh.quickbase.com/db/bq5hz7i9k?a=td,,,17,JT Bailey <62477437.bhmt>,,,

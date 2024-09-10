@@ -2,7 +2,7 @@
 % Please edit documentation in R/entrata_leases.R
 \name{entrata_leases}
 \alias{entrata_leases}
-\title{Entrata Leases}
+\title{Retrieve Lease Information from Entrata API}
 \usage{
 entrata_leases(
   property_id,
@@ -30,56 +30,72 @@ entrata_leases(
 )
 }
 \arguments{
-\item{application_id}{Optional. Integer value of the application ID}
+\item{property_id}{Required. Integer. The ID of the property to retrieve leases for.}
 
-\item{customer_id}{Optional. Integer value of the customer ID}
+\item{application_id}{Optional. Integer. Filter leases by application ID.}
 
-\item{lease_status_type_ids}{Optional. Integer vector of lease status type IDs}
+\item{customer_id}{Optional. Integer. Filter leases by customer ID.}
 
-\item{lease_ids}{Optional. Integer vector of lease IDs}
+\item{lease_status_type_ids}{Optional. Integer vector. Filter leases by status type IDs.}
 
-\item{scheduled_ar_code_ids}{Optional. Integer vector of scheduled AR code IDs}
+\item{lease_ids}{Optional. Integer vector. Retrieve specific leases by their IDs.}
 
-\item{unit_number}{Optional. Character value of the unit number}
+\item{scheduled_ar_code_ids}{Optional. Integer vector. Filter leases by scheduled AR code IDs.}
 
-\item{building_name}{Optional. Character value of the building name}
+\item{unit_number}{Optional. Character. Filter leases by unit number.}
 
-\item{move_in_date_from}{Optional. Date value of the move-in date from}
+\item{building_name}{Optional. Character. Filter leases by building name.}
 
-\item{move_in_date_to}{Optional. Date value of the move-in date to}
+\item{move_in_date_from}{Optional. Date. Filter leases with move-in date from this date.}
 
-\item{lease_expiring_date_from}{Optional. Date value of the lease expiring from}
+\item{move_in_date_to}{Optional. Date. Filter leases with move-in date up to this date.}
 
-\item{lease_expiring_date_to}{Optional. Date value of the lease expiring to}
+\item{lease_expiring_date_from}{Optional. Date. Filter leases expiring from this date.}
 
-\item{move_out_date_from}{Optional. Date value of the move-out date from}
+\item{lease_expiring_date_to}{Optional. Date. Filter leases expiring up to this date.}
 
-\item{move_out_date_to}{Optional. Date value of the move-out date to}
+\item{move_out_date_from}{Optional. Date. Filter leases with move-out date from this date.}
 
-\item{include_other_income_leases}{Optional. Logical value to include other income leases}
+\item{move_out_date_to}{Optional. Date. Filter leases with move-out date up to this date.}
 
-\item{resident_friendly_mode}{Optional. Logical value to include resident friendly mode}
+\item{include_other_income_leases}{Optional. Logical. Include other income leases in the results.}
 
-\item{include_lease_history}{Optional. Logical value to include lease history information}
+\item{resident_friendly_mode}{Optional. Logical. Use resident-friendly mode for the results.}
 
-\item{include_ar_transactions}{Optional. Logical value to include AR transactions}
+\item{include_lease_history}{Optional. Logical. Include lease history information in the results.}
 
-\item{pagination_page_number}{Pagination page number. Default is 1}
+\item{include_ar_transactions}{Optional. Logical. Include AR transactions in the results.}
 
-\item{pagination_page_size}{Number of items per page. Default is 500}
+\item{pagination_page_number}{Integer. The page number for paginated results. Default is 1.}
 
-\item{include_pagination_links}{Logical value to include pagination links in the response. Default is FALSE}
+\item{pagination_page_size}{Integer. Number of items per page. Default is 500.}
 
-\item{...}{Additional parameters to pass to the request}
+\item{include_pagination_links}{Logical. Include pagination links in the response. Default is FALSE.}
 
-\item{property_ids}{Required. Integer vector of property IDs}
+\item{...}{Additional parameters to pass to the request.}
 }
 \value{
-Parsed Response Body Content as a tibble with leases data.
+A tibble containing lease data with parsed and cleaned information.
 }
 \description{
-This function retrieves lease information from the Entrata API.
+This function retrieves lease information from the Entrata API. It allows for
+filtering and customization of the lease data retrieval based on various parameters.
+}
+\examples{
+\dontrun{
+# Retrieve leases for a specific property
+leases <- entrata_leases(property_id = 12345)
+
+# Retrieve leases with additional filters
+filtered_leases <- entrata_leases(
+  property_id = 12345,
+  move_in_date_from = as.Date("2023-01-01"),
+  move_in_date_to = as.Date("2023-12-31"),
+  include_lease_history = TRUE
+)
+}
+
 }
 \seealso{
-\code{\link[=parse_entrata_leases]{parse_entrata_leases()}}
+\code{\link[=parse_entrata_leases]{parse_entrata_leases()}} for details on how the API response is parsed.
 }

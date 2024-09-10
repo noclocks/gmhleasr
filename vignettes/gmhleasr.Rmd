@@ -1,8 +1,8 @@
 ---
-title: "gmhleasr"
+title: "Introduction to gmhleasr"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{gmhleasr}
+  %\VignetteIndexEntry{Introduction to gmhleasr}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -10,10 +10,157 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  eval = FALSE,
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
 ```{r setup}
-# library(gmhleasr)
+library(gmhleasr)
 ```
+
+## Introduction to gmhleasr
+
+The `gmhleasr` package is a comprehensive tool designed for GMH Communities to interact with the Entrata API and visualize leasing data. It combines a powerful API client with a customizable Shiny dashboard, providing a complete solution for managing and analyzing leasing information.
+
+## Package Components
+
+### API Client
+
+The API client component of `gmhleasr` provides a robust interface for interacting with the Entrata API. It includes functions for:
+
+- Authenticating with the Entrata API
+- Retrieving property information
+- Fetching lease data
+- Accessing various reports
+- Handling rate limiting and caching
+
+### Shiny Dashboard
+
+The Shiny dashboard component offers a user-friendly interface for visualizing and analyzing leasing data. It includes:
+
+- Interactive data visualizations
+- Customizable reports
+- Filters for data exploration
+- Export functionality for further analysis
+
+## Getting Started
+
+To begin using `gmhleasr`, you first need to install the package and set up your Entrata API configuration.
+
+### Installation
+
+You can install `gmhleasr` from GitHub using the following command:
+
+```{r}
+# install.packages("remotes")
+remotes::install_github("noclocks/gmhleasr")
+```
+
+### Configuration
+
+Create a `config.yml` file in your project directory with your Entrata API credentials:
+
+```yaml
+default:
+  entrata:
+    username: "your_username"
+    password: "your_password"
+    base_url: "https://your-subdomain.entrata.com"
+```
+
+Then, load the configuration in your R script:
+
+```{r}
+config <- create_entrata_config()
+```
+
+## API Client Usage
+
+The API client provides several functions for interacting with the Entrata API. Here are some basic examples:
+
+### Retrieving Properties
+
+```{r}
+properties <- entrata_properties(config = config)
+print(properties)
+```
+
+### Fetching Lease Data
+
+```{r}
+leases <- entrata_leases(property_id = "12345", config = config)
+print(leases)
+```
+
+### Getting Available Reports
+
+```{r}
+reports <- get_entrata_reports_list(config = config)
+print(reports)
+```
+
+For more detailed information on using the API client, refer to the "Entrata API Integration with gmhleasr" vignette.
+
+## Shiny Dashboard Usage
+
+To launch the Shiny dashboard, use the `run_app()` function:
+
+```{r}
+run_app()
+```
+
+The dashboard provides an interactive interface for exploring your leasing data. You can:
+
+- View property summaries
+- Analyze lease trends
+- Generate custom reports
+- Export data for further analysis
+
+## Advanced Features
+
+### Caching
+
+The `gmhleasr` package includes built-in caching to improve performance and reduce API calls. Caching is enabled by default for all API requests. You can disable it for specific requests:
+
+```{r}
+properties <- entrata_properties(config = config, cache = FALSE)
+```
+
+### Custom API Requests
+
+For more complex use cases, you can use the `entrata()` function directly:
+
+```{r}
+response <- entrata(
+  endpoint = "custom_endpoint",
+  method = "customMethod",
+  method_params = list(param1 = "value1", param2 = "value2"),
+  config = config,
+  perform = TRUE,
+  extract = TRUE
+)
+```
+
+### Extending the Dashboard
+
+The Shiny dashboard can be extended with custom modules. Refer to the package documentation for information on creating and integrating custom modules.
+
+## Troubleshooting and FAQ
+
+### Q: I'm getting authentication errors. What should I check?
+
+A: Ensure that your `config.yml` file is correctly formatted and contains the right credentials. Double-check that you're using the correct subdomain in the `base_url`.
+
+### Q: The API requests are slow. How can I improve performance?
+
+A: Make sure caching is enabled (it is by default). You can also try increasing the cache duration in your configuration. If you're making many requests in quick succession, consider implementing a delay to avoid hitting rate limits.
+
+### Q: How can I contribute to the package or report issues?
+
+A: Visit our GitHub repository at <https://github.com/noclocks/gmhleasr> to submit issues or pull requests.
+
+For more detailed information on specific functions and features, refer to the package documentation and other vignettes.

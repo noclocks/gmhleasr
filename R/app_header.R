@@ -1,3 +1,5 @@
+
+
 #  ------------------------------------------------------------------------
 #
 # Title : App Header Module
@@ -48,67 +50,62 @@ NULL
 #' @importFrom htmltools tagList tags
 #' @importFrom shiny NS actionButton icon textOutput tags actionLink
 #' @importFrom shinydashboard dropdownMenu
-app_header_ui <- function(
-    id,
-    title = "GMH Leasing Dashboard",
-    ...) {
+app_header_ui <- function(id, title = "GMH Leasing Dashboard", ...) {
+
   ns <- shiny::NS(id)
 
-  bs4Dash::bs4DashNavbar(
-    title = htmltools::tagList(
-      htmltools::tags$a(
-        href = "https://gmhcommunities.com",
-        htmltools::tags$img(
-          src = "www/images/logos/gmh-communities-logo.svg",
-          alt = "GMH Communities",
-          style = "width: 200px; height: auto;"
-        )
-      )
-    ),
-    skin = "light",
-    status = "white",
-    border = TRUE,
-    leftUi = htmltools::tagList(
-      htmltools::tags$li(
-        class = "dropdown",
-        shiny::actionButton(
-          ns("refresh"),
-          "Refresh",
-          icon = shiny::icon("refresh")
+    bs4Dash::bs4DashNavbar(
+      title = htmltools::tagList(
+        htmltools::tags$a(
+          href = "https://gmhcommunities.com",
+          htmltools::tags$img(
+            src = "www/images/logos/gmh-communities-logo.svg",
+            alt = "GMH Communities",
+            style = "width: 200px; height: auto;"
+          )
         )
       ),
-      htmltools::tags$li(
-        class = "dropdown",
-        shiny::actionButton(
-          ns("about"),
-          "About",
-          icon = shiny::icon("info-circle")
+      skin = "light",
+      status = "white",
+      border = TRUE,
+      leftUi = htmltools::tagList(
+        htmltools::tags$li(
+          class = "dropdown",
+          shiny::actionButton(ns(
+            "refresh"
+          ), "Refresh", icon = shiny::icon("refresh"))
+        ),
+        htmltools::tags$li(
+          class = "dropdown",
+          shiny::actionButton(
+            ns("about"),
+            "About",
+            icon = shiny::icon("info-circle"))
+        ),
+        htmltools::tags$li(
+          class = "dropdown",
+          shiny::actionButton(
+            ns("techstack"),
+            "Tech Stack",
+            icon = shiny::icon("code")
+          )
         )
       ),
-      htmltools::tags$li(
-        class = "dropdown",
-        shiny::actionButton(
-          ns("techstack"),
-          "Tech Stack",
-          icon = shiny::icon("code")
-        )
-      )
-    ),
-    rightUi = shinydashboard::dropdownMenu(
-      type = "messages",
-      badgeStatus = NULL,
-      icon = shiny::icon("user"),
-      headerText = shiny::textOutput("signed_in_as"),
-      shiny::tags$li(
-        shiny::actionLink(
-          style = "display: inline-flex; align-items: center; padding: 2.5px 50px; width: -webkit-fill-available;",
-          "noclocksauthr__sign_out",
-          label = "Sign Out",
-          icon = shiny::icon("sign-out-alt")
+      rightUi = shinydashboard::dropdownMenu(
+        type = "messages",
+        badgeStatus = NULL,
+        icon = shiny::icon('user'),
+        headerText = shiny::textOutput("signed_in_as"),
+        shiny::tags$li(
+          shiny::actionLink(
+            ns("noclocksauthr__sign_out"),
+            style = 'display: inline-flex; align-items: center; padding: 2.5px 50px; width: -webkit-fill-available;',
+            label = "Sign Out",
+            icon = shiny::icon("sign-out-alt")
+          )
         )
       )
     )
-  )
 }
 
 
@@ -134,9 +131,7 @@ app_header_server <- function(id, app_globals = NULL) {
           easyClose = TRUE,
           fade = TRUE,
           size = "l",
-          htmltools::includeMarkdown(
-            app_sys("content/about.md")
-          )
+          htmltools::includeMarkdown(app_sys("content/about.md"))
         )
       )
     }) |> shiny::bindEvent(input$about)
@@ -149,9 +144,7 @@ app_header_server <- function(id, app_globals = NULL) {
           easyClose = TRUE,
           fade = TRUE,
           size = "l",
-          htmltools::includeMarkdown(
-            app_sys("content/techstack.md")
-          )
+          htmltools::includeMarkdown(app_sys("content/techstack.md"))
         )
       )
     }) |> shiny::bindEvent(input$techstack)
@@ -184,32 +177,18 @@ app_header_server <- function(id, app_globals = NULL) {
 
 # internal ----------------------------------------------------------------
 
-.render_content <- function(
-    content_dir = app_sys("content")) {
+.render_content <- function(content_dir = app_sys("content")) {
   rmd_files <- fs::dir_ls(content_dir, glob = "*.Rmd")
 
-  purrr::walk(
-    rmd_files,
-    function(rmd) {
-      md <- fs::path_ext_set(rmd, "md") |> as.character()
-      if (!file.exists(md) || file.mtime(md) < file.mtime(rmd)) {
-        cli::cli_alert_info(
-          c(
-            "Rendering {.field {rmd}} to {.field {md}}"
-          )
-        )
-        knitr::knit(
-          input = rmd,
-          output = md
-        )
-        cli::cli_alert_success(
-          c(
-            "Successfully rendered {.field {rmd}} to {.field {md}}"
-          )
-        )
-      }
+  purrr::walk(rmd_files, function(rmd) {
+    md <- fs::path_ext_set(rmd, "md") |> as.character()
+    if (!file.exists(md) || file.mtime(md) < file.mtime(rmd)) {
+      cli::cli_alert_info(c("Rendering {.field {rmd}} to {.field {md}}"))
+      knitr::knit(input = rmd, output = md)
+      cli::cli_alert_success(c("Successfully rendered {.field {rmd}} to {.field {md}}"))
     }
-  )
+  })
+
 }
 
 # .header_dropdown <- function(id, text, icon) {
@@ -228,7 +207,7 @@ app_header_server <- function(id, app_globals = NULL) {
 #
 #
 # app_header_elements_ui <- function(
-#   id,
+    #   id,
 #   contacts = NULL,
 #   ...
 # ) {

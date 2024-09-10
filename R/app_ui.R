@@ -20,7 +20,8 @@
 #' @importFrom bs4Dash bs4DashPage
 #' @importFrom htmltools tagList tags
 app_ui <- function(request) {
-  ui <- force(request)
+
+  force(request)
 
   ui <- htmltools::tagList(
     add_external_resources(),
@@ -41,7 +42,14 @@ app_ui <- function(request) {
     )
   )
 
-  ui
+  if (request$PATH_INFO == "/") {
+    return(ui)
+  } else if (request$PATH_INFO == "/login") {
+    return(mod_login_ui("login"))
+  } else {
+    return(mod_error_ui("error"))
+  }
+
 }
 
 #' Add external Resources to the Application
@@ -67,9 +75,129 @@ add_external_resources <- function() {
       app_title = "gmhleasr"
     ),
     shinyjs::useShinyjs(),
-    waiter::use_waiter()
+    waiter::use_waiter(),
+    waiter::waiterShowOnLoad(html = waiter::spin_fading_circles())
   )
 }
+
+mod_login_ui <- function(id) {
+
+  ns <- shiny::NS(id)
+
+  noClocksAuthR::sign_in_ui_default(
+    sign_in_module = noClocksAuthR::sign_in_module_2_ui('sign_in'),
+    color = '#14beea',
+    company_name = 'Leasing Dashboard',
+    icon_href = file.path(pkgload::pkg_name(), "img/gmh-favicon.png"),
+    logo_top = shiny::tags$h1(
+      # Make style better for title of Log In page
+      style = 'margin-bottom: 2.5%; font-weight: 500; font-size: 3.5em; color: #FFF;',
+      "GMH Leasing Dashboard"
+    ),
+    logo_bottom = shiny::tags$img(
+      src = file.path(pkgload::pkg_name(), "img/gmh-logo.svg"),
+      alt = 'GMH Communities',
+      style = 'width: 40%; margin-top: 2.5%;'
+    )
+  )
+
+}
+
+mod_error_ui <- function(id) {
+
+  ns <- shiny::NS(id)
+
+  shiny::tags$div(
+    id = ns("error_ui"),
+    shiny::tags$h1(
+      "404 - Page Not Found",
+      style = "color: #FFF; font-size: 3em; font-weight: 500; margin-top: 5%;"
+    ),
+    shiny::tags$p(
+      "The page you are looking for does not exist.",
+      style = "color: #FFF; font-size: 1.5em; font-weight: 300; margin-top: 2%;"
+    )
+  )
+
+
+}
+
+# mod_login_ui <- function(id) {
+#
+#   ns <- shiny::NS(id)
+#
+#   password_ui <- htmltools::tags$div(
+#     id = ns("password_ui"),
+#     htmltools::tags$div(
+#       class = "form-group",
+#       style = "width: 100%;",
+#       htmltools::tags$label(
+#         htmltools::tagList(
+#           shiny::icon("unlock-alt"),
+#           "password"
+#         ),
+#         class = "control-label",
+#         `for` = ns("sign_in_password")
+#       ),
+#       htmltools::tags$input(
+#         id = ns("sign_in_password"),
+#         type = "password",
+#         class = "form-control",
+#         value = ""
+#       )
+#     ),
+#     shinyFeedback::loadingButton(
+#       ns("sign_in_submit"),
+#       label = "Sign In",
+#       class = "btn btn-primary btn-lg text-center",
+#       style = "width: 100%",
+#       loadingLabel = "Authenticating...",
+#       loadingClass = "btn btn-primary btn-lg text-center",
+#       loadingStyle = "width: 100%"
+#     )
+#   )
+#
+#   continue_ui <- htmltools::tags$div(
+#     id = ns("continue_sign_in"),
+#     shiny::actionButton(
+#       inputId = ns("submit_continue_sign_in"),
+#       label = "Continue",
+#       width = "100%",
+#       class = "btn btn-primary btn-lg"
+#     )
+#   )
+#
+#   email_ui <- htmltools::tags$div(
+#     id = ns("email_ui"),
+#     htmltools::tags$br(),
+#     email_input(
+#       inputId = ns("sign_in_email"),
+#       label = htmltools::tagList(shiny::icon("envelope"), "email"),
+#       value = "",
+#       width = "100%"
+#     ),
+#     htmltools::tags$div(
+#       id = ns("sign_in_panel_bottom"),
+#       if (isTRUE(auth$is_invite_required)) {
+#         htmltools::tagList(
+#           continue_ui,
+#           shinyjs::hidden(
+#             password_ui
+#           )
+#         )
+#       } else {
+#         password_ui
+#       },
+#       htmltools::tags$div(
+#         style = "text-align: center;",
+#         htmltools::tags$br(),
+#         send_password_reset_email_module_ui(ns("reset_password"))
+#       )
+#     )
+#   )
+#
+#
+# }
 
 #' Add Resource Path
 #'
@@ -152,7 +280,7 @@ app_theme <- function() {
 
 app_preloader <- function() {
   list(
-    html = waiter::spin_3k(), color = "#007bff"
+    html = htmltools::tagList(waiter::spin_flowers(), "Loading..."), color = "#007bff"
   )
 }
 
@@ -175,9 +303,7 @@ app_body_ui <- function() {
       ),
       bs4Dash::tabItem(
         tabName = "properties",
-        bs4Dash::box(
-          status = "orange"
-        )
+        mod_properties_ui("properties")
       )
     )
   )

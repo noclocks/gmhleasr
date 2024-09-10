@@ -4,7 +4,7 @@
 \alias{app_server}
 \title{App Server}
 \usage{
-app_server(input, output, session)
+app_server(input, output, session, logging = FALSE, ...)
 }
 \arguments{
 \item{input, output, session}{Internal parameters for {shiny}.}

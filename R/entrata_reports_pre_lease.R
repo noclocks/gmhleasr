@@ -71,28 +71,40 @@
 #'
 #' @export
 #'
-#' @importFrom rlang .data .env arg_match
-#' @importFrom cli cli_alert_info
+#' @importFrom cli cli_progress_step
 #' @importFrom dplyr bind_rows
+#' @importFrom glue glue
 #' @importFrom httr2 resp_body_json req_retry req_perform
 #' @importFrom lubridate mdy
 #' @importFrom purrr pluck compact
+#' @importFrom rlang arg_match
+#'
+#' @examples
+#' \dontrun{
+#' pre_lease_data_by_property <- entrata_pre_lease_report()
+#' pre_lease_data_by_property$summary |> dplyr::glimpse()
+#'
+#' pre_lease_data_by_unit_type <- entrata_pre_lease_report(summarize_by = "unit_type")
+#' pre_lease_data_by_unit_type$details |> dplyr::glimpse()
+#' }
 entrata_pre_lease_report <- function(
-    property_ids = get_property_ids_filter_param(),
-    leasing_period_start_date = get_pre_lease_period_start_date(),
-    leasing_period_type = c("today", "date"),
-    summarize_by = c("property", "unit_type", "floorplan_name", "do_not_summarize"),
-    group_by = c("do_not_group", "unit_type", "floorplan_name", "lease_term"),
-    consider_pre_leased_on = c("33", "32", "34", "41", "42", "43", "44"),
-    charge_code_detail = c("0", "1"),
-    space_options = c("do_not_show", "show_preferred", "show_actual"),
-    additional_units_shown = c("available", "excluded"),
-    combine_unit_spaces_with_same_lease = c("0", "1"),
-    consolidate_by = c("no_consolidation", "consolidate_all_properties", "consolidate_by_property_groups"),
-    arrange_by_property = c("0", "1"),
-    subtotals = list("summary", "details"),
-    yoy = c("1", "0"),
-    ...) {
+  property_ids = get_property_ids_filter_param(),
+  leasing_period_start_date = get_pre_lease_period_start_date(),
+  leasing_period_type = c("date", "today"),
+  summarize_by = c("property", "unit_type", "floorplan_name", "do_not_summarize"),
+  group_by = c("do_not_group", "unit_type", "floorplan_name", "lease_term"),
+  consider_pre_leased_on = c("33", "32", "34", "41", "42", "43", "44"),
+  charge_code_detail = c("0", "1"),
+  space_options = c("do_not_show", "show_preferred", "show_actual"),
+  additional_units_shown = c("available", "excluded"),
+  combine_unit_spaces_with_same_lease = c("0", "1"),
+  consolidate_by = c("no_consolidation", "consolidate_all_properties", "consolidate_by_property_groups"),
+  arrange_by_property = c("0", "1"),
+  subtotals = c("summary", "details"),
+  yoy = c("1", "0"),
+  ...
+) {
+
   # get report version
   latest_report_version <- get_latest_report_version("pre_lease")
 
@@ -150,6 +162,12 @@ entrata_pre_lease_report <- function(
     )
   )
 
+  # initialize progress
+  cli::cli_progress_step(
+    "Performing Entrata API Request for the {.field pre_lease} report data...",
+    msg_done = "Successfully retrieved data for the {.field pre_lease} report."
+  )
+
   # perform request to get the queue ID
   res_queue_id <- entrata(
     endpoint = "reports",
@@ -164,11 +182,9 @@ entrata_pre_lease_report <- function(
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "queueId")
 
-  cli::cli_alert_info(
-    c(
-      "Report generation request submitted.",
-      "Queue ID: {.field {queue_id}}"
-    )
+  cli::cli_progress_step(
+    "Successfully retrieved the Queue ID (JWT) for the {.field pre_lease} report: {.field {queue_id}}",
+    class = ".alert-success"
   )
 
   # prepare request to get the report data
@@ -178,25 +194,33 @@ entrata_pre_lease_report <- function(
     method_params = list(
       queueId = queue_id,
       serviceName = "getReportData"
-    ),
-    enable_retry = TRUE,
-    progress = TRUE,
-    timeout = 60,
+    )
   ) |>
     httr2::req_retry(
       max_tries = 10,
       max_seconds = 60,
       is_transient = req_retry_is_transient,
-      backoff = req_retry_backoff
+      backoff = req_retry_backoff,
+      after = req_retry_after
     )
+
+  cli::cli_progress_step(
+    "Attempting to get report data using the queue id...",
+    spinner = TRUE
+  )
 
   # perform request iteratively until get back a response
   res <- httr2::req_perform(req)
 
   # extract/parse content from response
-  res_content <- res_queue |>
+  res_content <- res |>
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "reportData")
+
+  cli::cli_progress_step(
+    "Successfully retrieved report data for the {.field pre_lease} report.",
+    class = ".alert-success"
+  )
 
   # extract summary data
   res_data_summary <- NULL
@@ -239,7 +263,8 @@ get_property_ids_filter_param <- function() {
   entrata(
     endpoint = "properties",
     method = "getProperties",
-    perform = TRUE
+    perform = TRUE,
+    extract = FALSE
   ) |>
     httr2::resp_body_json() |>
     purrr::pluck("response", "result", "PhysicalProperty", "Property") |>
@@ -247,4 +272,29 @@ get_property_ids_filter_param <- function() {
     purrr::map(as.character) |>
     purrr::list_flatten() |>
     unlist()
+}
+
+#' Get Pre-Lease Period Start Date
+#'
+#' @description
+#' This function returns the start date for the pre-lease period.
+#'
+#' @return A character string representing the start date for the pre-lease period.
+#' @export
+#'
+#' @importFrom lubridate today month year make_date
+get_pre_lease_period_start_date <- function() {
+
+  today <- lubridate::today()
+
+  if (lubridate::month(today) >= 9) {
+    out <- lubridate::make_date(lubridate::year(today) + 1, 9, 1)
+  } else {
+    out <- lubridate::make_date(lubridate::year(today), 9, 1)
+  }
+
+  out <- format(out, "%m/%d/%Y") |> as.character()
+
+  return(out)
+
 }

@@ -10,24 +10,22 @@
 
 #' App Assets
 #'
-#' @description
-#' Update the app's `resourcePath` and add bundled, static assets, making
-#' them available to the app's interface for downstream use.
+#' @description Update the app's `resourcePath` and add bundled, static assets,
+#'   making them available to the app's interface for downstream use.
 #'
-#' @details
-#' This function is used to add the app's favicon, bundle the app's assets,
-#' add various `<meta>` tags, and include necessary external libraries and
-#' shiny related packages to the app.
+#' @details This function is used to add the app's favicon, bundle the app's
+#'   assets, add various `<meta>` tags, and include necessary external libraries
+#'   and shiny related packages to the app.
 #'
-#' By default it will perform the following actions:
+#'   By default it will perform the following actions:
 #'
-#' - Update the app's `resourcePath` to include this package's `assets/` directory
-#'   via [shiny::addResourcePath()].
+#' - Update the app's `resourcePath` to include this package's `assets/`
+#'   directory via [shiny::addResourcePath()].
 #' - Add the favicon to the app's `<head>` via [app_favicon()].
 #' - Bundle and include app static assets as an [htmltools::htmlDependency()]
 #'   via [bundle_app_assets()].
 #'
-#' plus, it will include the following packages:
+#'   plus, it will include the following packages:
 #'
 #' - Include `shinyjs` via [shinyjs::useShinyjs()].
 #' - Include `shinyFeedback` via [shinyFeedback::useShinyFeedback()].
@@ -41,7 +39,8 @@
 #' @export
 #'
 #' @seealso [app_favicon()], [bundle_app_assets()], [shiny::addResourcePath()],
-#'   [shinyjs::useShinyjs()], [shinyFeedback::useShinyFeedback()], [waiter::useWaiter()]
+#'   [shinyjs::useShinyjs()], [shinyFeedback::useShinyFeedback()],
+#'   [waiter::useWaiter()]
 #'
 #' @importFrom shiny addResourcePath
 #' @importFrom htmltools tags
@@ -54,8 +53,7 @@ app_assets <- function(...) {
     app_favicon(),
     bundle_app_assets(),
     shinyjs::useShinyjs(),
-    shinyFeedback::useShinyFeedback(feedback = FALSE),
-    waiter::useWaiter()
+    shinyFeedback::useShinyFeedback(feedback = FALSE)
     # rintrojs::useRintrojs()
   )
 }

@@ -4,22 +4,113 @@
 \alias{EntrataAPI}
 \title{Entrata API Manager Client}
 \description{
-This is a wrapper \code{\link[R6:R6Class]{R6::R6Class()}} that provides a high-level interface for
-interacting with the \href{https://api.entrata.com/v1/documentation/}{Entrata API}.
-
-It handles authentication, request parameter validation and construction,
-and response parsing, making it easy for developers to work with the API.
+This R6 class provides a high-level interface for interacting with the Entrata API.
+It handles authentication, request parameter validation, request construction,
+response parsing, caching, and error handling, making it easy for developers
+to work with the API efficiently and reliably.
 }
 \details{
-This class ...
+The EntrataAPI class encapsulates all the necessary logic for interacting with the Entrata API,
+including request construction, authentication, error handling, and response parsing.
+It also implements caching to improve performance for frequently accessed data.
+}
+\examples{
+\dontrun{
+# Create an API client with default configuration
+api <- EntrataAPI$new()
+
+# Create an API client with custom configuration
+config <- create_entrata_config(
+  username = "your_username",
+  password = "your_password",
+  base_url = "https://your-subdomain.entrata.com"
+)
+api <- EntrataAPI$new(config)
+
+# Get the list of available reports
+reports <- api$get_reports_list()
+
+# Get information about a specific report
+report_info <- api$get_report_info("pre_lease")
+
+# Generate a pre-lease report
+pre_lease_report <- api$generate_pre_lease_report(property_ids = c(1234, 5678))
+
+# Get the list of property IDs
+property_ids <- api$get_property_ids()
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$send_request`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+response <- api$send_request(
+  endpoint = "properties",
+  method = "getProperties",
+  method_params = list(propertyId = 1234),
+  enable_retry = TRUE
+)
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$get_reports_list`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+reports <- api$get_reports_list()
+print(reports)
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$get_report_info`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+report_info <- api$get_report_info("pre_lease")
+print(report_info)
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$get_latest_report_version`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+latest_version <- api$get_latest_report_version("pre_lease")
+print(latest_version)
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$generate_pre_lease_report`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+pre_lease_report <- api$generate_pre_lease_report(
+  property_ids = c(1234, 5678),
+  period_start = as.Date("2023-01-01")
+)
+print(pre_lease_report)
+}
+
+## ------------------------------------------------
+## Method `EntrataAPI$get_property_ids`
+## ------------------------------------------------
+
+\dontrun{
+api <- EntrataAPI$new()
+property_ids <- api$get_property_ids()
+print(property_ids)
+}
 }
 \section{Public fields}{
 \if{html}{\out{<div class="r6-fields">}}
 \describe{
-\item{\code{config}}{A list containing the Entrata API configuration, including
-the username, password, and API base URL.}
-
-\item{\code{user_agent}}{The user agent string to use for API requests.}
+\item{\code{config}}{An APIConfig object containing the Entrata API configuration.}
 }
 \if{html}{\out{</div>}}
 }
@@ -40,28 +131,28 @@ the username, password, and API base URL.}
 \if{html}{\out{<a id="method-EntrataAPI-new"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-new}{}}}
 \subsection{Method \code{new()}}{
-Initializes the Entrata API manager with the provided configuration.
-If no configuration is provided, the default configuration will be used.
+Initialize a new EntrataAPI object.
 \subsection{Usage}{
-\if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$new(config = config::get("entrata"))}\if{html}{\out{</div>}}
+\if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$new(config = create_entrata_config())}\if{html}{\out{</div>}}
 }
 
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{config}}{A list containing the Entrata API configuration.}
+\item{\code{config}}{An APIConfig object or a list containing the Entrata API configuration.
+If not provided, a default configuration will be created using \code{\link[=create_entrata_config]{create_entrata_config()}}.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
-The initialized Entrata API manager.
+A new \code{EntrataAPI} object.
 }
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-send_request"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-send_request}{}}}
 \subsection{Method \code{send_request()}}{
-Sends a request to the Entrata API.
+Send a request to the Entrata API.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$send_request(
   endpoint,
@@ -71,6 +162,7 @@ Sends a request to the Entrata API.
   enable_retry = FALSE,
   timeout = NULL,
   progress = FALSE,
+  use_cache = TRUE,
   ...
 )}\if{html}{\out{</div>}}
 }
@@ -78,19 +170,21 @@ Sends a request to the Entrata API.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{endpoint}}{The Entrata API endpoint to call.}
+\item{\code{endpoint}}{Character string specifying the Entrata API endpoint to call.}
 
-\item{\code{method}}{The Entrata API method to use.}
+\item{\code{method}}{Character string specifying the Entrata API method to use.}
 
-\item{\code{method_version}}{The version of the API method to use.}
+\item{\code{method_version}}{Character string specifying the version of the API method to use. Default is "r1".}
 
 \item{\code{method_params}}{A named list of parameters to include in the API request.}
 
-\item{\code{enable_retry}}{Logical, should the request be retried on failure?}
+\item{\code{enable_retry}}{Logical indicating whether to enable request retrying on failure.}
 
-\item{\code{timeout}}{Numeric, the request timeout in seconds.}
+\item{\code{timeout}}{Numeric specifying the request timeout in seconds.}
 
-\item{\code{progress}}{Logical, should progress be shown for the request?}
+\item{\code{progress}}{Logical indicating whether to show a progress bar for the request.}
+
+\item{\code{use_cache}}{Logical indicating whether to use caching for this request.}
 
 \item{\code{...}}{Additional arguments to pass to the underlying \code{httr2::req_perform()} call.}
 }
@@ -99,12 +193,28 @@ Sends a request to the Entrata API.
 \subsection{Returns}{
 The response object from the API request.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+response <- api$send_request(
+  endpoint = "properties",
+  method = "getProperties",
+  method_params = list(propertyId = 1234),
+  enable_retry = TRUE
+)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-get_reports_list"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-get_reports_list}{}}}
 \subsection{Method \code{get_reports_list()}}{
-Retrieves the list of available Entrata reports.
+Retrieve the list of available Entrata reports.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$get_reports_list(latest_only = TRUE)}\if{html}{\out{</div>}}
 }
@@ -112,19 +222,31 @@ Retrieves the list of available Entrata reports.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{latest_only}}{Logical, should only the latest version of each report be returned?}
+\item{\code{latest_only}}{Logical indicating whether to return only the latest version of each report.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
 A tibble containing the report information.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+reports <- api$get_reports_list()
+print(reports)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-get_report_info"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-get_report_info}{}}}
 \subsection{Method \code{get_report_info()}}{
-Retrieves detailed information for a specific Entrata report.
+Retrieve detailed information for a specific Entrata report.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$get_report_info(report_name, report_version = "latest")}\if{html}{\out{</div>}}
 }
@@ -132,21 +254,34 @@ Retrieves detailed information for a specific Entrata report.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{report_name}}{The name of the report to retrieve information for.}
+\item{\code{report_name}}{Character string specifying the name of the report to retrieve information for.}
 
-\item{\code{report_version}}{The version of the report to retrieve information for.}
+\item{\code{report_version}}{Character string specifying the version of the report to retrieve information for.
+Use "latest" to retrieve information for the latest version.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
 A list containing the report name, description, and filters.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+report_info <- api$get_report_info("pre_lease")
+print(report_info)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-get_latest_report_version"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-get_latest_report_version}{}}}
 \subsection{Method \code{get_latest_report_version()}}{
-Retrieves the latest version of a specific Entrata report.
+Retrieve the latest version of a specific Entrata report.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$get_latest_report_version(report_name)}\if{html}{\out{</div>}}
 }
@@ -154,23 +289,35 @@ Retrieves the latest version of a specific Entrata report.
 \subsection{Arguments}{
 \if{html}{\out{<div class="arguments">}}
 \describe{
-\item{\code{report_name}}{The name of the report to retrieve the latest version for.}
+\item{\code{report_name}}{Character string specifying the name of the report to retrieve the latest version for.}
 }
 \if{html}{\out{</div>}}
 }
 \subsection{Returns}{
 The latest version of the report as a character string.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+latest_version <- api$get_latest_report_version("pre_lease")
+print(latest_version)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-generate_pre_lease_report"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-generate_pre_lease_report}{}}}
 \subsection{Method \code{generate_pre_lease_report()}}{
-Generates a pre-lease report in Entrata.
+Generate a pre-lease report in Entrata.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$generate_pre_lease_report(
   property_ids,
-  period_start = "2024-09-01",
+  period_start = Sys.Date(),
   ...
 )}\if{html}{\out{</div>}}
 }
@@ -180,7 +327,7 @@ Generates a pre-lease report in Entrata.
 \describe{
 \item{\code{property_ids}}{A vector of property IDs to include in the report.}
 
-\item{\code{period_start}}{The start date of the reporting period.}
+\item{\code{period_start}}{The start date of the reporting period. Defaults to the current date.}
 
 \item{\code{...}}{Additional parameters to pass to the report generation.}
 }
@@ -189,12 +336,27 @@ Generates a pre-lease report in Entrata.
 \subsection{Returns}{
 A list containing the summary and details of the pre-lease report.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+pre_lease_report <- api$generate_pre_lease_report(
+  property_ids = c(1234, 5678),
+  period_start = as.Date("2023-01-01")
+)
+print(pre_lease_report)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-get_property_ids"></a>}}
 \if{latex}{\out{\hypertarget{method-EntrataAPI-get_property_ids}{}}}
 \subsection{Method \code{get_property_ids()}}{
-Retrieves the list of property IDs from the Entrata API.
+Retrieve the list of property IDs from the Entrata API.
 \subsection{Usage}{
 \if{html}{\out{<div class="r">}}\preformatted{EntrataAPI$get_property_ids()}\if{html}{\out{</div>}}
 }
@@ -202,6 +364,18 @@ Retrieves the list of property IDs from the Entrata API.
 \subsection{Returns}{
 A vector of property IDs.
 }
+\subsection{Examples}{
+\if{html}{\out{<div class="r example copy">}}
+\preformatted{\dontrun{
+api <- EntrataAPI$new()
+property_ids <- api$get_property_ids()
+print(property_ids)
+}
+}
+\if{html}{\out{</div>}}
+
+}
+
 }
 \if{html}{\out{<hr>}}
 \if{html}{\out{<a id="method-EntrataAPI-clone"></a>}}

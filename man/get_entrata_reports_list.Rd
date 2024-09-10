@@ -2,19 +2,44 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_entrata_reports_list}
 \alias{get_entrata_reports_list}
-\title{Get Entrata Reports List}
+\title{Get List of Available Entrata Reports}
 \usage{
 get_entrata_reports_list(latest_only = TRUE)
 }
 \arguments{
 \item{latest_only}{Logical, if TRUE (default), returns only the latest version
-of each report.}
+of each report. If FALSE, returns all versions of all reports.}
 }
 \value{
-A tibble containing report information including report name, ID,
-system name, and version.
+A tibble containing report information with the following columns:
+\itemize{
+\item report_id: Integer ID of the report
+\item report_name: Character string, name of the report
+\item system_name: Character string, system name of the report
+\item report_version: Character string, version of the report
+\item is_latest: Logical, indicating if this is the latest version (only when latest_only = FALSE)
+}
 }
 \description{
-This function retrieves a list of reports available in the
-Entrata system, optionally filtering to only the latest version of each report.
+This function retrieves a list of reports available in the Entrata system.
+It provides information about each report, including its name, ID, system name,
+and version. You can choose to get only the latest version of each report or
+all available versions.
+}
+\examples{
+\dontrun{
+# Get the latest version of all reports
+latest_reports <- get_entrata_reports_list()
+
+# Get all versions of all reports
+all_reports <- get_entrata_reports_list(latest_only = FALSE)
+
+# View the first few rows of the reports list
+head(latest_reports)
+}
+
+}
+\seealso{
+\code{\link{get_latest_report_version}} for getting the latest version of a specific report
+\code{\link{get_entrata_report_info}} for getting detailed information about a specific report
 }

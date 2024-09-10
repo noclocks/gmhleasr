@@ -2,116 +2,56 @@
 % Please edit documentation in R/entrata_properties.R
 \name{entrata_properties}
 \alias{entrata_properties}
-\alias{parse_property_res_data}
-\title{Entrata API Properties Endpoint}
+\title{Retrieve Properties from Entrata API}
 \usage{
 entrata_properties(
-  property_ids = c(NULL),
+  property_ids = NULL,
   property_lookup_codes = NULL,
   show_all_status = FALSE,
+  include_lease_terms = FALSE,
   ...
 )
-
-parse_property_res_data(res_data)
 }
 \arguments{
-\item{property_ids}{Character Vector of Property IDs to include in the request
-body parameters. If \code{NULL}, all properties will be returned. Default is
-\code{NULL}.}
+\item{property_ids}{Character vector of Property IDs to include in the request.
+If NULL, all properties will be returned. Default is NULL.}
 
 \item{property_lookup_codes}{Character string with a "Property Lookup Code"
-to include in the request's body. Default is \code{NULL}.}
+to include in the request. Default is NULL.}
 
-\item{show_all_status}{Logical: if \code{TRUE} will return all properties, regardless
-of status. Default is \code{FALSE}.}
+\item{show_all_status}{Logical: if TRUE, will return all properties, regardless
+of status. Default is FALSE.}
 
-\item{...}{
-  Arguments passed on to \code{\link[=entrata]{entrata}}
-  \describe{
-    \item{\code{endpoint}}{Entrata API Endpoint to send the request to. Default is \code{NULL}.
-See details for the available endpoints.}
-    \item{\code{method}}{Entrata API Method to use in the request.
-Not to be confused with the \code{HTTP} request method (i.e. \code{GET}, \code{POST}),
-this method must be a method that is available in the Entrata API for the
-specified \code{endpoint}. The default value depends on whether the \code{endpoint}
-parameter was provided, if it is available the default value is the first
-method listed for that endpoint. If no endpoint is specified, \code{NULL}
-will be used as the method in the request body. See details for available
-methods by endpoint and more details on the structure of the request.}
-    \item{\code{method_version}}{Entrata API Method Version to use in the request. Default is \code{"r1"}.
-Some endpoints have multiple versions of the same method. The version
-should be provided as a string. See details for more information on the
-structure of the request and available versions by endpoint method.}
-    \item{\code{method_params}}{List of parameters to use in the request body's \code{"method"}
-object. Default is an empty list. The parameters should be provided as a
-named list where the names are the parameter names and the values are the
-parameter values. See details for more information on the structure of the
-request and available parameters by endpoint method.
-The default value depends on whether the \code{endpoint} parameter was provided,
-if it is available the default value is an empty list. If no endpoint is
-specified, \code{NULL} will be used as the method in the request body.}
-    \item{\code{ua}}{User Agent string to use in the request. Default is to use \code{\link[=user_agent]{user_agent()}}.}
-    \item{\code{perform}}{Logical value indicating whether to perform the request.
-Default is \code{FALSE}. If \code{FALSE}, the function will return the request object
-without performing the request. If \code{TRUE}, the function will perform the
-request and return the response object.}
-    \item{\code{extract}}{Logical value indicating whether to extract the response.
-Default is the value of \code{perform}. If \code{TRUE}, the function will extract the
-response object and return it. If \code{FALSE}, the function will return the
-response object as is.}
-    \item{\code{enable_retry}}{Logical value indicating whether to enable request retry.
-Default is \code{FALSE}. If \code{TRUE}, the function will enable request retry with
-the default retry settings. If \code{FALSE}, the function will not enable request
-retry.}
-    \item{\code{timeout}}{Numeric value indicating the request timeout in seconds.
-Default is \code{NULL}. If provided, the function will set the request timeout
-to the provided value in seconds.}
-    \item{\code{dry_run}}{Logical value indicating whether to perform a dry run of the request.
-Default is \code{FALSE}. If \code{TRUE}, the function will perform a dry run of the
-request before performing the actual request (or if \code{perform} is not set,
-will return the request object without performing the request).}
-    \item{\code{progress}}{Logical value indicating whether to show progress of the request.
-Only useful for long running requests. Default is \code{FALSE}. If \code{TRUE}, the
-function will show the progress of the request.}
-    \item{\code{config}}{Entrata API Configuration Values as a list. Default is to use
-\code{config::get("entrata")} to retrieve the configuration values from a
-\code{config.yml} configuration file. The configuration values should include
-the following keys: \code{username}, \code{password}, and \code{base_url}. See details.}
-    \item{\code{verbosity}}{How much information to print? This is a wrapper
-around \code{\link[httr2:req_verbose]{req_verbose()}} that uses an integer to control verbosity:
-\itemize{
-\item \code{0}: no output
-\item \code{1}: show headers
-\item \code{2}: show headers and bodies
-\item \code{3}: show headers, bodies, and curl status messages.
-}
+\item{include_lease_terms}{Logical: if TRUE, will include lease term information
+in the results. Default is FALSE.}
 
-Use \code{\link[httr2:with_verbosity]{with_verbosity()}} to control the verbosity of requests that
-you can't affect directly.}
-  }}
-
-\item{res_data}{Response data from the Entrata API's "getProperties" method.}
+\item{...}{Additional parameters to pass to the underlying \code{\link[=entrata]{entrata()}} function.}
 }
 \value{
-A tibble with the property information
-
-A tibble with the property information
+If include_lease_terms is FALSE (default), returns a tibble with property information.
+If include_lease_terms is TRUE, returns a list with two elements:
+\item{properties}{A tibble with property information}
+\item{lease_terms}{A tibble with lease term information for each property}
 }
 \description{
-This function retrieves properties from the Entrata API.
-
-This function parses the response from the Entrata API's "getProperties" method.
+This function retrieves property information from the Entrata API. It allows for
+filtering properties based on IDs, lookup codes, and status.
 }
-\section{Functions}{
-\itemize{
-\item \code{parse_property_res_data()}: Parse Entrata Properties Response Data
-
-}}
 \examples{
+\dontrun{
+# Retrieve all properties
+all_properties <- entrata_properties()
+
+# Retrieve specific properties by ID
+specific_properties <- entrata_properties(property_ids = c("123", "456"))
+
+# Retrieve properties with lease terms
+properties_with_lease_terms <- entrata_properties(include_lease_terms = TRUE)
+}
 
 }
 \seealso{
-\code{\link[=entrata]{entrata()}}
+\code{\link[=entrata]{entrata()}}, \code{\link[=parse_property_res_data]{parse_property_res_data()}}
 
-https://gmhcommunities.entrata.com/api/v1/documentation/getProperties
+\url{https://gmhcommunities.entrata.com/api/v1/documentation/getProperties}
 }

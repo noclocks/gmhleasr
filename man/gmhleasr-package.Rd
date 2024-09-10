@@ -4,12 +4,40 @@
 \name{gmhleasr-package}
 \alias{gmhleasr}
 \alias{gmhleasr-package}
-\title{gmhleasr: Shiny Dashboard for GMH Communities Leasing Data}
+\title{GMH Leasing R Package - \code{gmhleasr}}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
-
-Shiny Dashboard for GMH Communities Leasing Data.
+The \code{gmhleasr} package provides a comprehensive set of tools for interacting with the Entrata API.
+It includes functions for managing API configurations, making API requests, and parsing responses.
+The package is designed to simplify the process of retrieving and analyzing data from Entrata,
+particularly focusing on leasing and property management information.
 }
+\details{
+\emph{R package housing a shiny application and data processing logic related to
+the leasing activities at GMH Communities.}
+}
+\section{Main Features}{
+
+\itemize{
+\item API Configuration Management: Easy setup and management of Entrata API credentials and settings.
+\item Request Handling: Robust functions for making API requests with built-in error handling and retrying capabilities.
+\item Response Parsing: Tools for parsing and cleaning API responses into usable R data structures.
+\item Caching: Efficient caching mechanisms to improve performance and reduce API calls.
+\item Data Retrieval: Specialized functions for retrieving property, lease, and report data from Entrata.
+}
+}
+
+\section{Key Functions}{
+
+\itemize{
+\item \code{\link{create_entrata_config}}: Create and manage Entrata API configurations.
+\item \code{\link{entrata}}: Make requests to the Entrata API.
+\item \code{\link{entrata_properties}}: Retrieve property information from Entrata.
+\item \code{\link{entrata_leases}}: Fetch lease data from Entrata.
+\item \code{\link{get_entrata_reports_list}}: Get a list of available reports from Entrata.
+\item \code{\link{get_entrata_report_info}}: Retrieve detailed information about specific Entrata reports.
+}
+}
+
 \seealso{
 Useful links:
 \itemize{
@@ -33,4 +61,3 @@ Other contributors:
 }
 
 }
-\keyword{internal}

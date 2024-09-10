@@ -14,24 +14,7 @@ mod_dashboard_ui <- function(id) {
     shiny::fluidRow(
       shiny::column(
         width = 12,
-        bs4Dash::valueBoxOutput(
-          ns("number_of_properties"),
-          width = 4
-        ),
-        bs4Dash::valueBoxOutput(
-          ns("total_portfolio_value"),
-          width = 4
-        ),
-        bs4Dash::valueBoxOutput(
-          ns("total_portfolio_return"),
-          width = 4
-        )
-      )
-    ),
-    shiny::fluidRow(
-      shiny::column(
-        width = 12,
-        picker_entrata_properties(ns("properties")),
+        picker_entrata_properties(id = ns("properties")),
         htmltools::tags$h1(
           "Leasing Summary Report",
           style = "text-align: center; margin-top: 20px;"
@@ -56,64 +39,85 @@ mod_dashboard_ui <- function(id) {
         )
       )
     ),
+    htmltools::tags$br(),
+    shiny::fluidRow(
+      bs4Dash::valueBoxOutput(
+        ns("number_of_properties"),
+        width = 4
+      ),
+      bs4Dash::valueBoxOutput(
+        ns("number_of_units"),
+        width = 4
+      ),
+      bs4Dash::valueBoxOutput(
+        ns("avg_sch_rent"),
+        width = 4
+      )
+    ),
+    htmltools::tags$br(),
     shiny::fluidRow(
       shiny::column(
         width = 12,
         DT::DTOutput(ns("summary_table")) |> shinycustomloader::withLoader()
       )
-    ),
-    htmltools::tags$br()
+    )
   )
 }
 
 #' Executive Dashboard Server Function
 #'
 #' @noRd
-mod_dashboard_server <- function(id, app_globals) {
-  shiny::moduleServer(id, function(input, output, session) {
-    ns <- session$ns
+mod_dashboard_server <- function(id, global_data) {
 
-    reports_queue_id <- shiny::reactiveVal(NULL)
-    pre_lease_summary_data <- shiny::reactiveValues(
-      summary = NULL,
-      details = NULL
-    )
+  shiny::moduleServer(id, function(input, output, session) {
+
+    ns <- session$ns
 
     # get "pre_lease" summary data from reports endpoint
     pre_lease_report_data <- shiny::reactive({
-      shiny::req(input$properties)
+      shiny::req(input$properties, global_data$pre_lease)
 
-      entrata_pre_lease_report(
-        property_ids = input$properties
-      )
-    }) |>
-      shiny::bindCache(
-        input$properties,
-        cache = "app"
-      ) |>
-      shiny::bindEvent(
-        input$refresh_data,
-        ignoreInit = TRUE,
-        ignoreNULL = TRUE,
-        label = "refresh_data"
-      )
+      summary_data <- global_data$pre_lease$summary |>
+        dplyr::filter(
+          property_id %in% input$properties
+        )
 
-    shiny::observe({
+      details_data <- global_data$pre_lease$details |>
+        dplyr::filter(
+          property_id %in% input$properties
+        )
+
+      list(
+        summary = summary_data,
+        details = details_data
+      )
+    })
+
+    output$summary_table <- DT::renderDataTable({
       shiny::req(pre_lease_report_data())
-      pre_lease_summary_data$summary <- pre_lease_report_data()$summary
-      pre_lease_summary_data$details <- pre_lease_report_data()$details
-    }) |>
-      shiny::bindEvent(pre_lease_report_data())
-
-
-    output$portfolio_table <- DT::renderDataTable({
-      # Add your portfolio performance data here
+      dat <- pre_lease_report_data()$summary
+      DT::datatable(
+        dat,
+        rownames = FALSE,
+        options = list(
+          autoWidth = TRUE,
+          pageLength = 10
+        )
+      )
     })
 
-    output$property_leasing_table <- DT::renderDataTable({
-      # Add your property leasing information data here
+    output$details_table <- DT::renderDataTable({
+      shiny::req(pre_lease_report_data())
+      dat <- pre_lease_report_data()$details
+      DT::datatable(
+        dat,
+        rownames = FALSE,
+        options = list(
+          autoWidth = TRUE,
+          pageLength = 10
+        )
+      )
     })
-
 
     # valueboxes --------------------------------------------------------------
     num_properties <- shiny::reactive({
@@ -124,34 +128,48 @@ mod_dashboard_server <- function(id, app_globals) {
     output$number_of_properties <- bs4Dash::renderValueBox({
       shiny::req(num_properties())
       bs4Dash::valueBox(
-        value = num_properties(),
-        subtitle = "Total Properties",
+        value = paste0(as.character(num_properties()), " Properties"),
+        subtitle = "Number of Properties",
         icon = shiny::icon("building"),
         color = "primary",
         width = 12,
-        footer = htmltools::tags$a(
-          href = "#",
-          "View Details"
-        )
+        footer = "Number of Properties",
+        gradient = TRUE
       )
     })
 
-    output$total_portfolio_value <- bs4Dash::renderValueBox({
+    output$number_of_units <- bs4Dash::renderValueBox({
       shiny::req(input$properties)
-      shiny::req(pre_lease_summary_data$summary)
+      shiny::req(pre_lease_report_data()$summary)
       bs4Dash::valueBox(
-        value = shiny::prettyNum(
-          pre_lease_summary_data$summary$total_portfolio_value,
+        value = prettyNum(
+          sum(pre_lease_report_data()$summary$units, na.rm = TRUE),
           big.mark = ","
         ),
-        subtitle = "Total Portfolio Value",
-        icon = shiny::icon("dollar-sign"),
+        subtitle = "Total Units",
+        icon = shiny::icon("house"),
         color = "success",
         width = 12,
-        footer = htmltools::tags$a(
-          href = "#",
-          "View Details"
-        )
+        footer = "Number of Units"
+      )
+    })
+
+    output$avg_sch_rent <- bs4Dash::renderValueBox({
+      shiny::req(input$properties)
+      shiny::req(pre_lease_report_data()$summary)
+      bs4Dash::valueBox(
+        value = paste0(
+          "$",
+          prettyNum(
+            round(mean(pre_lease_report_data()$summary$avg_scheduled_rent, na.rm = TRUE), 2),
+            big.mark = ","
+          )
+        ),
+        subtitle = "Average Scheduled Rent",
+        icon = shiny::icon("dollar-sign"),
+        color = "info",
+        width = 12,
+        footer = "Average Scheduled Rent"
       )
     })
   })

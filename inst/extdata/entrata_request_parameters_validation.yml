@@ -1,0 +1,437 @@
+status:
+  getStatus:
+  - .na.character
+customers:
+  getCustomers:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value for the
+        Property ID.
+    customerIds:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Customer IDs.
+    leaseStatusTypeIds:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Lease Status Type IDs.
+    isAgreedToTermsOnly:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. isAgreedToTermsOnly
+        returns the date when a customer has agreed to the Terms and Conditions of
+        Entrata resident portal.
+    companyIdentificationTypeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma seperated multiple
+        values. company Identification type IDs.
+financial:
+  getBudgetActuals:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. propertyId
+    glTreeId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    budgetId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    postMonthFrom:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. MM/YYYY
+    postMonthTo:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. MM/YYYY
+    glBookTypeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values. glBookTypeIds
+    budgetStatusTypeId:
+      type: integer
+      required: no
+      description: This is an optional field. This field accepts single value. budgetStatusTypeId
+    accountingMethod:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. accountingMethod
+  getBudgets:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. propertyId
+    budgetIds:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Budget IDs.
+    budgetStatusTypeIds:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Budget Status Type IDs.
+    fiscalYears:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Fiscal Years.
+leases:
+  getLeases:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value.
+    applicationId:
+      type: integer
+      required: no
+      description: This is an optional field. This field accepts single value.
+    customerId:
+      type: integer
+      required: no
+      description: This is an optional field. This field accepts single value.
+    leaseStatusTypeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+    leaseIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+    scheduledArCodeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+    unitNumber:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    buildingName:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    moveInDateFrom:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    moveInDateTo:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    leaseExpiringDateFrom:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    leaseExpiringDateTo:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    moveOutDateFrom:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    moveOutDateTo:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value.
+    includeOtherIncomeLeases:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    residentFriendlyMode:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    includeLeaseHistory:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    includeArTransactions:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. This
+        should return the Ar Transactions associated with the lease.
+  getLeaseDetails:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value.
+    leaseId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    leaseStatusTypeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+    includeAddOns:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+    includeCharge:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+  getLeaseDocuments:
+    propertyId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    leaseId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    externalLeaseId:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value. Its
+        remote primary key which is associated to lease.
+    documentIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+    fileTypesCode:
+      type: string
+      required: no
+      multiple: yes
+      description: "\tThis is an optional field. This field accepts comma seperated
+        multiple values. System code for file files."
+    addedOnFromDate:
+      type: date
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided, this will return the documents which have AddedOn dates o n or after
+        the date provided.
+    showDeletedFile:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided, this will return the documents which have been deleted.
+  getLeaseDocumentsList:
+    propertyId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value.
+    leaseId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    externalLeaseId:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value. Its
+        remote primary key which is associated to lease.
+    fileTypesCode:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values. System code for file files.
+    showDeletedFile:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided, this will return the documents which have been deleted.
+    leaseStatusTypeIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values.
+properties:
+  getProperties:
+    propertyIds:
+      type: string_list
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma seperated multiple
+        values (cancatenated into a single, comma-separated string) representing PropertyIds.
+    propertyLookupCode:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value for
+        the Property Lookup Code.
+    showAllStatus:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value.
+  getFloorPlans:
+    propertyId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    propertyFloorPlanIds:
+      type: string
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma seperated multiple
+        values. propertyFloorPlanIds.
+    usePropertyPreferences:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. Checks
+        for the property settings manipulate floorplan data and honour those settings.
+    includeDisabledFloorPlans:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided value is 1, then user should get disabled floorplans along with the
+        enabled one.
+  getPropertyAddOns:
+    propertyId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    addOnIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Add On IDs.
+  getPropertyAnnouncements:
+    propertyId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    announcementIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Announcement IDs.
+  getPropertyRentableItems:
+    propertyId:
+      type: integer
+      required: yes
+      description: This is a required field. This field accepts single value.
+    rentableItemIds:
+      type: integer
+      required: no
+      multiple: yes
+      description: This is an optional field. This field accepts comma separated multiple
+        values for the Rentable Item IDs.
+propertyunits:
+  getPropertyUnits:
+    propertyIds:
+      type: string
+      required: yes
+      multiple: yes
+      description: This is a required field. This field accepts comma seperated multiple
+        values.
+    availableUnitsOnly:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided value is 1, then user should get only available units.
+    usePropertyPreferences:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        enabled then the Entrata setting 'Max Available Units per Floor Plan' will
+        be honored and the available units returned will be reduced. Also requires
+        using the availableUnitsOnly parameter as true (1).
+    includeDisabledFloorPlans:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided value is 1, then user should get disabled floorplans along with the
+        enabled one.
+    includeDisabledUnits:
+      type: boolean_string
+      required: no
+      description: This is an optional field. This field accepts single value. If
+        provided value is 1, then user should get disabled units along with the enabled
+        one.
+  getUnitTypes:
+    propertyId:
+      type: integer
+      required: yes
+      multiple: no
+      description: This is a required field. This field accepts single value.
+queue:
+  getResponse:
+    queueId:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. This
+        node accepts the queueId. This should be a JWT token. This token should get
+        generated from the getReportData(r3) version.
+    serviceName:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. This
+        node accepts the service name for which the apiToken is added.
+reports:
+  getReportDependentFilter:
+    reportName:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. Once
+        passing this parameter web service will return values of the depe ndent filter
+        for that report.
+    dependentFilter:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. We will
+        be getting values of these filters in response, that are depen dent on the
+        parent fields that would be mentioned in 'filters' section.
+    filters:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. Here
+        parent filters are mentioned considering those values of dependen t filters
+        will be getting in the response of this web service.
+  getReportData:
+    reportName:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. Once
+        passing this parameter web service will return report data for th at report.
+    reportVersion:
+      type: string
+      required: yes
+      description: This is an optional field. This field accepts single value. Will
+        filter result as per the report available report versions.
+    filters:
+      type: object
+      required: yes
+      description: This is a required field. This field accepts single value. For
+        each report there are filter parameters that are required, like property id,
+        dates etc. You can get filters for each report using the getReportsInfo webservice.
+  getReportInfo:
+    reportName:
+      type: string
+      required: yes
+      description: This is a required field. This field accepts single value. This
+        node accepts the reportName.
+    reportVersion:
+      type: string
+      required: no
+      description: This is an optional field. This field accepts single value. Will
+        filter result as per the available report versions.
+  getReportList: []

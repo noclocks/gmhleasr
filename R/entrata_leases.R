@@ -6,42 +6,59 @@
 #
 # ------------------------------------------------------------------------
 
-#' Entrata Leases
+#' Retrieve Lease Information from Entrata API
 #'
 #' @description
-#' This function retrieves lease information from the Entrata API.
+#' This function retrieves lease information from the Entrata API. It allows for
+#' filtering and customization of the lease data retrieval based on various parameters.
 #'
-#' @param property_ids Required. Integer vector of property IDs
-#' @param application_id Optional. Integer value of the application ID
-#' @param customer_id Optional. Integer value of the customer ID
-#' @param lease_status_type_ids Optional. Integer vector of lease status type IDs
-#' @param lease_ids Optional. Integer vector of lease IDs
-#' @param scheduled_ar_code_ids Optional. Integer vector of scheduled AR code IDs
-#' @param unit_number Optional. Character value of the unit number
-#' @param building_name Optional. Character value of the building name
-#' @param move_in_date_from Optional. Date value of the move-in date from
-#' @param move_in_date_to Optional. Date value of the move-in date to
-#' @param lease_expiring_date_from Optional. Date value of the lease expiring from
-#' @param lease_expiring_date_to Optional. Date value of the lease expiring to
-#' @param move_out_date_from Optional. Date value of the move-out date from
-#' @param move_out_date_to Optional. Date value of the move-out date to
-#' @param include_other_income_leases Optional. Logical value to include other income leases
-#' @param resident_friendly_mode Optional. Logical value to include resident friendly mode
-#' @param include_lease_history Optional. Logical value to include lease history information
-#' @param include_ar_transactions Optional. Logical value to include AR transactions
-#' @param pagination_page_number Pagination page number. Default is 1
-#' @param pagination_page_size Number of items per page. Default is 500
-#' @param include_pagination_links Logical value to include pagination links in the response. Default is FALSE
-#' @param ... Additional parameters to pass to the request
+#' @param property_id Required. Integer. The ID of the property to retrieve leases for.
+#' @param application_id Optional. Integer. Filter leases by application ID.
+#' @param customer_id Optional. Integer. Filter leases by customer ID.
+#' @param lease_status_type_ids Optional. Integer vector. Filter leases by status type IDs.
+#' @param lease_ids Optional. Integer vector. Retrieve specific leases by their IDs.
+#' @param scheduled_ar_code_ids Optional. Integer vector. Filter leases by scheduled AR code IDs.
+#' @param unit_number Optional. Character. Filter leases by unit number.
+#' @param building_name Optional. Character. Filter leases by building name.
+#' @param move_in_date_from Optional. Date. Filter leases with move-in date from this date.
+#' @param move_in_date_to Optional. Date. Filter leases with move-in date up to this date.
+#' @param lease_expiring_date_from Optional. Date. Filter leases expiring from this date.
+#' @param lease_expiring_date_to Optional. Date. Filter leases expiring up to this date.
+#' @param move_out_date_from Optional. Date. Filter leases with move-out date from this date.
+#' @param move_out_date_to Optional. Date. Filter leases with move-out date up to this date.
+#' @param include_other_income_leases Optional. Logical. Include other income leases in the results.
+#' @param resident_friendly_mode Optional. Logical. Use resident-friendly mode for the results.
+#' @param include_lease_history Optional. Logical. Include lease history information in the results.
+#' @param include_ar_transactions Optional. Logical. Include AR transactions in the results.
+#' @param pagination_page_number Integer. The page number for paginated results. Default is 1.
+#' @param pagination_page_size Integer. Number of items per page. Default is 500.
+#' @param include_pagination_links Logical. Include pagination links in the response. Default is FALSE.
+#' @param ... Additional parameters to pass to the request.
 #'
-#' @return Parsed Response Body Content as a tibble with leases data.
+#' @return A tibble containing lease data with parsed and cleaned information.
 #'
 #' @export
 #'
-#' @seealso [parse_entrata_leases()]
+#' @examples
+#' \dontrun{
+#' # Retrieve leases for a specific property
+#' leases <- entrata_leases(property_id = 12345)
+#'
+#' # Retrieve leases with additional filters
+#' filtered_leases <- entrata_leases(
+#'   property_id = 12345,
+#'   move_in_date_from = as.Date("2023-01-01"),
+#'   move_in_date_to = as.Date("2023-12-31"),
+#'   include_lease_history = TRUE
+#' )
+#' }
+#'
+#' @seealso
+#' [parse_entrata_leases()] for details on how the API response is parsed.
 #'
 #' @importFrom httr2 req_headers req_url_query req_perform
 #' @importFrom purrr compact
+#' @importFrom cli cli_alert_warning cli_alert_info
 entrata_leases <- function(
     property_id,
     application_id = as.integer(NULL),
@@ -126,22 +143,33 @@ entrata_leases <- function(
 #'
 #' @description
 #' This function parses the response from the Entrata API's "getLeases" method.
+#' It extracts and processes various components of the lease data, including
+#' customer information, lease intervals, scheduled charges, and unit spaces.
 #'
 #' @details
-#' The core function is `parse_entrata_leases()`, which parses the response
-#' from the Entrata API's "getLeases" method called via [entrata_leases()].
+#' The function performs the following steps:
+#' 1. Extracts the main lease data from the API response.
+#' 2. Parses specific components of the lease data using helper functions.
+#' 3. Joins the parsed components back into a single tibble.
+#' 4. Cleans and formats the data, including date parsing and type conversions.
 #'
-#' `parse_entrata_leases()` calls the following functions to parse the response:
-#'   - `parse_entrata_lease_customers()`: Parse Entrata lease customers
-#'   - `parse_entrata_lease_intervals()`: Parse Entrata lease intervals
-#'   - `parse_entrata_lease_scheduled_charges()`: Parse Entrata lease scheduled charges
-#'   - `parse_entrata_lease_unit_spaces()`: Parse Entrata lease unit spaces
+#' The following helper functions are used to parse specific components:
+#' - `parse_entrata_lease_customers()`: Parses customer information
+#' - `parse_entrata_lease_intervals()`: Parses lease interval data
+#' - `parse_entrata_lease_scheduled_charges()`: Parses scheduled charges
+#' - `parse_entrata_lease_unit_spaces()`: Parses unit space information
 #'
 #' @param res The [httr2::response()] object from the Entrata API
 #'
-#' @return Parsed Response Body Content as a tibble with leases data.
+#' @return A tibble containing parsed and cleaned lease data, including:
+#' - Basic lease information (ID, status, dates, etc.)
+#' - Customer information
+#' - Lease interval details
+#' - Scheduled charges
+#' - Unit space information
 #'
-#' @seealso [entrata_leases()]
+#' @seealso
+#' [entrata_leases()] for retrieving lease data from the Entrata API.
 #'
 #' @export
 #'
@@ -205,9 +233,9 @@ parse_entrata_leases <- function(res) {
 #'
 #' @param res_content Response content to parse
 #'
-#' @export
+#' @return A tibble containing parsed customer data for each lease.
 #'
-#' @return Parsed Response Body Content as a tibble with lease customer data.
+#' @export
 #'
 #' @importFrom jsonlite toJSON fromJSON
 #' @importFrom tidyr unnest_longer unnest
@@ -257,9 +285,9 @@ parse_entrata_lease_customers <- function(res_content) {
 #'
 #' @param res_content Response content to parse
 #'
-#' @export
+#' @return A tibble containing parsed lease interval data for each lease.
 #'
-#' @return Parsed Response Body Content as a tibble with lease interval data.
+#' @export
 #'
 #' @importFrom jsonlite toJSON fromJSON
 #' @importFrom tidyr unnest_longer unnest
@@ -310,7 +338,7 @@ parse_entrata_lease_intervals <- function(res_content) {
 #'
 #' @param res_content Response content to parse
 #'
-#' @return Parsed Response Body Content as a tibble with lease scheduled charges data.
+#' @return A tibble containing parsed scheduled charges data for each lease.
 #'
 #' @export
 #'
@@ -335,7 +363,7 @@ parse_entrata_lease_scheduled_charges <- function(res_content) {
 #'
 #' @param res_content Response content to parse
 #'
-#' @return Parsed Response Body Content as a tibble with lease unit spaces data.
+#' @return A tibble containing parsed unit spaces data for each lease.
 #'
 #' @export
 #'

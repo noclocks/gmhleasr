@@ -1,18 +1,18 @@
-# httptest2::capture_requests({
-#
-#   test_prop_id_1 <- "739084"
-#   test_prop_id_2 <- "641240"
-#
-#   res_leases <- entrata(
-#     endpoint = "leases",
-#     method = "getLeases",
-#     method_params = list("propertyId" = test_prop_id_1),
-#     method_version = "r2",
-#     perform = TRUE
-#   )
-#
-#   entrata_leases(property_id = test_prop_id_2)
-# })
+httptest2::capture_requests({
+
+  test_prop_id_1 <- "739084"
+  test_prop_id_2 <- "641240"
+
+  res_leases <- entrata(
+    endpoint = "leases",
+    method = "getLeases",
+    method_params = list("propertyId" = test_prop_id_1),
+    method_version = "r2",
+    perform = TRUE
+  )
+
+  entrata_leases(property_id = test_prop_id_2)
+})
 
 httptest2::with_mock_api({
   test_that("Can call leases endpoint getLeases method", {

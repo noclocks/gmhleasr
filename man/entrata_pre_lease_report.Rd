@@ -7,7 +7,7 @@
 entrata_pre_lease_report(
   property_ids = get_property_ids_filter_param(),
   leasing_period_start_date = get_pre_lease_period_start_date(),
-  leasing_period_type = c("today", "date"),
+  leasing_period_type = c("date", "today"),
   summarize_by = c("property", "unit_type", "floorplan_name", "do_not_summarize"),
   group_by = c("do_not_group", "unit_type", "floorplan_name", "lease_term"),
   consider_pre_leased_on = c("33", "32", "34", "41", "42", "43", "44"),
@@ -18,7 +18,7 @@ entrata_pre_lease_report(
   consolidate_by = c("no_consolidation", "consolidate_all_properties",
     "consolidate_by_property_groups"),
   arrange_by_property = c("0", "1"),
-  subtotals = list("summary", "details"),
+  subtotals = c("summary", "details"),
   yoy = c("1", "0"),
   ...
 )
@@ -104,6 +104,15 @@ with data is received.
 and "details" data as necessary.
 \item Return a list with the extracted, un-processed report data for
 further downstream processing or analysis.
+}
+}
+\examples{
+\dontrun{
+pre_lease_data_by_property <- entrata_pre_lease_report()
+pre_lease_data_by_property$summary |> dplyr::glimpse()
+
+pre_lease_data_by_unit_type <- entrata_pre_lease_report(summarize_by = "unit_type")
+pre_lease_data_by_unit_type$details |> dplyr::glimpse()
 }
 }
 \seealso{

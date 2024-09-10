@@ -26,6 +26,89 @@ default_shiny_user_image_url <- function() {
   "https://www.svgrepo.com/show/5125/avatar.svg"
 }
 
+app_header_ui <- function(id) {
+
+  ns <- shiny::NS(id)
+
+  bs4Dash::dashboardHeader(
+    title = "GMH Leasing Dashboard"
+  )
+
+}
+
+
+app_sidebar_ui <- function(id) {
+
+  ns <- shiny::NS(id)
+  disable = FALSE,
+      width = "250px",
+      skin = "light",
+      elevation = 3,
+      collapsed = FALSE,
+      minified = TRUE,
+      expandOnHover = TRUE,
+      fixed = TRUE,
+      status = "primary",
+      customArea = NULL,
+
+      # App Title, Version, and Date Updated at top of Sidebar, formatted nicely
+
+      sidebarMenu(
+        id = "sidebar_menu",
+        # flat = TRUE,
+        # compact = TRUE,
+        # childIndent = TRUE,
+        # legacy = FALSE,
+        menuItem(
+          "Dashboard",
+          tabName = "dashboard",
+          icon = icon("tachometer-alt")
+        ),
+        menuItem(
+          "Reports",
+          tabName = "reports",
+          icon = icon("file-alt"),
+          badgeLabel = "New!",
+          badgeColor = "success"
+        ),
+        menuItem(
+          "Properties",
+          tabName = "properties",
+          icon = icon("building"),
+          badgeLabel = "New!",
+          badgeColor = "success"
+        )
+      )
+    )
+
+  bs4Dash::dashboardSidebar(
+    id = ns("sidebar"),
+    bs4Dash::dashboardBrand(
+      title = "Leasing Dashboard",
+      image = "gmh-logo.svg",
+      href = "https://gmhcommunities.com"
+    ),
+    bs4Dash::sidebarMenu(
+      id = ns("sidebar_menu"),
+      bs4Dash::menuItem(
+        text = "Dashboard",
+        tabName = "dashboard",
+        icon = shiny::icon("tachometer-alt")
+      ),
+      bs4Dash::menuItem(
+        text = "Reports",
+        tabName = "reports",
+        icon = shiny::icon("file-alt")
+      ),
+      bs4Dash::menuItem(
+        text = "Properties",
+        tabName = "properties",
+        icon = shiny::icon("building")
+      )
+    )
+  )
+
+}
 
 
 shinyApp(

@@ -2,7 +2,7 @@
 % Please edit documentation in R/entrata_reports.R
 \name{get_entrata_report_info}
 \alias{get_entrata_report_info}
-\title{Get Entrata Report Info}
+\title{Get Detailed Information for a Specific Entrata Report}
 \usage{
 get_entrata_report_info(report_name, report_version = "latest")
 }
@@ -10,12 +10,39 @@ get_entrata_report_info(report_name, report_version = "latest")
 \item{report_name}{A character string representing the name of the report.}
 
 \item{report_version}{A character string representing the version of the report.
-Defaults to "latest".}
+Defaults to "latest", which will automatically fetch the most recent version.}
 }
 \value{
-A list containing report name, description, and filters.
+A list containing the following elements:
+\itemize{
+\item report_name: Character string, name of the report
+\item report_description: Character string, description of the report
+\item report_filters: A tibble containing information about the available filters for the report
+}
 }
 \description{
-This function retrieves detailed information for a specified
-report from Entrata, including filters and descriptions.
+This function retrieves detailed information for a specified report from Entrata,
+including the report's name, description, and available filters. This is particularly
+useful when you need to understand the structure and capabilities of a specific report
+before running it or analyzing its data.
+}
+\examples{
+\dontrun{
+# Get information for the latest version of the "pre_lease" report
+report_info <- get_entrata_report_info("pre_lease")
+
+# Print the report description
+cat(report_info$report_description)
+
+# View the available filters for the report
+print(report_info$report_filters)
+
+# Get information for a specific version of a report
+specific_version_info <- get_entrata_report_info("pre_lease", report_version = "1.0")
+}
+
+}
+\seealso{
+\code{\link{get_entrata_reports_list}} for getting a list of all available reports
+\code{\link{get_latest_report_version}} for getting the latest version of a specific report
 }

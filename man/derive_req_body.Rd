@@ -7,15 +7,17 @@
 derive_req_body(method, method_version, method_params)
 }
 \arguments{
-\item{method}{The Entrata API method to use.}
+\item{method}{Character string specifying the Entrata API method to use.}
 
-\item{method_version}{The version of the API method to use.}
+\item{method_version}{Character string specifying the version of the API method to use.}
 
 \item{method_params}{A named list of parameters to include in the request body.}
 }
 \value{
-A list representing the request body.
+A list representing the request body, ready to be converted to JSON.
 }
 \description{
-Derives the request body for an Entrata API request.
+Derives the request body for an Entrata API request. This function is used internally
+by the \code{\link[=entrata]{entrata()}} function to construct the JSON body of the API request.
 }
+\keyword{internal}

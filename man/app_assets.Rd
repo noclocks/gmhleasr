@@ -13,25 +13,23 @@ app_assets(...)
 \verb{<head>} with app assets configured
 }
 \description{
-Update the app's \code{resourcePath} and add bundled, static assets, making
-them available to the app's interface for downstream use.
+Update the app's \code{resourcePath} and add bundled, static assets,
+making them available to the app's interface for downstream use.
 }
 \details{
-This function is used to add the app's favicon, bundle the app's assets,
-add various \verb{<meta>} tags, and include necessary external libraries and
-shiny related packages to the app.
+This function is used to add the app's favicon, bundle the app's
+assets, add various \verb{<meta>} tags, and include necessary external libraries
+and shiny related packages to the app.
 
 By default it will perform the following actions:
 \itemize{
-\item Update the app's \code{resourcePath} to include this package's \verb{assets/} directory
-via \code{\link[shiny:resourcePaths]{shiny::addResourcePath()}}.
+\item Update the app's \code{resourcePath} to include this package's \verb{assets/}
+directory via \code{\link[shiny:resourcePaths]{shiny::addResourcePath()}}.
 \item Add the favicon to the app's \verb{<head>} via \code{\link[=app_favicon]{app_favicon()}}.
 \item Bundle and include app static assets as an \code{\link[htmltools:htmlDependency]{htmltools::htmlDependency()}}
 via \code{\link[=bundle_app_assets]{bundle_app_assets()}}.
-}
 
 plus, it will include the following packages:
-\itemize{
 \item Include \code{shinyjs} via \code{\link[shinyjs:useShinyjs]{shinyjs::useShinyjs()}}.
 \item Include \code{shinyFeedback} via \code{\link[shinyFeedback:useShinyFeedback]{shinyFeedback::useShinyFeedback()}}.
 \item Include \code{waiter} via \code{\link[waiter:waiter]{waiter::useWaiter()}}.
@@ -39,5 +37,6 @@ plus, it will include the following packages:
 }
 \seealso{
 \code{\link[=app_favicon]{app_favicon()}}, \code{\link[=bundle_app_assets]{bundle_app_assets()}}, \code{\link[shiny:resourcePaths]{shiny::addResourcePath()}},
-\code{\link[shinyjs:useShinyjs]{shinyjs::useShinyjs()}}, \code{\link[shinyFeedback:useShinyFeedback]{shinyFeedback::useShinyFeedback()}}, \code{\link[waiter:waiter]{waiter::useWaiter()}}
+\code{\link[shinyjs:useShinyjs]{shinyjs::useShinyjs()}}, \code{\link[shinyFeedback:useShinyFeedback]{shinyFeedback::useShinyFeedback()}},
+\code{\link[waiter:waiter]{waiter::useWaiter()}}
 }

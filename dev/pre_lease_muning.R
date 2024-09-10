@@ -170,21 +170,7 @@ prep_pre_lease_report_params <- function(
   )
 }
 
-get_pre_lease_period_start_date <- function() {
 
-  today <- lubridate::today()
-
-  if (lubridate::month(today) >= 9) {
-    out <- lubridate::make_date(lubridate::year(today) + 1, 9, 1)
-  } else {
-    out <- lubridate::make_date(lubridate::year(today), 9, 1)
-  }
-
-  out <- format(out, "%m/%d/%Y") |> as.character()
-
-  return(out)
-
-}
 
 #' Generate Pre-Lease Report
 #'

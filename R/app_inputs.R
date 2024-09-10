@@ -14,7 +14,8 @@
 #' Picker Input
 #'
 #' @description
-#' `picker()` is a function to create a picker input for a Shiny app.
+#' `input_picker()` is a function to create a generic picker (select) input for
+#' a Shiny App. It wraps the [shinyWidgets::pickerInput()] function.
 #'
 #' @param id Input ID for the picker
 #' @param label Label for the picker
@@ -34,17 +35,19 @@
 #' @export
 #'
 #' @importFrom shinyWidgets pickerInput pickerOptions
-picker <- function(
-    id,
-    label,
-    choices,
-    selected = choices,
-    multiple = TRUE,
-    count_threshold = 3,
-    choice_options = NULL,
-    ...) {
+input_picker <- function(
+  id,
+  label,
+  choices,
+  selected = choices,
+  multiple = TRUE,
+  count_threshold = 3,
+  choice_options = NULL,
+  ...
+) {
+
   shinyWidgets::pickerInput(
-    id = id,
+    id,
     label = label,
     choices = choices,
     selected = selected,
@@ -76,11 +79,13 @@ picker <- function(
 #'
 #' @return a
 #' @export
-picker_entrata_reports <- function(
-    id,
-    label = "Select Report",
-    selected = "pre_lease",
-    ...) {
+input_picker_reports <- function(
+  id,
+  label = "Select Report",
+  selected = "pre_lease",
+  ...
+) {
+
   entrata_reports <- get_entrata_reports_list()
   entrata_report_names <- entrata_reports$report_name
 
@@ -112,7 +117,7 @@ picker_entrata_properties <- function(
   names(property_choices) <- entrata_property_names
 
   picker(
-    id = id,
+    id,
     label = label,
     choices = property_choices,
     selected = property_choices,
@@ -120,6 +125,28 @@ picker_entrata_properties <- function(
     ...
   )
 }
+
+
+
+
+
+# table edit inputs -------------------------------------------------------
+
+
+.col_to_input_type_map <- list(
+  list = c("multi_select", "select", "checkbox", "radio"),
+  factor = c("select", "radio"),
+  character = "text",
+  description = "text_area",
+  numeric = "number",
+  integer = "number",
+  logical = c("checkbox", "switch"),
+  date = "date",
+  time = "time",
+  id = c("select", "multi_select")
+)
+
+
 
 # picker_date <- function() {
 #   shinyWidgets::airDatepickerInput(

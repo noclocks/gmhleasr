@@ -2,176 +2,107 @@
 % Please edit documentation in R/entrata_request.R
 \name{entrata}
 \alias{entrata}
-\title{Entrata API Request}
+\title{Send a request to the Entrata API}
 \usage{
 entrata(
   endpoint = NULL,
   method = NULL,
   method_version = "r1",
-  method_params = list(NULL),
-  ua = user_agent(),
-  verbosity = NULL,
+  method_params = list(),
+  config = create_entrata_config(),
   perform = FALSE,
-  extract = perform,
-  enable_retry = FALSE,
-  timeout = NULL,
-  dry_run = FALSE,
-  progress = FALSE,
-  config = config::get("entrata"),
+  extract = FALSE,
+  cache = TRUE,
   ...
 )
 }
 \arguments{
-\item{endpoint}{Entrata API Endpoint to send the request to. Default is \code{NULL}.
-See details for the available endpoints.}
+\item{endpoint}{Character string specifying the Entrata API endpoint to send the request to.
+If NULL, the request will be sent to the base API URL.}
 
-\item{method}{Entrata API Method to use in the request.
-Not to be confused with the \code{HTTP} request method (i.e. \code{GET}, \code{POST}),
-this method must be a method that is available in the Entrata API for the
-specified \code{endpoint}. The default value depends on whether the \code{endpoint}
-parameter was provided, if it is available the default value is the first
-method listed for that endpoint. If no endpoint is specified, \code{NULL}
-will be used as the method in the request body. See details for available
-methods by endpoint and more details on the structure of the request.}
+\item{method}{Character string specifying the Entrata API method to use in the request.
+If NULL, a default method will be determined based on the endpoint.}
 
-\item{method_version}{Entrata API Method Version to use in the request. Default is \code{"r1"}.
-Some endpoints have multiple versions of the same method. The version
-should be provided as a string. See details for more information on the
-structure of the request and available versions by endpoint method.}
+\item{method_version}{Character string specifying the version of the API method to use.
+Default is "r1".}
 
-\item{method_params}{List of parameters to use in the request body's \code{"method"}
-object. Default is an empty list. The parameters should be provided as a
-named list where the names are the parameter names and the values are the
-parameter values. See details for more information on the structure of the
-request and available parameters by endpoint method.
-The default value depends on whether the \code{endpoint} parameter was provided,
-if it is available the default value is an empty list. If no endpoint is
-specified, \code{NULL} will be used as the method in the request body.}
+\item{method_params}{List of parameters to include in the request body's "method" object.}
 
-\item{ua}{User Agent string to use in the request. Default is to use \code{\link[=user_agent]{user_agent()}}.}
+\item{config}{An APIConfig object or a list containing the Entrata API configuration.
+If not provided, a default configuration will be created using \code{\link[=create_entrata_config]{create_entrata_config()}}.}
 
-\item{verbosity}{How much information to print? This is a wrapper
-around \code{\link[httr2:req_verbose]{req_verbose()}} that uses an integer to control verbosity:
-\itemize{
-\item \code{0}: no output
-\item \code{1}: show headers
-\item \code{2}: show headers and bodies
-\item \code{3}: show headers, bodies, and curl status messages.
-}
+\item{perform}{Logical indicating whether to perform the request (TRUE) or just construct
+the request object (FALSE).}
 
-Use \code{\link[httr2:with_verbosity]{with_verbosity()}} to control the verbosity of requests that
-you can't affect directly.}
+\item{extract}{Logical indicating whether to extract the response body (TRUE) or return
+the full response object (FALSE).}
 
-\item{perform}{Logical value indicating whether to perform the request.
-Default is \code{FALSE}. If \code{FALSE}, the function will return the request object
-without performing the request. If \code{TRUE}, the function will perform the
-request and return the response object.}
+\item{cache}{Logical indicating whether to use caching for this request.}
 
-\item{extract}{Logical value indicating whether to extract the response.
-Default is the value of \code{perform}. If \code{TRUE}, the function will extract the
-response object and return it. If \code{FALSE}, the function will return the
-response object as is.}
-
-\item{enable_retry}{Logical value indicating whether to enable request retry.
-Default is \code{FALSE}. If \code{TRUE}, the function will enable request retry with
-the default retry settings. If \code{FALSE}, the function will not enable request
-retry.}
-
-\item{timeout}{Numeric value indicating the request timeout in seconds.
-Default is \code{NULL}. If provided, the function will set the request timeout
-to the provided value in seconds.}
-
-\item{dry_run}{Logical value indicating whether to perform a dry run of the request.
-Default is \code{FALSE}. If \code{TRUE}, the function will perform a dry run of the
-request before performing the actual request (or if \code{perform} is not set,
-will return the request object without performing the request).}
-
-\item{progress}{Logical value indicating whether to show progress of the request.
-Only useful for long running requests. Default is \code{FALSE}. If \code{TRUE}, the
-function will show the progress of the request.}
-
-\item{config}{Entrata API Configuration Values as a list. Default is to use
-\code{config::get("entrata")} to retrieve the configuration values from a
-\code{config.yml} configuration file. The configuration values should include
-the following keys: \code{username}, \code{password}, and \code{base_url}. See details.}
-
-\item{...}{Additional arguments to pass to the request object.}
+\item{...}{Additional arguments to pass to \code{\link[httr2:req_perform]{httr2::req_perform()}}.}
 }
 \value{
-\code{\link[httr2:request]{httr2::request()}} object with the Entrata API request.
+Depending on the \code{perform} and \code{extract} parameters:
+\itemize{
+\item If \code{perform} is FALSE: Returns an \link[httr2:request]{httr2::request} object.
+\item If \code{perform} is TRUE and \code{extract} is FALSE: Returns an \link[httr2:response]{httr2::response} object.
+\item If \code{perform} is TRUE and \code{extract} is TRUE: Returns the extracted response body (usually a list).
+}
 }
 \description{
-This function sends an \code{HTTP} request to the Entrata API.
-
-Use this function as a base template to create \code{HTTP} requests to the
-Entrata API. This function is used by other functions in this package to
-create requests to the Entrata API.
+This function sends an HTTP request to the Entrata API. It handles authentication,
+request construction, caching, and error handling. Use this function as a base
+for creating specific API calls or for direct interaction with the Entrata API.
 }
-\details{
-This function creates a request to the Entrata API using the \code{httr2} package.
+\examples{
+\dontrun{
+# Create a configuration object
+config <- create_entrata_config(
+  username = "your_username",
+  password = "your_password",
+  base_url = "https://your-subdomain.entrata.com"
+)
 
-Specifically, the function creates an \verb{HTTP POST} request to the Entrata API
-by appending to the request's URL path the provided endpoint, assigning the
-\code{POST} \code{HTTP} Method, adding the necessary authentication, populating the
-necessary request headers, and deriving the request's body using the provided
-\code{method} name and \code{params} parameters. See below for details.
+# Make a simple request to get properties
+properties <- entrata(
+  endpoint = "properties",
+  method = "getProperties",
+  config = config,
+  perform = TRUE,
+  extract = TRUE
+)
 
-This is the raw format of the base template request:
+# Print the properties
+print(properties)
 
-\if{html}{\out{<div class="sourceCode http">}}\preformatted{POST https://gmhcommunities.entrata.com/api/v1
-Headers:
-Content-Type: 'application/json; charset=UTF-8'
-Accept: '*/*'
-Accept-Language: 'en-US,en;q=0.9'
-Cache-Control: 'no-cache'
-Connection: 'keep-alive'
-Origin: 'https://gmhcommunities.entrata.com'
-Pragma: 'no-cache'
-Referer: 'https://gmhcommunities.entrata.com/'
-Authorization: '<REDACTED>'
-Body: JSON Encoded Data
-}\if{html}{\out{</div>}}
+# Make a request with parameters to get leases
+leases <- entrata(
+  endpoint = "leases",
+  method = "getLeases",
+  method_params = list(propertyId = 12345),
+  config = config,
+  perform = TRUE,
+  extract = TRUE
+)
 
-where the \code{Authorization} header is a \code{Basic} authentication header with the
-provided username and password and the body is a JSON encoded data object using
-the provided \code{method} and \code{params}:
+# Print the leases
+print(leases)
 
-\if{html}{\out{<div class="sourceCode json">}}\preformatted{\{
-"data": \{
-  "auth": \{
-    "type": [
-      "basic"
-    ]
-  \},
-  "requestId": [
-    15
-  ],
-  "method": \{
-    "name": [
-      "<method>"
-    ],
-    "version": [
-      "r1"
-    ],
-    "params": \{
-      "param1": [
-        "value1"
-      ],
-      "param2": [
-        "value2"
-      ]
-    \}
-  \}
-\}
-\}
-}\if{html}{\out{</div>}}
+# Construct a request without performing it
+req <- entrata(
+  endpoint = "reports",
+  method = "getReportList",
+  config = config,
+  perform = FALSE
+)
+
+# Inspect the request
+print(req)
+}
+
 }
 \seealso{
-\href{https://docs.entrata.com/api/v1/documentation/}{Entrata API Documentation}
-
-\href{https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching}{MDN Web Docs: HTTP Caching}
-
-\code{\link[httr2:req_auth_basic]{httr2::req_auth_basic()}}, \code{\link[httr2:request]{httr2::request()}}, \code{\link[httr2:req_body]{httr2::req_body_json()}},
-\code{\link[httr2:req_headers]{httr2::req_headers()}}, \code{\link[httr2:req_template]{httr2::req_template()}}, \code{\link[httr2:req_url]{httr2::req_url_path_append()}},
-\code{\link[httr2:req_method]{httr2::req_method()}}
+\code{\link[=create_entrata_config]{create_entrata_config()}} for creating an API configuration object.
+\code{\link[=validate_entrata_request]{validate_entrata_request()}} for request validation.
+\link{APIConfig} for the configuration object structure.
 }

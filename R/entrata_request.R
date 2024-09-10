@@ -2,272 +2,208 @@
 #
 # Title : Entrata Base API Request
 #    By : Jimmy Briggs
-#  Date : 2024-08-20
+#  Date : 2024-09-05
 #
 #  ------------------------------------------------------------------------
 
-
-# internal ----------------------------------------------------------------
-
-
-# exported ----------------------------------------------------------------
-
-#' Entrata API Request
+#' Send a request to the Entrata API
 #'
 #' @description
-#' This function sends an `HTTP` request to the Entrata API.
+#' This function sends an HTTP request to the Entrata API. It handles authentication,
+#' request construction, caching, and error handling. Use this function as a base
+#' for creating specific API calls or for direct interaction with the Entrata API.
 #'
-#' Use this function as a base template to create `HTTP` requests to the
-#' Entrata API. This function is used by other functions in this package to
-#' create requests to the Entrata API.
+#' @param endpoint Character string specifying the Entrata API endpoint to send the request to.
+#'   If NULL, the request will be sent to the base API URL.
+#' @param method Character string specifying the Entrata API method to use in the request.
+#'   If NULL, a default method will be determined based on the endpoint.
+#' @param method_version Character string specifying the version of the API method to use.
+#'   Default is "r1".
+#' @param method_params List of parameters to include in the request body's "method" object.
+#' @param config An APIConfig object or a list containing the Entrata API configuration.
+#'   If not provided, a default configuration will be created using [create_entrata_config()].
+#' @param perform Logical indicating whether to perform the request (TRUE) or just construct
+#'   the request object (FALSE).
+#' @param extract Logical indicating whether to extract the response body (TRUE) or return
+#'   the full response object (FALSE).
+#' @param cache Logical indicating whether to use caching for this request.
+#' @param ... Additional arguments to pass to [httr2::req_perform()].
 #'
-#' @param endpoint Entrata API Endpoint to send the request to. Default is `NULL`.
-#'   See details for the available endpoints.
-#' @param method Entrata API Method to use in the request.
-#'   Not to be confused with the `HTTP` request method (i.e. `GET`, `POST`),
-#'   this method must be a method that is available in the Entrata API for the
-#'   specified `endpoint`. The default value depends on whether the `endpoint`
-#'   parameter was provided, if it is available the default value is the first
-#'   method listed for that endpoint. If no endpoint is specified, `NULL`
-#'   will be used as the method in the request body. See details for available
-#'   methods by endpoint and more details on the structure of the request.
-#' @param method_version Entrata API Method Version to use in the request. Default is `"r1"`.
-#'   Some endpoints have multiple versions of the same method. The version
-#'   should be provided as a string. See details for more information on the
-#'   structure of the request and available versions by endpoint method.
-#' @param method_params List of parameters to use in the request body's `"method"`
-#'   object. Default is an empty list. The parameters should be provided as a
-#'   named list where the names are the parameter names and the values are the
-#'   parameter values. See details for more information on the structure of the
-#'   request and available parameters by endpoint method.
-#'   The default value depends on whether the `endpoint` parameter was provided,
-#'   if it is available the default value is an empty list. If no endpoint is
-#'   specified, `NULL` will be used as the method in the request body.
-#' @param ua User Agent string to use in the request. Default is to use [user_agent()].
-#' @inheritParams httr2::req_perform
-#' @param perform Logical value indicating whether to perform the request.
-#'  Default is `FALSE`. If `FALSE`, the function will return the request object
-#'  without performing the request. If `TRUE`, the function will perform the
-#'  request and return the response object.
-#' @param extract Logical value indicating whether to extract the response.
-#'   Default is the value of `perform`. If `TRUE`, the function will extract the
-#'   response object and return it. If `FALSE`, the function will return the
-#'   response object as is.
-#' @param enable_retry Logical value indicating whether to enable request retry.
-#'   Default is `FALSE`. If `TRUE`, the function will enable request retry with
-#'   the default retry settings. If `FALSE`, the function will not enable request
-#'   retry.
-#' @param timeout Numeric value indicating the request timeout in seconds.
-#'   Default is `NULL`. If provided, the function will set the request timeout
-#'   to the provided value in seconds.
-#' @param dry_run Logical value indicating whether to perform a dry run of the request.
-#'   Default is `FALSE`. If `TRUE`, the function will perform a dry run of the
-#'   request before performing the actual request (or if `perform` is not set,
-#'   will return the request object without performing the request).
-#' @param progress Logical value indicating whether to show progress of the request.
-#'   Only useful for long running requests. Default is `FALSE`. If `TRUE`, the
-#'   function will show the progress of the request.
-#' @param config Entrata API Configuration Values as a list. Default is to use
-#'   `config::get("entrata")` to retrieve the configuration values from a
-#'   `config.yml` configuration file. The configuration values should include
-#'   the following keys: `username`, `password`, and `base_url`. See details.
-#' @param ... Additional arguments to pass to the request object.
-#'
-#' @details
-#' This function creates a request to the Entrata API using the `httr2` package.
-#'
-#' Specifically, the function creates an `HTTP POST` request to the Entrata API
-#' by appending to the request's URL path the provided endpoint, assigning the
-#' `POST` `HTTP` Method, adding the necessary authentication, populating the
-#' necessary request headers, and deriving the request's body using the provided
-#' `method` name and `params` parameters. See below for details.
-#'
-#' This is the raw format of the base template request:
-#'
-#' ```http
-#' POST https://gmhcommunities.entrata.com/api/v1
-#' Headers:
-#' Content-Type: 'application/json; charset=UTF-8'
-#' Accept: '*/*'
-#' Accept-Language: 'en-US,en;q=0.9'
-#' Cache-Control: 'no-cache'
-#' Connection: 'keep-alive'
-#' Origin: 'https://gmhcommunities.entrata.com'
-#' Pragma: 'no-cache'
-#' Referer: 'https://gmhcommunities.entrata.com/'
-#' Authorization: '<REDACTED>'
-#' Body: JSON Encoded Data
-#' ```
-#'
-#' where the `Authorization` header is a `Basic` authentication header with the
-#' provided username and password and the body is a JSON encoded data object using
-#' the provided `method` and `params`:
-#'
-#' ```json
-#' {
-#' "data": {
-#'   "auth": {
-#'     "type": [
-#'       "basic"
-#'     ]
-#'   },
-#'   "requestId": [
-#'     15
-#'   ],
-#'   "method": {
-#'     "name": [
-#'       "<method>"
-#'     ],
-#'     "version": [
-#'       "r1"
-#'     ],
-#'     "params": {
-#'       "param1": [
-#'         "value1"
-#'       ],
-#'       "param2": [
-#'         "value2"
-#'       ]
-#'     }
-#'   }
-#' }
-#' }
-#' ```
-#'
-#' @seealso [Entrata API Documentation](https://docs.entrata.com/api/v1/documentation/)
-#' @seealso [MDN Web Docs: HTTP Caching](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)
-#' @seealso [httr2::req_auth_basic()], [httr2::request()], [httr2::req_body_json()],
-#'   [httr2::req_headers()], [httr2::req_template()], [httr2::req_url_path_append()],
-#'   [httr2::req_method()]
+#' @return Depending on the `perform` and `extract` parameters:
+#'   - If `perform` is FALSE: Returns an [httr2::request] object.
+#'   - If `perform` is TRUE and `extract` is FALSE: Returns an [httr2::response] object.
+#'   - If `perform` is TRUE and `extract` is TRUE: Returns the extracted response body (usually a list).
 #'
 #' @export
 #'
-#' @return [httr2::request()] object with the Entrata API request.
-#'
 #' @importFrom httr2 req_body_json req_auth_basic req_headers req_method
-#' @importFrom httr2 req_url_path_append request
-#' @importFrom config get
+#' @importFrom httr2 req_url_path_append request req_perform resp_body_json resp_status
+#' @importFrom rlang abort inform
+#' @importFrom purrr compact
 #' @importFrom glue glue
-#' @importFrom rlang abort
-#' @importFrom purrr pluck_exists pluck
-#' @importFrom fs path_temp
+#' @importFrom futile.logger flog.error
+#'
+#' @examples
+#' \dontrun{
+#' # Create a configuration object
+#' config <- create_entrata_config(
+#'   username = "your_username",
+#'   password = "your_password",
+#'   base_url = "https://your-subdomain.entrata.com"
+#' )
+#'
+#' # Make a simple request to get properties
+#' properties <- entrata(
+#'   endpoint = "properties",
+#'   method = "getProperties",
+#'   config = config,
+#'   perform = TRUE,
+#'   extract = TRUE
+#' )
+#'
+#' # Print the properties
+#' print(properties)
+#'
+#' # Make a request with parameters to get leases
+#' leases <- entrata(
+#'   endpoint = "leases",
+#'   method = "getLeases",
+#'   method_params = list(propertyId = 12345),
+#'   config = config,
+#'   perform = TRUE,
+#'   extract = TRUE
+#' )
+#'
+#' # Print the leases
+#' print(leases)
+#'
+#' # Construct a request without performing it
+#' req <- entrata(
+#'   endpoint = "reports",
+#'   method = "getReportList",
+#'   config = config,
+#'   perform = FALSE
+#' )
+#'
+#' # Inspect the request
+#' print(req)
+#' }
+#'
+#' @seealso
+#' [create_entrata_config()] for creating an API configuration object.
+#' [validate_entrata_request()] for request validation.
+#' [APIConfig] for the configuration object structure.
 entrata <- function(
     endpoint = NULL,
     method = NULL,
     method_version = "r1",
-    method_params = list(NULL),
-    ua = user_agent(),
-    verbosity = NULL,
+    method_params = list(),
+    config = create_entrata_config(),
     perform = FALSE,
-    extract = perform,
-    enable_retry = FALSE,
-    timeout = NULL,
-    dry_run = FALSE,
-    progress = FALSE,
-    config = config::get("entrata"),
-    ...) {
-  base_url <- config$base_url
+    extract = FALSE,
+    cache = TRUE,
+    ...
+) {
+  # Validate inputs
+  config <- if (inherits(config, "APIConfig")) config else create_entrata_config(config)
 
   if (is.null(method)) {
     method <- get_default_method(endpoint)
   }
 
-  validate_entrata_request(
-    endpoint = endpoint,
-    method = method,
-    method_params = method_params
-  )
+  validate_entrata_request(endpoint, method, method_params)
 
-  req_body <- derive_req_body(
-    method = method,
-    method_version = method_version,
-    method_params = method_params
-  )
+  # Check cache
+  cache_key <- NULL
+  if (cache && !is.null(config$cache_dir)) {
+    cache_key <- digest::digest(list(endpoint, method, method_version, method_params))
+    cached_response <- memoise::memoise(identity, cache = cachem::cache_disk(config$cache_dir))(cache_key)
+    if (!is.null(cached_response)) {
+      rlang::inform("Returning cached response")
+      return(cached_response)
+    }
+  }
 
-  username <- config$username
-  password <- config$password
+  # Prepare request body
+  req_body <- derive_req_body(method, method_version, method_params)
 
-  req <- httr2::request(base_url) |>
+  # Build request
+  req <- httr2::request(config$base_url) |>
     httr2::req_url_path_append("api", "v1") |>
     httr2::req_method("POST") |>
-    httr2::req_auth_basic(username, password) |>
-    httr2::req_headers(
-      `Content-Type` = "application/json; charset=UTF-8"
-    ) |>
-    httr2::req_user_agent(ua) |>
-    httr2::req_error(
-      is_error = res_is_err,
-      body = res_err_body
-    ) |>
-    httr2::req_body_json(req_body) |>
-    httr2::req_verbose(
-      header_req = TRUE,
-      header_resp = TRUE,
-      body_req = TRUE,
-      body_resp = TRUE,
-      info = TRUE,
-      redact_headers = TRUE
-    )
+    httr2::req_auth_basic(config$username, config$password) |>
+    httr2::req_headers(`Content-Type` = "application/json; charset=UTF-8") |>
+    httr2::req_user_agent(config$user_agent) |>
+    httr2::req_body_json(req_body)
 
   if (!is.null(endpoint)) {
     req <- req |> httr2::req_url_path_append(endpoint)
   }
 
-  if (enable_retry) {
-    req <- req |>
-      httr2::req_retry(
-        max_tries = 5,
-        max_seconds = 60,
-        is_transient = req_retry_is_transient,
-        backoff = req_retry_backoff
-      )
-  }
-
-  if (!is.null(timeout) && is.numeric(timeout)) {
-    req <- req |>
-      httr2::req_timeout(seconds = timeout)
-  }
-
-  if (progress) {
-    req <- req |>
-      httr2::req_progress()
-  }
-
-  if (dry_run) {
-    cli::cli_alert_info(
-      "Dry Run: Request will not be performed. Redacted headers are shown."
+  # Add retry capability
+  req <- req |>
+    httr2::req_retry(
+      max_tries = 3,
+      backoff = ~ 2 ^ .x
     )
-    httr2::req_dry_run(req, quiet = FALSE, redact_headers = TRUE)
+
+  # Set timeout
+  if (!is.null(config$timeout)) {
+    req <- req |> httr2::req_timeout(config$timeout)
   }
 
-  if (!perform) {
+  # Perform request if needed
+  if (perform) {
+    tryCatch({
+      resp <- httr2::req_perform(req, ...)
+
+      # Basic API error checking
+      if (httr2::resp_status(resp) >= 400) {
+        error_body <- httr2::resp_body_json(resp)
+        error_message <- glue::glue("API request failed with status {httr2::resp_status(resp)}: {error_body$message}")
+        futile.logger::flog.error(error_message)
+        rlang::abort(error_message)
+      }
+
+      # Cache response if caching is enabled
+      if (cache && !is.null(config$cache_dir) && !is.null(cache_key)) {
+        memoise::memoise(identity, cache = cachem::cache_disk(config$cache_dir))(cache_key, resp)
+      }
+
+      if (extract) {
+        return(httr2::resp_body_json(resp))
+      } else {
+        return(resp)
+      }
+    }, error = function(e) {
+      error_message <- glue::glue("API request failed: {e$message}\nEndpoint: {endpoint}\nMethod: {method}")
+      futile.logger::flog.error(error_message)
+      rlang::abort(error_message, parent = e)
+    })
+  } else {
     return(req)
   }
-
-  res <- req |> httr2::req_perform(verbosity = verbosity)
-  return(res)
 }
 
 #' Derive Entrata API Request Body
 #'
 #' @description
-#' Derives the request body for an Entrata API request.
+#' Derives the request body for an Entrata API request. This function is used internally
+#' by the [entrata()] function to construct the JSON body of the API request.
 #'
-#' @param method The Entrata API method to use.
-#' @param method_version The version of the API method to use.
+#' @param method Character string specifying the Entrata API method to use.
+#' @param method_version Character string specifying the version of the API method to use.
 #' @param method_params A named list of parameters to include in the request body.
 #'
-#' @return A list representing the request body.
+#' @return A list representing the request body, ready to be converted to JSON.
 #'
-#' @export
+#' @keywords internal
 #'
 #' @importFrom purrr compact
 derive_req_body <- function(method, method_version, method_params) {
   list(
-    auth = list(
-      type = "basic"
-    ),
-    requestId = 15,
+    auth = list(type = "basic"),
+    requestId = as.integer(Sys.time()),
     method = list(
       name = method,
       version = method_version,
