@@ -44,7 +44,7 @@ picker <- function(
     choice_options = NULL,
     ...) {
   shinyWidgets::pickerInput(
-    id = id,
+    inputId = id,
     label = label,
     choices = choices,
     selected = selected,
